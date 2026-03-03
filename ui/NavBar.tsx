@@ -131,7 +131,7 @@ export default function NavBar() {
               Culture & career
             </Link>
             <Link
-              href="/team"
+              href="/Blog"
               onClick={() => setIsMenuOpen(false)}
               className="text-[#1925aa] text-xl md:text-xl font-[GT50] uppercase hover:opacity-70 transition-opacity block "
             >
