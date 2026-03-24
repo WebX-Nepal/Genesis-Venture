@@ -1,5 +1,7 @@
 "use client";
 
+
+import { useStaggeredCharacterRise } from "@/hooks/useStaggeredCharacterRise";
 import gsap from "gsap";
 import { ArrowRight, Plus } from "lucide-react";
 import Image from "next/image";
@@ -25,19 +27,19 @@ export default function OurServices() {
         "Our team of over 50 in-house consultants in New York City helps clients navigate even the toughest building code and zoning challenges. With 33 years of experience across construction regulations, our team supports feasibility reviews, CCD1s, amendments, fire safety, land use matters, landmark coordination, violation resolution, and all the permits, approvals, and sign-offs your project needs.",
       image: "/image3.png",
     },
-     {
+    {
       title: "Sign-Offs & Project Closeouts",
       description:
         "Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.",
       image: "/image2.png",
     },
-     {
+    {
       title: "Sign-Offs & Project Closeouts",
       description:
         "Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.",
       image: "/image1.png",
     },
-     {
+    {
       title: "Sign-Offs & Project Closeouts",
       description:
         "Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.",
@@ -48,11 +50,17 @@ export default function OurServices() {
   const [currService, setCurrService] = useState<number | null>(null);
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const handleServiceClick = (index: number) => {
     setCurrService(index);
     setExpandedService(expandedService === index ? null : index);
   };
+
+  useStaggeredCharacterRise(headerRef, {
+    stagger: 0.08,
+    duration: 0.5,
+  });
 
   useEffect(() => {
     if (currService !== null && imageRef.current) {
@@ -65,12 +73,20 @@ export default function OurServices() {
   }, [currService]);
 
   return (
-    <div className="w-full md:min-h-screen bg-[#e9e7e0] border-b border-blue-900">
-      <h1 className="text-[55px] sm:text-[80px] md:text-[80px] lg:text-[170px] static md:absolute bg-[#e9e7e0] mt-0 md:mt-8 lg:mt-10 leading-none font-[PPFONT] px-5 text-left flex gap-4 md:gap-40 lg:gap-70 text-blue-900 pt-4">
-        Our <span className="pl-2 md:pl-6 lg:pl-8">Services</span>
+    <div className="w-full md:min-h-screen border-b border-primary">
+      <h1
+        ref={headerRef}
+        className="
+        w-full
+        text-[55px] sm:text-[80px] md:text-[80px] lg:text-[10vw]
+        leading-none font-[PPFONT] text-left text-primary font-semibold
+        static md:absolute bg-neutral-dark flex justify-center md:justify-between
+        mt-0 md:mt-8 lg:mt-10 gap-4 px-5 pt-4 pr-[10vw]"
+      >
+        <span>Our</span> <span>Services</span>
       </h1>
       <div className="w-full flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 md:min-h-screen hidden md:flex items-center justify-center border-b md:border-b-0 md:border-r border-blue-900">
+        <div className="w-full md:w-1/2 md:min-h-screen hidden md:flex items-center justify-center border-b md:border-b-0 md:border-r border-primary">
           {currService !== null && (
             <div ref={imageRef} key={currService}>
               <Image
@@ -89,14 +105,14 @@ export default function OurServices() {
             return (
               <div
                 key={index}
-                className="w-full border-t relative cursor-pointer border-blue-900 text-blue-900"
+                className="w-full border-t relative cursor-pointer border-primary text-primary"
                 onClick={() => handleServiceClick(index)}
               >
                 <div className="flex justify-between items-center px-4 md:px-6 lg:px-10 py-3 md:py-4 lg:py-5 text-xl sm:text-2xl md:text-2xl lg:text-4xl group">
-                  {service.title} 
+                  {service.title}
                   <Plus className={`transition-transform duration-500 group-hover:rotate-90 w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 ${isExpanded ? 'rotate-45' : ''}`} />
                 </div>
-                <div 
+                <div
                   className="overflow-hidden transition-all duration-700 ease-in-out"
                   style={{
                     maxHeight: isExpanded ? '500px' : '0px',
@@ -117,16 +133,16 @@ export default function OurServices() {
               </div>
             );
           })}
-            <div className="p-3 md:p-4 lg:p-5 font-[GT50] border-t border-blue-900">
-                <div className="relative h-14 md:h-16 lg:h-20 overflow-hidden group">
-                    <div className="absolute inset-0 bg-blue-700 text-white uppercase flex items-center justify-center cursor-pointer transition-all duration-300 group-hover:-translate-y-full group-hover:scale-0 text-xs md:text-sm lg:text-base">
-                        View All Services
-                    </div>
-                    <div className="absolute inset-0 bg-white text-blue-900 border border-blue-900 uppercase flex items-center justify-center cursor-pointer transition-all duration-700 translate-y-full scale-0 group-hover:translate-y-0 group-hover:scale-100 text-xs md:text-sm lg:text-base">
-                        View All Services
-                    </div>
-                </div>
+          <div className="pt-3 md:pt-4 lg:pt-5 font-[GT50] border-t border-primary ">
+            <div className="relative h-14 md:h-16 lg:h-20 overflow-hidden group w-full">
+              <div className="absolute inset-0 bg-primary text-neutral-base uppercase flex items-center justify-center cursor-pointer transition-all duration-300 group-hover:-translate-y-full group-hover:scale-0 text-xs md:text-sm lg:text-base">
+                View All Services
+              </div>
+              <div className="absolute inset-0 bg-neutral-base text-primary border border-primary uppercase flex items-center justify-center cursor-pointer transition-all duration-700 translate-y-full scale-0 group-hover:translate-y-0 group-hover:scale-100 text-xs md:text-sm lg:text-base">
+                View All Services
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </div>

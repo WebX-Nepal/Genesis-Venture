@@ -51,19 +51,18 @@ export default function Blogs() {
 
   return (
     <div className="w-full min-h-screen pt-7 px-5">
-      <div className="text-[220px] leading-tight font-[PPFONT] my-10  sm:text-[80px] md:text-[120px] lg:text-[170px] text-blue-900 tracking-tight pl-3 md:pl-5 border-b border-blue-900">
+      <div className="text-[220px] leading-tight font-[PPFONT] my-10  sm:text-[80px] md:text-[120px] lg:text-[170px] text-primary tracking-tight pl-3 md:pl-5 border-b border-primary">
         Blog
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_6fr] gap-4 mb-20">
         <div className="flex flex-col gap-4">
-          <nav className="flex flex-col text-xl leading-tight font-[PPFONT] text-blue-900">
+          <nav className="flex flex-col text-xl leading-tight font-[PPFONT] text-primary">
             <button
               onClick={() => setSelectedType(null)}
-              className={`text-left px-4 py-2 transition ${
-                selectedType === null
-                  ? "opacity-30"
-                  : "hover:cursor-pointer hover:opacity-50"
-              }`}
+              className={`text-left px-4 py-2 transition ${selectedType === null
+                ? "opacity-30"
+                : "hover:cursor-pointer hover:opacity-50"
+                }`}
             >
               All
             </button>
@@ -71,11 +70,10 @@ export default function Blogs() {
               <button
                 key={type}
                 onClick={() => setSelectedType(type as BlogPost["type"])}
-                className={`text-left px-4 py-2 rounded-md transition ${
-                  selectedType === type
-                    ? "opacity-30"
-                    : "hover:cursor-pointer hover:opacity-50"
-                }`}
+                className={`text-left px-4 py-2 rounded-md transition ${selectedType === type
+                  ? "opacity-30"
+                  : "hover:cursor-pointer hover:opacity-50"
+                  }`}
               >
                 {type}
               </button>
@@ -87,7 +85,7 @@ export default function Blogs() {
           {displayedProjects.map((blog, index) => (
             <div
               key={index}
-              className="group w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-5 border-b border-blue-900 py-10 text-blue-900 items-center hover:bg-[#1925aa] hover:text-white hover:transition-colors hover:duration-300"
+              className="group w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-5 border-b border-primary py-10 text-primary items-center hover:bg-primary hover:text-neutral-base hover:transition-colors hover:duration-300"
             >
               <div>
                 <h1 className="text-4xl font-[PPFONT]">{blog.id}</h1>
@@ -96,7 +94,7 @@ export default function Blogs() {
 
               <div className="flex flex-col gap-20">
                 <h2 className="text-2xl font-[PPFONT] mb-3">{blog.title}</h2>
-                <button className="px-5 py-4 bg-white max-w-40 text-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-white hover:bg-[#1925aa] hover:border hover:border-white">
+                <button className="px-5 py-4 bg-neutral-base max-w-40 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:text-neutral-base hover:bg-primary hover:border hover:border-neutral-base">
                   Read More
                 </button>
               </div>

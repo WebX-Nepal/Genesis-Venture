@@ -1,38 +1,52 @@
+'use client';
 import ScrollAnimated from "./ScrollAnimated";
+import { useSlideInFromBottom } from "@/hooks/useSlideInFromBottom";
+import { useRef } from "react";
 
 export default function Process() {
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  useSlideInFromBottom(headerRef, { duration: 0.4, stagger: 0.1 })
+
   return (
-    <div className="w-full relative bg-[#e9e7e0]">
-      <div className="absolute inset-0 font-[PPFONT] md:grid hidden grid-cols-3 w-full pointer-events-none">
-        <div className="h-full uppercase text-blue-900 p-2 border-r border-blue-900 text-xs md:text-sm lg:text-base">
+    <div className="w-full relative overflow-hidden">
+
+      <div className="absolute inset-0 font-[PPFONT] hidden md:grid grid-cols-3 w-full pointer-events-none">
+        <div className="h-full uppercase text-primary p-2 border-r border-primary text-xs lg:text-[1vw]">
           process
         </div>
-        <div className="h-full border-r border-blue-900 hidden md:block"></div>
-        <div className="h-full text-right text-blue-900 uppercase p-2 text-xs md:text-sm lg:text-base">
-          [0CT. 09]
+        <div className="h-full border-r border-primary"></div>
+        <div className="h-full text-right text-primary uppercase p-2 text-xs lg:text-[1vw]">
+          [OCT. 09]
         </div>
       </div>
-      <div className="flex flex-col md:flex-row">
-        <div className="flex flex-col gap-8 md:gap-16 lg:gap-30 py-10 md:py-0 md:w-1/2 flex-shrink-0">
-          <div className="flex md:hidden justify-between text-blue-900 px-3 font-[PPFONT]">
+
+      <div className="flex flex-col md:flex-row items-center">
+
+        {/* left side */}
+        <div className="flex flex-col gap-8 md:gap-12 lg:gap-[5vw] py-10 md:py-24 md:w-1/2 justify-center z-1">
+          {/* mobile only */}
+          <div className="flex md:hidden justify-between text-primary px-4 font-[PPFONT] text-xs">
             <p>PROCESS</p>
             <p>[OCT. 09]</p>
           </div>
-          <h1 className="font-[PPFONT] leading-none md:top-16 lg:top-20 relative pl-3 md:pl-4 lg:pl-5 text-blue-900 text-[60px] sm:text-[100px] md:text-[80px] lg:text-[190px] md:leading-25 lg:leading-45">
-            Here <br />{" "}
-            <span className="bg-[#e9e7e0] leading-none">at every</span> <br />{" "}
+          <h1 ref={headerRef} className="font-[PPFONT] leading-none text-primary px-4
+            text-[48px] sm:text-[72px] md:text-[64px] lg:text-[11vw] lg:leading-[9.8vw]">
+            Here <br />
+            <span className="bg-neutral-dark">at every</span> <br />
             step
           </h1>
-          <div className="w-full md:w-80 md:mt-10 lg:w-100 relative left-0 md:left-10 lg:left-20 px-3 md:px-0">
-            <p className="text-blue-900 md:bg-[#e9e7e0] font-[GT50] text-sm md:text-base lg:text-[18px] uppercase tracking-[1px]">
-              Navigating regulatory agencies can seem like an insurmountable
-              task for architects, engineers, owners and contractors.
+          <div className="md:ml-10 lg:ml-[10vw] px-4 md:px-0 z-1 bg-neutral-dark max-w-md lg:max-w-[22vw] ">
+            <p className="text-primary font-[GT50] text-sm sm:text-base lg:text-[0.9vw] uppercase tracking-wide">
+              Navigating regulatory agencies can seem like an insurmountable task for architects, engineers, owners and contractors.
             </p>
           </div>
         </div>
-        <div className="flex flex-col md:w-1/2 py-10 md:py-20 lg:py-30 relative px-3 md:px-4">
+
+        {/* right side */}
+        <div className="w-full md:w-1/2 py-10 md:py-20 lg:py-28 px-4 md:px-6 z-1">
           <ScrollAnimated />
         </div>
+
       </div>
     </div>
   );

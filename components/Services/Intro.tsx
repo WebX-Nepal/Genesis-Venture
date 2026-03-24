@@ -1,16 +1,16 @@
 export function Intro() {
   return (
-    <div className="w-full pt-7 bg-[#1925aa] px-5">
-      <div className="border-t border-blue-900 text-white">
-        <div className="uppercase w-full flex relative font-[GT50] text-sm">
-          <p className="p-5">Intro</p>
-          <p className=" flex f w-full font-[GT50] justify-end p-5 text-sm">
+    <div className="w-full pt-[1.2vw] bg-primary px-[2.1vw]">
+      <div className="border-t border-primary text-neutral-base">
+        <div className="uppercase w-full flex relative font-[GT50] text-[0.8vw]">
+          <p className="">Intro</p>
+          <p className=" flex f w-full font-[GT50] justify-end">
             [OCI.1]
           </p>
         </div>
-        <div className="w-full flex flex-row-reverse ">
-          <div className="flex flex-col justify-between mx-40 w-200 py-10">
-            <p className="indent-24 tracking-normal font-[GT50] text-3xl leading-tight">
+        <div className="w-full grid grid-cols-12 pt-12 pb-30">
+          <div className="flex flex-col pb-40 col-span-full lg:col-start-6 lg:-col-end-2">
+            <p className="indent-24 tracking-tighter font-[GT50] text-[4.9vw] lg:text-[1.8vw] leading-none">
               As you tackle the construction process, Outsource Consultants is
               there for you every step of the way, handling projects in code
               consultation, construction services, compliance and more. Covering

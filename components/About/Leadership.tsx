@@ -71,11 +71,11 @@ const Leadership: leadershipProps[] = [
 
 export default function LeadershipPage() {
   return (
-    <div className="w-full min-h-screen flex flex-col gap-5 px-5 pt-7">
-      <h2 className="text-9xl font-bold text-blue-900">
+    <div className="w-full min-h-screen flex flex-col gap-12 lg:gap-16 bg-neutral-base">
+      <h2 className="text-[18vw] lg:text-[11vw] text-primary leading-none lg:leading-[10.2vw] pt-14 lg:pt-32 tracking-tight font-bold px-4">
         Leadership <br /> Board
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5 text-blue-900 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-5 text-primary mb-10">
         {Leadership.map((member, index) => (
           <div key={index} className="flex flex-col gap-3 mb-10">
             <Image
@@ -86,8 +86,10 @@ export default function LeadershipPage() {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
             />
-            <h3 className="text-2xl">{member.name}</h3>
-            <p className="uppercase text-lg">{member.title}</p>
+            <div className="space-y-1">
+              <h3 className="text-2xl">{member.name}</h3>
+              <p className="uppercase text-lg">{member.title}</p>
+            </div>
           </div>
         ))}
       </div>

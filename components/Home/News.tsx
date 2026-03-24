@@ -4,31 +4,31 @@ import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 
-export default function News(){
-    const dummyNews=[
+export default function News() {
+    const dummyNews = [
         {
-            image:"/news1.png",
-            type:"contractors",
-             date: "02.11" ,
-            title:"Outsource Consultants Expands Services with New Construction Management Division"
+            image: "/news1.png",
+            type: "contractors",
+            date: "02.11",
+            title: "Outsource Consultants Expands Services with New Construction Management Division"
         },
         {
-            image:"/news2.png",
-            type:"projects",
-             date:"02.20" ,
-            title:"Outsource Consultants Secures Permits for Landmark Building Renovation"
+            image: "/news2.png",
+            type: "projects",
+            date: "02.20",
+            title: "Outsource Consultants Secures Permits for Landmark Building Renovation"
         },
         {
-            image:"/news3.png",
-            type:"code",
-             date:"02.12" ,
-            title:"Outsource Consultants Launches Code Compliance Training Program for Architects and Engineers"
+            image: "/news3.png",
+            type: "code",
+            date: "02.12",
+            title: "Outsource Consultants Launches Code Compliance Training Program for Architects and Engineers"
         },
         {
-            image:"/news4.png",
+            image: "/news4.png",
             date: "02.08",
-            type:"insights",
-            title:"Outsource Consultants Shares Insights on Navigating DOB Regulations in New York City"
+            type: "insights",
+            title: "Outsource Consultants Shares Insights on Navigating DOB Regulations in New York City"
         }
     ]
     const [currNews, setCurrNews] = useState(0);
@@ -44,7 +44,7 @@ export default function News(){
     const blurTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const getGridPosition = (index: number) => {
-        const col = index % 2; 
+        const col = index % 2;
         const row = Math.floor(index / 2);
         return {
             left: `${col * 50}%`,
@@ -60,22 +60,22 @@ export default function News(){
                 y: e.clientY - rect.top
             });
         }
-        
+
         const dx = e.clientX - lastMousePos.current.x;
         const dy = e.clientY - lastMousePos.current.y;
         const speed = Math.sqrt(dx * dx + dy * dy);
-        
+
         // Calculate blur based on mouse speed
         const newBlur = Math.min(speed * 0.8, 20); // Max blur of 20px
         setBlurAmount(newBlur);
-        
+
         lastMousePos.current = { x: e.clientX, y: e.clientY };
-        
+
         // Clear existing timeout
         if (blurTimeoutRef.current) {
             clearTimeout(blurTimeoutRef.current);
         }
-        
+
         // Reset blur after mouse stops
         blurTimeoutRef.current = setTimeout(() => {
             setBlurAmount(0);
@@ -105,7 +105,7 @@ export default function News(){
 
         // Set opacity to lower value immediately
         if (imageRef.current) {
-            gsap.set(imageRef.current, { opacity: 0});
+            gsap.set(imageRef.current, { opacity: 0 });
         }
 
         // Wait a few seconds before starting the animation
@@ -128,90 +128,93 @@ export default function News(){
             }
         };
     }, [currNews]);
-    
-    return(
-        <div className="w-full min-h-screen pt-15 pb-40 px-5   bg-[#e9e7e0]">
-            <div className="border-t  border-blue-900">
-               <div className="flex justify-between font-[GT50] text-blue-900 py-5 px-2 uppercase ">
-                 <p>Latest News</p>
-                 <button className="flex items-center uppercase  gap-2">
-                    [ View All news <ArrowRight size={20} strokeWidth={1} /> ]
-                 </button>
-               </div>
+
+    return (
+        <div className="w-full min-h-screen pt-15 pb-40 px-5">
+            <div className="border-t border-primary">
+                <div className="flex justify-between font-[GT50] text-primary py-5 px-2 uppercase ">
+                    <p>Latest News</p>
+                    <button className="flex items-center uppercase  gap-2">
+                        [ View All news <ArrowRight size={20} strokeWidth={1} /> ]
+                    </button>
+                </div>
             </div>
-            <div className="flex gap-5 w-full h-[85vh] ">
-                <div 
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
+                <div
                     ref={imageContainerRef}
-                    className="w-1/2 overflow-hidden relative"
+                    className="w-full h-[500px] lg:h-full overflow-hidden relative"
                     onMouseMove={handleImageMouseMove}
                     onMouseEnter={handleImageMouseEnter}
                     onMouseLeave={handleImageMouseLeave}
                 >
-                        {
-                            dummyNews[currNews] && (
-                                <div ref={imageRef} className="w-full h-full relative">
-                                    <div className="w-full cursor-pointer h-full group-hover:opacity-0 transition-opacity duration-300 absolute z-10 bg-[#1925aa]/70" />
-                                    <Image src={dummyNews[currNews].image} alt={dummyNews[currNews].title} fill className="" />
-                                </div>
-                            )
-                        }
-                        {/* Localized blur effect that follows cursor */}
-                        {isImageHovering && blurAmount > 0 && (
-                            <div 
-                                className="pointer-events-none absolute rounded-full"
-                                style={{
-                                    left: mousePos.x - 75,
-                                    top: mousePos.y - 75,
-                                    width: 150,
-                                    height: 150,
-                                    backdropFilter: `blur(${blurAmount}px)`,
-                                    WebkitBackdropFilter: `blur(${blurAmount}px)`,
-                                    transition: 'backdrop-filter 0.1s ease-out',
-                                    zIndex: 20,
-                                }}
-                            />
-                        )}
+                    {
+                        dummyNews[currNews] && (
+                            <div ref={imageRef} className="w-full h-full relative">
+                                <div className="w-full cursor-pointer h-full group-hover:opacity-0 transition-opacity duration-300 absolute z-10 bg-primary/60" />
+                                <Image src={dummyNews[currNews].image} alt={dummyNews[currNews].title} fill className="" />
+                            </div>
+                        )
+                    }
+                    {/* Localized blur effect that follows cursor */}
+                    {isImageHovering && blurAmount > 0 && (
+                        <div
+                            className="pointer-events-none absolute rounded-full"
+                            style={{
+                                left: mousePos.x - 75,
+                                top: mousePos.y - 75,
+                                width: 150,
+                                height: 150,
+                                backdropFilter: `blur(${blurAmount}px)`,
+                                WebkitBackdropFilter: `blur(${blurAmount}px)`,
+                                transition: 'backdrop-filter 0.1s ease-out',
+                                zIndex: 20,
+                            }}
+                        />
+                    )}
                 </div>
-                <div 
-                    className="grid w-1/2 grid-cols-2 relative"
+                <div
+                    className="grid w-full grid-cols-2 relative "
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                 >
-                    
-                    <div 
-                        className="absolute w-1/2 h-1/2 bg-[#1925aa] pointer-events-none transition-all duration-300 ease-out z-0"
+
+                    <div
+                        className="absolute w-1/2 h-1/2 bg-primary pointer-events-none transition-all duration-300 ease-out z-0"
                         style={{
                             left: getGridPosition(currNews).left,
                             top: getGridPosition(currNews).top,
                         }}
                     >
-                        <div className={`p-10 ${isHovering ? 'scale-100' : 'scale-0'} transition-transform duration-300 origin-top-right top-0 right-0 absolute text-blue-900 bg-white`}>
-                                        <ArrowRight size={45} className="-rotate-45" strokeWidth={1} />
-                                    </div>
+                        <div className={`p-10 ${isHovering ? 'scale-100' : 'scale-0'} transition-transform duration-300 origin-top-right top-0 right-0 absolute text-primary bg-white`}>
+                            <ArrowRight size={45} className="-rotate-45" strokeWidth={1} />
                         </div>
+                    </div>
                     {
-                        dummyNews.map((news, index)=>(
-                            <div key={index} className={`group border-b border-blue-900 text-blue-900 relative ${currNews === index ? 'text-white' : ''} transition-all flex flex-col justify-between py-5 z-10`} onMouseEnter={()=>{setCurrNews(index);}}>
-                                    <div className={`${index%2===0 ? "" : "border-l pl-2 border-blue-900"} h-full flex flex-col justify-between gap-5 p-5`}>
-                                        <h1 className=" text-2xl font-[PPFONT] uppercase">
+                        dummyNews.map((news, index) => (
+                            <div
+                                key={index}
+                                className={`group border-b border-primary relative ${currNews === index ? 'text-neutral-base' : 'text-primary'} transition-all flex flex-col justify-between py-5 z-10`}
+                                onMouseEnter={() => { setCurrNews(index); }}
+                            >
+                                <div className={`${index % 2 === 0 ? "" : "border-l pl-2 border-primary"} h-full flex flex-col justify-between gap-5 p-5`}>
+                                    <h1 className=" text-md md:text-2xl font-[PPFONT] uppercase">
                                         {news.date}
                                     </h1>
                                     <div className="flex flex-col  gap-3">
                                         <p className="font-[GT50]">
                                             {news.type.toUpperCase()}
                                         </p>
-                                        <h1 className="text-2xl font-[PPFONT]">
+                                        <h1 className="text-md md:text-2xl font-[PPFONT]">
                                             {news.title}
                                         </h1>
                                     </div>
-                                    
-                                        </div>
+
+                                </div>
                             </div>
                         ))
                     }
                 </div>
             </div>
-            
         </div>
     )
 }

@@ -6,97 +6,144 @@ interface OurServicesProps {
   imageUrl: string;
 }
 
-// TODO: Replace with actual data and images urls
 const servicesData: OurServicesProps[] = [
   {
     title: "Code & Zoning Consultation",
     description:
-      "At Outsource Consultants, our in-house team of expert consultants tackles the most complex Building, Zoning, Plumbing, and Mechanical Code challenges in New York City.",
+      "Our experienced consultants provide in-depth guidance on building, zoning, plumbing, and mechanical codes. We help you navigate complex regulations, ensure compliance, and streamline approvals for projects across New York City.",
     imageUrl: "/image1.jpg",
   },
   {
-    title: "Service 2",
-    description: "Description for Service 2",
+    title: "Permit Expediting Services",
+    description:
+      "We simplify the permitting process by managing applications, filings, and agency coordination on your behalf. Our team ensures faster approvals and minimizes delays so your project stays on schedule.",
     imageUrl: "/image2.jpg",
   },
   {
-    title: "Service 3",
-    description: "Description for Service 3",
+    title: "Project Compliance & Filing",
+    description:
+      "From initial documentation to final approvals, we handle all compliance requirements with precision. Our experts prepare and submit accurate filings to ensure your project meets all regulatory standards.",
     imageUrl: "/image3.jpg",
   },
 ];
 
 export function OurServices() {
   return (
-    <div className="w-full min-h-screen pt-7 bg-[#e9e7e0] px-5">
-      <div className="border-y border-blue-900 text-blue-900 ">
-        <div className="grid grid-cols-[2fr_6fr]">
-          <div className="flex flex-col h-full">
-            <p className="p-5 uppercase font-[GT50] text-sm">Our Services</p>
-            <p className="text-[60px] font-[PPFONT] self-end mr-10 my-18">A</p>
+    <div className="min-h-screen bg-neutral-dark w-full pt-7 px-4 relative">
+
+      <div className="border-y border-primary text-primary">
+        {/* our services */}
+        <div className="flex flex-col lg:flex-row lg:h-screen">
+          <div className="absolute top-5 left-0 w-full flex justify-between items-start">
+            <p className="p-4 text-sm text-primary uppercase w-full">Our Services</p>
+            <p className=" flex w-full font-[GT50] justify-end p-4 text-sm text-primary">[OCI.2]</p>
           </div>
-          <div className="flex flex-col h-full justify-between border-l border-blue-900 text-blue-900 pl-10 pb-10">
-            <p className="flex w-full font-[GT50] justify-end p-5 text-sm">
-              [OCI.2]
-            </p>
-            <p className="uppercase w-100 tracking-normal text-blue-900 font-[GT50] text-sm">
+
+          {/* only desktop mode */}
+          <div className="uppercase lg:w-200 relative font-[GT50] text-primary lg:border-r border-primary hidden lg:block">
+            <h1 className="absolute font-[PPFONT] bg-neutral-dark whitespace-nowrap top-1/2 -translate-y-1/2 text-[11vw]">
+              A Versatile
+            </h1>
+          </div>
+
+          <div className="flex flex-col h-full items-start justify-end lg:justify-between gap-y-6 py-12 lg:pl-10 w-full uppercase lg:normal-case">
+            <h1 className="font-[PPFONT] text-[19vw] lg:text-[11vw] text-start w-full text-primary lg:hidden py-6 font-bold normal-case leading-none">
+              A versatile range of services
+            </h1>
+            <p className="tracking-normal text-primary font-[GT50] md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
               Navigating city regulatory agencies can seem like an
               insurmountabley task for architects, engineers, owners and
               contractors.
             </p>
-            <p className="text-[225px] font-[PPFONT]">Versatile</p>
-            <p className="uppercase w-100 tracking-normal text-blue-900 font-[GT50] text-sm self-end">
+            <div className="lg:hidden w-full relative overflow-hidden">
+              <div className="absolute inset-0 bg-primary/50" />
+              <Image
+                src="/images/range.avif"
+                alt="Range"
+                width={800}
+                height={400}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <p className="tracking-normal text-primary font-[GT50] md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
               From concept to construction, Outsource guides every step—turning
               blueprints into shovel-ready projects
             </p>
           </div>
         </div>
-        <div className="relative grid grid-cols-[1fr_6fr] border-t border-blue-900">
-          <div className="flex flex-col h-full">
-            <p className="absolute text-[120px] md:text-[120px] lg:text-[170px] bg-[#E9E7E0] font-[PPFONT] mx-20 my-18 ">
-              Ra{" "}
-            </p>
+
+        {/* range of services */}
+        <div className="flex flex-col lg:flex-row lg:min-h-screen lg:border-t border-primary relative overflow-hidden">
+          {/* left text */}
+          <div className="hidden lg:block lg:w-[20vw] border-r border-primary relative">
+            <h1 className="absolute left-[6vw] top-40 font-[PPFONT] text-[11vw] leading-none text-primary z-5 whitespace-nowrap">
+              <span className="bg-neutral-dark">Ra</span><span className="bg-transparent">nge of</span>
+            </h1>
           </div>
-          <div className="flex w-full pt-10 h-full items-center justify-center border-l border-blue-900 text-blue-900 pl-10 pb-10">
-            <Image
-              src="/images/range.avif"
-              alt="Range"
-              width={700}
-              height={300}
-            />
-            <ul>
-              <li className="uppercase w-100 tracking-normal p-5 text-blue-900 font-[GT50] text-sm">
-                Code
-                <br />
-                Zoning
-                <br />
-                Permits
-                <br />
-                Sign-offs
-              </li>
-            </ul>
+
+          {/* right side */}
+          <div className="flex flex-col w-full relative lg:py-12 items-center lg:items-start">
+            <div className="flex flex-col lg:flex-row items-center gap-10 pb-12 lg:py-20 lg:pl-[6vw] ">
+              {/* image */}
+              <div className="hidden lg:block w-full relative h-[55vw] overflow-hidden">
+                <div className="inset-0 absolute bg-primary/50" />
+                <Image
+                  src="/images/range.avif"
+                  alt="Range"
+                  width={800}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              {/* text */}
+              <div className="w-full lg:w-1/2 flex flex-col gap-6 text-primary">
+                <ul className="uppercase tracking-normal font-[GT50] text-xs lg:text-[0.8vw]">
+                  <li>Code</li>
+                  <li>Zoning</li>
+                  <li>Permits</li>
+                  <li>Sign-offs</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* service */}
+            <h1 className="hidden lg:block absolute bottom-[10vw] right-5 font-[PPFONT] text-[11vw] leading-none text-primary">
+              Services
+            </h1>
+
           </div>
-          <h1 className="ml-65 absolute tracking-tight left-0 text-[60px] mt-23 sm:text-[80px] md:text-[120px] lg:text-[170px] font-[PPFONT] leading-tight pb-5 md:pb-10 pl-3 md:pl-5">
-            nge of
-          </h1>
-          <h1 className="absolute tracking-tight bottom-0 right-0 text-[60px] sm:text-[80px] md:text-[120px] lg:text-[170px] font-[PPFONT] leading-tight pb-5 md:pb-10 pl-3 md:pl-5">
-            Services
-          </h1>
-          {/* <div className="absolute z-55">Range of</div> */}
         </div>
       </div>
 
-      <div className="w-full flex flex-col items-center py-10">
+      <div className="w-full flex flex-col items-center pb-32">
         {servicesData.map((service, index) => (
           <div
             key={index}
-            className="group w-full flex flex-col py-10 text-blue-900 md:flex-row items-center hover:bg-[#1925aa] hover:text-white hover:transition-colors hover:duration-300"
+            className="group w-full flex flex-col md:flex-row py-5 text-primary items-start border-t border-primary
+            md:items-center hover:text-neutral-base transition-colors duration-150 gap-y-2 relative overflow-hidden"
           >
-            <div className="w-full md:w-1/2">
+            {/* hover element */}
+            <div className={`
+              absolute inset-0 bg-primary 
+              group-hover:translate-y-0 transition-all duration-500 z-0
+              -translate-y-full
+            `}
+            />
+
+            {/* mobile only title */}
+            <div className="w-full flex justify-between items-center md:hidden leading-none text-[8vw] z-1">
+              <h2 className="font-[PPFONT]">{service.title}</h2>
+              <h1 className="font-[PPFONT]">{index + 1}</h1>
+            </div>
+
+            {/* desktop only number */}
+            <div className="hidden md:block md:w-1/4 z-1">
               <h1 className="text-4xl font-[PPFONT]">{index + 1}</h1>
             </div>
 
-            <div className="w-full md:w-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* desktop only img */}
+            <div className="hidden md:block md:w-1/4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-1">
               <img
                 src={service.imageUrl}
                 alt={service.title}
@@ -104,16 +151,17 @@ export function OurServices() {
               />
             </div>
 
-            <div className="w-full">
-              <h2 className="text-2xl font-[PPFONT] mb-3">{service.title}</h2>
-              <button className="px-5 py-2 bg-white text-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* content */}
+            <div className="w-full md:w-2/4 mt-4 md:mt-0 z-1">
+              <h2 className="hidden md:block text-2xl font-[PPFONT] mb-3">
+                {service.title}
+              </h2>
+              <p className="text-xs uppercase font-[GT50] mb-4">
+                {service.description}
+              </p>
+              <button className="p-9 bg-neutral-dark text-primary text-xs font-[PPFONT] md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 uppercase">
                 Read More
               </button>
-            </div>
-
-            {/* description */}
-            <div className="w-full md:w-1/2 uppercase font-[GT50] text-sm px-10">
-              <p className="text-sm">{service.description}</p>
             </div>
           </div>
         ))}
