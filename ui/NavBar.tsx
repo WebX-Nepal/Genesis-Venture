@@ -82,8 +82,6 @@ export default function NavBar() {
     closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
   };
 
-  
-
   return (
     <div
       className="fixed top-0 left-0 right-0 z-50 flex flex-col transition-transform duration-300 ease-in-out"
@@ -91,16 +89,27 @@ export default function NavBar() {
     >
       <nav
         className={`flex items-center justify-between px-6 md:px-16 py-4 border-b border-gray-100 transition-all duration-300 ${
-          scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-white/60"
+          scrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm"
+            : "bg-transparent border-transparent"
         }`}
       >
         <Link href="/" className="flex leading-none select-none shrink-0">
-          <Image
-            src="/images/final/png/Asset 3.png"
-            alt="Genesis Ventures"
-            width={100}
-            height={40}
-          />
+          {scrolled ? (
+            <Image
+              src="/images/final/png/Asset 3.png"
+              alt="Genesis Ventures"
+              width={100}
+              height={40}
+            />
+          ) : (
+            <Image
+              src="/images/final/png/Asset 2.png"
+              alt="Genesis Ventures"
+              width={100}
+              height={40}
+            />
+          )}
         </Link>
 
         {/* Desktop */}
@@ -114,11 +123,13 @@ export default function NavBar() {
             >
               <Link
                 href={href ?? "#"}
-                className={`flex items-center gap-1 text-xs uppercase tracking-widest font-[GT50] transition-colors duration-200 ${
+                className={`flex items-center gap-1 text-xs uppercase tracking-widest font-poppins transition-colors duration-200 ${
                   pathname === href
                     ? "text-genesis-red"
                     : "text-genesis-navy hover:text-genesis-red"
-                }`}
+                }
+                ${scrolled ? "text-genesis-navy" : "text-white hover:text-genesis-red"}
+                `}
               >
                 {label}
                 {dropdown && (
@@ -148,7 +159,7 @@ export default function NavBar() {
                       <li key={dHref}>
                         <Link
                           href={dHref}
-                          className="block px-5 py-2.5 text-xs font-[GT50] uppercase tracking-wider text-gray-500 hover:text-genesis-navy hover:bg-gray-50 transition-colors duration-150"
+                          className="block px-5 py-2.5 text-xs font-poppins uppercase tracking-wider text-gray-500 hover:text-genesis-navy hover:bg-gray-50 transition-colors duration-150"
                         >
                           {dLabel}
                         </Link>
@@ -185,7 +196,7 @@ export default function NavBar() {
                     onClick={() =>
                       setMobileOpen((prev) => (prev === label ? null : label))
                     }
-                    className="w-full flex items-center justify-between text-sm uppercase tracking-widest font-[GT50] py-3 border-b border-gray-100 text-genesis-navy"
+                    className="w-full flex items-center justify-between text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 text-genesis-navy"
                   >
                     {label}
                     <ChevronDown
@@ -208,7 +219,7 @@ export default function NavBar() {
                       <Link
                         key={dHref}
                         href={dHref}
-                        className="block pl-4 py-2.5 text-xs font-[GT50] uppercase tracking-wider text-gray-500 hover:text-genesis-navy border-b border-gray-50 last:border-0 transition-colors"
+                        className="block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider text-gray-500 hover:text-genesis-navy border-b border-gray-50 last:border-0 transition-colors"
                       >
                         — {dLabel}
                       </Link>
@@ -218,7 +229,7 @@ export default function NavBar() {
               ) : (
                 <Link
                   href={href ?? "#"}
-                  className={`block text-sm uppercase tracking-widest font-[GT50] py-3 border-b border-gray-100 transition-colors ${
+                  className={`block text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 transition-colors ${
                     pathname === href ? "text-genesis-red" : "text-genesis-navy"
                   }`}
                 >

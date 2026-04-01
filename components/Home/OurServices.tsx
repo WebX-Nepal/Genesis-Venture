@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useStaggeredCharacterRise } from "@/hooks/useStaggeredCharacterRise";
 import gsap from "gsap";
 import { ArrowRight, Plus } from "lucide-react";
@@ -45,7 +44,6 @@ export default function OurServices() {
         "Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.",
       image: "/image3.png",
     },
-
   ];
   const [currService, setCurrService] = useState<number | null>(null);
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -67,7 +65,7 @@ export default function OurServices() {
       gsap.fromTo(
         imageRef.current,
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
       );
     }
   }, [currService]);
@@ -110,22 +108,29 @@ export default function OurServices() {
               >
                 <div className="flex justify-between items-center px-4 md:px-6 lg:px-10 py-3 md:py-4 lg:py-5 text-xl sm:text-2xl md:text-2xl lg:text-4xl group">
                   {service.title}
-                  <Plus className={`transition-transform duration-500 group-hover:rotate-90 w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 ${isExpanded ? 'rotate-45' : ''}`} />
+                  <Plus
+                    className={`transition-transform duration-500 group-hover:rotate-90 w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 ${isExpanded ? "rotate-45" : ""}`}
+                  />
                 </div>
                 <div
                   className="overflow-hidden transition-all duration-700 ease-in-out"
                   style={{
-                    maxHeight: isExpanded ? '500px' : '0px',
-                    opacity: isExpanded ? 1 : 0
+                    maxHeight: isExpanded ? "500px" : "0px",
+                    opacity: isExpanded ? 1 : 0,
                   }}
                 >
                   <div className="py-2">
-                    <p className="pl-4 md:pl-10 lg:pl-100 pb-5 text-xs md:text-xs lg:text-sm font-[GT50] uppercase flex justify-end text-left">
+                    <p className="pl-4 md:pl-10 lg:pl-100 pb-5 text-xs md:text-xs lg:text-sm font-poppins uppercase flex justify-end text-left">
                       {service.description}
                     </p>
                     <div className="flex justify-end pr-4 md:pr-6 lg:pr-10">
-                      <div className="flex font-[GT50] gap-2 md:gap-2 lg:gap-3 items-center py-3 md:py-4 lg:py-5 text-xs md:text-xs lg:text-sm">
-                        [ Learn more <ArrowRight size={12} className="md:w-[13px] md:h-[13px] lg:w-[15px] lg:h-[15px]" /> ]
+                      <div className="flex font-poppins gap-2 md:gap-2 lg:gap-3 items-center py-3 md:py-4 lg:py-5 text-xs md:text-xs lg:text-sm">
+                        [ Learn more{" "}
+                        <ArrowRight
+                          size={12}
+                          className="md:w-[13px] md:h-[13px] lg:w-[15px] lg:h-[15px]"
+                        />{" "}
+                        ]
                       </div>
                     </div>
                   </div>
@@ -133,7 +138,7 @@ export default function OurServices() {
               </div>
             );
           })}
-          <div className="pt-3 md:pt-4 lg:pt-5 font-[GT50] border-t border-primary ">
+          <div className="pt-3 md:pt-4 lg:pt-5 font-poppins border-t border-primary ">
             <div className="relative h-14 md:h-16 lg:h-20 overflow-hidden group w-full">
               <div className="absolute inset-0 bg-primary text-neutral-base uppercase flex items-center justify-center cursor-pointer transition-all duration-300 group-hover:-translate-y-full group-hover:scale-0 text-xs md:text-sm lg:text-base">
                 View All Services

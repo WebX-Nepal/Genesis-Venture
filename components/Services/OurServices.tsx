@@ -30,17 +30,20 @@ const servicesData: OurServicesProps[] = [
 export function OurServices() {
   return (
     <div className="min-h-screen bg-neutral-dark w-full pt-7 px-4 relative">
-
       <div className="border-y border-primary text-primary">
         {/* our services */}
         <div className="flex flex-col lg:flex-row lg:h-screen">
           <div className="absolute top-5 left-0 w-full flex justify-between items-start">
-            <p className="p-4 text-sm text-primary uppercase w-full">Our Services</p>
-            <p className=" flex w-full font-[GT50] justify-end p-4 text-sm text-primary">[OCI.2]</p>
+            <p className="p-4 text-sm text-primary uppercase w-full">
+              Our Services
+            </p>
+            <p className=" flex w-full font-poppins justify-end p-4 text-sm text-primary">
+              [OCI.2]
+            </p>
           </div>
 
           {/* only desktop mode */}
-          <div className="uppercase lg:w-200 relative font-[GT50] text-primary lg:border-r border-primary hidden lg:block">
+          <div className="uppercase lg:w-200 relative font-poppins text-primary lg:border-r border-primary hidden lg:block">
             <h1 className="absolute font-[PPFONT] bg-neutral-dark whitespace-nowrap top-1/2 -translate-y-1/2 text-[11vw]">
               A Versatile
             </h1>
@@ -50,7 +53,7 @@ export function OurServices() {
             <h1 className="font-[PPFONT] text-[19vw] lg:text-[11vw] text-start w-full text-primary lg:hidden py-6 font-bold normal-case leading-none">
               A versatile range of services
             </h1>
-            <p className="tracking-normal text-primary font-[GT50] md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
+            <p className="tracking-normal text-primary font-poppins md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
               Navigating city regulatory agencies can seem like an
               insurmountabley task for architects, engineers, owners and
               contractors.
@@ -65,7 +68,7 @@ export function OurServices() {
                 className="w-full h-auto object-contain"
               />
             </div>
-            <p className="tracking-normal text-primary font-[GT50] md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
+            <p className="tracking-normal text-primary font-poppins md:max-w-md lg:max-w-[20vw] text-xs lg:text-[1vw] leading-4 lg:leading-[1.2vw]">
               From concept to construction, Outsource guides every step—turning
               blueprints into shovel-ready projects
             </p>
@@ -77,7 +80,8 @@ export function OurServices() {
           {/* left text */}
           <div className="hidden lg:block lg:w-[20vw] border-r border-primary relative">
             <h1 className="absolute left-[6vw] top-40 font-[PPFONT] text-[11vw] leading-none text-primary z-5 whitespace-nowrap">
-              <span className="bg-neutral-dark">Ra</span><span className="bg-transparent">nge of</span>
+              <span className="bg-neutral-dark">Ra</span>
+              <span className="bg-transparent">nge of</span>
             </h1>
           </div>
 
@@ -98,7 +102,7 @@ export function OurServices() {
 
               {/* text */}
               <div className="w-full lg:w-1/2 flex flex-col gap-6 text-primary">
-                <ul className="uppercase tracking-normal font-[GT50] text-xs lg:text-[0.8vw]">
+                <ul className="uppercase tracking-normal font-poppins text-xs lg:text-[0.8vw]">
                   <li>Code</li>
                   <li>Zoning</li>
                   <li>Permits</li>
@@ -111,7 +115,6 @@ export function OurServices() {
             <h1 className="hidden lg:block absolute bottom-[10vw] right-5 font-[PPFONT] text-[11vw] leading-none text-primary">
               Services
             </h1>
-
           </div>
         </div>
       </div>
@@ -124,7 +127,8 @@ export function OurServices() {
             md:items-center hover:text-neutral-base transition-colors duration-150 gap-y-2 relative overflow-hidden"
           >
             {/* hover element */}
-            <div className={`
+            <div
+              className={`
               absolute inset-0 bg-primary 
               group-hover:translate-y-0 transition-all duration-500 z-0
               -translate-y-full
@@ -156,7 +160,7 @@ export function OurServices() {
               <h2 className="hidden md:block text-2xl font-[PPFONT] mb-3">
                 {service.title}
               </h2>
-              <p className="text-xs uppercase font-[GT50] mb-4">
+              <p className="text-xs uppercase font-poppins mb-4">
                 {service.description}
               </p>
               <button className="p-9 bg-neutral-dark text-primary text-xs font-[PPFONT] md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 uppercase">

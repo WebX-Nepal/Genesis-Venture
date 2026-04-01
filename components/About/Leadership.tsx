@@ -115,15 +115,15 @@ export default function Leadership() {
   });
   return (
     <section
-    id="leadership"
+      id="leadership"
       ref={containerRef}
-      className="min-h-screen w-full bg-white flex flex-col px-8 md:px-16 py-16 md:py-24"
+      className="relative bg-white min-h-screen w-full flex flex-col px-8 md:px-16 py-16 md:py-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-6 mb-10">
-        <span className="leadership-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="leadership-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Leadership
         </span>
-        <span className="leadership-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="leadership-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           04
         </span>
       </div>
@@ -133,7 +133,10 @@ export default function Leadership() {
           <h2 className="leadership-heading text-2xl md:text-3xl text-genesis-navy leading-snug">
             The team behind the portfolio.
           </h2>
-          <p id="animated-paragraph" className="text-sm text-gray-600 font-[GT50] leading-relaxed mt-4 max-w-xs">
+          <p
+            id="animated-paragraph"
+            className="text-sm text-gray-600 font-poppins leading-relaxed mt-4 max-w-xs"
+          >
             Experienced operators and investors who have built, scaled, and
             exited companies across every major sector.
           </p>
@@ -158,7 +161,7 @@ export default function Leadership() {
               <span className="text-sm text-genesis-navy font-[PPFONT]">
                 {name}
               </span>
-              <span className="text-xs text-gray-400 uppercase tracking-widest font-[GT50]">
+              <span className="text-xs text-gray-400 uppercase tracking-widest font-poppins">
                 {title}
               </span>
             </div>

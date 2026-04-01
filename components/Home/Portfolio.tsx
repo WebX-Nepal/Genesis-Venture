@@ -85,13 +85,13 @@ export default function Portfolio() {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full bg-white flex flex-col px-8 md:px-16 py-10 md:py-24"
+      className=" h-screen w-full bg-white flex flex-col px-8 md:px-16 py-10 md:py-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-4 md:pb-6">
-        <span className="portfolio-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="portfolio-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Portfolio
         </span>
-        <span className="portfolio-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="portfolio-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           04
         </span>
       </div>
@@ -120,19 +120,21 @@ export default function Portfolio() {
           {companies.map(({ name, sector, stage, year }) => (
             <div
               key={name}
-              className="portfolio-row flex items-center justify-between py-2 md:py-4 px-2 md:px-4 group hover:bg-genesis-navy  transition-colors"
+              className="relative portfolio-row flex items-center justify-between py-2 md:py-4 px-2 md:px-4 group hover:bg-genesis-navy/20  transition-colors"
             >
-              <span className="text-sm md:text-base lg:text-lg text-genesis-red font-[PPFONT] group-hover:text-white">
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+
+              <span className="text-sm md:text-base lg:text-lg text-genesis-navy font-[PPFONT] group-hover:text-genesis-red">
                 {name}
               </span>
               <div className="flex items-center gap-3 md:gap-12">
-                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-[GT50] uppercase hidden md:block">
+                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-poppins uppercase hidden md:block">
                   {sector}
                 </span>
-                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-[GT50] uppercase">
+                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-poppins uppercase">
                   {stage}
                 </span>
-                <span className="text-xs md:text-sm text-gray-500 group-hover:text-white font-[GT50]">
+                <span className="text-xs md:text-sm text-gray-500 group-hover:text-white font-poppins">
                   {year}
                 </span>
               </div>

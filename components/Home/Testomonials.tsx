@@ -11,23 +11,22 @@ export default function Testomonials() {
       company: "ABC Corporation",
       feedback:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: "/walmart.png"
+      image: "/walmart.png",
     },
     {
       name: "Jane Smith",
       company: "XYZ Inc.",
       feedback:
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      image: '/gensler.png'
+      image: "/gensler.png",
     },
     {
       name: "Michael Johnson",
       company: "123 Solutions",
       feedback:
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      image: '/sakanska.png'
+      image: "/sakanska.png",
     },
-
   ];
   const [currTestomonial, setCurrTestomonial] = useState(0);
   const handleNext = () => {
@@ -61,14 +60,22 @@ export default function Testomonials() {
               className="border border-primary rounded-full p-2"
               onClick={handlePrev}
             >
-              <ArrowLeft strokeWidth={1} size={24} className="lg:rotate-90 lg:w-[2vw] lg:h-[2vw]" />
+              <ArrowLeft
+                strokeWidth={1}
+                size={24}
+                className="lg:rotate-90 lg:w-[2vw] lg:h-[2vw]"
+              />
             </button>
 
             <button
               className="border border-primary rounded-full p-2"
               onClick={handleNext}
             >
-              <ArrowRight strokeWidth={1} size={24} className="lg:rotate-90 lg:w-[2vw] lg:h-[2vw]" />
+              <ArrowRight
+                strokeWidth={1}
+                size={24}
+                className="lg:rotate-90 lg:w-[2vw] lg:h-[2vw]"
+              />
             </button>
           </div>
         </div>
@@ -82,15 +89,13 @@ export default function Testomonials() {
 
       {/* Main Layout */}
       <div className="w-full flex lg:flex-row-reverse flex-col lg:min-h-screen items-center lg:gap-[8vw] lg:h-screen relative">
-
-
         {/* Testimonials */}
         <div className="h-full flex items-center">
           <div className="space-y-24 md:space-y-32">
-            <h3 className="font-[GT50] text-2xl md:text-[4vw] lg:text-[3vw] text-start leading-none tracking-tighter">
+            <h3 className="font-poppins text-2xl md:text-[4vw] lg:text-[3vw] text-start leading-none tracking-tighter">
               "{testomonials[currTestomonial].feedback}"
             </h3>
-            <div className="font-[GT50] uppercase text-sm flex justify-between md:grid grid-cols-6">
+            <div className="font-poppins uppercase text-sm flex justify-between md:grid grid-cols-6">
               <p>
                 0{currTestomonial + 1}/0{testomonials.length}
               </p>
@@ -128,15 +133,16 @@ export default function Testomonials() {
                 className="border border-primary rounded-full p-2"
                 onClick={handleNext}
               >
-                <ArrowRight strokeWidth={1} size={24} className="lg:rotate-90" />
+                <ArrowRight
+                  strokeWidth={1}
+                  size={24}
+                  className="lg:rotate-90"
+                />
               </button>
             </div>
           </div>
         </div>
-
       </div>
-
-
     </div>
   );
 }

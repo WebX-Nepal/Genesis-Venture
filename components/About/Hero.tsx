@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ImagePlayer } from "../image-player";
 import Image from "next/image";
+import Button from "@/ui/Button";
 
 const IMAGES = [
   "/images/hero/img1.jpg",
@@ -11,10 +12,8 @@ const IMAGES = [
   "/images/hero/img3.jpg",
   "/images/hero/img4.jpg",
   "/images/hero/img5.jpg",
-  
 ];
 export default function Hero() {
-
   useGSAP(() => {
     const splitTitle = new SplitText(".hero-heading", { type: "words" });
 
@@ -44,8 +43,11 @@ export default function Hero() {
   });
 
   return (
-    <section id="about" className="h-screen w-full  flex flex-col justify-between px-8 md:px-16 pt-32 pb-12">
-       <ImagePlayer
+    <section
+      id="about"
+      className="h-screen w-full  flex flex-col justify-between items-center px-8 md:px-16 pt-32 pb-12"
+    >
+      {/* <ImagePlayer
               images={IMAGES}
               interval={3000}
               renderImage={(src) => (
@@ -56,44 +58,55 @@ export default function Hero() {
                   alt="showcalse"
                 />
               )}
-            />
+            /> */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover -z-20"
+      >
+        <source src="/videos/night-sky.mp4" type="video/mp4" />
+      </video>
 
-      <div className="absolute inset-0 bg-genesis-navy/90 -z-20"></div>
+      <div className="absolute inset-0 bg-genesis-navy/30 -z-10"></div>
 
-      <div className="hero-heading flex items-start justify-between border-b border-white/10 pb-6">
-        <span className="text-xs uppercase tracking-widest text-white/40 font-[GT50]">
+      <div className="hero-heading flex items-start justify-between border-b border-white/10 pb-3">
+        <span className="text-xs uppercase tracking-widest text-white/40 font-poppins">
           About Us
-        </span>
-        <span className="text-xs uppercase tracking-widest text-white/40 font-[GT50]">
-          01
         </span>
       </div>
 
-      <div className="flex flex-col gap-6 max-w-2xl">
+      <div className="flex flex-col items-center gap-6 max-w-2xl">
         <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
           Built on conviction.
           <br />
-          <span className="text-genesis-red">Driven by purpose.</span>
+          Driven by purpose.
         </h1>
-        <p className="desc text-sm text-white/50 font-[GT50] leading-relaxed max-w-md">
+        <p className="desc text-sm text-center text-white/80 font-poppins leading-relaxed max-w-md">
           Since 1991, Genesis Ventures has partnered with visionary founders at
           the earliest stages of company building. We bring capital, networks,
           and decades of operational experience to every investment.
         </p>
+        {/* <Button
+        text="learn more"
+        href="#our-values"
+        className="relative z-50 "
+      /> */}
       </div>
 
-      <div className="flex flex-wrap gap-6 md:gap-16 border-t border-white/10 pt-8">
+      <div className="flex flex-wrap gap-6 w-full justify-between text-center md:gap-16 border-t border-white/10 pt-8">
         {[
           { value: "1991", label: "Founded" },
           { value: "Kathmandu", label: "Headquarters" },
           { value: "$2.4B+", label: "AUM" },
           { value: "80+", label: "Portfolio Companies" },
         ].map(({ value, label }) => (
-          <div key={label} className="flex flex-col gap-1">
+          <div key={label} className="flex flex-col justify-between gap-1">
             <span className="text-xl md:text-2xl text-white font-[PPFONT]">
               {value}
             </span>
-            <span className="text-xs text-white/50 uppercase tracking-widest font-[GT50]">
+            <span className="text-xs text-white/50 uppercase tracking-widest font-poppins">
               {label}
             </span>
           </div>

@@ -92,13 +92,13 @@ export default function Sectors() {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full bg-neutral-50 flex flex-col px-8 md:px-16 py-10 md:py-24"
+      className=" h-screen w-full bg-neutral-50 flex flex-col px-8 md:px-16 py-10 md:py-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-4 md:pb-6">
-        <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Invested Sectors
         </span>
-        <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           03
         </span>
       </div>
@@ -117,7 +117,7 @@ export default function Sectors() {
             />
             <div className="absolute inset-0 bg-black/10" />
           </div>
-          <p className=" text-sm text-gray-600 font-[GT50] leading-relaxed max-w-xs hidden md:block">
+          <p className=" text-sm text-gray-600 font-poppins leading-relaxed max-w-xs hidden md:block">
             We concentrate on sectors where technology creates durable
             competitive advantages and outsized returns.
           </p>
@@ -130,19 +130,21 @@ export default function Sectors() {
           {sectors.map(({ number, name, description }) => (
             <div
               key={number}
-              className="group sector-row flex items-start gap-4 md:gap-6 py-2 md:py-4 px-2 md:px-4 hover:bg-genesis-navy transition-colors"
+              className="relative group sector-row flex items-start gap-4 md:gap-6 py-2 md:py-4 px-2 md:px-4 hover:bg-genesis-navy/20 transition-colors"
             >
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+
               <span
-                className="text-xs text-gray-400 group-hover:text-white font-[GT50] pt-0.5 w-5 shrink-0"
+                className="text-xs text-gray-400 group-hover:text-white font-poppins pt-0.5 w-5 shrink-0"
                 style={{ opacity: 0 }}
               >
                 {number}
               </span>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-0.5 md:gap-8">
-                <span className="text-sm md:text-base lg:text-lg text-genesis-red group-hover:text-white font-[PPFONT]  shrink-0">
+                <span className="text-sm md:text-base lg:text-lg text-genesis-navy group-hover:text-genesis-red font-[PPFONT]  shrink-0">
                   {name}
                 </span>
-                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-[GT50] md:max-w-xs leading-relaxed hidden sm:block">
+                <span className="text-xs md:text-sm text-gray-600 group-hover:text-white font-poppins md:max-w-xs leading-relaxed hidden sm:block">
                   {description}
                 </span>
               </div>

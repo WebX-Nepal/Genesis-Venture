@@ -12,21 +12,22 @@ const values = [
   {
     title: "Conviction",
     description:
-      "We back founders others overlook — early, decisively, and with full commitment.",
+      "We back founders others overlook — early, decisively, and with full commitment. We trust our judgment when it matters most, leaning into bold ideas before they become obvious. Our belief doesn't waver with market noise. ",
   },
   {
     title: "Partnership",
     description:
-      "We sit alongside our founders through every stage, not just at the term sheet.",
+      "We sit alongside our founders through every stage, not just at the term sheet. From first check to scale, we provide strategic support, honest feedback, and long-term alignment. We win together and navigate challenges side by side. ",
   },
   {
     title: "Integrity",
     description:
-      "Transparent communication and honest counsel, even when it's difficult.",
+      "Transparent communication and honest counsel, even when it's difficult. We believe trust is built through consistency and truth, not convenience. Our decisions are guided by strong principles, not short-term gains.",
   },
   {
     title: "Long-term thinking",
-    description: "We measure success in decades, not quarters.",
+    description:
+      "We measure success in decades, not quarters. Our focus is on building enduring companies that stand the test of time. We prioritize sustainable growth over quick wins. Patience and discipline guide every decision we make.",
   },
 ];
 
@@ -97,13 +98,13 @@ export default function Mission() {
     <section
       id="our-values"
       ref={containerRef}
-      className="sticky top-0 h-screen w-full overflow-hidden z-0 bg-white flex flex-col px-8 md:px-16 py-16 md:py-24"
+      className=" h-screen w-full overflow-hidden z-0 bg-white flex flex-col px-8 md:px-16 py-16 md:py-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-6">
-        <span className="mission-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="mission-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Mission & Values
         </span>
-        <span className="mission-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="mission-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           02
         </span>
       </div>
@@ -122,10 +123,10 @@ export default function Mission() {
             />
             <div className="absolute inset-0 bg-black/20" />
           </div>
-          <p className="text-sm text-gray-600 font-[GT50] leading-relaxed">
+          {/* <p className="text-sm text-gray-600 font-poppins  leading-relaxed">
             We invest at the intersection of ambition and execution — where a
             founder&apos;s vision meets the discipline to see it through.
-          </p>
+          </p> */}
         </div>
 
         <div
@@ -135,12 +136,14 @@ export default function Mission() {
           {values.map(({ title, description }) => (
             <div
               key={title}
-              className="stats group bg-white px-6 md:px-8 flex flex-col justify-end gap-3 border border-transparent  hover:border-genesis-navy  transition-all duration-300 "
+              className="relative stats group bg-white px-6 md:px-8 flex flex-col justify-end gap-3 border border-transparent  transition-all duration-300 "
             >
-              <span className="text-xs uppercase tracking-widest text-genesis-red  font-[GT50]">
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+
+              <span className="text-xs uppercase tracking-widest text-genesis-navy group-hover:text-genesis-red  font-poppins">
                 {title}
               </span>
-              <p className="text-sm text-gray-600 font-[GT50]  leading-relaxed">
+              <p className="text-sm text-gray-600 font-poppins  leading-relaxed">
                 {description}
               </p>
             </div>

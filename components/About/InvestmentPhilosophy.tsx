@@ -95,15 +95,15 @@ const InvestmentPhilosophy = () => {
 
   return (
     <section
-    id="investment-philosophy"
+      id="investment-philosophy"
       ref={containerRef}
       className='className="min-h-screen w-full bg-white flex flex-col px-8 md:px-16 py-16 md:py-24'
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-6 mb-10">
-        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Investment Philosophy
         </span>
-        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           05
         </span>
       </div>
@@ -115,7 +115,7 @@ const InvestmentPhilosophy = () => {
           </h2>
           <p
             id="animated-paragraph"
-            className="text-sm text-gray-600 font-[GT50] leading-relaxed mt-4 max-w-xs"
+            className="text-sm text-gray-600 font-poppins leading-relaxed mt-4 max-w-xs"
           >
             Genesis Ventures focuses on founders at the earliest stages...
           </p>
@@ -128,17 +128,18 @@ const InvestmentPhilosophy = () => {
             key={id}
             className="relative bg-white flex flex-col justify-between p-6 md:p-8 
               min-w-55 md:min-w-65 flex-1
-              transition-all duration-300
-              hover:bg-genesis-navy hover:text-white
+              transition-all duration-300 hover:bg-genesis-navy/20
               group"
           >
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
-            <span className="text-sm text-genesis-red font-[GT50] uppercase tracking-widest group-hover:text-white transition-colors">
+            <span className="text-sm text-genesis-navy font-poppins uppercase tracking-widest group-hover:text-genesis-red transition-colors">
               {id}
             </span>
             <div className="flex flex-col gap-2 mt-auto">
-              <div className="w-4 h-px bg-genesis-navy mb-3 group-hover:bg-white transition-colors" />
-              <span className="text-base text-genesis-navy group-hover:text-white transition-colors">
+              <div className="w-4 h-px bg-genesis-navy mb-3 transition-colors" />
+              <span className="text-base text-genesis-navy group-hover:text-genesis-red transition-colors">
                 {title}
               </span>
               <span className="text-sm text-gray-600 group-hover:text-white/70 transition-colors">

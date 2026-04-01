@@ -54,12 +54,12 @@ const MarketInsights = () => {
     >
       {/* ── Section Header ── */}
       <div className="flex items-start justify-between border-b border-gray-200 pb-4 md:pb-6">
-        <span className="text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Market Insights
         </span>
         <a
           href="/perspective/insights"
-          className="text-xs uppercase tracking-widest text-genesis-red font-[GT50] border-b border-genesis-red pb-0.5 hover:opacity-70 transition-opacity"
+          className="text-xs uppercase tracking-widest text-genesis-red font-poppins border-b border-genesis-red pb-0.5 hover:opacity-70 transition-opacity"
         >
           View All →
         </a>
@@ -81,10 +81,10 @@ const MarketInsights = () => {
           >
             {/* Top: tag + date */}
             <div className="flex items-center justify-between">
-              <span className="text-xs uppercase tracking-widest text-genesis-red font-[GT50]">
+              <span className="text-xs uppercase tracking-widest text-genesis-red font-poppins">
                 {article.tag}
               </span>
-              <span className="text-xs text-gray-400 font-[GT50] tracking-wide">
+              <span className="text-xs text-gray-400 font-poppins tracking-wide">
                 {article.date}
               </span>
             </div>
@@ -95,7 +95,7 @@ const MarketInsights = () => {
             </h3>
 
             {/* Excerpt */}
-            <p className="text-xs text-gray-500 font-[GT50] leading-relaxed flex-1">
+            <p className="text-xs text-gray-500 font-poppins leading-relaxed flex-1">
               {article.excerpt}
             </p>
 
@@ -104,10 +104,10 @@ const MarketInsights = () => {
 
             {/* Author + Read More */}
             <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-400 font-[GT50] tracking-wide">
+              <span className="text-xs text-gray-400 font-poppins tracking-wide">
                 {article.author}
               </span>
-              <button className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-[GT50] text-genesis-navy hover:text-genesis-red transition-colors duration-150 group/btn">
+              <button className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-poppins text-genesis-navy hover:text-genesis-red transition-colors duration-150 group/btn">
                 <span className="border-b border-gray-300 group-hover/btn:border-genesis-red pb-0.5 transition-colors duration-150">
                   Read
                 </span>
@@ -122,7 +122,7 @@ const MarketInsights = () => {
 
       {/* ── Footer Bar ── */}
       <div className="border-t border-gray-100 pt-3 mt-6 md:mt-10">
-        <p className="text-xs text-gray-500 font-[GT50] uppercase tracking-widest">
+        <p className="text-xs text-gray-500 font-poppins uppercase tracking-widest">
           Genesis Ventures, Inc. — Kathmandu, Nepal
         </p>
       </div>

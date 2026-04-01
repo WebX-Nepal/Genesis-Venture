@@ -8,13 +8,8 @@ export default function About() {
   return (
     <main className="w-full font-[PPFONT]">
       <Hero />
-      <div className="relative">
-        <Mission />
-
-        <div className="z-50">
-          <Milestone />
-        </div>
-      </div>
+      <Mission />
+      <Milestone />
       <Leadership />
     </main>
   );

@@ -69,15 +69,14 @@ const Media = () => {
       id="media"
       className="w-full bg-white flex flex-col px-8 md:px-16 py-10 md:py-24"
     >
-
       {/* ── Section Header ── */}
       <div className="flex items-start justify-between border-b border-gray-200 pb-4 md:pb-6">
-        <span className="text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Media
         </span>
         <a
           href="/perspective/media"
-          className="text-xs uppercase tracking-widest text-genesis-red font-[GT50] border-b border-genesis-red pb-0.5 hover:opacity-70 transition-opacity"
+          className="text-xs uppercase tracking-widest text-genesis-red font-poppins border-b border-genesis-red pb-0.5 hover:opacity-70 transition-opacity"
         >
           View All →
         </a>
@@ -97,13 +96,12 @@ const Media = () => {
             key={item.id}
             className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 py-6 md:py-8 group hover:bg-gray-50 -mx-8 md:-mx-16 px-8 md:px-16 transition-colors duration-200"
           >
-
             {/* Left: index + date */}
             <div className="flex md:flex-col gap-4 md:gap-1 md:w-28 shrink-0">
               <span className="text-xs text-gray-300 font-[PPFONT] tabular-nums">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="text-xs text-gray-400 font-[GT50] tracking-wide">
+              <span className="text-xs text-gray-400 font-poppins tracking-wide">
                 {item.date}
               </span>
             </div>
@@ -111,25 +109,25 @@ const Media = () => {
             {/* Center: tag + title + description */}
             <div className="flex flex-col gap-2 flex-1">
               <div className="flex items-center gap-3">
-                <span className="text-xs uppercase tracking-widest text-genesis-red font-[GT50]">
+                <span className="text-xs uppercase tracking-widest text-genesis-red font-poppins">
                   {item.tag}
                 </span>
-                <span className="text-xs text-gray-300 font-[GT50]">·</span>
-                <span className="text-xs text-gray-400 font-[GT50] tracking-wide">
+                <span className="text-xs text-gray-300 font-poppins">·</span>
+                <span className="text-xs text-gray-400 font-poppins tracking-wide">
                   {item.source}
                 </span>
               </div>
               <h3 className="text-base md:text-lg font-[PPFONT] text-genesis-navy leading-snug group-hover:text-genesis-red transition-colors duration-200">
                 {item.title}
               </h3>
-              <p className="text-xs text-gray-500 font-[GT50] leading-relaxed max-w-xl">
+              <p className="text-xs text-gray-500 font-poppins leading-relaxed max-w-xl">
                 {item.description}
               </p>
             </div>
 
             {/* Right: Read More */}
             <div className="shrink-0 md:self-center">
-              <button className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-[GT50] text-genesis-navy hover:text-genesis-red transition-colors duration-150 group/btn">
+              <button className="flex items-center gap-1.5 text-xs uppercase tracking-widest font-poppins text-genesis-navy hover:text-genesis-red transition-colors duration-150 group/btn">
                 <span className="border-b border-gray-300 group-hover/btn:border-genesis-red pb-0.5 transition-colors duration-150">
                   Read
                 </span>
@@ -138,18 +136,16 @@ const Media = () => {
                 </span>
               </button>
             </div>
-
           </div>
         ))}
       </div>
 
       {/* ── Footer Bar ── */}
       <div className="border-t border-gray-100 pt-3 mt-6 md:mt-10">
-        <p className="text-xs text-gray-500 font-[GT50] uppercase tracking-widest">
+        <p className="text-xs text-gray-500 font-poppins uppercase tracking-widest">
           Genesis Ventures, Inc. — Kathmandu, Nepal
         </p>
       </div>
-
     </section>
   );
 };

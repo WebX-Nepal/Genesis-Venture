@@ -21,7 +21,7 @@ const PartnerCTA = () => {
     <section className="w-full bg-genesis-navy flex flex-col px-8 md:px-16 py-16 md:py-28">
       {/* ── Section Header ── */}
       <div className="flex items-start justify-between border-b border-white/10 pb-4 md:pb-6">
-        <span className="text-xs uppercase tracking-widest text-white/40 font-[GT50]">
+        <span className="text-xs uppercase tracking-widest text-white/40 font-poppins">
           Investor Relations
         </span>
       </div>
@@ -35,14 +35,14 @@ const PartnerCTA = () => {
 
         {/* Right: body + button */}
         <div className="flex flex-col gap-8 md:items-end md:text-right max-w-sm">
-          <p className="text-sm text-white/60 font-[GT50] leading-relaxed">
+          <p className="text-sm text-white/60 font-poppins leading-relaxed">
             We welcome new investors who share our vision for long-term growth
             in transformative companies.
           </p>
 
           <a
             href="/contact"
-            className="flex items-center gap-2 text-xs uppercase tracking-widest font-[GT50] text-white border border-white/20 px-5 py-3 w-fit hover:bg-white hover:text-genesis-navy transition-all duration-200 group"
+            className="flex items-center gap-2 text-xs uppercase tracking-widest font-poppins text-white border border-white/20 px-5 py-3 w-fit hover:bg-white hover:text-genesis-navy transition-all duration-200 group"
           >
             <span>Contact Us</span>
             <span className="group-hover:translate-x-1 transition-transform duration-200">
@@ -54,7 +54,7 @@ const PartnerCTA = () => {
 
       {/* ── Footer Bar ── */}
       <div className="border-t border-white/10 pt-3 mt-16 md:mt-24">
-        <p className="text-xs text-white/30 font-[GT50] uppercase tracking-widest">
+        <p className="text-xs text-white/30 font-poppins uppercase tracking-widest">
           Genesis Ventures, Inc. — Kathmandu, Nepal
         </p>
       </div>

@@ -5,41 +5,49 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
+
 const milestones = [
   {
     year: "1991",
     title: "Founded in Kathmandu",
     description:
       "Established with a focus on early-stage technology companies.",
+    image: "/images/milestones/kathmandu.jpg",
   },
   {
     year: "1998",
     title: "First Fund Closed",
     description:
       "Raised $120M, backing 14 companies across tech and healthcare.",
+    image: "/images/milestones/fund.jpg",
   },
   {
     year: "2005",
     title: "Life Sciences Expansion",
     description: "Launched a dedicated biotech and digital health practice.",
+    image: "/images/milestones/science.jpg",
   },
   {
     year: "2012",
     title: "Fund III — $500M",
     description: "Largest fund to date, reflecting strong LP confidence.",
+    image: "/images/milestones/fund2.jpg",
   },
   {
     year: "2018",
     title: "Global Reach",
     description: "Portfolio companies operating across 12 countries.",
+    image: "/images/milestones/global.jpg",
   },
   {
     year: "2024",
     title: "Fund V Launched",
     description:
       "$800M in commitments, continuing our focus on transformative founders.",
+    image: "/images/milestones/fund3.jpg",
   },
 ];
 
@@ -72,14 +80,14 @@ export default function Milestone() {
   const scrollBy = (direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const cardWidth = el.querySelector("div")?.clientWidth ?? 260;
+    const cardWidth =
+      el.querySelector<HTMLElement>(".milestone-card")?.clientWidth ?? 220;
     el.scrollBy({
       left: direction === "left" ? -cardWidth : cardWidth,
       behavior: "smooth",
     });
   };
 
-  // Mouse drag handlers
   const onMouseDown = (e: React.MouseEvent) => {
     const el = scrollRef.current;
     if (!el) return;
@@ -126,89 +134,104 @@ export default function Milestone() {
   });
 
   return (
+    <section
+      id="our-history"
+      ref={containerRef}
+      className=" bg-white h-screen w-full flex flex-col px-8 md:px-16 py-16 md:py-24"
+    >
+      {/* Header row */}
+      <div className="flex items-start justify-between border-b border-gray-200 pb-6">
+        <span className="milestone-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+          Our History
+        </span>
+        <span className="milestone-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+          03
+        </span>
+      </div>
 
-      <section
-        id="our-history"
-        ref={containerRef}
-        className="h-screen w-full flex flex-col px-8 md:px-16 py-16 md:py-24"
-      >
-        <div className="flex items-start justify-between border-b border-gray-200 pb-6">
-          <span className="milestone-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
-            Our History
-          </span>
-          <span className="milestone-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
-            03
-          </span>
+      <div className="flex flex-col gap-10 flex-1 pt-10 justify-between">
+        {/* Title + controls row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <h2 className="milestone-heading text-2xl md:text-3xl text-genesis-navy leading-snug max-w-sm">
+            Three decades of disciplined investing.
+          </h2>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => scrollBy("left")}
+              disabled={!canScrollLeft}
+              className={`w-9 h-9 flex items-center justify-center border transition-colors duration-200 ${
+                canScrollLeft
+                  ? "border-genesis-navy text-genesis-navy hover:bg-genesis-navy hover:text-white"
+                  : "border-gray-200 text-gray-300 cursor-not-allowed"
+              }`}
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button
+              onClick={() => scrollBy("right")}
+              disabled={!canScrollRight}
+              className={`w-9 h-9 flex items-center justify-center border transition-colors duration-200 ${
+                canScrollRight
+                  ? "border-genesis-navy text-genesis-navy hover:bg-genesis-navy hover:text-white"
+                  : "border-gray-200 text-gray-300 cursor-not-allowed"
+              }`}
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-10 flex-1 pt-10 justify-between">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-            <h2 className="milestone-heading  text-2xl md:text-3xl text-genesis-navy leading-snug max-w-sm">
-              Three decades of disciplined investing.
-            </h2>
+        {/* Scrollable cards */}
+        <div
+          ref={scrollRef}
+          className="flex gap-px bg-gray-200 overflow-x-auto flex-1 select-none"
+          style={{ scrollbarWidth: "none", cursor: "grab" }}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseUp}
+        >
+          {milestones.map(({ year, title, description, image }) => (
+            <div
+              key={year}
+              className="milestone-card relative bg-white flex flex-col min-w-55 md:min-w-65 flex-1 overflow-hidden px-2
+                hover:bg-gray-50 transition-colors duration-300 group"
+            >
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
-            {/* Arrow controls */}
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => scrollBy("left")}
-                disabled={!canScrollLeft}
-                className={`w-9 h-9 flex items-center justify-center border transition-colors duration-200 ${
-                  canScrollLeft
-                    ? "border-genesis-navy text-genesis-navy hover:bg-genesis-navy hover:text-white"
-                    : "border-gray-200 text-gray-300 cursor-not-allowed"
-                }`}
-              >
-                <ArrowLeft size={16} />
-              </button>
-              <button
-                onClick={() => scrollBy("right")}
-                disabled={!canScrollRight}
-                className={`w-9 h-9 flex items-center justify-center border transition-colors duration-200 ${
-                  canScrollRight
-                    ? "border-genesis-navy text-genesis-navy hover:bg-genesis-navy hover:text-white"
-                    : "border-gray-200 text-gray-300 cursor-not-allowed"
-                }`}
-              >
-                <ArrowRight size={16} />
-              </button>
-            </div>
-          </div>
-
-          {/* Scrollable cards */}
-          <div
-            ref={scrollRef}
-            className="flex gap-px bg-gray-200 overflow-x-auto flex-1 select-none"
-            style={{ scrollbarWidth: "none", cursor: "grab" }}
-            onMouseDown={onMouseDown}
-            onMouseMove={onMouseMove}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseUp}
-          >
-            {milestones.map(({ year, title, description }) => (
-              <div
-                key={year}
-                className="relative bg-white flex flex-col justify-between p-6 md:p-8 min-w-55 md:min-w-65 flex-1 hover:bg-genesis-navy hover:text-white
-              group transition-all duration-300 group"
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
-
-                <span className="text-sm text-genesis-red font-[GT50] uppercase tracking-widest group-hover:text-white transition-colors">
+              {/* Year label */}
+              <div className="px-4 pt-4 pb-3">
+                <span className="text-[11px] uppercase tracking-widest text-gray-400 font-poppins group-hover:text-gray-500 transition-colors">
                   {year}
                 </span>
-                <div className="flex flex-col gap-2 mt-auto">
-                  <div className="w-4 h-px bg-genesis-navy mb-3 group-hover:bg-white transition-colors" />
-                  <span className="text-base text-genesis-navy font-[PPFONT] leading-snug group-hover:text-white transition-colors">
-                    {title}
-                  </span>
-                  <span className="text-sm text-gray-600 font-[GT50] leading-relaxed group-hover:text-white transition-colors">
-                    {description}
-                  </span>
-                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
+              {/* Photo band */}
+              <div className="relative w-full h-40 overflow-hidden">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="w-full h-full object-cover grayscale-20 group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                  draggable={false}
+                />
+              </div>
+
+              {/* Text content */}
+              <div className="flex flex-col gap-1.5 px-4 pt-4 pb-6 flex-1">
+                <div className="w-5 h-px bg-gray-300 mb-2" />
+                <span className="text-sm font-medium text-genesis-navy group-hover:text-genesis-red leading-snug font-[PPFONT]">
+                  {title}
+                </span>
+                <span className="text-xs text-gray-500 font-poppins leading-relaxed">
+                  {description}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

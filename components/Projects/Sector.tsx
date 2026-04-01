@@ -24,7 +24,7 @@ export default function SectorStrip() {
       style={{ scrollbarWidth: "none" }}
     >
       {/* Label */}
-      <span className="text-xs text-gray-400 font-[GT50] uppercase tracking-widest pr-6 border-r border-gray-200 py-4 shrink-0">
+      <span className="text-xs text-gray-400 font-poppins uppercase tracking-widest pr-6 border-r border-gray-200 py-4 shrink-0">
         Sectors
       </span>
 
@@ -40,7 +40,7 @@ export default function SectorStrip() {
               onClick={() => handleClick(id)}
               onMouseEnter={() => setHoveredId(id)}
               onMouseLeave={() => setHoveredId(null)}
-              className={`relative group px-5 md:px-6 py-4 text-xs md:text-sm font-[GT50] uppercase tracking-wider whitespace-nowrap transition-colors duration-200 ${
+              className={`relative group px-5 md:px-6 py-4 text-xs md:text-sm font-poppins uppercase tracking-wider whitespace-nowrap transition-colors duration-200 ${
                 isActive
                   ? "text-genesis-navy"
                   : "text-gray-400 hover:text-genesis-navy"

@@ -27,10 +27,6 @@ html {
   src: url("/fonts/PPNeueMontreal-Regular.woff2");
 }
 
-@font-face {
-  font-family: "GT50";
-  src: url("/fonts/GTAmericaMono-Regular.woff2");
-}
 
 :root {
   /* ── Genesis Ventures Brand Palette ── */
@@ -92,6 +88,7 @@ html {
 
 @theme inline {
   /* Brand */
+  --font-poppins: var(--font-poppins);
   --color-genesis-navy:      var(--genesis-navy);
   --color-genesis-navy-dark: var(--genesis-navy-dark);
   --color-genesis-red:       var(--genesis-red);

@@ -21,7 +21,7 @@ const legal = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-genesis-navy text-white font-[GT50]">
+    <footer className="w-full bg-genesis-navy text-white font-poppins">
       {/* Top */}
       <div className="px-8 md:px-16 pt-14 pb-10 flex flex-col md:flex-row justify-between gap-12 border-b border-white/20">
         {/* Brand */}
@@ -41,9 +41,9 @@ export default function Footer() {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-[PPFONT] leading-snug">
             Ready to build something
             <br />
-            <span className="text-genesis-red">significant?</span>
+            significant?
           </h2>
-          <p className="text-sm text-white/60 font-[GT50] leading-relaxed max-w-sm hidden sm:block">
+          <p className="text-sm text-white/60 font-poppins leading-relaxed max-w-sm hidden sm:block">
             We review every submission and respond within 5 business days. If
             there's a fit, we move quickly.
           </p>

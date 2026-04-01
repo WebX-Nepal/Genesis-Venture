@@ -33,7 +33,6 @@ export default function ScrollAnimated() {
     },
   ];
 
-
   return (
     <div className="flex flex-col gap-10">
       {data.map((item, index) => (
@@ -45,7 +44,7 @@ export default function ScrollAnimated() {
             <h1>{item.title}</h1>
             <p>{item.number}</p>
           </div>
-          <p className="py-10 px-5 pr-30 border-b border-primary font-[GT50] w-full text-sm">
+          <p className="py-10 px-5 pr-30 border-b border-primary font-poppins w-full text-sm">
             {item.description.toUpperCase()}
           </p>
         </div>

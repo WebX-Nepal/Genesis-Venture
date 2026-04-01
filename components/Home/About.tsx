@@ -90,13 +90,13 @@ export default function About() {
   return (
     <section
       ref={containerRef}
-      className=" h-screen w-full bg-white flex flex-col px-8 md:px-16 py-10 md:py-24"
+      className="h-screen w-full bg-white flex flex-col px-8 md:px-16 py-10 md:py-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-4 md:pb-6">
-        <span className="about-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="about-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           About Us
         </span>
-        <span className="about-heading text-xs uppercase tracking-widest text-gray-500 font-[GT50]">
+        <span className="about-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           02
         </span>
       </div>
@@ -108,18 +108,14 @@ export default function About() {
           </h2>
           <p
             id="animated-paragraph"
-            className="text-sm text-gray-600 font-[GT50] leading-relaxed max-w-sm hidden sm:block"
+            className="text-sm text-gray-600 font-poppins leading-relaxed max-w-sm hidden sm:block"
           >
             Founded in 1991, Genesis Ventures has built a reputation for
             identifying transformative businesses before they reach mainstream
             attention. We work closely with founders to accelerate growth and
             create lasting value.
           </p>
-          <Button
-            text="Our Story"
-            href="/About"
-            className="relative z-50"
-          />
+          <Button text="Our Story" href="/About" className="relative z-50" />
         </div>
 
         <div className="md:w-1/2">
@@ -136,7 +132,7 @@ export default function About() {
       </div>
 
       <div className="border-t border-gray-100 pt-3 mt-4 md:mt-0 flex flex-col md:flex-row gap-6 md:gap-12">
-        <p className="text-xs text-gray-500 font-[GT50] uppercase tracking-widest flex items-center">
+        <p className="text-lg text-gray-500 font-poppins uppercase tracking-widest flex items-center">
           Genesis Ventures, Inc. — Kathmandu, Nepal
         </p>
         <div
@@ -151,7 +147,7 @@ export default function About() {
               <span className="text-xl md:text-2xl lg:text-3xl font-[PPFONT] text-genesis-navy">
                 {value}
               </span>
-              <span className="text-xs text-gray-500 uppercase tracking-widest font-[GT50] leading-tight">
+              <span className="text-xs text-gray-500 uppercase tracking-widest font-poppins leading-tight">
                 {label}
               </span>
             </div>
