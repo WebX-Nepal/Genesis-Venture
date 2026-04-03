@@ -109,7 +109,7 @@ const ReportsAndUpdates = () => {
 
       <div className="flex flex-col md:flex-row gap-px flex-1 min-h-0">
         <div className="hidden md:block md:w-1/3 md:self-start md:sticky md:top-24">
-          <div className="relative overflow-hidden h-[26rem] lg:h-[34rem] xl:h-[38rem]">
+          <div className="relative overflow-hidden h-104 lg:h-136 xl:h-152">
           <video
             autoPlay
             muted
