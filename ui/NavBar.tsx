@@ -133,7 +133,7 @@ export default function NavBar() {
                 href={href ?? "#"}
                 className={`flex items-center gap-1 text-xs uppercase tracking-widest font-poppins transition-colors duration-200 ${
                   pathname === href
-                    ? "text-genesis-red"
+                    ? scrolled ? "text-genesis-red" : "text-white"
                     : isContactPage || scrolled
                     ? "text-genesis-navy hover:text-genesis-red"
                     : "text-white hover:text-white/70"

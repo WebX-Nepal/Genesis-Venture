@@ -154,16 +154,6 @@ export default function FAQs() {
                   </AccordionItem>
                 ))}
               </Accordion>
-
-              <p className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed max-w-lg mt-4 sm:mt-6">
-                Can't find what you're looking for? Contact our{" "}
-                <Link
-                  href="#"
-                  className="text-primary font-medium hover:underline"
-                >
-                  customer support team
-                </Link>
-              </p>
             </div>
             <div className="relative w-full h-full md:w-1/3">
               <Image

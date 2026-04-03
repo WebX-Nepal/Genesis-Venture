@@ -97,7 +97,7 @@ export default function About() {
       <div className="w-full mb-10 sm:mb-14 md:mb-20">
         <div
           ref={statsRef}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-10 md:gap-x-50"
         >
           {stats.map(({ value, label }) => (
             <div
@@ -126,10 +126,6 @@ export default function About() {
 
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 flex-1 pt-5 sm:pt-6 md:pt-10 pb-8 sm:pb-10 overflow-hidden">
         <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-6 md:justify-center">
-          <span className="about-heading text-xs uppercase tracking-widest text-genesis-blue font-[GT50]">
-            Early-Stage Venture Capital • Est. 1991
-          </span>
-
           <h2 className="about-heading text-[clamp(1.25rem,4vw,2.5rem)] text-genesis-navy leading-snug font-[PPFONT]">
             A disciplined approach to early-stage investment.
           </h2>

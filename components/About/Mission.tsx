@@ -42,7 +42,7 @@ export default function Values() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top 90%",
-        end: "bottom 80%",
+        end: "top top",
         scrub: true,
       },
       opacity: 0,
@@ -80,7 +80,7 @@ export default function Values() {
           scrollTrigger: {
             trigger: statsRef.current,
             start: "top 70%",
-            end: "bottom 70%",
+            end: "top 20%",
             scrub: true,
           },
         },

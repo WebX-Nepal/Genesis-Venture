@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import SectorStrip from "./Sector";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
@@ -22,6 +21,7 @@ interface Sector {
   label: string;
   img: string;
   tagline: string;
+  stat: { value: string; label: string };
   companies: Company[];
 }
 
@@ -32,6 +32,7 @@ const sectors: Sector[] = [
     img: "/images/projects/ai.jpg",
     tagline:
       "Backing software and AI companies redefining how industries operate.",
+    stat: { value: "18 companies", label: "in portfolio" },
     companies: [
       {
         name: "Meridian AI",
@@ -65,6 +66,7 @@ const sectors: Sector[] = [
     img: "/images/projects/healthcare.jpg",
     label: "Healthcare & Life Sciences",
     tagline: "Investing in companies improving patient outcomes at scale.",
+    stat: { value: "12 companies", label: "in portfolio" },
     companies: [
       {
         name: "Helix Health",
@@ -92,6 +94,7 @@ const sectors: Sector[] = [
     img: "/images/projects/finance.jpg",
     label: "Financial Services",
     tagline: "Modernizing access to capital and financial infrastructure.",
+    stat: { value: "9 companies", label: "in portfolio" },
     companies: [
       {
         name: "Clearpath Finance",
@@ -121,6 +124,7 @@ const sectors: Sector[] = [
     img: "/images/projects/real.jpg",
     tagline:
       "PropTech and sustainable infrastructure for the built environment.",
+    stat: { value: "6 companies", label: "in portfolio" },
     companies: [
       {
         name: "Urbanbase",
@@ -142,6 +146,7 @@ const sectors: Sector[] = [
     label: "Consumer & Retail",
     img: "/images/projects/retail.jpg",
     tagline: "Next-generation consumer brands with strong unit economics.",
+    stat: { value: "11 companies", label: "in portfolio" },
     companies: [
       {
         name: "Forma",
@@ -170,6 +175,7 @@ const sectors: Sector[] = [
 export default function OurProjects() {
   const [activeId, setActiveId] = useState(sectors[0].id);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -188,35 +194,7 @@ export default function OurProjects() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
-  const scrollTo = (id: string) => {
-    sectionRefs.current[id]?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const containerRef = useRef<HTMLDivElement>(null);
-
   useGSAP(() => {
-    const splitTitle = new SplitText(".project-heading", { type: "words" });
-
-    gsap.from(splitTitle.words, {
-      opacity: 0,
-      y: 30,
-      filter: "blur(10px)",
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
-    });
-
-    const splitDesc = new SplitText(".desc", { type: "lines" });
-
-    gsap.from(splitDesc.lines, {
-      opacity: 0,
-      y: 20,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power2.out",
-      delay: 0.5,
-    });
-
     gsap.utils.toArray<HTMLElement>(".company-row").forEach((row) => {
       gsap.fromTo(
         row,
@@ -235,82 +213,139 @@ export default function OurProjects() {
       );
     });
 
-    return () => {
-      splitTitle.revert();
-      splitDesc.revert();
-    };
+    gsap.utils.toArray<HTMLElement>(".sector-left").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    });
   });
 
   return (
-      <div className="w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24">
-        <section 
-        ref={containerRef}
-          id="portfolio"
-          className="relative flex flex-col gap-8 sm:gap-12 md:gap-16"
-        >
-          
-
-          {sectors.map(({ id, label, img, tagline, companies }, si) => (
+    <div
+      ref={containerRef}
+      className="w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
+    >
+      <section id="portfolio" className="relative flex flex-col gap-0">
+        {sectors.map(({ id, label, img, tagline, stat, companies }, si) => {
+          const isReversed = si % 2 !== 0;
+          return (
             <section
               key={id}
               id={id}
               ref={(el) => {
                 sectionRefs.current[id] = el;
               }}
-              className={`w-full min-h-screen flex flex-col  py-8 sm:py-12 md:py-24 ${si % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
+              className={`w-full flex flex-col py-12 sm:py-16 md:py-24 border-b border-gray-100 ${si % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
             >
-              <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6">
-                <span className="row-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+              {/* Section header */}
+              <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6 mb-8 sm:mb-10 md:mb-14">
+                <span className="text-xs uppercase tracking-widest text-gray-400 font-poppins">
                   {label}
                 </span>
-                <span className="row-heading text-xs uppercase tracking-widest text-genesis-navy font-poppins">
+                <span className="text-xs uppercase tracking-widest text-genesis-navy/40 font-poppins">
                   0{si + 1}
                 </span>
               </div>
 
-              <div className={`flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 flex-1 pt-5 sm:pt-6 md:pt-10 ${
-              si % 2 !== 0 ? "md:flex-row-reverse" : ""
-            }`}>
-                <div className="group w-full md:w-1/3 flex flex-col gap-4 sm:gap-6">
-                  <h2 className="row-heading z-50 text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug">
-                    {label}
-                  </h2>
-                  <div className="relative w-full h-44 xs:h-52 sm:h-64 md:h-full overflow-hidden">
+              {/* Main layout */}
+              <div
+                className={`flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24 ${isReversed ? "md:flex-row-reverse" : ""}`}
+              >
+                {/* Left/Right: image + meta stacked */}
+                <div className="sector-left group w-full md:w-2/5 flex flex-col gap-5">
+                  <div className="relative w-full h-52 xs:h-64 sm:h-72 md:h-[380px] lg:h-[440px] overflow-hidden">
                     <Image
                       src={img}
                       alt={label}
                       fill
-                      className="object-cover  scale-105 group-hover:scale-100 transition-transform duration-700"
+                      className="object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-black/20" />
+                    <div className="absolute inset-0 bg-genesis-navy/20" />
+                    {/* Sector label overlay on image */}
+                    <div className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-genesis-navy/80 to-transparent">
+                      <span className="text-white/50 text-[10px] uppercase tracking-widest font-poppins">
+                        Sector
+                      </span>
+                      <h2 className="text-white text-lg sm:text-xl md:text-2xl font-[PPFONT] leading-snug mt-0.5">
+                        {label}
+                      </h2>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm z-50 text-gray-600 font-poppins leading-relaxed">
+
+                  {/* Meta row below image */}
+                  <div className="flex items-start gap-6">
+                    <div className="flex flex-col gap-1 border-l border-gray-200 pl-4">
+                      <span className="text-base sm:text-lg md:text-xl font-[PPFONT] text-genesis-navy">
+                        {stat.value}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                        {stat.label}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1 border-l border-gray-200 pl-4">
+                      <span className="text-base sm:text-lg md:text-xl font-[PPFONT] text-genesis-navy">
+                        {companies[companies.length - 1].year}
+                      </span>
+                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                        Latest investment
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* <p className="text-xs sm:text-sm text-gray-500 font-poppins leading-relaxed max-w-sm">
                     {tagline}
-                  </p>
+                  </p> */}
                 </div>
 
-                <div className="w-full md:w-2/3 flex flex-col justify-center divide-y divide-gray-200">
+                {/* Right/Left: company rows */}
+                <div className="w-full md:w-3/5 flex flex-col justify-center divide-y divide-gray-100">
+                  <div className="flex items-center justify-between pb-3 mb-1">
+                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                      Company
+                    </span>
+                    <div className="flex items-center gap-6 sm:gap-10">
+                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins hidden sm:block">
+                        Stage
+                      </span>
+                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                        Year
+                      </span>
+                    </div>
+                  </div>
+
                   {companies.map(({ name, stage, year, description }) => (
                     <div
                       key={name}
-                      className="relative company-row flex items-start justify-between gap-3 sm:gap-4 md:gap-6 py-3 sm:py-3.5 md:py-4 px-2 sm:px-3 md:px-6 group cursor-default hover:bg-genesis-navy/20 transition-colors"
+                      className="relative company-row group flex items-start justify-between gap-4 py-4 sm:py-5 px-3 sm:px-4 hover:bg-genesis-navy/[0.06] transition-colors cursor-default"
                     >
                       <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
-                      <div className="flex flex-col gap-0.5 sm:gap-1">
-                        <span className="text-sm sm:text-base text-genesis-blue group-hover:text-genesis-red font-[PPFONT]">
+                      <div className="flex flex-col gap-1">
+                        <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-blue font-[PPFONT] transition-colors">
                           {name}
                         </span>
-                        <span className="text-xs sm:text-sm text-gray-600 group-hover:text-white font-poppins leading-relaxed max-w-[200px] sm:max-w-xs">
+                        <span className="text-xs text-gray-500 group-hover:text-gray-700 font-poppins leading-relaxed max-w-[220px] sm:max-w-xs transition-colors">
                           {description}
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3 sm:gap-4 md:gap-6 shrink-0">
-                        <span className="text-xs sm:text-sm text-gray-600 group-hover:text-white font-poppins uppercase hidden sm:block">
+                      <div className="flex items-center gap-4 sm:gap-8 shrink-0 pt-0.5">
+                        <span className="text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins uppercase tracking-wider hidden sm:block transition-colors">
                           {stage}
                         </span>
-                        <span className="text-xs sm:text-sm text-gray-500 group-hover:text-white font-poppins">
+                        <span className="text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins tracking-wider transition-colors">
                           {year}
                         </span>
                       </div>
@@ -319,10 +354,9 @@ export default function OurProjects() {
                 </div>
               </div>
             </section>
-          ))}
-        </section>
-
-        
-      </div>
+          );
+        })}
+      </section>
+    </div>
   );
 }

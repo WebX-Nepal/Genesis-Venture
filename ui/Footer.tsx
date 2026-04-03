@@ -1,5 +1,5 @@
+import Button from "@/components/ui/Button2";
 import Link from "next/link";
-import Button from "./Button";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -92,11 +92,22 @@ export default function Footer() {
             <span className="text-sm text-white/80">
               350 Fifth Ave, New York, NY
             </span>
-            <Button
+            {/* <Button
               text="Send a message"
               href="/Contacts"
               className="relative z-50"
-            />
+            /> */}
+            <Link href="/Contacts">
+              <Button
+                variant="secondary"
+                size="md"
+                className="mt-12 bg-white px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.28em]  hover:bg-genesis-white/80 transition-colors"
+              >
+                <span className="inline-flex items-center gap-3">
+                  Send a message
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

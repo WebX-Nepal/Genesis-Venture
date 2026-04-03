@@ -99,7 +99,7 @@ export default function AboutUs() {
       <div className="w-full mb-10 sm:mb-14 md:mb-20">
         <div
           ref={statsRef}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-10 md:gap-x-50"
         >
           {stats.map(({ value, label }) => (
             <div

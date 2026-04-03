@@ -1,31 +1,33 @@
-'use client';
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+"use client";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
 }
 
 export default function Button({
   children,
-  variant = 'primary',
-  size = 'md',
-  className = '',
+  variant = "primary",
+  size = "md",
+  className = "",
   ...props
 }: ButtonProps) {
-  const baseStyles = 'relative overflow-hidden font-medium transition-colors cursor-pointer';
-  
+  const baseStyles =
+    "relative overflow-hidden font-medium transition-colors cursor-pointer";
+
   const variants = {
-    primary: 'bg-genesis-blue text-white hover:bg-genesis-blue/90',
-    secondary: 'bg-genesis-green text-neutral-950 hover:bg-genesis-green/90',
-    outline: 'border border-neutral-950 text-neutral-950 hover:bg-neutral-950 hover:text-white',
+    primary: "bg-genesis-blue text-white hover:bg-genesis-blue/90",
+    secondary: "bg-white text-genesis-navy hover:bg-white/80",
+    outline:
+      "border border-neutral-950 text-neutral-950 hover:bg-neutral-950 hover:text-white",
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs',
-    md: 'px-6 py-3 text-sm',
-    lg: 'px-8 py-4 text-base',
+    sm: "px-4 py-2 text-xs",
+    md: "px-6 py-3 text-sm",
+    lg: "px-8 py-4 text-base",
   };
 
   return (

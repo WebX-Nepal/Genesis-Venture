@@ -1,8 +1,7 @@
-import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
-import Sectors from "@/components/Home/Sectors";
-import Portfolio from "@/components/Home/Portfolio";
 import FAQ from "@/components/Home/FAQ";
+import Hero from "@/components/Home/Hero";
+import Sectors from "@/components/Home/Sectors";
 
 export default function Home() {
   return (
