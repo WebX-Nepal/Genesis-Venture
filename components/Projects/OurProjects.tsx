@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 interface Company {
   name: string;
@@ -198,15 +197,15 @@ export default function OurProjects() {
     gsap.utils.toArray<HTMLElement>(".company-row").forEach((row) => {
       gsap.fromTo(
         row,
-        { opacity: 0, y: 24 },
+        { opacity: 0, y: 16 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: row,
-            start: "top 88%",
+            start: "top 92%",
             toggleActions: "play none none reverse",
           },
         },
@@ -216,15 +215,15 @@ export default function OurProjects() {
     gsap.utils.toArray<HTMLElement>(".sector-left").forEach((el) => {
       gsap.fromTo(
         el,
-        { opacity: 0, x: -30 },
+        { opacity: 0, x: -20 },
         {
           opacity: 1,
           x: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power2.out",
           scrollTrigger: {
             trigger: el,
-            start: "top 85%",
+            start: "top 90%",
             toggleActions: "play none none reverse",
           },
         },
@@ -233,11 +232,8 @@ export default function OurProjects() {
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
-    >
-      <section id="portfolio" className="relative flex flex-col gap-0">
+    <div ref={containerRef} className="w-full bg-white flex flex-col">
+      <section id="portfolio" className="relative flex flex-col">
         {sectors.map(({ id, label, img, tagline, stat, companies }, si) => {
           const isReversed = si % 2 !== 0;
           return (
@@ -247,25 +243,30 @@ export default function OurProjects() {
               ref={(el) => {
                 sectionRefs.current[id] = el;
               }}
-              className={`w-full flex flex-col py-12 sm:py-16 md:py-24 border-b border-gray-100 ${si % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
+              className={`w-full h-screen min-h-[600px] max-h-[1000px] flex flex-col border-b border-gray-100 px-4 xs:px-6 sm:px-8 md:px-16 pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 md:pb-8 ${si % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
             >
-              {/* Section header */}
-              <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6 mb-8 sm:mb-10 md:mb-14">
-                <span className="text-xs uppercase tracking-widest text-gray-400 font-poppins">
+              {/* Section header — fixed small */}
+              <div className="flex items-center justify-between border-b border-gray-200 pb-2.5 mb-4 sm:mb-5 md:mb-6 shrink-0">
+                <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
                   {label}
                 </span>
-                <span className="text-xs uppercase tracking-widest text-genesis-navy/40 font-poppins">
+                <span className="text-[10px] uppercase tracking-widest text-genesis-navy/30 font-poppins">
                   0{si + 1}
                 </span>
               </div>
 
-              {/* Main layout */}
+              {/* Main layout — fills remaining height */}
               <div
-                className={`flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24 ${isReversed ? "md:flex-row-reverse" : ""}`}
+                className={`flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-10 lg:gap-16 flex-1 min-h-0 ${isReversed ? "md:flex-row-reverse" : ""}`}
               >
-                {/* Left/Right: image + meta stacked */}
-                <div className="sector-left group w-full md:w-2/5 flex flex-col gap-5">
-                  <div className="relative w-full h-52 xs:h-64 sm:h-72 md:h-[380px] lg:h-[440px] overflow-hidden">
+                {/* Image column */}
+                <div
+                  className={`sector-left group shrink-0 flex flex-col gap-3 md:gap-4 md:w-[32%] lg:w-[30%] ${
+                    // on mobile show image as a short strip, on desktop fill height
+                    "h-[28vw] min-h-35 max-h-50 md:h-auto md:max-h-none"
+                  }`}
+                >
+                  <div className="relative w-full flex-1 overflow-hidden min-h-0">
                     <Image
                       src={img}
                       alt={label}
@@ -273,84 +274,85 @@ export default function OurProjects() {
                       className="object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-genesis-navy/20" />
-                    {/* Sector label overlay on image */}
-                    <div className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-genesis-navy/80 to-transparent">
-                      <span className="text-white/50 text-[10px] uppercase tracking-widest font-poppins">
+                    <div className="absolute bottom-0 left-0 right-0 px-3 sm:px-4 py-3 bg-linear-to-t from-genesis-navy/80 to-transparent">
+                      <span className="text-white/40 text-[9px] uppercase tracking-widest font-poppins hidden sm:block">
                         Sector
                       </span>
-                      <h2 className="text-white text-lg sm:text-xl md:text-2xl font-[PPFONT] leading-snug mt-0.5">
+                      <h2 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-[PPFONT] leading-snug">
                         {label}
                       </h2>
                     </div>
                   </div>
 
-                  {/* Meta row below image */}
-                  <div className="flex items-start gap-6">
-                    <div className="flex flex-col gap-1 border-l border-gray-200 pl-4">
-                      <span className="text-base sm:text-lg md:text-xl font-[PPFONT] text-genesis-navy">
+                  {/* Meta stats — hidden on small mobile to save space */}
+                  <div className="hidden sm:flex items-start gap-4 shrink-0">
+                    <div className="flex flex-col gap-0.5 border-l border-gray-200 pl-3">
+                      <span className="text-sm md:text-base lg:text-lg font-[PPFONT] text-genesis-navy leading-none">
                         {stat.value}
                       </span>
-                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                      <span className="text-[9px] uppercase tracking-widest text-gray-400 font-poppins">
                         {stat.label}
                       </span>
                     </div>
-                    <div className="flex flex-col gap-1 border-l border-gray-200 pl-4">
-                      <span className="text-base sm:text-lg md:text-xl font-[PPFONT] text-genesis-navy">
+                    <div className="flex flex-col gap-0.5 border-l border-gray-200 pl-3">
+                      <span className="text-sm md:text-base lg:text-lg font-[PPFONT] text-genesis-navy leading-none">
                         {companies[companies.length - 1].year}
                       </span>
-                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
-                        Latest investment
+                      <span className="text-[9px] uppercase tracking-widest text-gray-400 font-poppins">
+                        Latest
                       </span>
                     </div>
                   </div>
-
-                  {/* <p className="text-xs sm:text-sm text-gray-500 font-poppins leading-relaxed max-w-sm">
-                    {tagline}
-                  </p> */}
                 </div>
 
-                {/* Right/Left: company rows */}
-                <div className="w-full md:w-3/5 flex flex-col justify-center divide-y divide-gray-100">
-                  <div className="flex items-center justify-between pb-3 mb-1">
-                    <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                {/* Company rows column */}
+                <div className="flex-1 flex flex-col justify-start gap-5 min-h-0 overflow-hidden">
+                  {/* Column headers */}
+                  <p className="hidden lg:block text-sm lg:text-2xl text-gray-400 font-poppins leading-relaxed shrink-0">
+                    {tagline}
+                  </p>
+                  <div className="flex items-center justify-between pb-2 mb-0.5 shrink-0">
+                    <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-300 font-poppins">
                       Company
                     </span>
-                    <div className="flex items-center gap-6 sm:gap-10">
-                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins hidden sm:block">
+                    <div className="flex items-center gap-5 sm:gap-8 md:gap-10">
+                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-300 font-poppins hidden sm:block">
                         Stage
                       </span>
-                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-poppins">
+                      <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-300 font-poppins">
                         Year
                       </span>
                     </div>
                   </div>
 
-                  {companies.map(({ name, stage, year, description }) => (
-                    <div
-                      key={name}
-                      className="relative company-row group flex items-start justify-between gap-4 py-4 sm:py-5 px-3 sm:px-4 hover:bg-genesis-navy/[0.06] transition-colors cursor-default"
-                    >
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  <div className="divide-y divide-gray-100 overflow-hidden">
+                    {companies.map(({ name, stage, year, description }) => (
+                      <div
+                        key={name}
+                        className="relative company-row group flex items-center justify-between gap-3 sm:gap-4 py-2.5 sm:py-3 md:py-3.5 px-2 sm:px-3 hover:bg-genesis-navy/[0.05] transition-colors cursor-default"
+                      >
+                        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
-                      <div className="flex flex-col gap-1">
-                        <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-blue font-[PPFONT] transition-colors">
-                          {name}
-                        </span>
-                        <span className="text-xs text-gray-500 group-hover:text-gray-700 font-poppins leading-relaxed max-w-[220px] sm:max-w-xs transition-colors">
-                          {description}
-                        </span>
-                      </div>
+                        <div className="flex flex-col gap-0.5 min-w-0">
+                          <span className="text-xs sm:text-sm md:text-base text-genesis-navy group-hover:text-genesis-blue font-[PPFONT] transition-colors truncate">
+                            {name}
+                          </span>
+                          <span className="text-[10px] sm:text-xs text-gray-400 group-hover:text-gray-600 font-poppins leading-relaxed line-clamp-1 sm:line-clamp-2 md:line-clamp-1 transition-colors">
+                            {description}
+                          </span>
+                        </div>
 
-                      <div className="flex items-center gap-4 sm:gap-8 shrink-0 pt-0.5">
-                        <span className="text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins uppercase tracking-wider hidden sm:block transition-colors">
-                          {stage}
-                        </span>
-                        <span className="text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins tracking-wider transition-colors">
-                          {year}
-                        </span>
+                        <div className="flex items-center gap-3 sm:gap-6 md:gap-8 shrink-0">
+                          <span className="text-[10px] sm:text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins uppercase tracking-wider hidden sm:block transition-colors">
+                            {stage}
+                          </span>
+                          <span className="text-[10px] sm:text-[11px] text-gray-400 group-hover:text-genesis-navy font-poppins tracking-wider transition-colors">
+                            {year}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>
