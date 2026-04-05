@@ -1,16 +1,12 @@
-import localFont from "next/font/local";
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+"use client";
+
+import { Playfair_Display } from "next/font/google";
+import { useEffect, useRef } from "react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
   variable: "--font-playfair",
-});
-
-const sourceSans = Source_Sans_3({
-  subsets: ["latin"],
-  weight: ["300", "400", "600"],
-  variable: "--font-source",
 });
 
 const risks = [
@@ -47,10 +43,7 @@ const risks = [
 ];
 
 const stats = [
-  {
-    number: "90%",
-    label: "of day traders lose money within their first year",
-  },
+  { number: "90%", label: "of day traders lose money within their first year" },
   {
     number: "−57%",
     label: "S&P 500 peak-to-trough decline during the 2008 financial crisis",
@@ -80,396 +73,194 @@ const principles = [
   },
 ];
 
-export default function InvestmentRiskFlyer() {
+interface Props {
+  onClose: () => void;
+}
+
+export default function InvestmentRiskModal({ onClose }: Props) {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
   return (
+    // Backdrop — clicking directly on this div (not the modal) closes it
     <div
-      className={`${playfair.variable} ${sourceSans.variable}`}
-      style={{
-        fontFamily: "var(--font-source), sans-serif",
-        background: "#0a0a0a",
-        color: "#f0ece3",
-        width: "210mm",
-        minHeight: "297mm",
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
+      className="fixed inset-0 z-9999 flex items-center justify-center bg-genesis-navy/60 backdrop-blur-sm px-4 sm:px-6 overscroll-none"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose();
       }}
     >
-      {/* Top accent bar */}
+      {/* Modal panel — stop propagation so clicks inside don't bubble to backdrop */}
       <div
-        style={{
-          height: "6px",
-          background:
-            "linear-gradient(90deg, #c8a96e 0%, #e8c87a 40%, #a07840 100%)",
-          width: "100%",
-          flexShrink: 0,
-        }}
-      />
-
-      {/* Header */}
-      <div
-        style={{
-          padding: "36px 48px 24px",
-          borderBottom: "0.5px solid #2a2a2a",
-        }}
+        ref={modalRef}
+        className={`${playfair.variable} relative w-full max-w-3xl h-[90vh] bg-white flex flex-col overflow-hidden overscroll-none`}
+        onMouseDown={(e) => e.stopPropagation()}
       >
-        {/* Warning badge */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            background: "#1a0a00",
-            border: "1px solid #c8a96e",
-            color: "#c8a96e",
-            fontFamily: "var(--font-source), sans-serif",
-            fontSize: "10px",
-            fontWeight: 600,
-            letterSpacing: "3px",
-            textTransform: "uppercase",
-            padding: "6px 14px",
-            marginBottom: "20px",
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              width: "6px",
-              height: "6px",
-              background: "#c8a96e",
-              borderRadius: "50%",
-              flexShrink: 0,
-            }}
-          />
-          Important Notice — Please Read Carefully
-        </div>
+        {/* Top accent bar */}
+        <div className="h-1 w-full bg-genesis-navy shrink-0" />
 
-        {/* Headline */}
-        <h1
-          style={{
-            fontFamily: "var(--font-playfair), serif",
-            fontSize: "52px",
-            fontWeight: 900,
-            lineHeight: 1.0,
-            color: "#f0ece3",
-            marginBottom: "8px",
-          }}
-        >
-          Before You
-          <br />
-          <em style={{ fontStyle: "italic", color: "#c8a96e" }}>Invest,</em>
-          <br />
-          Understand
-          <br />
-          the Risks.
-        </h1>
+        {/* Header */}
+        <div className="flex items-start justify-between px-6 sm:px-10 pt-7 pb-5 border-b border-gray-100 shrink-0">
+          <div className="flex flex-col gap-3">
+            <div className="inline-flex items-center gap-2 border border-genesis-navy/20 px-3 py-1.5 w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-genesis-navy shrink-0" />
+              <span className="text-[9px] uppercase tracking-[3px] text-genesis-navy font-poppins font-semibold">
+                Important Notice — Please Read Carefully
+              </span>
+            </div>
+            <h1 className="font-[PPFONT] text-[clamp(1.5rem,4vw,2.5rem)] text-genesis-navy leading-tight">
+              Before You{" "}
+              <em className="not-italic text-genesis-blue">Invest,</em>
+              <br />
+              Understand the Risks.
+            </h1>
+            <p className="text-xs sm:text-sm text-gray-500 font-poppins leading-relaxed max-w-lg">
+              All investments carry inherent risk. Past performance does not
+              guarantee future results. This document outlines key risks every
+              investor must consider.
+            </p>
+          </div>
 
-        <p
-          style={{
-            fontSize: "14px",
-            fontWeight: 300,
-            color: "#888",
-            letterSpacing: "0.5px",
-            maxWidth: "480px",
-            lineHeight: 1.6,
-          }}
-        >
-          All investments carry inherent risk. Past performance does not
-          guarantee future results. This document outlines key risks every
-          investor must consider.
-        </p>
-      </div>
-
-      {/* Content */}
-      <div style={{ padding: "28px 48px", flex: 1 }}>
-        {/* Intro block */}
-        <div
-          style={{
-            background: "#111",
-            borderLeft: "3px solid #c8a96e",
-            padding: "18px 20px",
-            marginBottom: "28px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "13.5px",
-              lineHeight: 1.7,
-              color: "#ccc",
-              fontWeight: 300,
-            }}
+          <button
+            type="button"
+            onClick={onClose}
+            className="shrink-0 ml-4 mt-0.5 w-8 h-8 flex items-center justify-center border border-gray-200 hover:border-genesis-navy hover:bg-genesis-navy hover:text-white text-gray-400 transition-all duration-200 cursor-pointer"
+            aria-label="Close"
           >
-            <strong style={{ color: "#f0ece3", fontWeight: 600 }}>
-              Capital at risk.
-            </strong>{" "}
-            Investing involves the risk that you may get back less than you
-            originally invested — including the possible loss of your entire
-            capital. The value of investments can fall as well as rise. You
-            should never invest money you cannot afford to lose, and you should
-            ensure that any investment aligns with your financial goals, time
-            horizon, and risk tolerance.
-          </p>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path
+                d="M1 1L11 11M11 1L1 11"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
         </div>
 
-        {/* Section label */}
-        <SectionLabel>Key Risk Factors</SectionLabel>
-
-        {/* Risks grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "12px",
-            marginBottom: "28px",
-          }}
-        >
-          {risks.map((risk) => (
-            <div
-              key={risk.num}
-              style={{
-                background: "#111",
-                border: "0.5px solid #222",
-                padding: "16px 18px",
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              {/* Ghost number */}
-              <span
-                aria-hidden
-                style={{
-                  position: "absolute",
-                  top: "-1px",
-                  right: "14px",
-                  fontFamily: "var(--font-playfair), serif",
-                  fontSize: "40px",
-                  fontWeight: 900,
-                  color: "#1a1a1a",
-                  lineHeight: 1,
-                  userSelect: "none",
-                }}
-              >
-                {risk.num}
+        {/* Scrollable body */}
+        <div className="flex-1 overflow-y-scroll overscroll-contain px-6 sm:px-10 py-6 space-y-8">
+          <div className="border-l-2 border-genesis-navy bg-gray-50 px-4 py-4">
+            <p className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed">
+              <span className="text-genesis-navy font-semibold">
+                Capital at risk.{" "}
               </span>
-              <h3
-                style={{
-                  fontFamily: "var(--font-source), sans-serif",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  color: "#c8a96e",
-                  marginBottom: "6px",
-                }}
-              >
-                {risk.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: "12px",
-                  lineHeight: 1.6,
-                  color: "#999",
-                  fontWeight: 300,
-                }}
-              >
-                {risk.body}
-              </p>
+              Investing involves the risk that you may get back less than you
+              originally invested — including the possible loss of your entire
+              capital. You should never invest money you cannot afford to lose.
+            </p>
+          </div>
+
+          <div>
+            <SectionLabel>Key Risk Factors</SectionLabel>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-gray-100">
+              {risks.map((risk) => (
+                <div
+                  key={risk.num}
+                  className="relative bg-white px-5 py-5 overflow-hidden"
+                >
+                  <span
+                    aria-hidden
+                    className="absolute top-1 right-3 font-[PPFONT] text-4xl text-gray-50 select-none leading-none"
+                  >
+                    {risk.num}
+                  </span>
+                  <h3 className="text-[10px] uppercase tracking-widest text-genesis-navy font-poppins font-semibold mb-2">
+                    {risk.title}
+                  </h3>
+                  <p className="text-xs text-gray-500 font-poppins leading-relaxed">
+                    {risk.body}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Section label */}
-        <SectionLabel>Sobering Figures Every Investor Should Know</SectionLabel>
+          <div>
+            <SectionLabel>
+              Sobering Figures Every Investor Should Know
+            </SectionLabel>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-100">
+              {stats.map((stat) => (
+                <div
+                  key={stat.number}
+                  className="bg-white px-5 py-5 flex flex-col items-center text-center gap-2"
+                >
+                  <span className="font-[PPFONT] text-2xl sm:text-3xl text-genesis-navy leading-none">
+                    {stat.number}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-gray-400 font-poppins leading-relaxed">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Stats row */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "12px",
-            marginBottom: "28px",
-          }}
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.number}
-              style={{
-                background: "#111",
-                border: "0.5px solid #222",
-                padding: "16px",
-                textAlign: "center",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontSize: "30px",
-                  fontWeight: 700,
-                  color: "#c8a96e",
-                  display: "block",
-                  lineHeight: 1,
-                  marginBottom: "4px",
-                }}
-              >
-                {stat.number}
+          <div>
+            <SectionLabel>Principles for Responsible Investing</SectionLabel>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {principles.map((p) => (
+                <div key={p.title} className="border-t-2 border-gray-200 pt-4">
+                  <h4 className="text-[10px] uppercase tracking-widest text-genesis-navy font-poppins font-semibold mb-2">
+                    {p.title}
+                  </h4>
+                  <p className="text-xs text-gray-500 font-poppins leading-relaxed">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gray-50 border border-gray-100 px-5 py-5">
+            <p className="text-[10px] sm:text-xs text-gray-400 font-poppins leading-relaxed">
+              <span className="text-gray-500 font-semibold">
+                Regulatory Disclaimer:{" "}
               </span>
-              <span
-                style={{
-                  fontSize: "10px",
-                  fontWeight: 400,
-                  color: "#666",
-                  lineHeight: 1.4,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-              >
-                {stat.label}
-              </span>
-            </div>
-          ))}
+              This document is for informational purposes only and does not
+              constitute financial, investment, legal, or tax advice. Investment
+              products are not bank deposits and are not insured by any
+              government or regulatory body. Returns are not guaranteed. Past
+              performance is not a reliable indicator of future results.
+            </p>
+          </div>
         </div>
 
-        {/* Section label */}
-        <SectionLabel>Principles for Responsible Investing</SectionLabel>
-
-        {/* Principles row */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "10px",
-            marginBottom: "28px",
-          }}
-        >
-          {principles.map((p) => (
-            <div
-              key={p.title}
-              style={{
-                borderTop: "2px solid #2a2a2a",
-                paddingTop: "12px",
-              }}
-            >
-              <h4
-                style={{
-                  fontSize: "11px",
-                  fontWeight: 600,
-                  color: "#f0ece3",
-                  marginBottom: "5px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.5px",
-                }}
-              >
-                {p.title}
-              </h4>
-              <p
-                style={{
-                  fontSize: "11px",
-                  lineHeight: 1.5,
-                  color: "#666",
-                  fontWeight: 300,
-                }}
-              >
-                {p.body}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Disclaimer */}
-        <div
-          style={{
-            background: "#0e0e0e",
-            border: "0.5px solid #1e1e1e",
-            padding: "16px 20px",
-            marginBottom: "20px",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "10.5px",
-              lineHeight: 1.65,
-              color: "#666",
-              fontWeight: 300,
-            }}
+        {/* Footer */}
+        <div className="shrink-0 px-6 sm:px-10 py-4 border-t border-gray-100 flex items-center justify-between">
+          <span className="text-[9px] uppercase tracking-widest text-gray-300 font-poppins">
+            Investment Risk Disclosure — For Investor Use Only
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            className="text-[10px] uppercase tracking-widest text-genesis-navy font-poppins border border-genesis-navy px-4 py-2 hover:bg-genesis-navy hover:text-white transition-all duration-200 cursor-pointer"
           >
-            <strong style={{ color: "#999", fontWeight: 600 }}>
-              Regulatory Disclaimer:
-            </strong>{" "}
-            This document is for informational purposes only and does not
-            constitute financial, investment, legal, or tax advice. It should
-            not be relied upon as the basis for any investment decision.
-            Investment products are not bank deposits and are not insured by any
-            government or regulatory body. Returns are not guaranteed. You
-            should carefully read all offering documents, prospectuses, and
-            terms and conditions before investing. If you are uncertain about
-            any investment, seek independent professional advice from a
-            qualified and authorised financial adviser regulated in your
-            jurisdiction. Past performance is not a reliable indicator of future
-            results. The value of investments and any income from them can go
-            down as well as up.
-          </p>
+            I Understand
+          </button>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div
-        style={{
-          padding: "16px 48px",
-          borderTop: "0.5px solid #1e1e1e",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexShrink: 0,
-        }}
-      >
-        <span
-          style={{
-            fontSize: "9px",
-            color: "#444",
-            letterSpacing: "1px",
-            textTransform: "uppercase",
-          }}
-        >
-          Investment Risk Disclosure — For Investor Use Only
-        </span>
-        <span
-          style={{
-            fontSize: "9px",
-            color: "#444",
-            letterSpacing: "1px",
-          }}
-        >
-          This is not an offer or solicitation to buy or sell any security
-        </span>
+        {/* Bottom accent bar */}
+        <div className="h-1 w-full bg-genesis-navy shrink-0" />
       </div>
-
-      {/* Bottom accent bar */}
-      <div
-        style={{
-          height: "4px",
-          background:
-            "linear-gradient(90deg, #2a1800 0%, #c8a96e 50%, #2a1800 100%)",
-          width: "100%",
-          flexShrink: 0,
-        }}
-      />
     </div>
   );
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p
-      style={{
-        fontSize: "9px",
-        fontWeight: 600,
-        letterSpacing: "3px",
-        textTransform: "uppercase",
-        color: "#c8a96e",
-        marginBottom: "14px",
-        fontFamily: "var(--font-source), sans-serif",
-      }}
-    >
+    <p className="text-[9px] uppercase tracking-[3px] text-genesis-navy font-poppins font-semibold mb-4">
       {children}
     </p>
   );

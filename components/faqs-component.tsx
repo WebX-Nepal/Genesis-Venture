@@ -157,10 +157,10 @@ export default function FAQs() {
             </div>
             <div className="relative w-full h-full md:w-1/3">
               <Image
-                src="/images/hero/faq.jpg"
+                src="/images/hero/faq-image.jpg"
                 alt="Frequently Asked Questions"
                 fill
-                className="object-cover"
+                className="object-cover brightness-150"
               />
             </div>
           </div>

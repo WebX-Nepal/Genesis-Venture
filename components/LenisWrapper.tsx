@@ -69,7 +69,7 @@ export default function LenisProvider({ children }: LenisProviderProps) {
     const lenisInstance = new Lenis({
       lerp: 0.05, // Lower value creates a smoother, more fluid scrolling effect
       smoothWheel: true,
-      wheelMultiplier: 0.8, // Slightly slows down the wheel speed for smoothness
+      // wheelMultiplier: 1, // Slightly slows down the wheel speed for smoothness
       infinite: false,
     });
 
