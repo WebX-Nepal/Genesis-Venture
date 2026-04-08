@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are — Genesis Ventree Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --navy-deep: #08112a;
+      --navy-mid: #162952;
+      --navy-light: #1e3a6e;
+      --navy-pale: #e8edf5;
+      --red: #c0192b;
+      --red-bright: #e0202f;
+      --red-pale: #fdf0f1;
+      --off-white: #f5f3ef;
+      --white: #ffffff;
+      --silver: #e4e0db;
+      --text-body: #2c2c34;
+      --text-muted: #6b6b78;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--text-body);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--off-white);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--navy-light);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1.5px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* ══ NAV ══ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy-deep);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 64px;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-logo-mark {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .nav-logo-mark span {
+      transform: rotate(-45deg);
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .nav-logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-text sup {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.4);
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--red);
+      transition: width 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--red) !important;
+      color: var(--white) !important;
+      padding: 9px 22px;
+      font-size: 11px !important;
+      letter-spacing: 0.12em !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--red-bright) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    /* ══ HERO ══ */
+    .hero {
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+    }
+
+    .hero-left {
+      padding: 100px 72px 80px 64px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      letter-spacing: -0.015em;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--red-bright);
+    }
+
+    .hero-divider {
+      width: 56px;
+      height: 2px;
+      background: var(--red);
+      margin-bottom: 28px;
+    }
+
+    .hero-body {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.58);
+      max-width: 480px;
+      margin-bottom: 44px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-bright);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .btn-ghost .arrow {
+      transition: transform 0.2s;
+    }
+
+    .btn-ghost:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      background: var(--navy-mid);
+      display: flex;
+      flex-direction: column;
+      padding: 64px 64px 64px 56px;
+      justify-content: space-between;
+    }
+
+    /* Integrity statement — top of hero right */
+    .integrity-statement {
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 40px;
+    }
+
+    .integrity-statement .tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .integrity-statement blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.55;
+    }
+
+    .integrity-statement blockquote em {
+      font-style: normal;
+      color: var(--red-bright);
+      border-bottom: 1px solid rgba(192, 25, 43, 0.4);
+    }
+
+    /* Stats — bottom of hero right */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-box {
+      background: var(--navy-mid);
+      padding: 28px 24px;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--red);
+      transition: height 0.4s ease;
+    }
+
+    .stat-box:hover::before {
+      height: 100%;
+    }
+
+    .stat-box:hover {
+      background: var(--navy-light);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-num sup {
+      font-size: 16px;
+      color: var(--red);
+      vertical-align: super;
+    }
+
+    .stat-desc {
+      font-size: 10.5px;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: rgba(255, 255, 255, 0.38);
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    /* ══ RED CREDENTIALS BAND ══ */
+    .red-band {
+      background: var(--red);
+      padding: 20px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .band-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .band-item:first-child {
+      justify-content: flex-start;
+    }
+
+    .band-item:last-child {
+      justify-content: flex-end;
+    }
+
+    .band-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.22);
+      flex-shrink: 0;
+    }
+
+    .band-item p {
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .band-icon {
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    /* ══ WHAT WE BELIEVE (core "Who We Are" section) ══ */
+    .beliefs {
+      padding: 112px 64px;
+      background: var(--white);
+    }
+
+    .beliefs-header {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 96px;
+      align-items: start;
+      margin-bottom: 80px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid var(--silver);
+    }
+
+    .beliefs-header h2 {
+      font-size: clamp(36px, 3.8vw, 50px);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--navy-deep);
+      letter-spacing: -0.01em;
+    }
+
+    .beliefs-header h2 em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .beliefs-header-right {
+      padding-top: 8px;
+    }
+
+    .beliefs-header-right p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .beliefs-header-right p:last-child {
+      margin-bottom: 0;
+    }
+
+    .beliefs-header-right p strong {
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+
+    /* Cards */
+    .beliefs-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--silver);
+    }
+
+    .belief-card {
+      background: var(--white);
+      padding: 48px 40px;
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .belief-card:hover {
+      background: var(--off-white);
+    }
+
+    .belief-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background: var(--red);
+      transition: height 0.3s ease;
+    }
+
+    .belief-card:hover::before {
+      height: 3px;
+    }
+
+    .belief-card .belief-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--navy-pale);
+      line-height: 1;
+      margin-bottom: 24px;
+      transition: color 0.25s;
+    }
+
+    .belief-card:hover .belief-number {
+      color: rgba(192, 25, 43, 0.07);
+    }
+
+    .belief-card h3 {
+      font-size: 21px;
+      font-weight: 500;
+      color: var(--navy-deep);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .belief-card p {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.88;
+    }
+
+    /* ══ INTEGRITY MANIFESTO (navy section) ══ */
+    .manifesto {
+      background: var(--navy-deep);
+      padding: 96px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .manifesto::after {
+      content: '"';
+      position: absolute;
+      top: -40px;
+      right: 48px;
+      font-family: 'Playfair Display', serif;
+      font-size: 360px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.018);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .manifesto-inner {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .manifesto-divider {
+      background: rgba(255, 255, 255, 0.1);
+      height: 100%;
+      align-self: stretch;
+    }
+
+    .manifesto-left blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .manifesto-left blockquote em {
+      font-style: normal;
+      color: var(--red-bright);
+    }
+
+    .manifesto-attr {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .manifesto-right p {
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.52);
+      margin-bottom: 18px;
+    }
+
+    .manifesto-right p:last-child {
+      margin-bottom: 0;
+    }
+
+    .manifesto-right p strong {
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ══ VALUES TICKER ══ */
+    .values-ticker {
+      background: var(--white);
+      border-top: 1px solid var(--silver);
+      border-bottom: 1px solid var(--silver);
+      overflow: hidden;
+      height: 54px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      animation: ticker 26s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 44px;
+      border-right: 1px solid var(--silver);
+    }
+
+    .ticker-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ticker-item span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy-deep);
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ══ CTA ══ */
+    .cta-section {
+      background: var(--navy-deep);
+      padding: 112px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(192, 25, 43, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 50%, rgba(22, 41, 82, 0.6) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .cta-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-left h2 {
+      font-size: clamp(34px, 3.5vw, 48px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .cta-left h2 em {
+      font-style: italic;
+      color: var(--red-bright);
+    }
+
+    .cta-left p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.48);
+      line-height: 1.9;
+      margin-bottom: 40px;
+    }
+
+    .cta-right {
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 48px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .cta-right h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .cta-right>p {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.42);
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .contact-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-detail span {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.58);
+      letter-spacing: 0.02em;
+    }
+
+    .cta-disclaimer {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.2);
+      line-height: 1.7;
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      background: #060e1e;
+      padding: 56px 64px 36px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .footer-brand .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand .tagline {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.28);
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand>p {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.28);
+      line-height: 1.8;
+    }
+
+    .footer-col h5 {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.28);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.48);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ══ ANIMATIONS ══ */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .anim {
+      opacity: 0;
+    }
+
+    .anim.visible {
+      animation: fadeSlideUp 0.75s ease forwards;
+    }
+
+    .anim-d1 {
+      animation-delay: 0.08s;
+    }
+
+    .anim-d2 {
+      animation-delay: 0.18s;
+    }
+
+    .anim-d3 {
+      animation-delay: 0.28s;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 960px) {
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 72px 24px 48px;
+      }
+
+      .hero-right {
+        padding: 48px 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .red-band {
+        flex-direction: column;
+        padding: 28px 24px;
+        gap: 18px;
+      }
+
+      .band-divider {
+        display: none;
+      }
+
+      .band-item {
+        justify-content: flex-start !important;
+      }
+
+      .beliefs {
+        padding: 72px 24px;
+      }
+
+      .beliefs-header {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 48px;
+        padding-bottom: 40px;
+      }
+
+      .beliefs-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .manifesto {
+        padding: 72px 24px;
+      }
+
+      .manifesto-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .manifesto-divider {
+        display: none;
+      }
+
+      .cta-section {
+        grid-template-columns: 1fr;
+        padding: 72px 24px;
+        gap: 48px;
+      }
+
+      footer {
+        padding: 48px 24px 28px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark"><span>G</span></div>
+      <span class="nav-logo-text">Genesis Ventree<sup>Ltd.</sup></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Who We Are</a></li>
+      <li><a href="#">Our Work</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Insights</a></li>
+      <li><a href="#" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <svg viewBox="0 0 800 600" preserveAspectRatio="xMaxYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="600" x2="800" y2="0" stroke="white" stroke-width="0.5" />
+        <line x1="100" y1="600" x2="900" y2="0" stroke="white" stroke-width="0.5" />
+        <line x1="200" y1="600" x2="1000" y2="0" stroke="white" stroke-width="0.5" />
+        <line x1="300" y1="600" x2="1100" y2="0" stroke="white" stroke-width="0.5" />
+        <line x1="400" y1="600" x2="1200" y2="0" stroke="white" stroke-width="0.5" />
+        <rect x="580" y="80" width="220" height="220" fill="none" stroke="white" stroke-width="0.5" />
+        <rect x="630" y="130" width="120" height="120" fill="none" stroke="white" stroke-width="0.5" />
+      </svg>
+    </div>
+
+    <div class="hero-left">
+      <div class="eyebrow">Who We Are</div>
+      <div class="hero-divider"></div>
+      <h1>Integrity<br>before <em>returns.</em><br>Always.</h1>
+      <p class="hero-body">Genesis Ventree Ltd. is an independent investment firm that places your interests above all
+        else — including our own. In a world where performance is routinely promised and seldom earned, we have chosen a
+        different measure of success: trust.</p>
+      <div class="hero-cta-row">
+        <a href="#" class="btn-primary">What We Believe &nbsp;→</a>
+        <a href="#" class="btn-ghost">Get in touch &nbsp;<span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="integrity-statement">
+        <span class="tag">Our commitment</span>
+        <blockquote>"We will never recommend what is profitable for us over what is <em>right for you.</em> That is not
+          a policy — it is the reason we exist."</blockquote>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-num">15<sup>+</sup></div>
+          <div class="stat-desc">Years of<br>investment expertise</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Rs 4<sup>B</sup></div>
+          <div class="stat-desc">Assets under<br>advisory</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">100<sup>%</sup></div>
+          <div class="stat-desc">Fiduciary<br>independence</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">0</div>
+          <div class="stat-desc">Proprietary<br>products sold</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RED BAND -->
+  <div class="red-band">
+    <div class="band-item">
+      <svg class="band-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+      <p>Conflict-Free &amp; Fiduciary</p>
+    </div>
+    <div class="band-divider"></div>
+    <div class="band-item">
+      <svg class="band-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+      <p>Client Interests — First, Last &amp; Always</p>
+    </div>
+    <div class="band-divider"></div>
+    <div class="band-item">
+      <svg class="band-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+      <p>Long-Horizon. No Short-Term Pressure.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE BELIEVE -->
+  <section class="beliefs">
+    <div class="beliefs-header anim">
+      <div>
+        <div class="eyebrow">What We Believe</div>
+        <h2>We are not in<br>the business of<br><em>selling confidence.</em></h2>
+      </div>
+      <div class="beliefs-header-right">
+        <p>Most firms measure themselves by the returns they generate. We measure ourselves by something harder to fake:
+          whether our clients can look back a decade from now and say that Genesis Ventree was the most honest partner
+          they ever had in financial life.</p>
+        <p>Performance follows integrity — not the other way around. When advice is given free of conflicts, when fees
+          are transparent, and when a firm has the discipline to say "we don't know" rather than bluff, <strong>better
+            decisions get made</strong>. That is the foundation of everything we do.</p>
+      </div>
+    </div>
+
+    <div class="beliefs-cards">
+      <div class="belief-card anim anim-d1">
+        <div class="belief-number">01</div>
+        <h3>Your interests are the only interests</h3>
+        <p>We earn no commissions, hold no proprietary positions that compete with your portfolio, and accept no
+          payments from third parties for directing your capital. Our only revenue is the fee you pay us. Full stop.</p>
+      </div>
+      <div class="belief-card anim anim-d2">
+        <div class="belief-number">02</div>
+        <h3>Honesty in difficult moments</h3>
+        <p>We will tell you when a market is overvalued even if it means watching the index rally without you. We will
+          flag risk before it materialises, not after. We will never dress up a bad outcome with reassuring language.
+          You deserve the truth — especially when it is uncomfortable.</p>
+      </div>
+      <div class="belief-card anim anim-d3">
+        <div class="belief-number">03</div>
+        <h3>Discipline over narrative</h3>
+        <p>We do not chase themes, trends, or the comfort of consensus. Investment decisions at Genesis Ventree are made
+          through documented, stress-tested process — not conviction built from a compelling story. If the numbers don't
+          support it, neither do we.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRITY MANIFESTO -->
+  <section class="manifesto">
+    <div class="manifesto-inner">
+      <div class="anim anim-d1">
+        <div class="eyebrow" style="color:rgba(220,80,80,0.85);">
+          <span
+            style="width:28px;height:1.5px;background:rgba(220,80,80,0.85);display:inline-block;flex-shrink:0;"></span>
+          Our Manifesto
+        </div>
+        <blockquote>"The greatest threat to your wealth is not market volatility. It is an adviser whose <em>incentives
+            do not align with yours</em> — and who has learned to sound like they do."</blockquote>
+        <p class="manifesto-attr">— Genesis Ventree, founding principle</p>
+      </div>
+      <div class="manifesto-divider"></div>
+      <div class="anim anim-d2">
+        <p>We were founded by professionals who spent years inside institutions where the pressure to sell, to close,
+          and to hit targets quietly shaped the advice that reached clients. We saw first-hand how that gap — between
+          what was right for the client and what was right for the firm — grew wider over time.</p>
+        <p>Genesis Ventree was built to close that gap permanently. <strong>We have structured our firm so that the only
+            way we succeed is if you do.</strong> Our fees reflect that. Our refusal to offer proprietary products
+          reflects that. Our willingness to decline mandates that do not serve you reflects that.</p>
+        <p>Integrity is not a value we aspire to. It is the architecture of how we operate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES TICKER -->
+  <div class="values-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Integrity Before Returns</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Absolute Fiduciary Duty</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>No Conflicts of Interest</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Transparent Fees</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Honest in Adversity</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Discipline Over Narrative</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Long-Horizon Thinking</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Client First. Always.</span>
+      </div>
+      <!-- duplicate for seamless loop -->
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Integrity Before Returns</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Absolute Fiduciary Duty</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>No Conflicts of Interest</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Transparent Fees</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Honest in Adversity</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Discipline Over Narrative</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Long-Horizon Thinking</span>
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div><span>Client First. Always.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-left anim anim-d1">
+      <div class="eyebrow" style="color:rgba(220,80,80,0.85);">
+        <span
+          style="width:28px;height:1.5px;background:rgba(220,80,80,0.85);display:inline-block;flex-shrink:0;"></span>
+        Work With Us
+      </div>
+      <h2>If you want to be told<br>what you want to hear,<br>we are <em>not the right firm.</em></h2>
+      <p>We work with a limited number of clients who value honest counsel above flattering projections. If that sounds
+        like the kind of relationship you have been looking for, we would welcome a conversation.</p>
+      <a href="#" class="btn-primary">Request an Introduction &nbsp;→</a>
+    </div>
+    <div class="cta-right anim anim-d2">
+      <h3>Get in touch</h3>
+      <p>All enquiries are handled directly by a firm principal and treated with strict confidentiality. There is no
+        sales team, no automated response — just a straightforward conversation.</p>
+      <div class="contact-detail">
+        <div class="contact-dot"></div>
+        <span>info@genesisventree.com</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-dot"></div>
+        <span>+977 (01) XXX XXXX</span>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-dot"></div>
+        <span>Kathmandu, Nepal</span>
+      </div>
+      <p class="cta-disclaimer">Genesis Ventree Ltd. is a registered investment firm. All mandates are subject to formal
+        due diligence. Past advisory performance does not guarantee future results.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-text">Genesis Ventree</span>
+        <p class="tagline">Investment firm · Established in Nepal</p>
+        <p>An independent investment firm committed to integrity, disciplined process, and the absolute prioritisation
+          of client interests — in every decision, every mandate, every year.</p>
+      </div>
+      <div class="footer-col">
+        <h5>The Firm</h5>
+        <ul>
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">Our Philosophy</a></li>
+          <li><a href="#">Investment Process</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Our Work</h5>
+        <ul>
+          <li><a href="#">Equity</a></li>
+          <li><a href="#">Private Markets</a></li>
+          <li><a href="#">Structured Credit</a></li>
+          <li><a href="#">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Get in Touch</a></li>
+          <li><a href="#">Insights &amp; Research</a></li>
+          <li><a href="#">Media Enquiries</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Genesis Ventree Ltd. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Regulatory Disclosures</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const elems = document.querySelectorAll('.anim');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    elems.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
