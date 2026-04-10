@@ -160,7 +160,7 @@ export default function FAQs() {
               src="/images/upp.png"
               alt="Frequently Asked Questions"
               fill
-              className="object-cover brightness-150"
+              className="object-cover"
             />
           </div>
         </div>
