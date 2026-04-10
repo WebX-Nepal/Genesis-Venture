@@ -94,21 +94,21 @@ const ReportsAndUpdates = () => {
         description="A comprehensive overview of our investment activities, portfolio performance, and key strategic milestones achieved throughout 2025. This report highlights fund growth, major partnerships, and insights into how our long-term vision continues to drive sustainable value creation across diverse markets."
         button="DOWNLOAD PDF"
         link="/About"
-        image="/images/relations/report.png"
+        image="/images/relations/report.webp"
       />
 
-      <BannerSection bgImage="/images/relations/reports.jpeg" title="Performance you can measure. Strategy you can trust" />
+      <BannerSection bgImage="/images/relations/reports.webp" title="Performance you can measure. Strategy you can trust" />
 
       <InfoSection
         title="Portfolio Overview"
         description="An in-depth snapshot of our global portfolio, showcasing companies across various stages, industries, and regions. This overview highlights operational progress, innovation milestones, and the collective impact of our investments across 12 countries."
         button="DOWNLOAD PDF"
         link="/About"
-        image="/images/relations/portfolio-img.png"
+        image="/images/relations/portfolio-img.webp"
         variant="reversed"
       />
 
-      <BannerSection bgImage="/images/relations/growth.jpeg" title="Guiding investment decisions through market insight" />
+      <BannerSection bgImage="/images/relations/growth.webp" title="Guiding investment decisions through market insight" />
 
     </section >
   );
