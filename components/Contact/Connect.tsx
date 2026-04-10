@@ -12,10 +12,10 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 type Tab = "general" | "pitch";
 
 const inputClass =
-  "w-full bg-transparent border-b border-genesis-navy/20 py-3 text-sm text-genesis-navy font-poppins placeholder:text-genesis-navy/30 focus:outline-none focus:border-genesis-navy/60 transition-colors";
+  "w-full bg-transparent border-b border-genesis-navy/20 py-3 text-sm text-genesis-navy font-poppins placeholder:text-genesis-navy/40 focus:outline-none focus:border-genesis-navy/60 transition-colors";
 
 const labelClass =
-  "text-[11px] uppercase tracking-widest text-genesis-navy/60 font-poppins";
+  "text-[11px] uppercase tracking-widest text-genesis-navy/80 font-poppins";
 
 export default function Connect() {
   const [tab, setTab] = useState<Tab>("general");
@@ -56,24 +56,22 @@ export default function Connect() {
             </h1>
           </div>
 
-          <div className="flex w-full overflow-hidden border border-genesis-navy/15 sm:w-fit sm:min-w-[18rem]">
+          <div className="flex w-full overflow-hidden border border-genesis-navy/35 sm:w-fit sm:min-w-[18rem]">
             <button
               onClick={() => setTab("general")}
-              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${
-                tab === "general"
-                  ? "bg-genesis-navy text-white"
-                  : "bg-transparent text-genesis-navy/40 hover:text-genesis-navy"
-              }`}
+              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${tab === "general"
+                ? "bg-genesis-navy text-white"
+                : "bg-transparent text-genesis-navy/40 hover:text-genesis-navy"
+                }`}
             >
               General
             </button>
             <button
               onClick={() => setTab("pitch")}
-              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${
-                tab === "pitch"
-                  ? "bg-genesis-navy text-white"
-                  : "bg-transparent text-genesis-navy/40 hover:text-genesis-navy"
-              }`}
+              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${tab === "pitch"
+                ? "bg-genesis-navy text-white"
+                : "bg-transparent text-genesis-navy/80 hover:text-genesis-navy"
+                }`}
             >
               Pitch Us
             </button>

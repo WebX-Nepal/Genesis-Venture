@@ -2,7 +2,6 @@ import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 import OurProjects from "@/components/Projects/OurProjects";
 import ProjectsHero from "@/components/Projects/ProjectsHero";
 import SectorStrip from "@/components/Projects/Sector";
-import { div } from "framer-motion/client";
 
 export default function Projects() {
   return (

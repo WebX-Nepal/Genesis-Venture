@@ -35,7 +35,7 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-between px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
       <video
         autoPlay
         muted
@@ -43,27 +43,24 @@ const Hero = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover -z-20"
       >
-        <source src="/videos/relation.mp4" type="video/mp4" />
+        <source src="/videos/investors.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-genesis-navy/30 -z-10" />
 
-      <div className="w-full flex items-start justify-between border-b border-white/10 pb-3 sm:pb-4 md:pb-6">
-      </div>
 
-      <div className="flex flex-col justify-center text-center gap-3 sm:gap-4 md:gap-6 w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl px-2">
+
+      <div className="flex flex-col justify-center text-center gap-3 sm:gap-4 md:gap-6 w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-5xl px-2">
         <h1 className="hero-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight font-[PPFONT]">
-          Transparent insights into Genesis Ventures' performance and strategy
+          {/* Transparent insights into Genesis Ventures' performance and strategy */}
+          Transparent insight into capital, performance, and strategy.
         </h1>
-        <p className="desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-xs sm:max-w-sm mx-auto">
+        {/* <p className="desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-xs sm:max-w-sm mx-auto">
           We provide our partners with clear visibility into capital allocation,
           portfolio performance, and strategic updates. Your trust drives our
           commitment to long-term growth.
-        </p>
+        </p> */}
       </div>
 
-      <div className="grid grid-cols-3 xs:grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-6 md:gap-16 w-full border-t border-white/10 pt-5 sm:pt-6 md:pt-8">
-        
-      </div>
     </section>
   );
 };

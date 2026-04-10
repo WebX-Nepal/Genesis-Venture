@@ -7,8 +7,8 @@ import { useRef } from "react";
 const sectors = [
   { id: "all", label: "All" },
   { id: "fintech", label: "Fintech" },
-    { id: "healthtech", label: "Healthtech" },
-    { id: "edtech", label: "Edtech" },]
+  { id: "healthtech", label: "Healthtech" },
+  { id: "edtech", label: "Edtech" },]
 
 const ProjectsHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -44,44 +44,33 @@ const ProjectsHero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-between items-center text-center px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center text-center px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden"
     >
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-20"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-20  scale-x-[-1]"
       >
-        <source src="/videos/we-do.mp4" type="video/mp4" />
+        <source src="/videos/projects.mp4" type="video/mp4" className="" />
       </video>
-      <div className="absolute inset-0 bg-genesis-navy/30 -z-10" />
+      <div className="absolute inset-0 bg-genesis-navy/40 -z-10" />
 
-      <div className="w-full flex items-start justify-between border-b border-white/10 pb-3">
-      </div>
+
 
       <div className="flex flex-col gap-3 sm:gap-4 w-full max-w-xl px-2">
         <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight">
           Backing early-stage companies.
         </h1>
-        <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
+        {/* <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
           Genesis Ventures partners with founders from day one, providing
           capital, strategic guidance, and long-term support to build
           category-defining companies.
-        </p>
+        </p> */}
       </div>
 
-      <div className="flex flex-wrap w-full justify-between gap-y-2 gap-x-2 xs:gap-x-3 sm:gap-x-4 md:gap-x-8 border-t border-white/10 pt-5 sm:pt-6">
-        {/* {sectors.map(({ id, label }) => (
-          <button
-            key={id}
-            onClick={() => scrollTo(id)}
-            className="text-[10px] xs:text-xs sm:text-sm md:text-base text-white/50 hover:text-white font-poppins uppercase tracking-wider transition-colors"
-          >
-            {label.split(" ")[0]}
-          </button>
-        ))} */}
-      </div>
+
     </section>
   );
 };

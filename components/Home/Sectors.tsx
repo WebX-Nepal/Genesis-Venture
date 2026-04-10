@@ -77,9 +77,6 @@ export default function Sectors() {
         <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Invested Sectors
         </span>
-        <span className="sectors-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
-          03
-        </span>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 flex-1 pt-5 sm:pt-6 md:pt-10 pb-8 sm:pb-10 overflow-hidden">

@@ -115,9 +115,6 @@ export default function FAQs() {
           <span className="faq-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
             FAQs
           </span>
-          <span className="faq-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
-            05
-          </span>
         </div>
 
         <div className="grid flex-1 grid-cols-1 gap-8 pt-5 sm:pt-6 md:grid-cols-5 md:gap-10 md:pt-10">

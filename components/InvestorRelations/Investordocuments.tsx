@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/dist/client/link";
 import { useRef } from "react";
 import Button from "../ui/Button2";
+import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -168,7 +169,7 @@ const InvestorDocuments = () => {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
+      className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24 relative"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6">
         <span className="documents-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
@@ -189,11 +190,11 @@ const InvestorDocuments = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-gray-200 flex-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 flex-1">
         {documents.map((doc) => (
           <div
             key={doc.id}
-            className="relative bg-white flex flex-col gap-3 sm:gap-4 md:gap-5 p-4 xs:p-5 sm:p-6 md:p-10 group hover:bg-gray-50 transition-colors duration-200"
+            className="relative bg-white flex flex-col gap-3 sm:gap-4 md:gap-5 p-4 xs:p-5 sm:p-6 group hover:bg-gray-50 transition-colors duration-200 border"
           >
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
@@ -225,7 +226,7 @@ const InvestorDocuments = () => {
               <Button
                 variant="primary"
                 size="md"
-                className="mt-12 bg-genesis-navy px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white hover:bg-genesis-navy/80 transition-colors"
+                className="mt-4 bg-genesis-navy px-8 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white hover:bg-genesis-navy/80 transition-colors"
               >
                 <span className="inline-flex items-center gap-3">Download PDF</span>
               </Button>

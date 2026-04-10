@@ -103,15 +103,12 @@ const InvestmentPhilosophy = () => {
         <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
           Investment Philosophy
         </span>
-        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
-          06
-        </span>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
         <div className="w-full md:w-1/3">
           <h2 className="investment-philosophy-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-[PPFONT]">
-            We invest early — when conviction matters most.
+            We invest early when conviction matters most.
           </h2>
           <p
             id="animated-paragraph"
