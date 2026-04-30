@@ -36,7 +36,7 @@ const ReportsAndUpdates = () => {
       <div className="relative py-10 sm:py-14 md:py-16">
         <div className="layout-7xl">
           <div className="flex items-start justify-between border-b border-genesis-red pb-3 sm:pb-4">
-            <span className="font-poppins text-lg sm:text-xl font-normal uppercase tracking-[0.12em] text-white">
+            <span className="font-poppins text-[11px] font-medium uppercase tracking-[0.28em] text-white">
               In Preparation
             </span>
           </div>
@@ -45,18 +45,18 @@ const ReportsAndUpdates = () => {
             {prepItems.map((item) => (
               <article
                 key={item.num}
-                className="flex min-h-[340px] flex-col justify-between bg-zinc-200"
+                className="group flex min-h-[320px] flex-col justify-between border border-white/20 bg-[#e9edf2] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
               >
-                <div className="px-6 pt-6 pb-5">
-                  <p className="font-poppins text-[11px] font-semibold uppercase tracking-[0.05em] text-[#2f4268]">
+                <div className="px-5 py-6 sm:px-6">
+                  <p className="font-poppins text-xs font-semibold uppercase tracking-widest text-[#2f4268] transition-colors duration-300 group-hover:text-[#173053]">
                     {item.label}
                   </p>
-                  <span className="mt-2 block h-[2px] w-10 bg-genesis-red" />
+                  <span className="mt-2 block h-[2px] w-10 bg-genesis-red transition-all duration-300 group-hover:w-14" />
 
-                  <h3 className="mt-7 font-poppins text-[2.05rem] font-semibold leading-[1.1] text-[#173053]">
+                  <h3 className="mt-6 font-[PPFONT] text-xl leading-snug text-[#173053] transition-colors duration-300 group-hover:text-[#8d1e39] sm:text-2xl">
                     {item.title}
                   </h3>
-                  <p className="mt-4 font-poppins text-[13px] sm:text-[14px] leading-[1.7] text-[#2f4268]">
+                  <p className="mt-4 font-poppins text-sm leading-relaxed text-[#2f4268]">
                     {item.desc}
                   </p>
                 </div>

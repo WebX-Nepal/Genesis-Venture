@@ -13,7 +13,7 @@ export default function InvestorRelationsPage() {
         titleClassName="text-[clamp(1.5rem,4.8vw,3.2rem)]"
       /> */}
       <AboutIntro />
-      {/* <Hero /> */}
+      <Hero />
       <ReportsAndUpdates />
       <PartnerCTA />
       <InvestorDocuments />
