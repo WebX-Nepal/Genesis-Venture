@@ -67,7 +67,25 @@ const values = [
 export default function OurStoriesPage() {
   return (
     <main className="bg-white text-[#1a1714] font-poppins">
-      <HeroPage title="Our Story" />
+      <section className="relative h-screen w-full overflow-hidden bg-[#0a1634] text-white">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/projects.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="layout-7xl relative flex h-full flex-col">
+          <div className="flex flex-1 items-center justify-center">
+            <h1 className="font-[PPFONT] font-normal leading-none tracking-wider text-white/95 text-[clamp(1.5rem,4.8vw,3.2rem)]">
+              Our Story
+            </h1>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white px-6 pt-16 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:px-16 lg:pt-24 lg:pb-14">
         <div className="layout-7xl">
@@ -223,41 +241,35 @@ export default function OurStoriesPage() {
         </div>
       </section>
 
-      <section className="relative w-full overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="h-[64%] bg-[#001D3F]" />
-          <div className="h-[36%] bg-white" />
-        </div>
-        <div className="relative py-10 sm:py-14 md:py-16">
-          <div className="layout-7xl">
-            <div className="flex items-start justify-between border-b border-genesis-red pb-3 sm:pb-4">
-              <span className="font-poppins text-lg sm:text-xl font-normal uppercase tracking-[0.12em] text-white">
-                What We Stand For
-              </span>
-            </div>
+      <section className="w-full bg-white py-10 sm:py-14 md:py-16">
+        <div className="layout-7xl">
+          <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6">
+            <span className="text-xs uppercase tracking-[0.22em] text-[#8D1E39] font-poppins font-medium">
+              What We Stand For
+            </span>
+          </div>
 
-            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {values.map((item, idx) => (
-                <article
-                  key={item.title}
-                  className="flex min-h-[340px] flex-col justify-between bg-zinc-200"
-                >
-                  <div className="px-6 pt-6 pb-5">
-                    <p className="font-poppins text-lg font-semibold text-[#2f4268]">
-                      {idx + 1}
-                    </p>
-                    <span className="mt-2 block h-[2px] w-10 bg-genesis-red" />
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-5">
+            {values.map((item, idx) => (
+              <article
+                key={item.title}
+                className="group relative flex min-h-[320px] flex-col border border-[#d8dde6] bg-white p-5 sm:p-6 md:p-7 transition-all duration-200 hover:bg-[#fff7f9] hover:border-[#8D1E39]/35"
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#8D1E39] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
 
-                    <h3 className="mt-7 font-poppins text-[2.05rem] font-semibold leading-[1.1] text-[#173053]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-4 font-poppins text-[13px] sm:text-[14px] leading-[1.7] text-[#2f4268]">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
+                <p className="text-xs uppercase tracking-widest text-[#8D1E39] font-poppins font-medium">
+                  {(idx + 1).toString().padStart(2, "0")}
+                </p>
+                <span className="mt-2 block h-px w-10 bg-[#8D1E39]" />
+
+                <h3 className="mt-6 text-[1.25rem] sm:text-[1.45rem] font-[PPFONT] leading-[1.2] text-genesis-navy transition-colors duration-200 group-hover:text-[#8D1E39]">
+                  {item.title}
+                </h3>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-[#4d5c75] font-poppins">
+                  {item.description}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

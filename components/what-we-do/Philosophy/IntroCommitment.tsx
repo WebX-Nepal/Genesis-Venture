@@ -11,7 +11,18 @@ const heroStats = [
 ];
 export default function IntroCommitment() {
   return (
-    <section className="relative overflow-hidden bg-white">
+    <section className="relative overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/videos/projects.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-[#102347]/70" />
+
       <div className="layout-7xl relative py-14 sm:py-18 lg:py-22">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center">
           <span className="inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
@@ -23,14 +34,14 @@ export default function IntroCommitment() {
         </div>
         <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col justify-start">
-              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.35] tracking-[-0.01em] text-[#08112a] font-medium">
+              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.35] tracking-[-0.01em] text-white font-medium">
                 <span className="block">Integrity before</span>
                 <span className="block italic text-[#8D1E39] font-medium">
                   returns. Always.
                 </span>
               </h1>
 
-              <p className="mt-5 sm:mt-7 max-w-[620px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.72] text-[#42506a]">
+              <p className="mt-5 sm:mt-7 max-w-[620px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.72] text-white/85">
                 Genesis Ventree Ltd. is an independent investment firm that
                 places your interests above all else - including our own. In a
                 world where performance is routinely promised and seldom earned,
