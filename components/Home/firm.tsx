@@ -20,44 +20,44 @@ export default function Firm() {
   useGSAP(() => {
     if (!sectionRef.current) return;
 
-    const splitKicker = new SplitText(".firm-kicker", { type: "words" });
     const splitTitle = new SplitText(".firm-title", { type: "words" });
-
+    const splitKicker = new SplitText(".firm-kicker", { type: "words" });
     const tl = gsap.timeline({
       defaults: { ease: "power2.out" },
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 82%",
+        start: "top 90%",
         toggleActions: "play none none reverse",
+        invalidateOnRefresh: true,
       },
     });
 
     tl.from(splitKicker.words, {
       autoAlpha: 0,
-      y: 10,
-      stagger: 0.09,
-      duration: 0.82,
+      y: 8,
+      stagger: 0.05,
+      duration: 0.55,
     })
       .from(
         splitTitle.words,
         {
           autoAlpha: 0,
-          y: 14,
-          filter: "blur(4px)",
-          stagger: 0.1,
-          duration: 1.05,
+          y: 22,
+          filter: "blur(8px)",
+          stagger: 0.06,
+          duration: 0.8,
         },
-        "-=0.2",
+        "-=0.15",
       )
       .from(
         ".firm-item",
         {
           autoAlpha: 0,
           y: 14,
-          stagger: 0.16,
-          duration: 1.08,
+          stagger: 0.1,
+          duration: 0.75,
         },
-        "<+0.06",
+        "-=0.25",
       );
 
     return () => {

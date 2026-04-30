@@ -9,6 +9,7 @@ import ScrollingHeadline from "@/components/Home/ScrollingHeadline";
 import Devider from "@/components/Home/devider";
 
 
+
 export default function Home() {
   const [showModal, setShowModal] = useState(true);
 
@@ -22,6 +23,7 @@ export default function Home() {
         <Firm />
         <div className="mt-8 sm:mt-10 md:mt-12">
           <Devider />
+         
           <UnlistedMarket />
         </div>
       </div>

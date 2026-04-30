@@ -104,14 +104,13 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
+      className="min-h-screen  max-w-7xl bg-white flex flex-col  sm:px-8 py-8 sm:py-12 md:py-24 mx-auto"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6 mb-6 sm:mb-8 md:mb-10">
-        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+        <span className="investment-philosophy-heading text-xs uppercase tracking-widest text-[#8D1E39] font-poppins">
           Investment Philosophy
         </span>
       </div>
-
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
         <div className="w-full md:w-5xl">
           <h2 className="investment-philosophy-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-[PPFONT]">
@@ -129,7 +128,6 @@ const InvestmentPhilosophy = () => {
           </p>
         </div>
       </div>
-
       <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 flex-1">
         {investmentPhilosophy.map(({ id, title, image, description }) => (
           <div
@@ -160,7 +158,7 @@ const InvestmentPhilosophy = () => {
               <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
                 {title}
               </span>
-              <span className="text-xs sm:text-sm text-gray-600 group-hover:text-white/70 transition-colors font-poppins leading-relaxed">
+              <span className="text-xs sm:text-sm text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-relaxed">
                 {description}
               </span>
             </div>

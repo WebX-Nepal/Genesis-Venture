@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="flex flex-col justify-between gap-5 md:flex-row">
             <div className="flex max-w-xl flex-col gap-3">
               <h2 className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.55] text-white">
-                Ready to build something
+                Let's Get
                 <br />
-                significant?
+                Connected?
               </h2>
               <p className="hidden max-w-sm font-poppins text-[13px] sm:text-sm leading-relaxed text-white/60 sm:block">
                 We review every submission and respond within 5 business days.
