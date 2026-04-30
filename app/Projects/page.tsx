@@ -1,6 +1,6 @@
 import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 import OurProjects from "@/components/Projects/OurProjects";
-import ProjectsHero from "@/components/Projects/ProjectsHero";
+import ProjectsHero from "@/components/Projects/portfolio";
 import SectorStrip from "@/components/Projects/Sector";
 
 export default function Projects() {

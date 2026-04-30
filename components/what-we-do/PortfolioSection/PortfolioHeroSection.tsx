@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectsHero from "@/components/Projects/ProjectsHero";
+import ProjectsHero from "@/components/Projects/portfolio";
 
 type HeroStat = {
   value: string;

@@ -4,8 +4,6 @@ interface HeroPageProps {
   backgroundImage?: string;
   backgroundImageAlt?: string;
 }
-
-
 export default function HeroPage({
   title,
   titleClassName = "text-[clamp(1.5rem,4.8vw,3.2rem)]",

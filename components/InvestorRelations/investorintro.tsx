@@ -1,40 +1,43 @@
 "use client";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const AboutIntro = () => {
-  useGSAP(() => {
-    const splitTitle = new SplitText(".hero-heading", { type: "words" });
+  const sectionRef = useRef<HTMLElement>(null);
 
-    gsap.from(splitTitle.words, {
-      opacity: 0,
-      y: 30,
-      filter: "blur(10px)",
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
+  useGSAP(() => {
+    if (!sectionRef.current) return;
+
+    const splitTitle = new SplitText(".hero-heading", { type: "words" });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      defaults: { ease: "power2.out" },
     });
 
-    const splitDesc = new SplitText(".desc", { type: "lines" });
-
-    gsap.from(splitDesc.lines, {
+    tl.from(splitTitle.words, {
       opacity: 0,
       y: 20,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power2.out",
+      filter: "blur(6px)",
+      stagger: 0.045,
+      duration: 0.62,
     });
 
     return () => {
       splitTitle.revert();
-      splitDesc.revert();
     };
-  });
+  }, { scope: sectionRef });
+
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen w-full flex flex-col items-center justify-center px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 overflow-hidden">
       <video
         autoPlay
         muted

@@ -4,13 +4,15 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useRef } from "react";
 
+
+
 const sectors = [
   { id: "all", label: "All" },
   { id: "fintech", label: "Fintech" },
   { id: "healthtech", label: "Healthtech" },
   { id: "edtech", label: "Edtech" },]
 
-const ProjectsHero = () => {
+const PortfolioHeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -75,4 +77,4 @@ const ProjectsHero = () => {
   );
 };
 
-export default ProjectsHero;
+export default PortfolioHeroSection;
