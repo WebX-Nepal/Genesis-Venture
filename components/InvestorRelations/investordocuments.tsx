@@ -18,6 +18,7 @@ const documents = [
     description:
       "Summary of our fund's objective, investment strategy, key statistics, AUM breakdown, and historical performance highlights across sectors.",
     meta: "PDF · 2.4 MB · Updated Q1 2026",
+    image: "/images/Projects/investing.webp",
     icon: (
       <svg
         width="22"
@@ -42,6 +43,7 @@ const documents = [
     description:
       "Slide deck summarizing the firm, portfolio performance, notable exits, investment philosophy, and our market positioning across 12 countries.",
     meta: "PDF · 8.1 MB · Updated Q2 2026",
+    image: "/images/Projects/founder.webp",
     icon: (
       <svg
         width="22"
@@ -65,8 +67,9 @@ const documents = [
     category: "ESG",
     title: "ESG Report",
     description:
-      "Our environmental, social, and governance commitments — sustainability practices, portfolio impact metrics, and policies on ethical investing.",
+      "Our environmental, social, and governance commitments - sustainability practices, portfolio impact metrics, and policies on ethical investing.",
     meta: "PDF · 3.7 MB · Updated 2025",
+    image: "/images/Projects/insight.webp",
     icon: (
       <svg
         width="22"
@@ -90,6 +93,7 @@ const documents = [
     description:
       "Internal governance structure, advisory boards, compliance policies, investor rights, and our standards for transparency and decision-making.",
     meta: "PDF · 1.2 MB · Updated 2025",
+    image: "/images/Projects/partnership.webp",
     icon: (
       <svg
         width="22"
@@ -185,7 +189,7 @@ const InvestorDocuments = () => {
           id="animated-paragraph"
           className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 font-poppins leading-relaxed max-w-5xl"
         >
-          Key materials for current and prospective investors — fund strategy,
+          Key materials for current and prospective investors - fund strategy,
           performance, ESG commitments, and governance documentation.
         </p>
       </div>
@@ -211,6 +215,17 @@ const InvestorDocuments = () => {
               {doc.title}
             </h3>
 
+            <div className="relative w-full aspect-4/3 overflow-hidden">
+              <Image
+                src={doc.image}
+                alt={doc.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
+            </div>
+
             <p className="text-sm text-gray-500 font-poppins leading-relaxed flex-1">
               {doc.description}
             </p>
@@ -221,7 +236,6 @@ const InvestorDocuments = () => {
 
             <div className="border-t border-gray-100" />
 
-            {/* <Button text="Download PDF" /> */}
             <Link href="/About" className="self-center">
               <Button
                 variant="primary"
