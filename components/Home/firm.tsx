@@ -1,74 +1,14 @@
 "use client";
 
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
 export default function Firm() {
-  const sectionRef = useRef<HTMLElement>(null);
-
   const focusItems = [
     { label: "Investment Focus", value: "Unlisted Shares" },
     { label: "Investment Stage", value: "Growth to Pre-IPO" },
     { label: "Horizon", value: "Long-Term Capital" },
   ];
 
-  useGSAP(() => {
-    if (!sectionRef.current) return;
-
-    const splitTitle = new SplitText(".firm-title", { type: "words" });
-    const splitKicker = new SplitText(".firm-kicker", { type: "words" });
-    const tl = gsap.timeline({
-      defaults: { ease: "power2.out" },
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 90%",
-        toggleActions: "play none none reverse",
-        invalidateOnRefresh: true,
-      },
-    });
-
-    tl.from(splitKicker.words, {
-      autoAlpha: 0,
-      y: 8,
-      stagger: 0.05,
-      duration: 0.55,
-    })
-      .from(
-        splitTitle.words,
-        {
-          autoAlpha: 0,
-          y: 22,
-          filter: "blur(8px)",
-          stagger: 0.06,
-          duration: 0.8,
-        },
-        "-=0.15",
-      )
-      .from(
-        ".firm-item",
-        {
-          autoAlpha: 0,
-          y: 14,
-          stagger: 0.1,
-          duration: 0.75,
-        },
-        "-=0.25",
-      );
-
-    return () => {
-      splitKicker.revert();
-      splitTitle.revert();
-      gsap.set(".firm-item", { clearProps: "all" });
-    };
-  }, { scope: sectionRef });
-
   return (
-    <section ref={sectionRef} className="w-full bg-[#fdfcf9]">
+    <section className="w-full bg-[#fdfcf9]">
       <div className="layout-7xl py-6 sm:py-8 md:py-12 lg:py-16">
         <div className="max-w-[1180px]">
           <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6">
