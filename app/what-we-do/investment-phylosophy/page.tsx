@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button2";
 import HeroPage from "@/components/ui/HeroPage";
+import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 
 const heroStats = [
   { value: "NPR 1B+", desc: "Assets Under Management" },
@@ -208,6 +209,8 @@ export default function InvestmentPhylosophyPage() {
           </div>
         </div>
       </section>
+
+        <InvestmentPhilosophy />
 
       <style jsx global>{`
         @keyframes ticker {

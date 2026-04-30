@@ -71,7 +71,7 @@ const InvestmentPhilosophy = () => {
 
     const words = paragraph.textContent
       ?.split(" ")
-      .map((word) => `<span class="word inline-block">${word}</span>`)
+      .map((word) => `<span class="word">${word}</span>`)
       .join(" ");
     if (words) paragraph.innerHTML = words;
 
@@ -79,13 +79,11 @@ const InvestmentPhilosophy = () => {
 
     gsap.fromTo(
       wordEls,
-      { opacity: 0.15, y: 12, filter: "blur(6px)" },
+      { opacity: 0.1 },
       {
         opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        stagger: 0.03,
-        ease: "power2.out",
+        stagger: 0.1,
+        ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 90%",
@@ -113,19 +111,15 @@ const InvestmentPhilosophy = () => {
       </div>
 
       <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
-        <div className="w-full md:w-5xl">
+        <div className="w-full md:w-1/3">
           <h2 className="investment-philosophy-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-[PPFONT]">
             We invest early when conviction matters most.
           </h2>
           <p
             id="animated-paragraph"
-            className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed mt-3 sm:mt-4 max-w-7xl"
+            className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed mt-3 sm:mt-4 max-w-xs"
           >
-            Genesis Ventures focuses on founders at the earliest stages, when
-            clarity, speed, and hands-on support matter most. We partner with
-            ambitious teams from idea to scale, helping shape strategy, refine
-            product direction, and build durable businesses with long-term
-            value.
+            Genesis Ventures focuses on founders at the earliest stages...
           </p>
         </div>
       </div>
