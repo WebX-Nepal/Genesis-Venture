@@ -47,7 +47,7 @@ const AboutIntro = () => {
       >
         <source src="/videos/investors.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-genesis-navy/30 z-10" />
+      <div className="absolute inset-0  z-10" />
       <div className="relative z-20 flex w-full max-w-xs flex-col justify-center gap-3 px-2 text-center xs:max-w-sm sm:max-w-md sm:gap-4 md:max-w-5xl md:gap-6">
         <h1 className="hero-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight font-[PPFONT]">
           {/* Transparent insights into Genesis Ventures' performance and strategy */}
