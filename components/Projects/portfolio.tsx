@@ -53,17 +53,17 @@ const PortfolioHeroSection = () => {
         muted
         loop
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-20  scale-x-[-1]"
+        className="absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1]"
       >
         <source src="/videos/projects.mp4" type="video/mp4" className="" />
       </video>
-      <div className="absolute inset-0 bg-genesis-navy/40 -z-10" />
+      <div className="absolute inset-0 bg-genesis-navy/40 z-10" />
 
 
 
-      <div className="flex flex-col gap-3 sm:gap-4 w-full max-w-xl px-2">
+      <div className="relative z-20 flex w-full max-w-xl flex-col gap-3 px-2 sm:gap-4">
         <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight">
-          Backing early-stage companies.
+          Backing early-stage&nbsp;companies.
         </h1>
         {/* <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
           Genesis Ventures partners with founders from day one, providing

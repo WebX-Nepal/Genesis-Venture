@@ -27,7 +27,7 @@ export default function PortfolioPage() {
 
   return (
     <main className="min-h-screen bg-[#fdfcf9] font-poppins">
-      <HeroPage title="Investment Portfolio" />
+  
       <PortfolioHeroSection heroStats={heroStats} />
 
       <PortfolioSection

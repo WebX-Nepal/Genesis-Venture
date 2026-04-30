@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Stats />
     
-      <div className="mt-8 flex flex-col sm:mt-10 md:mt-12 pb-20">
+      <div className="mt-8 flex flex-col  pb-20">
         <Firm />
         <div className="mt-8 sm:mt-10 md:mt-12">
           <Devider />

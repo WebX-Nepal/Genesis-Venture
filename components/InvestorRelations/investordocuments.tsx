@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/dist/client/link";
 import { useRef } from "react";
 import Button from "../ui/Button2";
-import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -169,21 +168,21 @@ const InvestorDocuments = () => {
   return (
     <section
       ref={containerRef}
-      className="layout-7xl min-h-screen bg-white flex flex-col py-4 sm:py-6 md:py-10 pb-10 sm:pb-18 md:pb-24"
+      className="layout-7xl min-h-screen bg-white flex flex-col py-2 sm:py-3 md:py-6 pb-10 sm:pb-18 md:pb-24"
     >
-      <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6">
-        <span className="documents-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+      <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6">
+        <span className="documents-heading text-xs uppercase tracking-[0.22em] text-[#8D1E39] font-poppins font-medium">
           Investor Relations
         </span>
       </div>
 
-      <div className="flex flex-col gap-3 sm:gap-4 pt-5 sm:pt-6 md:pt-10 mb-6 sm:mb-8 md:mb-14">
+      <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-4 md:pt-6 mb-6 sm:mb-8 md:mb-14">
         <h2 className="documents-heading text-[clamp(1.25rem,4vw,2.5rem)] text-genesis-navy leading-snug font-[PPFONT] max-w-5xl">
           Investor Documents
         </h2>
         <p
           id="animated-paragraph"
-          className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 font-poppins leading-relaxed max-w-5xl"
+          className="text-xs sm:text-sm md:text-base lg:text-lg text-[#4d5c75] font-poppins leading-relaxed max-w-5xl"
         >
           Key materials for current and prospective investors — fund strategy,
           performance, ESG commitments, and governance documentation.
@@ -194,15 +193,15 @@ const InvestorDocuments = () => {
         {documents.map((doc) => (
           <div
             key={doc.id}
-            className="relative bg-white flex flex-col gap-3 sm:gap-4 md:gap-5 p-4 xs:p-5 sm:p-6 group hover:bg-gray-50 transition-colors duration-200 border"
+            className="relative bg-white flex flex-col gap-3 sm:gap-4 md:gap-5 p-4 xs:p-5 sm:p-6 group hover:bg-[#fff7f9] transition-all duration-200 border border-[#d8dde6] hover:border-[#8D1E39]/35"
           >
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#8D1E39] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
             <div className="flex items-center justify-between">
               <div className="text-genesis-navy opacity-40 group-hover:opacity-100 transition-opacity duration-200">
                 {doc.icon}
               </div>
-              <span className="text-xs uppercase tracking-widest text-genesis-blue group-hover:text-genesis-red font-poppins">
+              <span className="text-xs uppercase tracking-widest text-[#8D1E39] group-hover:text-[#6f1028] font-poppins font-medium">
                 {doc.category}
               </span>
             </div>
@@ -226,7 +225,7 @@ const InvestorDocuments = () => {
               <Button
                 variant="primary"
                 size="md"
-                className="mt-4 bg-genesis-navy px-6 py-3 text-xs font-semibold uppercase tracking-widest text-white hover:bg-genesis-navy/80 transition-colors"
+                className="mt-4 bg-[#8D1E39] px-6 py-3 text-xs font-semibold uppercase tracking-widest text-white hover:bg-[#74162d] transition-colors"
               >
                 <span className="inline-flex items-center gap-3">Download PDF</span>
               </Button>

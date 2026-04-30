@@ -13,27 +13,30 @@ export default function Devider() {
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    const splitTitle = new SplitText(".devider-title", { type: "words" });
+    if (!containerRef.current) return;
 
-    gsap.from(splitTitle.words, {
+    const splitTitle = new SplitText(".devider-title", { type: "words" });
+    const tl = gsap.timeline({
+      defaults: { ease: "power2.out" },
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 90%",
-        end: "bottom 80%",
-        scrub: true,
+        start: "top 82%",
+        toggleActions: "play none none reverse",
       },
-      opacity: 0,
-      y: 30,
-      filter: "blur(10px)",
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
+    });
+
+    tl.from(splitTitle.words, {
+      autoAlpha: 0,
+      y: 22,
+      filter: "blur(6px)",
+      stagger: 0.06,
+      duration: 0.7,
     });
 
     return () => {
       splitTitle.revert();
     };
-  }, []);
+  }, { scope: containerRef });
 
   return (
     <section
