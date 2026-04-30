@@ -169,7 +169,7 @@ const InvestorDocuments = () => {
   return (
     <section
       ref={containerRef}
-      className="layout-7xl min-h-screen bg-white flex flex-col py-4 sm:py-6 md:py-10"
+      className="layout-7xl min-h-screen bg-white flex flex-col py-4 sm:py-6 md:py-10 pb-10 sm:pb-18 md:pb-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6">
         <span className="documents-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
