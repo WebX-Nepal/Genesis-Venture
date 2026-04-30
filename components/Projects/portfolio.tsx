@@ -61,9 +61,10 @@ const PortfolioHeroSection = () => {
 
 
 
-      <div className="relative z-20 flex w-full max-w-xl flex-col gap-3 px-2 sm:gap-4">
+      <div className="relative z-20 flex w-full max-w-5xl flex-col gap-3 px-2 sm:gap-4">
         <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight">
-          Backing early-stage&nbsp;companies.
+          <span className="block">Backing early-stage</span>
+          <span className="block">companies.</span>
         </h1>
         {/* <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
           Genesis Ventures partners with founders from day one, providing

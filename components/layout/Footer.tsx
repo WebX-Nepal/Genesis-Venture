@@ -34,7 +34,7 @@ export default function Footer() {
               <h2 className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.55] text-white">
                 Let's Get
                 <br />
-                Connected?
+                Connected.
               </h2>
               <p className="hidden max-w-sm font-poppins text-[13px] sm:text-sm leading-relaxed text-white/60 sm:block">
                 We review every submission and respond within 5 business days.

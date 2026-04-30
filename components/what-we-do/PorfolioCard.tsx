@@ -17,7 +17,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
           <p className="text-[10px] font-bold tracking-[0.2em] text-zinc-700 uppercase transition-colors duration-300">
             {item.sector}
           </p>
-          <div className="h-px w-4 bg-zinc-400 transition-all duration-500" />
+            <div className="h-px w-4 bg-zinc-400 transition-all duration-500" />
         </div>
 
         <span className="text-[8px] font-medium tracking-widest text-zinc-600 uppercase border border-zinc-300 px-2 py-0.5 transition-colors duration-300">
