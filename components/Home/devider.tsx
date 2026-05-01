@@ -41,7 +41,7 @@ export default function Devider() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[70vh]  w-full overflow-hidden"
+      className="relative h-screen  w-full overflow-hidden"
     >
       <Image
         src="/images/grow.png"
