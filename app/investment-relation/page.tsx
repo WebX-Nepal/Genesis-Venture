@@ -1,7 +1,6 @@
 import Hero from "@/components/InvestorRelations/Hero";
 import ReportsAndUpdates from "@/components/InvestorRelations/ReportsAndUpdates";
 import PartnerCTA from "@/components/InvestorRelations/commitment";
-import InvestorDocuments from "@/components/InvestorRelations/investordocuments";
 import AboutIntro from "@/components/InvestorRelations/investorintro";
 
 
