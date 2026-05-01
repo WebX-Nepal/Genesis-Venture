@@ -8,8 +8,8 @@ const heroStats = [
 ];
 
 const storyParagraphs = [
-  "Genesis Ventures Ltd was founded on a straightforward but powerful idea: that the best investment decisions are made by those who understand not just financial markets, but the real-world industries that drive them. Too often, capital is managed by those who have only ever known finance - and that is precisely where the gaps in judgment appear.",
-  "We are different. Genesis Ventures was built at the intersection of two worlds - manufacturing and finance - bringing to bear a rare combination of operational understanding and market acumen that most investment firms simply cannot offer.",
+  "Genesis Ventures Ltd was founded on a simple belief: the best investment decisions come from understanding both financial markets and the industries that drive them. Too often, capital is managed without a true understanding of the businesses behind it.",
+  "Built at the intersection of manufacturing and finance, we combine operational insight with market expertise to identify opportunities, manage risk thoughtfully, and create enduring value for our investors, partners, and the businesses we support.",
 ];
 
 const trustSection = {
@@ -22,10 +22,9 @@ const trustSection = {
 };
 
 const leaderParagraphs = [
-  "Anuj Rathi is the Founder and Managing Director of Genesis Ventures Ltd, bringing over two decades of varied and distinguished experience spanning both the manufacturing sector and financial markets. This rare dual background forms the intellectual core of Genesis Ventures - and sets it apart from conventionally trained investment managers.",
-  "Anuj's career began in manufacturing, where he developed a granular, ground-level understanding of industrial operations, supply chains, capital allocation, and the cyclical pressures that shape real businesses. He witnessed firsthand how companies are built, scaled, and stress-tested - insight that cannot be found in a textbook or on a trading floor.",
-  "Over time, his career expanded into finance, where he applied that operational knowledge to investment strategy - building a disciplined, research-led approach to capital markets that is informed by an understanding of business fundamentals few peers can match. He has navigated multiple market cycles, managed risk across asset classes, and developed a philosophy of investing that prioritises long-term value over short-term noise.",
-  "Today, Anuj leads Genesis Ventures with a hands-on approach - personally overseeing investment strategy, client relationships, and portfolio management. He believes that trust is earned through consistency, transparency, and the courage to take a long-term view even when markets are short-term in their thinking.",
+  "Anuj Rathi is the Founder and Managing Director of Genesis Ventures Ltd, with over two decades of experience across both manufacturing and financial markets. This rare dual perspective forms the foundation of Genesis Ventures and distinguishes it from conventionally trained investment managers.",
+  "Beginning his career in manufacturing, Anuj developed a deep understanding of industrial operations, supply chains, capital allocation, and the forces that shape real businesses. He later brought this operational expertise to finance, building a disciplined, research-driven investment approach grounded in business fundamentals.",
+  "Today, Anuj leads Genesis Ventures with a hands-on approach, personally overseeing investment strategy, client relationships, and portfolio management. His philosophy is rooted in long-term value creation, disciplined risk management, and an unwavering commitment to transparency and trust.",
 ];
 
 const expertiseTags = [
@@ -39,35 +38,31 @@ const expertiseTags = [
 
 const values = [
   {
-    title: "Integrity",
+    title: "Strategic Judgment",
     description:
-      "We act in our clients' best interests at all times - with complete transparency about fees, risks, and our reasoning. No exceptions.",
-    bgColor: "#001D3F",
+      "We make long-term decisions with clarity, discipline, and a strong sense of timing across changing market conditions.",
   },
   {
-    title: "Patience",
+    title: "Founder Partnership",
     description:
-      "We resist the pull of short-termism. Wealth is built over years, not quarters - and we have the conviction to stay the course.",
-    bgColor: "#04356A",
+      "Leadership at Genesis is hands-on where it matters most, supporting founders through key decisions, growth, and inflection points.",
   },
   {
-    title: "Rigour",
+    title: "Operational Perspective",
     description:
-      "Every decision is grounded in research and evidence. We examine fundamentals deeply and challenge assumptions before committing capital.",
-    bgColor: "#054E98",
+      "Our approach combines capital allocation with real operating insight, helping businesses scale with greater resilience and focus.",
   },
   {
-    title: "Partnership",
+    title: "Governance First",
     description:
-      "We see every client as a long-term partner. We succeed when they succeed - that alignment shapes every conversation and every decision.",
-    bgColor: "#0A6ED3",
+      "We believe disciplined governance creates better companies, stronger accountability, and more durable long-term outcomes.",
   },
 ];
 
 export default function OurStoriesPage() {
   return (
     <main className="bg-white text-[#1a1714] font-poppins">
-      <section className="relative h-screen w-full overflow-hidden bg-[#0a1634] text-white">
+      <section className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#0a1634] px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 text-white">
         <video
           autoPlay
           muted
@@ -78,13 +73,11 @@ export default function OurStoriesPage() {
           <source src="/videos/projects.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/35" />
-        <div className="layout-7xl relative flex h-full flex-col">
-          <div className="flex flex-1 items-center justify-center">
-            <h1 className="hero-heading project-heading text-center text-[clamp(1.6rem,5vw,3.75rem)] leading-tight text-white/95">
-              <span className="block">Capital guided by principles,</span>
-              <span className="block">not just Opportunity</span>
-            </h1>
-          </div>
+        <div className="relative z-20 flex w-full max-w-5xl flex-col items-center gap-3 px-2 text-center sm:gap-4">
+          <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] leading-tight text-white/95">
+            <span className="block">Capital guided by principles,</span>
+            <span className="block">not just Opportunity</span>
+          </h1>
         </div>
       </section>
 
@@ -101,18 +94,18 @@ export default function OurStoriesPage() {
 
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-2">
             <div className="order-2 flex flex-col justify-start lg:order-2 lg:pl-14">
-              <p className="max-w-[560px] text-[16px] sm:text-[17px] leading-[1.55] text-[#08112a]">
+              <p className="max-w-[560px] text-[16px] sm:text-[17px] leading-[1.55] text-[#173053]">
                 {storyParagraphs[0]}
               </p>
 
-              <p className="mt-5 max-w-[560px] text-[16px] sm:text-[17px] leading-[1.55] text-[#08112a]">
+              <p className="mt-5 max-w-[560px] text-[16px] sm:text-[17px] leading-[1.55] text-[#173053]">
                 {storyParagraphs[1]}
               </p>
             </div>
 
-            <div className="order-1 flex flex-col justify-start lg:order-1">
-              <div className="mb-10 pb-10">
-                <blockquote className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] italic leading-[1.45] text-[#08112a]">
+            <div className="order-1 flex flex-col justify-start lg:order-1 lg:justify-center lg:-mt-3">
+              <div className="mb-10 pb-10 lg:mb-0 lg:pb-0">
+                <blockquote className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] italic leading-[1.45] text-[#173053]">
                   We do not just read balance sheets. We understand what it
                   takes to build a business and weather a cycle.
                 </blockquote>
@@ -124,7 +117,7 @@ export default function OurStoriesPage() {
             {heroStats.map((stat) => (
               <div
                 key={stat.label}
-                className="min-h-[132px] sm:min-h-[144px] bg-[#173053] px-5 py-7 transition hover:bg-[#173053]"
+                className="min-h-[132px] sm:min-h-[144px] bg-[#152F53] px-5 py-7 transition hover:bg-[#152F53]"
               >
                 <p className="font-[PPFONT] text-[1.9rem] sm:text-[2.1rem] leading-none text-white">
                   {stat.value}
@@ -181,8 +174,7 @@ export default function OurStoriesPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[340px_1fr] lg:gap-20">
-            <div className="relative overflow-hidden bg-[#173053] p-10">
-              <div className="pointer-events-none absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_80%_20%,#fff_0%,transparent_55%)]" />
+            <div className="relative overflow-hidden bg-[#152F53] p-10">
               <div className="relative z-10">
                 <div className="mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-white/30 bg-white/15 font-[PPFONT] text-3xl text-white/90">
                   AR
@@ -217,7 +209,7 @@ export default function OurStoriesPage() {
               </div>
             </div>
 
-            <div className="text-[#616877]">
+            <div className="text-[#173053]">
               {leaderParagraphs.map((paragraph) => (
                 <p
                   key={paragraph}
@@ -244,29 +236,35 @@ export default function OurStoriesPage() {
 
       <section className="w-full bg-white py-10 sm:py-14 md:py-16">
         <div className="layout-7xl">
-          <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6">
-            <span className="text-xs uppercase tracking-[0.22em] text-[#8D1E39] font-poppins font-medium">
+          <div className="pb-3 sm:pb-4 md:pb-6">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-[#8D1E39] font-poppins font-medium">
               What We Stand For
             </span>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:gap-5">
-            {values.map((item, idx) => (
+          <div className="border-t border-[#e5e9f0] pt-8 sm:pt-10">
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-14">
+              <h2 className="font-[PPFONT] text-[clamp(1.9rem,4.3vw,3.3rem)] leading-[1.08] text-[#173053]">
+                Leadership built on judgment, discipline, and long-term partnership.
+              </h2>
+              <p className="max-w-[560px] text-[14px] sm:text-[15px] leading-[1.75] text-[#355171]">
+                Genesis brings a leadership approach shaped by rigorous thinking, active partnership, and a
+                commitment to building resilient businesses with lasting value.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 gap-0 sm:grid-cols-2 md:grid-cols-4">
+            {values.map((item) => (
               <article
                 key={item.title}
-                className="group relative flex min-h-[320px] flex-col border border-[#d8dde6] bg-white p-5 sm:p-6 md:p-7 transition-all duration-200 hover:bg-[#fff7f9] hover:border-[#8D1E39]/35"
+                className="group relative -mt-px -ml-px flex min-h-[220px] flex-col overflow-hidden border border-[#cfd9e6] bg-white p-5 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10"
               >
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#8D1E39] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
-
-                <p className="text-xs uppercase tracking-widest text-[#8D1E39] font-poppins font-medium">
-                  {(idx + 1).toString().padStart(2, "0")}
-                </p>
-                <span className="mt-2 block h-px w-10 bg-[#8D1E39]" />
-
-                <h3 className="mt-6 text-[1.25rem] sm:text-[1.45rem] font-[PPFONT] leading-[1.2] text-genesis-navy transition-colors duration-200 group-hover:text-[#8D1E39]">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
+                <h3 className="text-[1.15rem] sm:text-[1.3rem] font-[PPFONT] leading-[1.25] text-[#173053]">
                   {item.title}
                 </h3>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-[#4d5c75] font-poppins">
+                <p className="mt-4 text-sm leading-relaxed text-[#4f6783] font-poppins">
                   {item.description}
                 </p>
               </article>

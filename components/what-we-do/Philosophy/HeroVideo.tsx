@@ -16,10 +16,9 @@ export default function HeroVideo() {
 
       <div className="relative z-20 flex min-h-screen items-center justify-center px-4 xs:px-6 sm:px-8 md:px-16 text-center">
         <h1 className="hero-heading project-heading font-[PPFONT] text-[clamp(1.6rem,5vw,3.75rem)] leading-tight text-white">
-          Investment Philosophy
+          Conviction-led investing,<br/> built for long-term value.
         </h1>
       </div>
     </section>
   );
 }
-

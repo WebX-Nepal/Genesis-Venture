@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,24 +14,32 @@ const prepItems = [
     label: "Quarterly",
     title: "Annual Performance Report",
     desc: "A complete record of portfolio returns, benchmarked against relevant indices and net of all fees. Published once verified by our independent reviewers.",
+    image: "/images/Projects/investing.webp",
+    meta: "PDF · Updated Quarterly",
   },
   {
     num: "02",
     label: "Transparency",
     title: "Portfolio Disclosures",
     desc: "Holdings, stages, sector allocation, and concentration metrics, the things that actually tell you how capital is being deployed.",
+    image: "/images/Projects/founder.webp",
+    meta: "Disclosure Pack · Updated Quarterly",
   },
   {
     num: "03",
     label: "Outlook",
     title: "Letters to Investors",
     desc: "Our perspective on markets, risk, and the reasoning behind every significant decision. Candid, long-form, and written by the people managing your capital, not a communications team.",
+    image: "/images/Projects/insight.webp",
+    meta: "Letter Series · Periodic",
   },
   {
     num: "04",
     label: "Governance",
     title: "Audit & Valuation Notes",
     desc: "Independent verification notes, valuation methodology updates, and key policy disclosures that inform how we report portfolio value.",
+    image: "/images/Projects/partnership.webp",
+    meta: "Audit Notes · As Published",
   },
 ];
 
@@ -68,25 +77,39 @@ const ReportsAndUpdates = () => {
             </span>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {prepItems.map((item) => (
               <article
                 key={item.num}
-                className="iru-card group flex min-h-[320px] flex-col justify-between border border-white/20 bg-[#e9edf2] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                className="iru-card group relative flex min-h-[320px] flex-col gap-3 overflow-hidden border border-[#d8e0ea] bg-white p-4 transition-colors duration-200 hover:bg-gray-50 sm:gap-4 sm:p-6"
               >
-                <div className="px-5 py-6 sm:px-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
+                <div className="flex items-center justify-between">
                   <p className="font-poppins text-xs font-semibold uppercase tracking-widest text-[#2f4268] transition-colors duration-300 group-hover:text-[#173053]">
                     {item.label}
                   </p>
-                  <span className="mt-2 block h-[2px] w-10 bg-genesis-red transition-all duration-300 group-hover:w-14" />
-
-                  <h3 className="mt-6 font-[PPFONT] text-xl leading-snug text-[#173053] transition-colors duration-300 group-hover:text-[#8d1e39] sm:text-2xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 font-poppins text-sm leading-relaxed text-[#2f4268]">
-                    {item.desc}
-                  </p>
+                  <span className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#8D1E39]">
+                    {item.num}
+                  </span>
                 </div>
+                <h3 className="text-base font-[PPFONT] leading-snug text-[#173053] transition-colors duration-200 group-hover:text-[#8D1E39] sm:text-lg">
+                  {item.title}
+                </h3>
+                <div className="relative w-full aspect-4/3 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
+                </div>
+                <p className="flex-1 font-poppins text-sm leading-relaxed text-[#2f4268]">
+                  {item.desc}
+                </p>
+                <span className="text-xs text-[#6c7a93] font-poppins tracking-wide">{item.meta}</span>
+                <div className="border-t border-gray-100" />
               </article>
             ))}
           </div>

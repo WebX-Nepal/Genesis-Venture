@@ -128,13 +128,13 @@ const InvestmentPhilosophy = () => {
         {investmentPhilosophy.map(({ id, title, image, description }) => (
           <div
             key={id}
-            className="relative bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
+            className="relative bg-[#152F53] flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-[#173b66] group overflow-hidden"
           >
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
 
-            <span className="text-xs sm:text-sm text-genesis-navy font-poppins uppercase tracking-widest group-hover:text-genesis-red transition-colors">
+            <span className="text-xs sm:text-sm text-white/85 font-poppins uppercase tracking-widest group-hover:text-white transition-colors">
               {id}
             </span>
 
@@ -150,11 +150,11 @@ const InvestmentPhilosophy = () => {
             </div>
 
             <div className="flex flex-col gap-1.5 sm:gap-2 pt-6 sm:pt-8">
-              <div className="w-4 h-px bg-genesis-navy mb-2 sm:mb-3 transition-colors" />
-              <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
+              <div className="w-4 h-px bg-white/70 mb-2 sm:mb-3 transition-colors" />
+              <span className="text-sm sm:text-base text-white group-hover:text-white transition-colors font-[PPFONT]">
                 {title}
               </span>
-              <span className="text-xs sm:text-sm text-gray-600 group-hover:text-white/70 transition-colors font-poppins leading-relaxed">
+              <span className="text-xs sm:text-sm text-white/80 group-hover:text-white/90 transition-colors font-poppins leading-relaxed">
                 {description}
               </span>
             </div>

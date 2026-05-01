@@ -140,8 +140,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="mt-2 flex flex-col justify-start border border-[#173053]/15 bg-white p-6 sm:p-8 lg:mt-0 lg:ml-4">
-            <div className="mb-8 border-b border-[#1a2e4a]/15 pb-8">
+          <div className="mt-2 flex flex-col justify-start border border-[#173053]/15 bg-white p-6 sm:p-8 lg:mt-0 lg:ml-8">
+            <div className="mt-6 mb-8 border-b border-[#1a2e4a]/15 pb-8">
               <blockquote className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] italic leading-[1.55] text-[#102347]">
                 <span className="ir-word-animate not-italic mr-1" data-delay={280}>
                   &quot;
@@ -156,17 +156,12 @@ const Hero = () => {
                 </span>
               </blockquote>
             </div>
+          </div>
 
-            <p className="text-[15px] sm:text-[16px] text-[#2f4268] leading-[1.9] font-poppins">
-              {animateWords(
-                "Most firms publish performance the moment it flatters them. We have chosen a different path: to release figures only when they have been audited, stress-tested, and reviewed against the standards we hold ourselves to.",
-                520,
-                16,
-              )}
-            </p>
+          
           </div>
         </div>
-      </div>
+  
     </section>
   );
 };

@@ -65,18 +65,18 @@ export default function BeliefsSection() {
           {beliefCards.map((card) => (
             <article
               key={card.no}
-              className="group cursor-pointer border border-[#173053]/20 bg-white px-7 py-9 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8D1E39]/35 hover:shadow-[0_8px_24px_rgba(16,35,71,0.08)] sm:px-8 sm:py-10"
+              className="group cursor-pointer border border-[#173053]/25 bg-white px-7 py-9 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#173053]/45 hover:bg-[#f7faff] hover:shadow-[0_8px_24px_rgba(16,35,71,0.08)] sm:px-8 sm:py-10"
             >
               <div className="mb-6 flex items-center justify-between">
-                <span className="h-[2px] w-10 bg-[#8D1E39] transition-all duration-300 group-hover:w-14" />
-                <p className="font-poppins text-[13px] font-semibold tracking-[0.2em] text-[#8D1E39]">
+                <span className="h-[2px] w-10 bg-[#173053] transition-all duration-300 group-hover:w-14" />
+                <p className="font-poppins text-[13px] font-semibold tracking-[0.2em] text-[#173053]">
                   {card.no}
                 </p>
               </div>
-              <h3 className="mb-3 font-[PPFONT] text-[1.2rem] sm:text-[1.35rem] leading-[1.2] text-[#08112a] transition-colors duration-300 group-hover:text-[#8D1E39]">
+              <h3 className="mb-3 font-[PPFONT] text-[1.2rem] sm:text-[1.35rem] leading-[1.2] text-[#152F53] transition-colors duration-300 group-hover:text-[#173053]">
                 {card.title}
               </h3>
-              <p className="text-[14px] sm:text-[15px] leading-7 text-[#616877] font-poppins transition-colors duration-300 group-hover:text-[#42506a]">
+              <p className="text-[14px] sm:text-[15px] leading-7 text-[#355171] font-poppins transition-colors duration-300 group-hover:text-[#173053]">
                 {card.body}
               </p>
             </article>

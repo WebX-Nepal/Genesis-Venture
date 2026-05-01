@@ -26,7 +26,7 @@ export default function PortfolioPage() {
   }, [activeSector]);
 
   return (
-    <main className="min-h-screen bg-[#fdfcf9] font-poppins">
+    <main className="min-h-screen bg-white font-poppins">
       <PortfolioHeroSection heroStats={heroStats} />
 
       <section className="bg-[#fdfcf9] py-10 sm:py-12 md:py-14">
@@ -48,16 +48,26 @@ export default function PortfolioPage() {
             {heroStats.map((stat) => (
               <div
                 key={stat.desc}
-                className="border border-[#d8e0ea] bg-white px-4 py-4 sm:px-5 sm:py-5"
+                className="border border-[#152F53] bg-[#152F53] px-4 py-4 sm:px-5 sm:py-5"
               >
-                <p className="text-[10px] uppercase tracking-[0.1em] text-[#6b7a93]">
+                <p className="text-[10px] uppercase tracking-[0.1em] text-white/75">
                   {stat.desc}
                 </p>
-                <p className="mt-2 font-[PPFONT] text-3xl leading-none text-[#173053]">
-                  {stat.value}
+                <p className="mt-2 font-[PPFONT] text-3xl leading-none text-white">
+                  {stat.desc === "Manufacturing"
+                    ? "5"
+                    : stat.desc === "Agro"
+                      ? "2"
+                      : stat.value}
                 </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.08em] text-[#8D1E39]">
-                  {stat.value === "1" ? "company" : "companies"}
+                <p className="mt-1 text-[10px] uppercase tracking-[0.08em] text-white/85">
+                  {(stat.desc === "Manufacturing"
+                    ? "5"
+                    : stat.desc === "Agro"
+                      ? "2"
+                      : stat.value) === "1"
+                    ? "company"
+                    : "companies"}
                 </p>
               </div>
             ))}

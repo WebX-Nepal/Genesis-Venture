@@ -71,7 +71,7 @@ export default function PortfolioSection({
                       {sector.title}
                     </p>
 
-                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
                       {sectorItems.map((item) =>
                         item.isFeatured ? (
                           <FeaturedPortfolioCard key={item.name} item={item} />
@@ -89,7 +89,7 @@ export default function PortfolioSection({
             <p className="mb-6 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-genesis-red font-poppins">
               {sectorTabs.find((s) => s.key === activeSector)?.title}
             </p>
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
               {filteredItems.map((item) =>
                 item.isFeatured ? (
                   <FeaturedPortfolioCard key={item.name} item={item} />

@@ -11,17 +11,9 @@ const heroStats = [
 ];
 export default function IntroCommitment() {
   return (
-    <section className="relative overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/videos/projects.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-[#102347]/70" />
+    <section className="relative  overflow-hidden">
+     
+      <div className="absolute inset-0 bg-white" />
 
       <div className="layout-7xl relative py-14 sm:py-18 lg:py-22">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center">
@@ -34,14 +26,14 @@ export default function IntroCommitment() {
         </div>
         <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col justify-start">
-              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.35] tracking-[-0.01em] text-white font-medium">
+              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.35] tracking-[-0.01em] text-[#173053] font-medium">
                 <span className="block">Integrity before</span>
                 <span className="block italic text-[#8D1E39] font-medium">
                   returns. Always.
                 </span>
               </h1>
 
-              <p className="mt-5 sm:mt-7 max-w-[620px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.72] text-white/85">
+              <p className="mt-5 sm:mt-7 max-w-[620px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.72] text-[#355171]">
                 Genesis Ventree Ltd. is an independent investment firm that
                 places your interests above all else - including our own. In a
                 world where performance is routinely promised and seldom earned,
@@ -70,11 +62,9 @@ export default function IntroCommitment() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-start lg:pl-8 xl:pl-12">
+          <div className="flex flex-col justify-start lg:pl-8 xl:pl-12 mt-8">
             <div className="rounded-sm border border-[#dbe2ea] bg-[#f8fafd] p-6 sm:p-8 lg:p-9">
-              <p className="mb-3 font-poppins text-[10px] uppercase tracking-[0.24em] text-[#8D1E39]">
-                Founder's Note
-              </p>
+              
               <blockquote className="max-w-[620px] font-[PPFONT] text-[1.3rem] sm:text-[1.6rem] lg:text-[1.8rem] italic leading-[1.5] text-[#102347]">
                 &quot;We will never recommend what is profitable for us over what is
                 <span className="not-italic"> right for you.</span> That is not a
@@ -88,13 +78,13 @@ export default function IntroCommitment() {
           {heroStats.map((stat) => (
             <article
               key={stat.desc}
-              className="group flex min-h-[148px] flex-col justify-between border border-[#dbe2ea] bg-white px-5 py-6 sm:px-6 sm:py-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8D1E39]/35 hover:shadow-[0_8px_24px_rgba(16,35,71,0.08)]"
+              className="group flex min-h-[148px] flex-col justify-between border border-[#152F53] bg-[#152F53] px-5 py-6 sm:px-6 sm:py-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8D1E39]/45 hover:shadow-[0_8px_24px_rgba(16,35,71,0.14)]"
             >
-              <div className="mb-4 h-[2px] w-10 bg-[#8D1E39] transition-all duration-300 group-hover:w-14" />
-              <p className="font-[PPFONT] text-[1.75rem] sm:text-[1.95rem] leading-none text-[#102347]">
+              <div className="mb-4 h-[2px] w-10 bg-white/80 transition-all duration-300 group-hover:w-14" />
+              <p className="font-[PPFONT] text-[1.75rem] sm:text-[1.95rem] leading-none text-white">
                 {stat.value}
               </p>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.11em] text-[#5b6780] font-poppins leading-tight">
+              <p className="mt-3 text-[11px] uppercase tracking-[0.11em] text-white/80 font-poppins leading-tight">
                 {stat.desc}
               </p>
             </article>

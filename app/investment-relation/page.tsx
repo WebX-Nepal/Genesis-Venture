@@ -12,7 +12,7 @@ export default function InvestorRelationsPage() {
       <Hero />
       <ReportsAndUpdates />
       <PartnerCTA />
-      <InvestorDocuments />
+      {/* <InvestorDocuments /> */}
     </main>
   );
 }
