@@ -132,11 +132,11 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 flex-1">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-0 border border-[#cfcfcf] flex-1">
           {items.map((item) => (
             <article
               key={item.index}
-              className="relative bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
+              className="relative -mt-px -ml-px border border-[#cfcfcf] bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
             >
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 

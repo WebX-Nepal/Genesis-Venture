@@ -80,8 +80,9 @@ export default function OurStoriesPage() {
         <div className="absolute inset-0 bg-black/35" />
         <div className="layout-7xl relative flex h-full flex-col">
           <div className="flex flex-1 items-center justify-center">
-            <h1 className="font-[PPFONT] font-normal leading-none tracking-wider text-white/95 text-[clamp(1.5rem,4.8vw,3.2rem)]">
-              Our Story
+            <h1 className="hero-heading project-heading text-center text-[clamp(1.6rem,5vw,3.75rem)] leading-tight text-white/95">
+              <span className="block">Capital guided by principles,</span>
+              <span className="block">not just Opportunity</span>
             </h1>
           </div>
         </div>

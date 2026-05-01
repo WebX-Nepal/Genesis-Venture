@@ -23,7 +23,6 @@ export default function ScrollingHeadline() {
 
         .marquee-text {
           margin: 0;
-          margin-right: -0.08em;
           padding-right: 0;
           font-family: var(--font-playfair), Georgia, serif;
           font-size: clamp(3rem, 12vw, 10rem);
