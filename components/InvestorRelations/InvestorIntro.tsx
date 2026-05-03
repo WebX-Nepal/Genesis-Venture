@@ -4,10 +4,11 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Title from "../ui/Title";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const AboutIntro = () => {
+const InvesrtorIntro = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -49,10 +50,13 @@ const AboutIntro = () => {
       </video>
       <div className="absolute inset-0  z-10" />
       <div className="relative z-20 flex w-full max-w-xs flex-col justify-center gap-3 px-2 text-center xs:max-w-sm sm:max-w-md sm:gap-4 md:max-w-5xl md:gap-6">
-        <h1 className="hero-heading text-[clamp(1.75rem,7vw,4.5rem)] text-white leading-tight tracking-[0.015em] font-[PPFONT]">
-          {/* Transparent insights into Genesis Ventures' performance and strategy */}
-          Transparent insight into capital, performance, and strategy.
-        </h1>
+        <Title 
+        as="h1"
+        text={<>
+          Transparent insight into capital,
+          <br/>
+          performance, and strategy.
+          </>}/>
         {/* <p className="desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-xs sm:max-w-sm mx-auto">
           We provide our partners with clear visibility into capital allocation,
           portfolio performance, and strategic updates. Your trust drives our
@@ -64,4 +68,4 @@ const AboutIntro = () => {
   );
 };
 
-export default AboutIntro;
+export default InvesrtorIntro;

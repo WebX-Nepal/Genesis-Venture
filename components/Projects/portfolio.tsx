@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useRef } from "react";
+import Title from "../ui/Title";
 
 
 
@@ -62,10 +63,12 @@ const PortfolioHeroSection = () => {
 
 
       <div className="relative z-20 flex w-full max-w-5xl flex-col gap-3 px-2 sm:gap-4">
-        <h1 className="hero-heading project-heading font-[PPFONT] text-[clamp(1.75rem,7vw,4.5rem)] tracking-[0.015em] text-white leading-tight">
-          <span className="block">Backing early-stage</span>
-          <span className="block">companies.</span>
-        </h1>
+        <Title 
+        as="h1"
+        text={<>
+          Backing early-stage<br/>
+          companies.
+          </>}/>
         {/* <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
           Genesis Ventures partners with founders from day one, providing
           capital, strategic guidance, and long-term support to build

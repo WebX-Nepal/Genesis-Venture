@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import Title from "../ui/Title";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -74,12 +75,13 @@ export default function Hero() {
           </span>
           <span className="h-px w-10 bg-white/35 md:w-16" />
         </div>
-
-        <h1 className="hero-heading text-[clamp(1.75rem,7vw,4.5rem)] font-[PPFONT] text-white leading-tight tracking-[0.015em]">
+        <Title
+        as="h1"
+        text={<>
           Creating Long Term
-          <br />
-          Sustainable Wealth
-        </h1>
+          <br/>
+          Sustainable Wealth</>} 
+        />
       </div>
     </section>
   );

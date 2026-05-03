@@ -15,28 +15,28 @@ const items = [
     label: "Strategic Edge",
     title: "Asymmetric opportunity",
     desc: "Private companies represent the largest and fastest-growing segment of the economy, yet remain inaccessible to most institutional and retail investors.",
-    image: "/images/Projects/investing.webp",
+    image: "/images/hero/strategy.webp",
   },
   {
     index: "02",
     label: "Risk Discipline",
     title: "Reduced market noise",
     desc: "Unlisted investments are insulated from the short-term volatility and sentiment swings that affect public markets, enabling a clearer focus on fundamental value.",
-    image: "/images/Projects/founder.webp",
+    image: "/images/hero/growth.webp",
   },
   {
     index: "03",
     label: "Entry Timing",
     title: "Early entry advantage",
     desc: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
-    image: "/images/Projects/insight.webp",
+    image: "/images/hero/investment.webp",
   },
   {
     index: "04",
     label: "Network Access",
     title: "Relationship-driven deals",
     desc: "The best private deals are earned through trust and networks, not won through auctions - a discipline at the core of how Genesis Ventures operates.",
-    image: "/images/Projects/partnership.webp",
+    image: "/images/hero/handshake.webp",
   },
 ];
 
