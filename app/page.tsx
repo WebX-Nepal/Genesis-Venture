@@ -18,7 +18,6 @@ export default function Home() {
       {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />}
       <Hero />
       <Stats />
-    
       <div className="mt-8 flex flex-col  pb-20">
         <Firm />
           <div className="mt-8 sm:mt-10 md:mt-12">

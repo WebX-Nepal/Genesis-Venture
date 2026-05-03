@@ -49,7 +49,7 @@ const AboutIntro = () => {
       </video>
       <div className="absolute inset-0  z-10" />
       <div className="relative z-20 flex w-full max-w-xs flex-col justify-center gap-3 px-2 text-center xs:max-w-sm sm:max-w-md sm:gap-4 md:max-w-5xl md:gap-6">
-        <h1 className="hero-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight font-[PPFONT]">
+        <h1 className="hero-heading text-[clamp(1.75rem,7vw,4.5rem)] text-white leading-tight tracking-[0.015em] font-[PPFONT]">
           {/* Transparent insights into Genesis Ventures' performance and strategy */}
           Transparent insight into capital, performance, and strategy.
         </h1>

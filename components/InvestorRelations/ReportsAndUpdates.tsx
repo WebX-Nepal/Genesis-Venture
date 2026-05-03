@@ -63,7 +63,7 @@ const ReportsAndUpdates = () => {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
         <div className="h-[64%] bg-[#001D3F]" />
         <div className="h-[36%] bg-white" />
@@ -85,14 +85,14 @@ const ReportsAndUpdates = () => {
               >
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
                 <div className="flex items-center justify-between">
-                  <p className="font-poppins text-xs font-semibold uppercase tracking-widest text-[#2f4268] transition-colors duration-300 group-hover:text-[#173053]">
+                  <p className="font-poppins text-[11px] font-semibold uppercase tracking-[0.28em] text-[#2f4268] transition-colors duration-300 group-hover:text-[#173053]">
                     {item.label}
                   </p>
                   <span className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#8D1E39]">
                     {item.num}
                   </span>
                 </div>
-                <h3 className="text-base font-[PPFONT] leading-snug text-[#173053] transition-colors duration-200 group-hover:text-[#8D1E39] sm:text-lg">
+                <h3 className="text-[1.05rem] sm:text-[1.125rem] font-[PPFONT] leading-snug text-[#173053] transition-colors duration-200 group-hover:text-[#8D1E39]">
                   {item.title}
                 </h3>
                 <div className="relative w-full aspect-4/3 overflow-hidden">
@@ -105,10 +105,10 @@ const ReportsAndUpdates = () => {
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
                 </div>
-                <p className="flex-1 font-poppins text-sm leading-relaxed text-[#2f4268]">
+                <p className="flex-1 font-poppins text-[16px] leading-[1.55] text-[#2f4268]">
                   {item.desc}
                 </p>
-                <span className="text-xs text-[#6c7a93] font-poppins tracking-wide">{item.meta}</span>
+                <span className="text-[11px] text-[#6c7a93] font-poppins tracking-wide">{item.meta}</span>
                 <div className="border-t border-gray-100" />
               </article>
             ))}

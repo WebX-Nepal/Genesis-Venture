@@ -31,12 +31,12 @@ const PartnerCTA = () => {
     <section
       ref={sectionRef}
       id="commitment"
-      className="group relative border-t border-[#e4e0db] bg-white py-16"
+      className="group relative flex min-h-screen items-center border-t border-[#e4e0db] bg-white py-16"
     >
      
-      <div className="layout-7xl relative z-10">
+      <div className="layout-7xl relative z-10 w-full">
         <div className="max-w-[960px] mx-auto text-center">
-          <span className="cta-kicker inline-flex items-center gap-3 font-poppins text-xs font-medium tracking-widest uppercase text-[#8D1E39]">
+          <span className="cta-kicker inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
             The Commitment
           </span>
 
@@ -49,12 +49,12 @@ const PartnerCTA = () => {
             &quot;
           </blockquote>
 
-          <div className="cta-author flex items-center justify-center gap-4 sm:gap-6 font-poppins text-xs sm:text-sm md:text-base">
+          <div className="cta-author flex items-center justify-center gap-4 sm:gap-6 font-poppins text-[16px] leading-[1.55]">
             <div>
               <span className="text-[#08112a] font-medium tracking-[0.02em]">
                 Anuj Rathi
               </span>
-              <span className="block text-[#616877] italic text-[10px] xs:text-xs sm:text-sm mt-0.5">
+              <span className="block text-[#616877] italic text-[11px] mt-0.5">
                 Founder &amp; Managing Director
               </span>
             </div>
