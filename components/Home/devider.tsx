@@ -52,7 +52,7 @@ export default function Devider() {
       <div className="absolute inset-0 bg-[#08112a]/68" />
       <div className="relative z-10 flex h-full items-center justify-center px-6 text-center sm:px-10 md:px-16 lg:px-20">
         <div className="max-w-5xl -translate-y-8 sm:-translate-y-10 md:-translate-y-12">
-          <h2 className="devider-title font-[PPFONT] text-[clamp(1.8rem,4.6vw,4.4rem)] leading-[1.18] text-white">
+          <h2 className="devider-title font-[PPFONT] text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em] text-white">
             Backing bold ideas before the market catches on.
           </h2>
         </div>

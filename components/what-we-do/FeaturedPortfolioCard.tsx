@@ -16,24 +16,24 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
         {/* Top Meta: Badge & Sector */}
         <div className="flex justify-between items-start mb-16">
           <div className="space-y-1">
-            <p className="text-[10px] font-bold tracking-[0.2em] text-[#173053] uppercase transition-colors duration-300">
+            <p className="text-[11px] font-bold tracking-[0.2em] text-[#173053] uppercase transition-colors duration-300">
               {item.sector}
             </p>
             <div className="h-px w-6 bg-[#173053]/35 transition-all duration-500" />
           </div>
 
-          <span className="text-[9px] font-black tracking-[0.2em] text-[#173053]/80 uppercase border border-[#cfd9e6] px-3 py-1 transition-colors duration-300">
+          <span className="text-[11px] font-black tracking-[0.2em] text-[#173053]/80 uppercase border border-[#cfd9e6] px-3 py-1 transition-colors duration-300">
             {item.badge}
           </span>
         </div>
 
         {/* Main Title & Description */}
         <div className="max-w-4xl mb-12">
-          <h4 className="mb-6 font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.3] tracking-tight text-[#152F53] transition-colors duration-300">
+          <h4 className="mb-6 font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#152F53] transition-colors duration-300">
             {item.name}
           </h4>
           <p
-            className={`max-w-2xl text-[14px] sm:text-[15px] leading-7 ${
+            className={`max-w-2xl text-[16px] leading-[1.55] ${
               item.id === "sopan-multiple"
                 ? "text-[#355171] transition-colors duration-300"
                 : "text-[#4f6783] transition-colors duration-300"
@@ -49,10 +49,10 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
             {item.subs?.map((sub) => (
               <div key={sub.name} className="border-l border-[#d8e0ea] pl-5">
-                <p className="mb-1.5 text-[9px] uppercase font-bold tracking-widest text-[#4f6783] transition-colors duration-300">
+                <p className="mb-1.5 text-[11px] uppercase font-bold tracking-[0.2em] text-[#4f6783] transition-colors duration-300">
                   {sub.label}
                 </p>
-                <p className="text-sm font-medium text-[#173053] transition-colors duration-300">
+                <p className="text-[16px] font-medium leading-[1.55] text-[#173053] transition-colors duration-300">
                   {sub.name}
                 </p>
               </div>
@@ -66,7 +66,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
                 <span className="text-2xl lg:text-3xl font-light text-[#152F53] tracking-tighter transition-colors duration-300">
                   {stat.value}
                 </span>
-                <span className="text-[8px] uppercase font-bold tracking-[0.2em] text-[#4f6783] transition-colors duration-300">
+                <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#4f6783] transition-colors duration-300">
                   {stat.label}
                 </span>
               </div>
@@ -77,7 +77,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
         <div className="mt-auto flex flex-wrap items-center gap-y-3 border-t border-[#d8e0ea] pt-8">
           {item.tags.map((tag: string) => (
             <div key={tag} className="flex items-center">
-              <span className="text-[10px] text-[#4f6783] font-medium tracking-widest uppercase transition-colors duration-300">
+              <span className="text-[11px] text-[#4f6783] font-medium tracking-[0.2em] uppercase transition-colors duration-300">
                 {tag}
               </span>
             </div>

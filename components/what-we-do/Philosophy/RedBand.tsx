@@ -28,7 +28,7 @@ export default function RedBand() {
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <p className="text-sm sm:text-base font-medium uppercase tracking-[0.08em] text-white">
+            <p className="font-poppins text-[11px] font-medium uppercase tracking-[0.12em] text-white">
               {item}
             </p>
             {idx !== redBandItems.length - 1 && (

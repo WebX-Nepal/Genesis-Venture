@@ -40,14 +40,14 @@ export default function BeliefsSection() {
           </div>
 
           <div className="pt-1 text-white/85 font-poppins">
-            <p className="mb-4 text-[14px] sm:text-[15px] leading-7">
+            <p className="mb-4 text-[16px] leading-[1.55]">
               Most firms measure themselves by the returns they generate. We
               measure ourselves by something harder to fake: whether our
               clients can look back a decade from now and say that Genesis
               Ventree was the most honest partner they ever had in financial
               life.
             </p>
-            <p className="text-[14px] sm:text-[15px] leading-7">
+            <p className="text-[16px] leading-[1.55]">
               Performance follows integrity - not the other way around. When
               advice is given free of conflicts, when fees are transparent, and
               when a firm has the discipline to say &quot;we do not know&quot;
@@ -69,14 +69,14 @@ export default function BeliefsSection() {
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="h-[2px] w-10 bg-[#173053] transition-all duration-300 group-hover:w-14" />
-                <p className="font-poppins text-[13px] font-semibold tracking-[0.2em] text-[#173053]">
+                <p className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#173053]">
                   {card.no}
                 </p>
               </div>
-              <h3 className="mb-3 font-[PPFONT] text-[1.2rem] sm:text-[1.35rem] leading-[1.2] text-[#152F53] transition-colors duration-300 group-hover:text-[#173053]">
+              <h3 className="mb-3 font-[PPFONT] text-[1.05rem] sm:text-[1.125rem] leading-[1.3] text-[#152F53] transition-colors duration-300 group-hover:text-[#173053]">
                 {card.title}
               </h3>
-              <p className="text-[14px] sm:text-[15px] leading-7 text-[#355171] font-poppins transition-colors duration-300 group-hover:text-[#173053]">
+              <p className="text-[16px] leading-[1.55] text-[#355171] font-poppins transition-colors duration-300 group-hover:text-[#173053]">
                 {card.body}
               </p>
             </article>

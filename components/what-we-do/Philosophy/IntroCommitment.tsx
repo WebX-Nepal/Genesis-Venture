@@ -26,14 +26,14 @@ export default function IntroCommitment() {
         </div>
         <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="flex flex-col justify-start">
-              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.55rem,3.2vw,2.35rem)] leading-[1.35] tracking-[-0.01em] text-[#173053] font-medium">
+              <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#173053]">
                 <span className="block">Integrity before</span>
                 <span className="block italic text-[#8D1E39] font-medium">
                   returns. Always.
                 </span>
               </h1>
 
-              <p className="mt-5 sm:mt-7 max-w-[620px] text-[15px] sm:text-[16px] lg:text-[17px] leading-[1.72] text-[#355171]">
+              <p className="mt-5 sm:mt-7 max-w-[620px] text-[16px] leading-[1.55] text-[#355171]">
                 Genesis Ventree Ltd. is an independent investment firm that
                 places your interests above all else - including our own. In a
                 world where performance is routinely promised and seldom earned,
@@ -65,7 +65,7 @@ export default function IntroCommitment() {
           <div className="flex flex-col justify-start lg:pl-8 xl:pl-12 mt-8">
             <div className="rounded-sm border border-[#dbe2ea] bg-[#f8fafd] p-6 sm:p-8 lg:p-9">
               
-              <blockquote className="max-w-[620px] font-[PPFONT] text-[1.3rem] sm:text-[1.6rem] lg:text-[1.8rem] italic leading-[1.5] text-[#102347]">
+              <blockquote className="max-w-[620px] font-[PPFONT] text-[clamp(1.05rem,2.4vw,1.75rem)] italic leading-[1.5] text-[#102347]">
                 &quot;We will never recommend what is profitable for us over what is
                 <span className="not-italic"> right for you.</span> That is not a
                 policy - it is the reason we exist.&quot;
@@ -81,7 +81,7 @@ export default function IntroCommitment() {
               className="group flex min-h-[148px] flex-col justify-between border border-[#152F53] bg-[#152F53] px-5 py-6 sm:px-6 sm:py-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8D1E39]/45 hover:shadow-[0_8px_24px_rgba(16,35,71,0.14)]"
             >
               <div className="mb-4 h-[2px] w-10 bg-white/80 transition-all duration-300 group-hover:w-14" />
-              <p className="font-[PPFONT] text-[1.75rem] sm:text-[1.95rem] leading-none text-white">
+              <p className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-none text-white">
                 {stat.value}
               </p>
               <p className="mt-3 text-[11px] uppercase tracking-[0.11em] text-white/80 font-poppins leading-tight">

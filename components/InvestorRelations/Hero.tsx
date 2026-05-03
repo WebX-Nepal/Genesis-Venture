@@ -77,6 +77,7 @@ const Hero = () => {
 
   return (
     <section ref={sectionRef} className="relative flex min-h-screen items-center overflow-hidden bg-white">
+
       <style>{`
         .ir-word-animate {
           display: inline-block;
@@ -101,7 +102,7 @@ const Hero = () => {
 
         <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="flex flex-col justify-start">
-            <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em] text-[#08112a]">
+            <h1 className="mt-0 sm:mt-1 font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.55] tracking-[-0.01em] text-[#08112a]">
               <span className="block">
                 {animateWords("Good data takes time.", 140, 36)}
               </span>
@@ -140,7 +141,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="mt-2 flex flex-col justify-start border border-[#173053]/15 bg-white p-6 sm:p-8 lg:mt-0 lg:ml-8">
+          <div className="mt-2 flex flex-col justify-start border border-[#173053]/15 bg-white/85 p-6 shadow-[0_18px_50px_rgba(23,48,83,0.08)] backdrop-blur-[2px] sm:p-8 lg:mt-0 lg:ml-8">
             <div className="mt-6 mb-8 border-b border-[#1a2e4a]/15 pb-8">
               <blockquote className="font-[PPFONT] text-[clamp(1.05rem,2.4vw,1.75rem)] italic leading-[1.5] text-[#102347]">
                 <span className="ir-word-animate not-italic mr-1" data-delay={280}>

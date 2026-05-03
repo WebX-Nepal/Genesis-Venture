@@ -15,24 +15,24 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
       {/* Top Metadata Row */}
       <div className="flex justify-between items-start mb-12">
         <div className="space-y-1">
-          <p className="text-[10px] font-bold tracking-[0.2em] text-[#173053] uppercase transition-colors duration-300">
+          <p className="text-[11px] font-bold tracking-[0.2em] text-[#173053] uppercase transition-colors duration-300">
             {item.sector}
           </p>
           <div className="h-px w-4 bg-[#8D1E39] transition-all duration-500" />
         </div>
 
-        <span className="text-[8px] font-medium bg-[#8D1E39] tracking-widest text-white uppercase border border-[#cfd9e6] px-2 py-0.5 transition-colors duration-300">
+        <span className="text-[11px] font-medium bg-[#8D1E39] tracking-[0.12em] text-white uppercase border border-[#cfd9e6] px-2 py-0.5 transition-colors duration-300">
           {item.badge}
         </span>
       </div>
 
       {/* Main Content */}
       <div className="flex-1 space-y-4">
-        <h4 className="font-[PPFONT] text-[1.2rem] tracking-tight leading-[1.2] text-[#152F53] transition-colors duration-300">
+        <h4 className="font-[PPFONT] text-[1.05rem] sm:text-[1.125rem] tracking-tight leading-[1.3] text-[#152F53] transition-colors duration-300">
           {item.name}
         </h4>
 
-        <p className="max-w-[90%] text-[14px] leading-7 text-[#173053] transition-colors duration-300">
+        <p className="max-w-[90%] text-[16px] leading-[1.55] text-[#173053] transition-colors duration-300">
           {item.description}
         </p>
       </div>
@@ -42,10 +42,10 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
         {item.progress !== undefined && (
           <div className="mb-8">
             <div className="flex justify-between items-end mb-2">
-              <span className="text-[8px] font-black uppercase tracking-[0.2em] text-[#173053] transition-colors duration-300">
+              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#173053] transition-colors duration-300">
                 Phase Progress
               </span>
-              <span className="text-[10px] tabular-nums font-medium text-[#173053] transition-colors duration-300">
+              <span className="text-[11px] tabular-nums font-medium text-[#173053] transition-colors duration-300">
                 {item.progress}%
               </span>
             </div>
@@ -62,7 +62,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
         <div className="flex flex-wrap items-center gap-y-2 border-t border-[#d8e0ea] pt-6">
           {item.tags.map((tag: string, index: number) => (
             <div key={tag} className="flex items-center">
-              <span className="text-[10px] text-[#173053] font-medium tracking-wider uppercase transition-colors duration-300">
+              <span className="text-[11px] text-[#173053] font-medium tracking-[0.12em] uppercase transition-colors duration-300">
                 {tag}
               </span>
               {index < item.tags.length - 1 && (

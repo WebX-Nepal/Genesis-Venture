@@ -33,7 +33,6 @@ const PartnerCTA = () => {
       id="commitment"
       className="group relative flex min-h-screen items-center border-t border-[#e4e0db] bg-white py-16"
     >
-     
       <div className="layout-7xl relative z-10 w-full">
         <div className="max-w-[960px] mx-auto text-center">
           <span className="cta-kicker inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">

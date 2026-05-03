@@ -62,7 +62,7 @@ const PortfolioHeroSection = () => {
 
 
       <div className="relative z-20 flex w-full max-w-5xl flex-col gap-3 px-2 sm:gap-4">
-        <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] text-white leading-tight">
+        <h1 className="hero-heading project-heading font-[PPFONT] text-[clamp(1.75rem,7vw,4.5rem)] tracking-[0.015em] text-white leading-tight">
           <span className="block">Backing early-stage</span>
           <span className="block">companies.</span>
         </h1>
