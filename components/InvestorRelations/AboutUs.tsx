@@ -21,7 +21,7 @@ const animateWords = (text: string, startDelay = 0, step = 42) => {
   ));
 };
 
-const Hero = () => {
+const AboutUs = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
@@ -167,4 +167,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default AboutUs;

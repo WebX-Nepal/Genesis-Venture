@@ -1,6 +1,6 @@
-import Hero from "@/components/InvestorRelations/Hero";
+import AboutUs from "@/components/InvestorRelations/AboutUs";
 import ReportsAndUpdates from "@/components/InvestorRelations/ReportsAndUpdates";
-import PartnerCTA from "@/components/InvestorRelations/commitment";
+import PartnerCTA from "@/components/InvestorRelations/PartnerCTA";
 import HeroPage from "@/components/ui/HeroPage";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
         title="Investor Relations"
         titleClassName="text-[clamp(1.5rem,4.8vw,3.2rem)]"
       />
-      <Hero />
+      <AboutUs />
       <ReportsAndUpdates />
       <PartnerCTA />
     

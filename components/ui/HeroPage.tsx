@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Title from "./Title";
 
 interface HeroPageProps {
   title: ReactNode;
@@ -41,10 +42,10 @@ export default function HeroPage({
         </>
       ) : null}
       <div className="layout-7xl relative flex h-full flex-col">
-        <div className="flex flex-1 items-center justify-center">
-          <h1 className={`text-center font-[PPFONT] font-normal leading-none tracking-wider text-white/95 ${titleClassName}`}>
-            {title}
-          </h1>
+        <div className="flex flex-1 items-center text-center justify-center">
+          <Title 
+          as="h1"
+          text={title}/>
         </div>
       </div>
     </section>

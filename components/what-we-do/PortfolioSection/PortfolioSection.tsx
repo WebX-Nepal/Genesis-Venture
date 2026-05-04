@@ -52,7 +52,6 @@ export default function PortfolioSection({
             })}
           </div>
         </div>
-
       <section id="portfolio" className="w-full">
         {activeSector === "All" ? (
           <>

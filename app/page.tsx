@@ -20,11 +20,11 @@ export default function Home() {
       <Stats />
       <div className="mt-8 flex flex-col  pb-20">
         <Firm />
-          <div className="mt-8 sm:mt-10 md:mt-12">
+        <div className="mt-8 sm:mt-10 md:mt-12">
           <Devider />
           <UnlistedMarket />
-          </div>
-          </div>
+        </div>
+      </div>
       <ScrollingHeadline />
     </main>
   );
