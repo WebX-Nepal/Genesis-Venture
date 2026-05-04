@@ -22,9 +22,10 @@ export default function Title({ text, className }: TitleProps) {
     gsap.from(words, {
       y: "100%",
       filter:"blur(8px)",
-      duration: 0.7,
-      ease: "power3.out",
-      stagger: 0.08,
+      duration: 0.6,
+      ease: "power1.Out",
+      stagger: 0.1,
+      delay:0.1,
     })
   }, { scope: ref })
 
@@ -37,7 +38,7 @@ export default function Title({ text, className }: TitleProps) {
       )}
     >
       {lines.map((line, li) => (
-        <span key={li} className="flex flex-wrap gap-x-[0.25em]  justify-center">  
+        <span key={li} className="flex flex-wrap gap-x-[0.25em] justify-center">  
           {line.split(" ").map((word, indx) => (
             <span key={indx} className="overflow-hidden inline-block">  
               <span className="word-inner inline-block">              
