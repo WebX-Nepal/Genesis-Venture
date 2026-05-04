@@ -1,14 +1,14 @@
-import Hero from "@/components/InvestorRelations/Hero";
+import AboutUs from "@/components/InvestorRelations/AboutUs";
 import ReportsAndUpdates from "@/components/InvestorRelations/ReportsAndUpdates";
-import PartnerCTA from "@/components/InvestorRelations/commitment";
-import AboutIntro from "@/components/InvestorRelations/investorintro";
+import PartnerCTA from "@/components/InvestorRelations/PartnerCTA";
+import InvestorIntro from "@/components/InvestorRelations/InvestorIntro";
 
 
 export default function InvestorRelationsPage() {
   return (
     <main className="w-full bg-white text-[#2c2c34] font-poppins overflow-x-hidden">
-      <AboutIntro />
-      <Hero />
+      <InvestorIntro />
+      <AboutUs />
       <ReportsAndUpdates />
       <PartnerCTA />
       {/* <InvestorDocuments /> */}
