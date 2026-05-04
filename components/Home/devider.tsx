@@ -1,20 +1,15 @@
 "use client";
-
 import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(SplitText, ScrollTrigger);
-
 export default function Devider() {
   const containerRef = useRef<HTMLElement>(null);
-
   useGSAP(() => {
     if (!containerRef.current) return;
-
     const splitTitle = new SplitText(".devider-title", { type: "words" });
     const tl = gsap.timeline({
       defaults: { ease: "power2.out" },
@@ -24,7 +19,6 @@ export default function Devider() {
         toggleActions: "play none none reverse",
       },
     });
-
     tl.from(splitTitle.words, {
       autoAlpha: 0,
       y: 22,
@@ -32,12 +26,10 @@ export default function Devider() {
       stagger: 0.06,
       duration: 0.7,
     });
-
     return () => {
       splitTitle.revert();
     };
   }, { scope: containerRef });
-
   return (
     <section
       ref={containerRef}
