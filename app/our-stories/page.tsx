@@ -1,4 +1,5 @@
 import HeroPage from "@/components/ui/HeroPage";
+import Title from "@/components/ui/Title";
 
 const heroStats = [
   { value: "20+", label: "Years of cross-sector experience" },
@@ -74,10 +75,9 @@ export default function OurStoriesPage() {
         </video>
         <div className="absolute inset-0 bg-black/35" />
         <div className="relative z-20 flex w-full max-w-5xl flex-col items-center gap-3 px-2 text-center sm:gap-4">
-          <h1 className="hero-heading project-heading text-[clamp(1.6rem,5vw,3.75rem)] leading-tight text-white/95">
-            <span className="block">Capital guided by principles,</span>
-            <span className="block">not just Opportunity</span>
-          </h1>
+          <Title
+          text={["Capital guided by principles,","not just Opportunity"]}
+          />
         </div>
       </section>
 

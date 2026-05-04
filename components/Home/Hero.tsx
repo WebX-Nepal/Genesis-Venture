@@ -76,11 +76,7 @@ export default function Hero() {
           <span className="h-px w-10 bg-white/35 md:w-16" />
         </div>
         <Title
-        as="h1"
-        text={<>
-          Creating Long Term
-          <br/>
-          Sustainable Wealth</>} 
+        text={[" Creating Long Term"," Sustainable Wealth"]}
         />
       </div>
     </section>

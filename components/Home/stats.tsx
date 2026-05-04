@@ -17,13 +17,9 @@ export default function Stats() {
             className="flex min-h-45 flex-col items-center justify-center gap-2 px-4 py-8 text-center sm:min-h-55 sm:px-6 md:px-8"
             style={{ backgroundColor: color }}
           >
-            {/* <span className="whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[PPFONT] text-white">
+            <span className="whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[PPFONT] text-white">
               {value}
-            </span> */}
-            <Title
-            as="h2"
-            text={value}
-            />
+            </span>
             <span className="text-xs text-white uppercase tracking-widest font-montserrat leading-tight">
               {label}
             </span>
