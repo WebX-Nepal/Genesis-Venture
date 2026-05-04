@@ -30,13 +30,13 @@ export default function Counter({
 
             ScrollTrigger.create({
                 trigger: ref.current,
-                start: "top 85%",
+                start: "top 95%",
                 once: true,
                 onEnter: () => {
                     gsap.to(obj, {
                         val: finalNumber,
                         duration,
-                        ease: "power2.out",
+                        ease: "power1",
                         onUpdate: () => {
                             setDisplay(Math.floor(obj.val));
                         },

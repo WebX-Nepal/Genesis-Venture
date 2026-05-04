@@ -100,7 +100,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
   return (
     // Backdrop - clicking directly on this div (not the modal) closes it
     <div
-      className="fixed inset-0 z-9999 flex items-center justify-center bg-genesis-navy/60 backdrop-blur-sm px-4 sm:px-6 overscroll-none"
+      className="fixed inset-0 z-[999] flex items-center justify-center bg-genesis-navy/60 backdrop-blur-sm px-4 sm:px-6 overscroll-none"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}

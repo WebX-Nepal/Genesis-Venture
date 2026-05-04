@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main className="w-full font-[PPFONT]">
-      {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />}
+      {/* {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />} */}
       <Hero />
       <Stats />
       <div className="mt-8 flex flex-col  pb-20">
