@@ -4,6 +4,8 @@ import "./globals.css";
 import LenisProvider from "@/components/LenisWrapper";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
+import Loader from "@/components/ui/Preloader";
+import { PreLoaderProvider } from "@/context/PreLoaderContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,10 +39,14 @@ export default function RootLayout({
         className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LenisProvider>
-          {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
-          <NavBar />
-          {children}
-          <Footer />
+          <PreLoaderProvider>
+            <Loader />
+            {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
+            <NavBar />
+            {children}
+            <Footer />
+          </PreLoaderProvider>
+
         </LenisProvider>
       </body>
     </html>

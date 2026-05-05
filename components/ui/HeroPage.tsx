@@ -2,14 +2,12 @@ import { ReactNode } from "react";
 import Title from "./Title";
 
 interface HeroPageProps {
-  title: ReactNode;
   titleClassName?: string;
   backgroundImage?: string;
   backgroundImageAlt?: string;
   backgroundVideo?: string;
 }
 export default function HeroPage({
-  title,
   titleClassName = "text-[clamp(1.5rem,4.8vw,3.2rem)]",
   backgroundImage,
   backgroundImageAlt = "",
@@ -44,8 +42,8 @@ export default function HeroPage({
       <div className="layout-7xl relative flex h-full flex-col">
         <div className="flex flex-1 items-center text-center justify-center">
           <Title 
-          as="h1"
-          text={title}/>
+          text={[" Independent Capital.","Enduring Partnerships."]}
+      />
         </div>
       </div>
     </section>
