@@ -12,15 +12,14 @@ export default function Loader() {
     const textRefs = useRef<HTMLSpanElement[]>([]);
     const { setHasLoaded } = usePreLoader()
     useEffect(() => {
-        document.body.style.overflow = "hidden";
-
+        document.body.style.overflowY = "scroll"; // scrollbar visible
+        document.body.style.position = "fixed";    // prevent scrolling
+        document.body.style.width = "100%";
         const tl = gsap.timeline({
             onComplete: () => {
                 document.body.style.overflow = "auto";
-                setHasLoaded(true); 
-                if (loaderRef.current) {
-                    loaderRef.current.style.display = "none";
-                }
+                 document.body.style.position = "static";
+                setHasLoaded(true);
             },
         });
 
