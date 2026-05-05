@@ -1,32 +1,30 @@
 "use client";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import Title from "../ui/Title";
-
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
+import { usePreLoader } from "@/context/PreLoaderContext";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-
+  const textRef = useRef<HTMLHeadingElement | null>(null);
+const { hasLoaded } = usePreLoader()
   useGSAP(
     () => {
-      const splitTitle = new SplitText(".hero-heading", { type: "words" });
-      const titleTween = gsap.from(splitTitle.words, {
-        opacity: 0,
-        y: 30,
-        filter: "blur(10px)",
-        stagger: 0.05,
-        duration: 1,
-        ease: "power3.out",
-      });
-      let videoTween: gsap.core.Tween | null = null;
+    if (textRef.current) {
+      gsap.set(textRef.current, { y: 20, opacity: 1, color: "#1a2e5a" });
 
+      gsap.to(textRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.3,
+        ease: "cubic-bezier(0.55, 0, 1, 0.45)",
+        delay: 1.3,
+        color: "white",
+      });
+    }
       if (sectionRef.current && videoRef.current) {
-        videoTween = gsap.to(videoRef.current, {
+        gsap.to(videoRef.current, {
           yPercent: 12,
           scale: 1.08,
           ease: "none",
@@ -38,14 +36,8 @@ export default function Hero() {
           },
         });
       }
-
-      return () => {
-        titleTween.kill();
-        videoTween?.kill();
-        splitTitle.revert();
-      };
     },
-    { scope: sectionRef },
+    { scope: sectionRef }
   );
 
   return (
@@ -75,9 +67,23 @@ export default function Hero() {
           </span>
           <span className="h-px w-10 bg-white/35 md:w-16" />
         </div>
-        <Title
-        text={[" Creating Long Term"," Sustainable Wealth"]}
-        />
+        {hasLoaded ? 
+        <>
+         <h1
+          className="text-[clamp(1.75rem,7vw,4.5rem)] font-[PPFONT] text-center  leading-tight tracking-[0.015em] text-white"
+        >
+          <span className="block">Creating Long Term</span>
+          <span>Sustainable Wealth</span>
+        </h1>
+        </>
+        :  <h1
+          ref={textRef}
+          className="text-[clamp(1.75rem,7vw,4.5rem)] font-[PPFONT] text-center  leading-tight tracking-[0.015em]"
+        >
+          <span className="block">Creating Long Term</span>
+          <span>Sustainable Wealth</span>
+        </h1>}
+       
       </div>
     </section>
   );

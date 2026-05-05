@@ -14,7 +14,7 @@ interface CounterProps {
 
 export default function Counter({
     to,
-    duration = 1.5,
+    duration = 0.8,
     from = 0,
     className,
 }: CounterProps) {
