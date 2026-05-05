@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
 import { PreLoaderProvider } from "@/context/PreLoaderContext";
+import { TransitionProvider } from "@/context/TransitionContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,13 +41,14 @@ export default function RootLayout({
       >
         <LenisProvider>
           <PreLoaderProvider>
-            <Loader />
-            {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
-            <NavBar />
-            {children}
-            <Footer />
+            <TransitionProvider>
+              <Loader />
+              {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
+              <NavBar />
+              {children}
+              <Footer />
+            </TransitionProvider>
           </PreLoaderProvider>
-
         </LenisProvider>
       </body>
     </html>

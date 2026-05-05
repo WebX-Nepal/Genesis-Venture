@@ -12,8 +12,8 @@ export default function Loader() {
     const textRefs = useRef<HTMLSpanElement[]>([]);
     const { setHasLoaded } = usePreLoader()
     useEffect(() => {
-        document.body.style.overflowY = "scroll"; // scrollbar visible
-        document.body.style.position = "fixed";    // prevent scrolling
+        document.body.style.overflowY = "scroll";
+        document.body.style.position = "fixed";  
         document.body.style.width = "100%";
         const tl = gsap.timeline({
             onComplete: () => {
