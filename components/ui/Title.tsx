@@ -25,7 +25,7 @@ export default function Title({ text, className }: TitleProps) {
       duration: 0.6,
       ease: "power1.Out",
       stagger: 0.1,
-      delay:0.1,
+      delay:0.7,
     })
   }, { scope: ref })
 

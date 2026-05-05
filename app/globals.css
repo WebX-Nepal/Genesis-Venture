@@ -213,3 +213,9 @@ html {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-8;
   }
 }
+
+.transition-block{
+  position: absolute;
+  background-color: #111e3d;
+  opacity: 0;
+}
