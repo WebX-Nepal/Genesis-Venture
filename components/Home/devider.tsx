@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Title from "../ui/Title";
+
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 export default function Devider() {
