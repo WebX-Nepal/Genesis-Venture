@@ -29,7 +29,6 @@ export function TransitionProvider({ children }: {
 
     const lockScroll = () => {
         document.body.style.overflow = "hidden"
-        document.body.style.position = "fixed"
         document.body.style.width = "100%"
     }
 
