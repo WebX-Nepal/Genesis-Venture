@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import { Handshake, LucideIcon, Target, Users, TrendingUp } from "lucide-react";
 import { useRef } from "react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -11,31 +11,39 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 const investmentPhilosophy = [
   {
     id: 1,
+    number: "01",
     title: "High-conviction investing",
     description:
       "We make fewer bets, but go deeper—committing time, capital, and network from day one.",
-    image: "/images/Projects/investing.webp"
+    image: "/images/Projects/investing.webp",
+    icon: Target,
   },
   {
     id: 2,
+    number: "03",
     title: "Founder-first approach",
     description:
       "We believe great companies are built by exceptional founders, prioritizing people.",
-    image: "/images/Projects/founder.webp"
+    image: "/images/Projects/founder.webp",
+    icon: Users,
   },
   {
     id: 3,
+    number: "02",
     title: "Sector-focused insight",
     description:
       "We invest in sectors where we have deep expertise and strong operational understanding.",
-    image: "/images/Projects/insight.webp"
+    image: "/images/Projects/insight.webp",
+    icon: TrendingUp,
   },
   {
     id: 4,
+    number: "04",
     title: "Long-term partnership",
     description:
       "We stay with our companies from inception to scale, supporting every stage of growth.",
-    image: "/images/Projects/partnership.webp"
+    image: "/images/Projects/partnership.webp",
+    icon: Handshake,
   },
 ];
 
@@ -104,69 +112,85 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="min-h-screen  max-w-7xl bg-white flex flex-col  sm:px-8 py-8 sm:py-12 md:py-24 mx-auto"
+      className="bg-white min-h-screen flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
     >
-      <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6 mb-6 sm:mb-8 md:mb-10">
-        <span className="investment-philosophy-heading text-[11px] uppercase tracking-[0.28em] text-[#8D1E39] font-poppins">
-          Investment Philosophy
-        </span>
-      </div>
-      <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
-        <div className="w-full md:w-5xl">
-          <h2 className="investment-philosophy-heading text-[1.7rem] sm:text-[2rem] text-genesis-navy leading-[1.45] tracking-[-0.01em] font-[PPFONT]">
-            We invest early when conviction matters most.
-          </h2>
-          <p
-            id="animated-paragraph"
-            className="text-[16px] text-gray-600 font-poppins leading-[1.55] mt-3 sm:mt-4 max-w-7xl"
-          >
-            Genesis Ventures focuses on founders at the earliest stages, when
-            clarity, speed, and hands-on support matter most. We partner with
-            ambitious teams from idea to scale, helping shape strategy, refine
-            product direction, and build durable businesses with long-term
-            value.
-          </p>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-px bg-gray-200 flex-1">
-        {investmentPhilosophy.map(({ id, title, image, description }) => (
-          <div
-            key={id}
-            className="relative bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
-          >
-            <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+      <div className="layout-7xl">
+        <div className="grid grid-cols-1 w-full lg:grid-cols-2 gap-12 lg:gap-12 items-center ">
 
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
-
-            <span className="text-[11px] text-genesis-navy font-poppins uppercase tracking-[0.28em] group-hover:text-genesis-red transition-colors">
-              {id}
-            </span>
-
-            <div className="relative w-full aspect-4/3 overflow-hidden mt-3 sm:mt-4">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
+          {/* Left side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-4  ">
+            <div className="flex flex-col gap-4 h-full ">
+              {investmentPhilosophy.filter((_, i) => i % 2 === 0).map(({ id, title, description, icon, number }) => (
+                <Card key={id} id={id} title={title} description={description} icon={icon} number={number} />
+              ))}
             </div>
 
-            <div className="flex flex-col gap-1.5 sm:gap-2 pt-6 sm:pt-8">
-              <div className="w-4 h-px bg-genesis-navy mb-2 sm:mb-3 transition-colors" />
-              <span className="text-[1.05rem] sm:text-[1.125rem] text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
-                {title}
-              </span>
-              <span className="text-[16px] text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-[1.55]">
-                {description}
-              </span>
+            <div className="flex flex-col gap-4 lg:mt-16 h-full ">
+              {investmentPhilosophy.filter((_, i) => i % 2 !== 0).map(({ id, title, description, icon, number }) => (
+                <Card key={id} id={id} title={title} description={description} icon={icon} number={number} />
+              ))}
             </div>
           </div>
-        ))}
+
+          {/* Right side */}
+          <div>
+            <h2 className="investment-philosophy-heading text-[2rem] text-genesis-navy leading-[1.45] tracking-[-0.01em] font-[PPFONT]">
+              We invest early when conviction matters most.
+            </h2>
+            <p
+              id="animated-paragraph"
+              className="text-[16px] text-gray-600 font-poppins leading-[1.55] mt-4"
+            >
+              Genesis Ventures focuses on founders at the earliest stages, when
+              clarity, speed, and hands-on support matter most. We partner with
+              ambitious teams from idea to scale, helping shape strategy, refine
+              product direction, and build durable businesses with long-term value.
+            </p>
+          </div>
+
+        </div>
       </div>
+
     </section>
   );
 };
 
 export default InvestmentPhilosophy;
+
+const Card = ({ id, title, description, icon, number }: {
+  id: number,
+  title: string,
+  description: string,
+  icon: LucideIcon,
+  number: string
+}) => {
+  const Icon = icon;
+
+  return (
+    <div className="relative bg-white justify-center h-70 md:h-80 lg:h-fit border border-[#173053]/25 flex flex-col p-6 lg:p-8 transition-all duration-300 hover:bg-[#f7faff] hover:shadow-[0_8px_24px_rgba(16,35,71,0.08)] cursor-pointer group overflow-hidden">
+      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+      <div className="flex justify-between items-center">
+        <span className="h-[2px] w-10 bg-[#173053] transition-all duration-300 group-hover:w-14" />
+        <span className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#173053]">
+          {number}
+        </span>
+      </div>
+
+
+
+      <div className="flex flex-col gap-2 pt-8">
+        {Icon && (
+          <Icon className="w-12 h-12 text-genesis-navy group-hover:text-genesis-red transition-colors" />
+        )}
+
+        <span className="text-[1.125rem] font-normal text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
+          {title}
+        </span>
+
+        <span className="text-[16px] text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-[1.55]">
+          {description}
+        </span>
+      </div>
+    </div>
+  );
+};
