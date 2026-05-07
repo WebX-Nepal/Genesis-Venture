@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="layout-7xl flex flex-col gap-5 pb-5 pt-6 md:pb-6 md:pt-8">
             <div className="flex flex-col justify-between gap-5 md:flex-row">
               <div className="flex max-w-xl flex-col gap-3">
-                <h2 className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.55] text-white">
+                <h2 className="font-montserrat text-[1.7rem] sm:text-[2rem] leading-[1.55] text-white">
                   Let's Get
                   <br />
                   Connected.
@@ -49,14 +49,14 @@ export default function Footer() {
 
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20">
                 <div className="flex flex-col gap-3">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50">
+                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Navigation
                   </span>
                   {nav.map(({ label, href }) => (
                     <Link
                       key={href}
                       href={href}
-                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white"
+                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white font-montserrat"
                     >
                       {label}
                     </Link>
@@ -66,27 +66,27 @@ export default function Footer() {
 
 
                 <div className="flex flex-col gap-3">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50">
+                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Contact
                   </span>
-                  <span className="text-xs text-white/80">
+                  <span className="text-xs text-white/80 font-poppins">
                     info@genesisventures.com.np
                   </span>
-                  <span className="text-xs text-white/80">+977 9851418843</span>
-                  <span className="text-xs text-white/80">
+                  <span className="text-xs text-white/80 font-poppins">+977 9851418843</span>
+                  <span className="text-xs text-white/80 font-poppins">
                     Dharan Road, Biratnagar
                   </span>
                 </div>
 
                 <div className="flex flex-col gap-3">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50">
+                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Resources
                   </span>
                   {resources.map(({ label, href }) => (
                     <Link
                       key={label}
                       href={href}
-                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white"
+                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white font-montserrat"
                     >
                       {label}
                     </Link>

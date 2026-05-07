@@ -51,7 +51,7 @@ const InvesrtorIntro = () => {
       <div className="absolute inset-0  z-10" />
       <div className="relative z-20 flex w-full max-w-xs flex-col justify-center gap-3 px-2 text-center xs:max-w-sm sm:max-w-md sm:gap-4 md:max-w-5xl md:gap-6">
         <Title
-          text={["Transparent insight into capital,","performance, and strategy."]}
+          text={["Clear insight into capital,","performance, and strategy."]}
         />
         {/* <p className="desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-xs sm:max-w-sm mx-auto">
           We provide our partners with clear visibility into capital allocation,

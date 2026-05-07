@@ -105,13 +105,11 @@ export default function UnlistedMarket() {
       className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
     >
       <div className="layout-7xl">
-       
          <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6 sm:mb-8 md:mb-10">
             <p className="firm-kicker font-montserrat text-xs font-medium uppercase tracking-[0.22em] text-[#8D1E39]">
                 Why Unlisted Markets
             </p>
           </div>
-
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
           <div className="w-full md:w-5xl">
             <h2 className="unlisted-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-montserrat font-medium">
@@ -128,37 +126,39 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-0 border border-[#cfcfcf] flex-1">
+        <div className="flex flex-col border border-[#d6dce8] flex-1">
           {items.map((item) => (
             <article
               key={item.index}
-              className="relative -mt-px -ml-px border border-[#cfcfcf] bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
+              className="group relative -mt-px flex flex-col md:flex-row border-t border-[#d6dce8] first:border-t-0 bg-white transition-colors duration-300 hover:bg-[#f8fbff]"
             >
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <div className="absolute left-0 top-0 h-full w-[3px] bg-[#8c1d3c] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
 
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
-
-              <span className="text-xs sm:text-sm text-genesis-navy font-poppins uppercase tracking-widest group-hover:text-genesis-red transition-colors">
-                {item.label}
-              </span>
-
-              <div className="relative w-full aspect-4/3 overflow-hidden mt-3 sm:mt-4">
+              <div className="relative w-full md:w-[38%] lg:w-[34%] h-[220px] sm:h-[250px] md:h-auto">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 32vw"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t md:from-black/20 md:to-transparent" />
               </div>
 
-              <div className="flex flex-col gap-1.5 sm:gap-2 pt-6 sm:pt-8">
-                <div className="w-4 h-px bg-genesis-navy mb-2 sm:mb-3 transition-colors" />
-                <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
+              <div className="flex flex-1 flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 md:px-7 md:py-7">
+                <div className="mb-2 flex items-center gap-3">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#8c1d3c]">
+                    {item.index}
+                  </span>
+                  <span className="h-px w-10 bg-[#8c1d3c]/35" />
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#173053]">
+                    {item.label}
+                  </span>
+                </div>
+                <span className="font-montserrat text-[clamp(1.05rem,2.1vw,1.55rem)] text-[#162e54] leading-[1.2]">
                   {item.title}
                 </span>
-                <span className="text-xs sm:text-sm text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-relaxed">
+                <span className="mt-2 text-sm text-[#4f5f78] font-poppins leading-relaxed max-w-3xl">
                   {item.desc}
                 </span>
               </div>

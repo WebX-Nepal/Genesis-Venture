@@ -115,7 +115,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
             <button
               type="button"
               onClick={onClose}
-              className="shrink-0 ml-3 mt-0.5 h-9 w-9 flex items-center justify-center border border-[#d6deea] bg-white text-[#173053] transition-all duration-200 hover:border-[#8c1d3c] hover:text-[#8c1d3c] cursor-pointer"
+              className="shrink-0 ml-3 mt-0.5 h-9 w-9 flex items-center justify-center border border-[#d6deea] bg-[#173053] text-white transition-all duration-200 hover:border-[#8c1d3c] hover:text-white cursor-pointer"
               aria-label="Close"
             >
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">

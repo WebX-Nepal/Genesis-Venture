@@ -33,7 +33,7 @@ export default function Title({ text, className }: TitleProps) {
     <h1
       ref={ref}
       className={cn(
-        "text-[clamp(1.75rem,7vw,4.5rem)] font-[PPFONT] text-center text-white leading-tight tracking-[0.015em]",
+        "font-montserrat text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium text-center text-white leading-tight tracking-wide",
         className
       )}
     >

@@ -3,7 +3,7 @@
 export default function ScrollingHeadline() {
   const headline = "Create wealth with Genesis.";
   return (
-    <section className="relative w-full overflow-hidden bg-white pb-48">
+    <section className="relative w-full overflow-hidden bg-white pb-24 pt-12">
       <div className="marquee-track">
         <p className="marquee-text">{headline}</p>
         <p aria-hidden className="marquee-text">
