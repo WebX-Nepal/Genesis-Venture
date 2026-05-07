@@ -1,13 +1,6 @@
 "use client";
 
-import { Playfair_Display } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  variable: "--font-playfair",
-});
 
 const risks = [
   {
@@ -45,18 +38,6 @@ const risks = [
     title: "Regulatory & Tax Risk",
     accent: "#1E3A6E",
     body: "Laws, tax regimes, and regulations governing investments can change. Such changes may adversely affect the value of your holdings or reduce net returns.",
-  },
-];
-
-const stats = [
-  { number: "90%", label: "of day traders lose money within their first year" },
-  {
-    number: "-57%",
-    label: "S&P 500 peak-to-trough decline during the 2008 financial crisis",
-  },
-  {
-    number: "50%+",
-    label: "of startup investments result in total or near-total capital loss",
   },
 ];
 
@@ -98,187 +79,166 @@ export default function InvestmentRiskModal({ onClose }: Props) {
   }, [onClose]);
 
   return (
-    // Backdrop - clicking directly on this div (not the modal) closes it
     <div
-      className="fixed inset-0 z-[999] flex items-center justify-center bg-genesis-navy/60 backdrop-blur-sm px-4 sm:px-6 overscroll-none"
+      className="fixed inset-0 z-[999] flex items-center justify-center bg-[#0a1830]/72 backdrop-blur-sm px-4 sm:px-6 overscroll-none"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
       onWheel={(e) => e.preventDefault()}
       onTouchMove={(e) => e.preventDefault()}
     >
-      {/* Modal panel - stop propagation so clicks inside don't bubble to backdrop */}
       <div
         ref={modalRef}
-        className={`${playfair.variable} relative w-full max-w-3xl h-[90vh] bg-white/95 flex flex-col overflow-hidden overscroll-none`}
+        className="relative w-full max-w-[920px] h-[90vh] border border-[#d8e1ee] bg-white shadow-[0_24px_64px_rgba(8,20,40,0.22)] flex flex-col overflow-hidden overscroll-none"
         onMouseDown={(e) => e.stopPropagation()}
         onWheel={(e) => e.stopPropagation()}
         onTouchMove={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between px-6 sm:px-10 pt-7 pb-5 border-b border-gray-100 shrink-0">
-          <div className="flex flex-col gap-3">
-            <div className="inline-flex items-center gap-2 border border-genesis-navy/20 px-3 py-1.5 w-fit">
-              <span className="w-1.5 h-1.5 rounded-full bg-genesis-navy shrink-0" />
-              <span className="text-[9px] uppercase tracking-[3px] text-genesis-navy font-poppins font-semibold">
-                Important Notice - Please Read Carefully
-              </span>
+        <div className="shrink-0 border-b border-[#e2e8f2] bg-white">
+          <div className="flex items-start justify-between px-6 sm:px-10 pt-7 pb-5">
+            <div className="flex flex-col gap-3.5 pr-4">
+              <div className="inline-flex items-center gap-2 border border-[#d6deea] bg-white px-3 py-1.5 w-fit">
+              
+                <span className="text-[10px] uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold">
+                  Investment Disclosure
+                </span>
+              </div>
+              <h1 className="font-montserrat font-semibold text-[clamp(1.35rem,3.1vw,2.2rem)] text-[#162e54] leading-[1.14] tracking-[-0.01em]">
+                Before You Invest, Understand the Risks
+              </h1>
+              {/* <p className="text-xs sm:text-sm text-[#5a6880] font-poppins leading-relaxed max-w-2xl">
+                Every investment carries uncertainty. This summary highlights key
+                risks to help investors make informed decisions with a long-term
+                perspective.
+              </p> */}
             </div>
-            <h1 className="font-[PPFONT] text-[clamp(1.5rem,4vw,2.5rem)] text-genesis-navy leading-tight">
-              Before You{" "}
-              <em className="not-italic text-genesis-blue">Invest,</em>
-              <br />
-              Understand the Risks.
-            </h1>
-            <p className="text-xs sm:text-sm text-gray-500 font-poppins leading-relaxed max-w-lg">
-              All investments carry inherent risk. Past performance does not
-              guarantee future results. This document outlines key risks every
-              investor must consider.
-            </p>
+            <button
+              type="button"
+              onClick={onClose}
+              className="shrink-0 ml-3 mt-0.5 h-9 w-9 flex items-center justify-center border border-[#d6deea] bg-white text-[#173053] transition-all duration-200 hover:border-[#8c1d3c] hover:text-[#8c1d3c] cursor-pointer"
+              aria-label="Close"
+            >
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M1 1L11 11M11 1L1 11"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
           </div>
 
-          <button
-            type="button"
-            onClick={onClose}
-            className="shrink-0 ml-4 mt-0.5 w-8 h-8 flex items-center justify-center border border-genesis-navy bg-genesis-navy text-white transition-opacity duration-200 hover:opacity-90 cursor-pointer"
-            aria-label="Close"
-          >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path
-                d="M1 1L11 11M11 1L1 11"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
+          <div className="px-6 sm:px-10 pb-6">
+            <div className="border-l-[3px] border-l-[#8d1e39] border border-[#e2e8f2] bg-white px-4 py-3.5">
+              <p className="text-sm text-[#4f5f78] font-montserrat leading-relaxed">
+                <span className="text-[#102347] font-semibold">
+                  Capital at risk.
+                </span>{" "}
+                You may get back less than you invest, including the potential
+                loss of your full capital. Only invest amounts you can afford to
+                keep at risk.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="flex-1 overflow-y-scroll overscroll-auto scroll-smooth px-6 sm:px-10 py-6 space-y-8">
-          <div className="border border-genesis-navy/15 bg-genesis-navy/[0.04] px-4 py-4">
-            <p className="text-xs sm:text-sm text-gray-600 font-poppins leading-relaxed">
-              <span className="text-genesis-navy font-semibold">
-                Capital at risk.{" "}
-              </span>
-              Investing involves the risk that you may get back less than you
-              originally invested - including the possible loss of your entire
-              capital. You should never invest money you cannot afford to lose.
-            </p>
-          </div>
-
-          <div>
+        <div className="flex-1 overflow-y-scroll overscroll-auto scroll-smooth px-6 sm:px-10 py-7 space-y-7">
+          <div className="space-y-4">
             <SectionLabel>Key Risk Factors</SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
               {risks.map((risk) => (
-                <div
+                <article
                   key={risk.num}
                   onMouseEnter={() => setActiveRisk(risk.num)}
                   onMouseLeave={() => setActiveRisk(null)}
                   onFocus={() => setActiveRisk(risk.num)}
                   onBlur={() => setActiveRisk(null)}
                   tabIndex={0}
-                  className={`relative border border-genesis-navy/20 bg-genesis-navy/[0.04] px-5 py-5 overflow-hidden transition-colors duration-200 outline-none cursor-pointer ${
+                  className={`group relative border bg-white px-4 py-4 transition-all duration-200 outline-none cursor-pointer ${
                     activeRisk === risk.num
-                      ? "bg-genesis-navy/[0.07]"
-                      : "hover:bg-genesis-navy/[0.05]"
+                      ? "border-transparent shadow-[0_8px_20px_rgba(12,34,66,0.12)]"
+                      : "border-[#e4e9f2] hover:border-[#cfd8e7]"
                   }`}
                   style={
                     activeRisk === risk.num
-                      ? { boxShadow: `inset 3px 0 0 ${risk.accent}` }
+                      ? {
+                          boxShadow: "0 8px 20px rgba(12,34,66,0.12)",
+                        }
                       : undefined
                   }
                 >
-                  <span
-                    aria-hidden
-                    className={`absolute top-1 right-3 font-[PPFONT] text-4xl select-none leading-none transition-colors duration-200 ${
-                      activeRisk === risk.num
-                        ? "text-genesis-navy/35"
-                        : "text-genesis-navy/20"
-                    }`}
-                  >
-                    {risk.num}
-                  </span>
-                  <h3
-                    className="text-[10px] uppercase tracking-widest font-poppins font-semibold mb-2 transition-colors duration-200"
-                    style={{
-                      color:
-                        activeRisk === risk.num ? risk.accent : "#001D3F",
-                    }}
-                  >
-                    {risk.title}
-                  </h3>
-                  <p className="text-xs text-gray-500 font-poppins leading-relaxed">
+                  <div className="mb-2.5 flex items-center justify-between">
+                    <span
+                      className="text-[10px] uppercase tracking-[0.2em] font-montserrat font-semibold"
+                      style={{ color: activeRisk === risk.num ? risk.accent : "#173053" }}
+                    >
+                      {risk.title}
+                    </span>
+                    <span className="font-montserrat text-xl text-[#8c1d3c] leading-none">
+                      {risk.num}
+                    </span>
+                  </div>
+                  <p className="text-sm text-[#53627b] font-montserrat leading-relaxed">
                     {risk.body}
                   </p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
-          {/* <div>
-            <SectionLabel>
-              Sobering Figures Every Investor Should Know
-            </SectionLabel>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-100">
-              {stats.map((stat) => (
-                <div
-                  key={stat.number}
-                  className="bg-white px-5 py-5 flex flex-col items-center text-center gap-2"
+          <div className="space-y-4">
+            <SectionLabel>Principles For Responsible Investing</SectionLabel>
+            <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+              {principles.map((p, index) => (
+                <article
+                  key={p.title}
+                  className="group border border-[#e4e9f2] bg-white px-4 py-4 transition-colors duration-200 hover:border-[#cfd8e7]"
                 >
-                  <span className="font-[PPFONT] text-2xl sm:text-3xl text-genesis-navy leading-none">
-                    {stat.number}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400 font-poppins leading-relaxed">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div> */}
-
-          <div>
-            <SectionLabel>Principles for Responsible Investing</SectionLabel>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {principles.map((p) => (
-                <div key={p.title} className="border-t-2 border-gray-200 pt-4">
-                  <h4 className="text-[10px] uppercase tracking-widest text-genesis-navy font-poppins font-semibold mb-2">
-                    {p.title}
-                  </h4>
-                  <p className="text-xs text-gray-500 font-poppins leading-relaxed">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8c1d3c]">
+                      0{index + 1}
+                    </span>
+                    <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#173053] font-montserrat font-semibold">
+                      {p.title}
+                    </h4>
+                  </div>
+                  <p className="text-sm text-[#5a6a83] font-montserrat leading-relaxed">
                     {p.body}
                   </p>
-                </div>
+                </article>
               ))}
             </div>
           </div>
 
-          <div className="border border-genesis-navy/15 bg-genesis-navy/[0.03] px-5 py-5">
-            <p className="text-[10px] sm:text-xs text-gray-500 font-poppins leading-relaxed">
-              <span className="text-genesis-navy font-semibold">
-                Regulatory Disclaimer:{" "}
+          <div className="border border-[#e4e9f2] bg-white px-4 py-4 sm:px-5">
+            <div className="mb-2 flex items-center gap-2">
+              {/* <span className="h-[2px] w-6 bg-[#8c1d3c]" /> */}
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold">
+                Important Notice - Please Read Carefully
               </span>
-              This document is for informational purposes only and does not
-              constitute financial, investment, legal, or tax advice. Investment
-              products are not bank deposits and are not insured by any
-              government or regulatory body. Returns are not guaranteed. Past
-              performance is not a reliable indicator of future results.
+            </div>
+            <p className="text-sm text-[#5b6980] font-montserrat leading-relaxed">
+              This material is for informational purposes only and does not
+              constitute financial, legal, or tax advice. Investment products
+              are not bank deposits and may lose value. Past performance is not
+              a reliable indicator of future results.
             </p>
           </div>
         </div>
 
-        <div className="shrink-0 px-6 sm:px-10 py-4 border-t border-gray-100 flex items-center justify-between">
-          <span className="text-[11px] tracking-[0.08em] text-gray-500 font-poppins">
+        <div className="shrink-0 border-t border-[#e2e8f2] bg-white px-6 py-4 sm:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <span className="text-xs sm:text-sm tracking-[0.08em] text-[#6b778d] font-montserrat uppercase">
             Investment risk disclosure for investor use only
           </span>
           <button
             type="button"
             onClick={onClose}
-            className="text-[10px] uppercase tracking-widest text-white font-poppins border border-genesis-navy bg-genesis-navy px-4 py-2 transition-opacity duration-200 hover:opacity-90 cursor-pointer"
+            className="text-[10px] uppercase tracking-[0.18em] text-white font-montserrat border border-[#0f2745] bg-[#173053] px-5 py-2.5 transition-all duration-200 hover:bg-[#0f2745] cursor-pointer"
           >
             I Understand
           </button>
         </div>
-
-        <div className="h-1 w-full bg-genesis-navy shrink-0" />
       </div>
     </div>
   );
@@ -286,7 +246,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm uppercase tracking-wider text-genesis-navy font-poppins font-semibold mb-4">
+    <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold mb-4">
       {children}
     </p>
   );

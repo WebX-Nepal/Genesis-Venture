@@ -5,7 +5,7 @@ const stats = [
   { value: "NPR 1B+", label: "Assets Under Management", color: "#001D3F" ,animate:false},
   { value: "25+", label: "Years of Experience", color: "#04356A" },
   { value: "20+", label: "Portfolio Companies", color: "#054E98" },
-  { value: "3", label: "IPO", color: "#0A6ED3" },
+  { value: "2", label: "IPO", color: "#0A6ED3" },
 ];
 
 export default function Stats() {
@@ -18,7 +18,7 @@ export default function Stats() {
             className="flex min-h-45 flex-col items-center justify-center gap-2 px-4 py-8 text-center sm:min-h-55 sm:px-6 md:px-8"
             style={{ backgroundColor: color }}
           >
-            {animate === false ? <span className="whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-[PPFONT] text-white">
+            {animate === false ? <span className="whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-montserrat text-white">
               {value}
             </span> : <Counter to={value}/>}
          

@@ -24,10 +24,10 @@ export default function ScrollingHeadline() {
         .marquee-text {
           margin: 0;
           padding-right: 0;
-          font-family: var(--font-playfair), Georgia, serif;
+          font-family: montserrat, sans-serif;
           font-size: clamp(3rem, 12vw, 10rem);
           line-height: 0.95;
-          color: #0d3a66;
+          color: #162e54;
         }
 
         @keyframes marquee {

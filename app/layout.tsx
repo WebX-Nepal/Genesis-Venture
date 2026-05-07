@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisWrapper";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
-import { PreLoaderProvider } from "@/context/PreLoaderContext";
+// import { PreLoaderProvider } from "@/context/PreLoaderContext";
 import { TransitionProvider } from "@/context/TransitionContext";
 
 const geistSans = Geist({
@@ -20,6 +20,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "block",
+});
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "block",
 });
 
@@ -37,18 +43,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LenisProvider>
-          <PreLoaderProvider>
+          {/* <PreLoaderProvider> */}
             <TransitionProvider>
-              <Loader />
+              {/* <Loader /> */}
               {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
               <NavBar />
               {children}
               <Footer />
             </TransitionProvider>
-          </PreLoaderProvider>
+          {/* </PreLoaderProvider> */}
         </LenisProvider>
       </body>
     </html>
