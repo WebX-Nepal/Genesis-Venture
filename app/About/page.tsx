@@ -3,6 +3,7 @@ import Hero from "@/components/About/Hero";
 import Leadership from "@/components/About/Leadership";
 import Milestone from "@/components/About/Milestone";
 import ValuesShowcase from "@/components/About/ValuesShowcase";
+import SCROLLING_HEADLINE from "@/components/Home/ScrollingHeadline";
 
 export default function About() {
   return (
@@ -10,8 +11,8 @@ export default function About() {
       <Hero />
       <AboutUs />
       <ValuesShowcase />
-      {/* <Milestone /> */}
       <Leadership />
+      <SCROLLING_HEADLINE />
     </main>
   );
 }
