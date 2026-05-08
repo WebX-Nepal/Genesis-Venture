@@ -106,24 +106,24 @@ export default function Leadership() {
     <section
       id="leadership"
       ref={containerRef}
-      className="relative flex min-h-screen w-full flex-col bg-white px-4 py-16 xs:px-6 sm:px-8 md:px-16 md:py-24"
+      className="relative flex min-h-screen w-full flex-col bg-white px-4 py-16 xs:px-6 sm:px-8 md:px-16 md:py-24 font-montserrat"
     >
       <div className="mb-10 flex items-start justify-between border-b border-gray-200 pb-6">
-        <span className="leadership-heading font-poppins text-xs uppercase tracking-widest text-gray-500">
+        <span className="leadership-heading font-montserrat text-xs uppercase tracking-widest text-gray-500">
           Leadership
         </span>
       </div>
 
       <div className="mb-12 flex flex-col gap-10 md:mb-16 md:flex-row md:gap-20">
         <div className="w-full md:max-w-xl">
-          <h2 className="leadership-heading font-[PPFONT] text-[clamp(1.8rem,4vw,3rem)] leading-[1.08] text-genesis-navy">
+          <h2 className="leadership-heading font-montserrat text-[clamp(1.8rem,4vw,3rem)] leading-[1.08] text-genesis-navy">
             Leadership built on judgment, discipline, and long-term partnership.
           </h2>
         </div>
         <div className="w-full md:max-w-md">
           <p
             id="animated-paragraph"
-            className="font-poppins text-sm leading-7 text-gray-600"
+            className="font-montserrat text-sm leading-7 text-gray-600"
           >
             Genesis brings a leadership approach shaped by rigorous thinking,
             active partnership, and a commitment to building resilient
@@ -138,10 +138,10 @@ export default function Leadership() {
             key={title}
             className="leadership-card border border-black/10 bg-white/75 px-5 py-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)] backdrop-blur-md sm:px-6 sm:py-7 md:px-7"
           >
-            <h3 className="font-[PPFONT] text-[1.2rem] leading-tight text-genesis-navy">
+            <h3 className="font-montserrat text-[1.2rem] leading-tight text-genesis-navy">
               {title}
             </h3>
-            <p className="mt-3 font-poppins text-sm leading-7 text-gray-600">
+            <p className="mt-3 font-montserrat text-sm leading-7 text-gray-600">
               {description}
             </p>
           </article>

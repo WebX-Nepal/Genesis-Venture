@@ -112,13 +112,13 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="bg-white w-full px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20"
+      className="bg-white w-full px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20 font-montserrat"
     >
       <div className="layout-7xl">
         <div className="grid grid-cols-1 w-full lg:grid-cols-2 gap-12 lg:gap-12 items-center ">
 
           {/* Left side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-4  ">
+          <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-4 bg-[#162e54] p-4 sm:p-5">
             <div className="flex flex-col gap-4 h-full ">
               {investmentPhilosophy.filter((_, i) => i % 2 === 0).map(({ id, title, description, icon, number }) => (
                 <Card key={id} id={id} title={title} description={description} icon={icon} number={number} />

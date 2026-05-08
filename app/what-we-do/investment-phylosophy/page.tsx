@@ -6,7 +6,7 @@ import BeliefsSection from "@/components/what-we-do/Philosophy/BeliefsSection";
 
 export default function InvestmentPhylosophyPage() {
   return (
-    <main className="bg-white text-[#2c2c34] font-poppins">
+    <main className="bg-white text-[#2c2c34] font-montserrat">
       <HeroVideo />
       
       <IntroCommitment />

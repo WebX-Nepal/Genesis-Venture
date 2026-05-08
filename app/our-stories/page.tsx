@@ -23,9 +23,11 @@ const trustSection = {
 };
 
 const leaderParagraphs = [
-  "Anuj Rathi is the Founder and Managing Director of Genesis Ventures Ltd, with over two decades of experience across both manufacturing and financial markets. This rare dual perspective forms the foundation of Genesis Ventures and distinguishes it from conventionally trained investment managers.",
-  "Beginning his career in manufacturing, Anuj developed a deep understanding of industrial operations, supply chains, capital allocation, and the forces that shape real businesses. He later brought this operational expertise to finance, building a disciplined, research-driven investment approach grounded in business fundamentals.",
-  "Today, Anuj leads Genesis Ventures with a hands-on approach, personally overseeing investment strategy, client relationships, and portfolio management. His philosophy is rooted in long-term value creation, disciplined risk management, and an unwavering commitment to transparency and trust.",
+  "Anuj Rathi is the Founder and Managing Director of Genesis Ventures Ltd, bringing over two decades of experience across manufacturing, consumer goods, and financial markets. This rare breadth of experience forms the foundation of Genesis Ventures and distinguishes it from conventionally trained investment managers.",
+  "Anuj began his professional journey after graduating from Mayo College, earning his undergraduate degree from Shri Ram College of Commerce (SRCC), Delhi, and completing his postgraduate studies at the Faculty of Management Studies (FMS), Delhi. His career commenced at Cadbury, where he served as Area Sales Manager for Karnataka, gaining early exposure to business strategy, market dynamics, and consumer behavior.",
+  "He subsequently played an instrumental role in the establishment and operations of leading industrial enterprises, including Maruti Cements Ltd and Premier Distilleries Ltd. He currently serves as Chairman of Maruti Cements Ltd and as Director of Premier Distilleries Ltd, bringing strategic oversight and deep operational insight to both organizations.",
+  "This extensive operating experience gave Anuj a firsthand understanding of industrial operations, supply chains, capital allocation, and the forces that shape real businesses. He later brought this operational expertise to finance, developing a disciplined, research-driven investment approach grounded in business fundamentals.",
+  "Today, Anuj leads Genesis Ventures with a hands-on approach, personally overseeing investment strategy, client relationships, and portfolio management. His philosophy is rooted in long-term value creation, disciplined risk management, and an unwavering commitment to transparency, integrity, and trust.",
 ];
 
 const expertiseTags = [
@@ -62,7 +64,7 @@ const values = [
 
 export default function OurStoriesPage() {
   return (
-    <main className="bg-white text-[#1a1714] font-poppins">
+    <main className="bg-white text-[#1a1714] font-montserrat">
       <section className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#0a1634] px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 text-white">
         <video
           autoPlay
@@ -84,10 +86,10 @@ export default function OurStoriesPage() {
       <section className="bg-white px-6 pt-16 pb-10 sm:px-10 sm:pt-20 sm:pb-12 lg:px-16 lg:pt-24 lg:pb-14">
         <div className="layout-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center">
-            <span className="inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
+            <span className="inline-flex items-center gap-3 font-montserrat text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
               Our Story
             </span>
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-poppins lg:pl-14 lg:text-left">
+            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat lg:pl-14 lg:text-left">
               Where We Come From
             </p>
           </div>
@@ -122,7 +124,7 @@ export default function OurStoriesPage() {
                 <p className="font-[PPFONT] text-[1.9rem] sm:text-[2.1rem] leading-none text-white">
                   {stat.value}
                 </p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.08em] text-white/85 font-poppins leading-tight">
+                <p className="mt-2 text-[11px] uppercase tracking-[0.08em] text-white/85 font-montserrat leading-tight">
                   {stat.label}
                 </p>
               </div>
@@ -147,7 +149,7 @@ export default function OurStoriesPage() {
                   {trustSection.paragraphs.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="font-poppins text-[15px] sm:text-[16px] leading-[1.65] text-[#575b63]"
+                      className="font-montserrat text-[15px] sm:text-[16px] leading-[1.65] text-[#575b63]"
                     >
                       {paragraph}
                     </p>
@@ -165,7 +167,7 @@ export default function OurStoriesPage() {
       >
         <div className="layout-7xl">
           <div className="mb-12">
-            <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-poppins">
+            <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
               Leadership
             </p>
             <h2 className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
@@ -182,11 +184,11 @@ export default function OurStoriesPage() {
                 <h3 className="font-[PPFONT] text-[1.7rem] leading-[1.2] text-white">
                   Anuj Rathi
                 </h3>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-white/85 font-poppins">
+                <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-white/85 font-montserrat">
                   Founder and Managing Director
                 </p>
                 <div className="my-7 h-px bg-white/20" />
-                <div className="space-y-5 text-white/85 font-poppins">
+                <div className="space-y-5 text-white/85 font-montserrat">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/55">
                       Experience
@@ -213,7 +215,7 @@ export default function OurStoriesPage() {
               {leaderParagraphs.map((paragraph) => (
                 <p
                   key={paragraph}
-                  className="mb-5 text-[14px] sm:text-[15px] leading-7 last:mb-0 font-poppins"
+                  className="mb-5 text-[14px] sm:text-[15px] leading-7 last:mb-0 font-montserrat"
                 >
                   {paragraph}
                 </p>
@@ -223,7 +225,7 @@ export default function OurStoriesPage() {
                 {expertiseTags.map((tag) => (
                   <span
                     key={tag}
-                    className="border border-[#8D1E39] px-3 py-1.5 text-[11px] uppercase tracking-[0.08em] text-[#08112a] font-poppins"
+                    className="border border-[#8D1E39] px-3 py-1.5 text-[11px] uppercase tracking-[0.08em] text-[#08112a] font-montserrat"
                   >
                     {tag}
                   </span>
@@ -237,7 +239,7 @@ export default function OurStoriesPage() {
       <section className="w-full bg-white py-10 sm:py-14 md:py-16">
         <div className="layout-7xl">
           <div className="pb-3 sm:pb-4 md:pb-6">
-            <span className="text-[11px] uppercase tracking-[0.22em] text-[#8D1E39] font-poppins font-medium">
+            <span className="text-[11px] uppercase tracking-[0.22em] text-[#8D1E39] font-montserrat font-medium">
               What We Stand For
             </span>
           </div>
@@ -264,7 +266,7 @@ export default function OurStoriesPage() {
                 <h3 className="text-[1.15rem] sm:text-[1.3rem] font-[PPFONT] leading-[1.25] text-[#173053]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-[#4f6783] font-poppins">
+                <p className="mt-4 text-sm leading-relaxed text-[#4f6783] font-montserrat">
                   {item.description}
                 </p>
               </article>

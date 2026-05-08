@@ -155,10 +155,10 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   onFocus={() => setActiveRisk(risk.num)}
                   onBlur={() => setActiveRisk(null)}
                   tabIndex={0}
-                  className={`group relative border bg-white px-4 py-4 transition-all duration-200 outline-none cursor-pointer ${
+                  className={`group relative border px-4 py-4 transition-all duration-200 outline-none cursor-pointer ${
                     activeRisk === risk.num
-                      ? "border-transparent shadow-[0_8px_20px_rgba(12,34,66,0.12)]"
-                      : "border-[#e4e9f2] hover:border-[#cfd8e7]"
+                      ? "border-transparent bg-[#dcebff] shadow-[0_8px_20px_rgba(12,34,66,0.12)]"
+                      : "border-[#cfe0f5] bg-[#eaf3ff] hover:border-[#bcd4f0]"
                   }`}
                   style={
                     activeRisk === risk.num
@@ -171,7 +171,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   <div className="mb-2.5 flex items-center justify-between">
                     <span
                       className="text-[10px] uppercase tracking-[0.2em] font-montserrat font-semibold"
-                      style={{ color: activeRisk === risk.num ? risk.accent : "#173053" }}
+                      style={{ color: "#173053" }}
                     >
                       {risk.title}
                     </span>
@@ -211,10 +211,10 @@ export default function InvestmentRiskModal({ onClose }: Props) {
             </div>
           </div>
 
-          <div className="border border-[#e4e9f2] bg-white px-4 py-4 sm:px-5">
+          <div className="px-0 py-1">
             <div className="mb-2 flex items-center gap-2">
               {/* <span className="h-[2px] w-6 bg-[#8c1d3c]" /> */}
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#8c1d3c] font-montserrat font-semibold">
                 Important Notice - Please Read Carefully
               </span>
             </div>
