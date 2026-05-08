@@ -112,7 +112,7 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="bg-white min-h-screen flex items-center px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
+      className="bg-white w-full px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20"
     >
       <div className="layout-7xl">
         <div className="grid grid-cols-1 w-full lg:grid-cols-2 gap-12 lg:gap-12 items-center ">

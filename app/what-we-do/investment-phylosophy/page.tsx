@@ -3,14 +3,18 @@ import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 import HeroVideo from "@/components/what-we-do/Philosophy/HeroVideo";
 import IntroCommitment from "@/components/what-we-do/Philosophy/IntroCommitment";
 import BeliefsSection from "@/components/what-we-do/Philosophy/BeliefsSection";
+import PhilosophyFramework from "@/components/what-we-do/Philosophy/PhilosophyFramework";
 
 export default function InvestmentPhylosophyPage() {
   return (
     <main className="bg-white text-[#2c2c34] font-poppins">
       <HeroVideo />
+      
       <IntroCommitment />
-      <BeliefsSection />
       <InvestmentPhilosophy />
+      <BeliefsSection />
+      <PhilosophyFramework />
+   
 
       <style jsx global>{`
         @keyframes ticker {
