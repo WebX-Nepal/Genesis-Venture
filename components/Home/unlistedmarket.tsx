@@ -105,11 +105,11 @@ export default function UnlistedMarket() {
       className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
     >
       <div className="layout-7xl">
-         <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6 sm:mb-8 md:mb-10">
-            <p className="firm-kicker font-montserrat text-xs font-medium uppercase tracking-[0.22em] text-[#8D1E39]">
-                Why Unlisted Markets
-            </p>
-          </div>
+        <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6 sm:mb-8 md:mb-10">
+          <p className="firm-kicker font-montserrat text-xs font-medium uppercase tracking-[0.22em] text-[#8D1E39]">
+            Why Unlisted Markets
+          </p>
+        </div>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
           <div className="w-full md:w-5xl">
             <h2 className="unlisted-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-montserrat font-medium">

@@ -214,7 +214,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
           <div className="px-0 py-1">
             <div className="mb-2 flex items-center gap-2">
               {/* <span className="h-[2px] w-6 bg-[#8c1d3c]" /> */}
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#8c1d3c] font-montserrat font-semibold">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#8c1d3c] font-montserrat font-semibold">
                 Important Notice - Please Read Carefully
               </span>
             </div>
