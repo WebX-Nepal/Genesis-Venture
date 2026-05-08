@@ -102,7 +102,7 @@ export default function UnlistedMarket() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen w-full bg-white flex flex-col px-4 xs:px-6 sm:px-8 md:px-16 py-8 sm:py-12 md:py-24"
+      className="w-full bg-white py-10 sm:py-12 md:py-20"
     >
       <div className="layout-7xl">
         <div className="flex items-start justify-between border-b border-[#8D1E39]/25 pb-3 sm:pb-4 md:pb-6 sm:mb-8 md:mb-10">
@@ -126,7 +126,50 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
+          <div className="flex gap-4 min-w-max pr-2">
+            {items.map((item) => (
+              <article
+                key={item.index}
+                className="group relative h-[60vh] w-[82vw] sm:h-[60vh] sm:w-[64vw] shrink-0 snap-center overflow-hidden border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] transition-colors duration-300"
+              >
+                <div className="absolute inset-0 opacity-100">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 82vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/50 to-black/30" />
+                </div>
+
+                <div className="relative z-20 h-full p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#f3dce3]">
+                      {item.index}
+                    </span>
+                    <span className="h-px w-8 bg-[#f3dce3]/55" />
+                    <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
+                      {item.label}
+                    </span>
+                  </div>
+
+                  <div className="absolute inset-x-5 top-1/2 -translate-y-1/2">
+                    <h3 className="text-center font-montserrat text-[1.2rem] leading-[1.25] text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/90">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:grid grid-cols-2 gap-5 xl:grid-cols-4">
           {items.map((item) => (
             <article
               key={item.index}
@@ -145,17 +188,17 @@ export default function UnlistedMarket() {
 
               <div className="relative z-20 h-full p-5 sm:p-6">
                 <div className="flex items-center gap-3 transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#d6e6fa] group-hover:text-[#f3dce3]">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#f3dce3]">
                     {item.index}
                   </span>
-                  <span className="h-px w-8 bg-[#d6e6fa]/55 group-hover:bg-[#f3dce3]/55 transition-colors duration-300" />
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#d6e6fa] group-hover:text-[#f3dce3] transition-colors duration-300">
+                  <span className="h-px w-8 bg-[#f3dce3]/55 transition-colors duration-300" />
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3] transition-colors duration-300">
                     {item.label}
                   </span>
                 </div>
 
                 <div className="absolute inset-x-5 top-1/2 -translate-y-1/2 sm:inset-x-6">
-                  <h3 className="text-center font-montserrat text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.25] text-white transition-opacity duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-0">
+                  <h3 className="text-center font-montserrat text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.25] text-white transition-opacity duration-500 group-hover:opacity-0">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-h-0 translate-y-2 overflow-hidden text-sm leading-relaxed text-white/90 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-h-40 group-hover:translate-y-0 group-hover:opacity-100">

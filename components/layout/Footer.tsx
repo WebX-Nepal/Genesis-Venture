@@ -27,27 +27,28 @@ export default function Footer() {
       style={{
         clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)"
       }}
-      className='relative h-[46vh]'>
-      <footer className=" fixed bottom-0 h-[46vh]  w-full  overflow-hidden bg-genesis-navy text-white font-poppins">
+      className="relative h-auto md:h-[46vh]"
+    >
+      <footer className="relative w-full overflow-hidden bg-genesis-navy text-white font-poppins md:fixed md:bottom-0 md:h-[46vh]">
         <div className="pointer-events-none absolute inset-0 bg-[url('/footer/image.png')] bg-cover bg-center opacity-30" />
         <div className="pointer-events-none absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 flex min-h-[46vh] flex-col justify-between">
-          <div className="layout-7xl flex flex-col gap-5 pb-5 pt-6 md:pb-6 md:pt-8">
-            <div className="flex flex-col justify-between gap-5 md:flex-row">
+        <div className="relative z-10 flex min-h-[420px] flex-col justify-between md:min-h-[46vh]">
+          <div className="layout-7xl flex flex-col gap-6 pb-6 pt-7 md:pb-6 md:pt-8">
+            <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="flex max-w-xl flex-col gap-3">
-                <h2 className="font-montserrat text-[1.7rem] sm:text-[2rem] leading-[1.55] text-white">
+                <h2 className="font-montserrat text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
                   Let's Get
                   <br />
                   Connected.
                 </h2>
-                <p className="hidden max-w-sm font-poppins text-[13px] sm:text-sm leading-relaxed text-white/60 sm:block">
+                <p className="max-w-sm font-poppins text-[13px] leading-relaxed text-white/60 sm:text-sm">
                   We review every submission and respond within 5 business days.
                   If there's a fit, we move quickly.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-20">
+              <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
                 <div className="flex flex-col gap-3">
                   <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Navigation
@@ -96,12 +97,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="layout-7xl grid grid-cols-1 items-center gap-2 pb-4 pt-2 text-center md:grid-cols-3 md:pb-5 md:pt-3 md:text-left">
+          <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-left md:grid-cols-3 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3">
             <span className="text-xs text-white/80 md:justify-self-start">
               Copyright (c) {new Date().getFullYear()} Genesis Ventures, Inc. All
               Rights Reserved.
             </span>
-            <div className="flex items-center justify-center gap-6 md:justify-self-center">
+            <div className="flex flex-wrap items-center gap-4 md:justify-self-center md:gap-6">
               {legal.map(({ label, href }) => (
                 <Link
                   key={label}
@@ -116,7 +117,7 @@ export default function Footer() {
               href="https://www.webxnepal.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-xs text-white/60 transition-colors hover:text-white md:justify-self-end"
+              className="inline-flex items-center gap-2 text-xs text-white/60 transition-colors hover:text-white md:justify-self-end"
             >
               <span>Designed &amp; Developed by</span>
               <img
