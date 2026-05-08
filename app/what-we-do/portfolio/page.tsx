@@ -18,18 +18,22 @@ export default function PortfolioPage() {
   useGSAP(() => {
     if (!introRef.current) return;
 
-    const paragraph = introRef.current.querySelector<HTMLParagraphElement>(
-      "#portfolio-intro-paragraph",
+    const paragraphs = introRef.current.querySelectorAll<HTMLElement>(
+      "#portfolio-intro-paragraph p",
     );
-    if (!paragraph) return;
+    if (!paragraphs.length) return;
 
-    const words = paragraph.textContent
-      ?.split(" ")
-      .map((word) => `<span class="word inline-block">${word}</span>`)
-      .join(" ");
-    if (words) paragraph.innerHTML = words;
+    paragraphs.forEach((paragraph) => {
+      const words = paragraph.textContent
+        ?.split(" ")
+        .map((word) => `<span class="word inline-block">${word}</span>`)
+        .join(" ");
+      if (words) paragraph.innerHTML = words;
+    });
 
-    const wordEls = paragraph.querySelectorAll(".word");
+    const wordEls = introRef.current.querySelectorAll(
+      "#portfolio-intro-paragraph .word",
+    );
     gsap.fromTo(
       wordEls,
       { opacity: 0.15, y: 10, filter: "blur(5px)" },
@@ -85,21 +89,22 @@ export default function PortfolioPage() {
           </div>
 
           <div className="py-2 sm:py-3 md:py-4">
-            <p
-              id="portfolio-intro-paragraph"
-              className="w-full text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat"
-            >
-              Genesis Ventures deploys long-term capital into unlisted
-              businesses across six sectors. Every position is the result of
-              independent research, direct engagement with management, and a
-              clear view on intrinsic value, without the pressure of a fund
-              cycle or the distortion of market noise. We build exposure with a
-              deliberate long-horizon mindset, prioritizing business quality,
-              governance strength, and sector durability over short-term market
-              sentiment. Our portfolio construction reflects conviction,
-              patience, and disciplined capital allocation designed to compound
-              value through cycles.
-            </p>
+            <div id="portfolio-intro-paragraph" className="max-w-5xl space-y-4">
+              <p className="text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">
+                Genesis Ventures deploys long-term capital into unlisted
+                businesses across six sectors. Every position is the result of
+                independent research, direct engagement with management, and a
+                clear view on intrinsic value, without the pressure of a fund
+                cycle or the distortion of market noise.
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">
+                We build exposure with a deliberate long-horizon mindset,
+                prioritizing business quality, governance strength, and sector
+                durability over short-term market sentiment. Our portfolio
+                construction reflects conviction, patience, and disciplined
+                capital allocation designed to compound value through cycles.
+              </p>
+            </div>
           </div>
         </div>
       </section>
