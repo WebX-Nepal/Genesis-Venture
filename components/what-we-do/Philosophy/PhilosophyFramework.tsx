@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 
 export default function PhilosophyFramework() {
   return (
@@ -24,24 +23,6 @@ export default function PhilosophyFramework() {
                 Risk is not price movement. Risk is permanent loss of capital. We
                 focus on downside protection first, then seek compounding returns.
               </p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#385273]">
-                We earn only from transparent advisory fees. No commissions, no
-                hidden incentives, and no conflict-driven product pushing.
-              </p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#385273]">
-                We set realistic expectations: markets are cyclical, drawdowns are
-                inevitable, and long-term discipline beats short-term prediction.
-              </p>
-            </div>
-            <div className="relative min-h-[240px] overflow-hidden border border-[#d9e2ee]">
-              <Image
-                src="/images/Projects/insight.webp"
-                alt="Investment analysis session"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 35vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#173053]/55 via-transparent to-transparent" />
             </div>
           </div>
         </div>
