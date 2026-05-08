@@ -2,7 +2,6 @@
 import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 import HeroVideo from "@/components/what-we-do/Philosophy/HeroVideo";
 import IntroCommitment from "@/components/what-we-do/Philosophy/IntroCommitment";
-import BeliefsSection from "@/components/what-we-do/Philosophy/BeliefsSection";
 
 export default function InvestmentPhylosophyPage() {
   return (
@@ -11,7 +10,6 @@ export default function InvestmentPhylosophyPage() {
       
       <IntroCommitment />
       <InvestmentPhilosophy />
-      <BeliefsSection />
    
 
       <style jsx global>{`
