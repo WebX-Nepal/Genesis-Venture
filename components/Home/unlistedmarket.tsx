@@ -126,13 +126,13 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 md:gap-5 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => (
             <article
               key={item.index}
-              className="group relative aspect-[4/5] overflow-hidden border border-[#cfe0f5] bg-[#eaf3ff] transition-colors duration-300"
+              className="group relative aspect-[4/5] overflow-hidden border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] transition-colors duration-300"
             >
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -144,21 +144,21 @@ export default function UnlistedMarket() {
               </div>
 
               <div className="relative z-20 h-full p-5 sm:p-6">
-                <div className="flex items-center gap-3 transition-colors duration-300">
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#8c1d3c] group-hover:text-[#f3dce3]">
+                <div className="flex items-center gap-3 transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#d6e6fa] group-hover:text-[#f3dce3]">
                     {item.index}
                   </span>
-                  <span className="h-px w-8 bg-[#8c1d3c]/45 group-hover:bg-[#f3dce3]/55 transition-colors duration-300" />
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#173053] group-hover:text-[#f3dce3] transition-colors duration-300">
+                  <span className="h-px w-8 bg-[#d6e6fa]/55 group-hover:bg-[#f3dce3]/55 transition-colors duration-300" />
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#d6e6fa] group-hover:text-[#f3dce3] transition-colors duration-300">
                     {item.label}
                   </span>
                 </div>
 
                 <div className="absolute inset-x-5 top-1/2 -translate-y-1/2 sm:inset-x-6">
-                  <h3 className="text-center font-montserrat text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.25] text-[#162e54] transition-all duration-300 group-hover:opacity-0">
+                  <h3 className="text-center font-montserrat text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.25] text-white transition-opacity duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-0">
                     {item.title}
                   </h3>
-                  <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-white/90 opacity-0 transition-all duration-400 group-hover:max-h-40 group-hover:opacity-100">
+                  <p className="mt-3 max-h-0 translate-y-2 overflow-hidden text-sm leading-relaxed text-white/90 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-h-40 group-hover:translate-y-0 group-hover:opacity-100">
                     {item.desc}
                   </p>
                 </div>

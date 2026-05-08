@@ -157,8 +157,8 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   tabIndex={0}
                   className={`group relative border px-4 py-4 transition-all duration-200 outline-none cursor-pointer ${
                     activeRisk === risk.num
-                      ? "border-transparent bg-[#dcebff] shadow-[0_8px_20px_rgba(12,34,66,0.12)]"
-                      : "border-[#cfe0f5] bg-[#eaf3ff] hover:border-[#bcd4f0]"
+                      ? "border-[#204474] bg-[#162e54] shadow-[0_8px_20px_rgba(12,34,66,0.22)]"
+                      : "border-[#204474] bg-[#162e54] hover:border-[#3a5d8c]"
                   }`}
                   style={
                     activeRisk === risk.num
@@ -171,15 +171,15 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   <div className="mb-2.5 flex items-center justify-between">
                     <span
                       className="text-[10px] uppercase tracking-[0.2em] font-montserrat font-semibold"
-                      style={{ color: "#173053" }}
+                      style={{ color: "#ffffff" }}
                     >
                       {risk.title}
                     </span>
-                    <span className="font-montserrat text-xl text-[#8c1d3c] leading-none">
+                    <span className="font-montserrat text-xl text-white leading-none">
                       {risk.num}
                     </span>
                   </div>
-                  <p className="text-sm text-[#53627b] font-montserrat leading-relaxed">
+                  <p className="text-sm text-white font-montserrat leading-relaxed">
                     {risk.body}
                   </p>
                 </article>
@@ -189,21 +189,21 @@ export default function InvestmentRiskModal({ onClose }: Props) {
 
           <div className="space-y-4">
             <SectionLabel>Principles For Responsible Investing</SectionLabel>
-            <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {principles.map((p, index) => (
                 <article
                   key={p.title}
-                  className="group border border-[#e4e9f2] bg-white px-4 py-4 transition-colors duration-200 hover:border-[#cfd8e7]"
+                  className="group border border-[#3388db] bg-[#0A6ED3]/75 px-4 py-4 transition-colors duration-200 hover:border-[#5fa4e5]"
                 >
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8c1d3c]">
+                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       0{index + 1}
                     </span>
-                    <h4 className="text-[11px] uppercase tracking-[0.18em] text-[#173053] font-montserrat font-semibold">
+                    <h4 className="text-[11px] uppercase tracking-[0.18em] text-white font-montserrat font-semibold">
                       {p.title}
                     </h4>
                   </div>
-                  <p className="text-sm text-[#5a6a83] font-montserrat leading-relaxed">
+                  <p className="text-sm text-white font-montserrat leading-relaxed">
                     {p.body}
                   </p>
                 </article>

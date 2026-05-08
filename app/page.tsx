@@ -27,7 +27,7 @@ export default function Home() {
       <Firm /> 
       <Devider />
       <UnlistedMarket />
-      <ScrollingHeadline />
+      {/* <ScrollingHeadline /> */}
     </main>
   );
 }
