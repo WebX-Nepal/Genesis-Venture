@@ -126,41 +126,42 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="flex flex-col border border-[#d6dce8] flex-1">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-4">
           {items.map((item) => (
             <article
               key={item.index}
-              className="group relative -mt-px flex flex-col md:flex-row border-t border-[#d6dce8] first:border-t-0 bg-white transition-colors duration-300 hover:bg-[#f8fbff]"
+              className="group relative aspect-[4/5] overflow-hidden border border-[#cfe0f5] bg-[#eaf3ff] transition-colors duration-300"
             >
-              <div className="absolute left-0 top-0 h-full w-[3px] bg-[#8c1d3c] scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
-
-              <div className="relative w-full md:w-[38%] lg:w-[34%] h-[220px] sm:h-[250px] md:h-auto">
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 42vw, 32vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/25 to-transparent md:bg-gradient-to-t md:from-black/20 md:to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/50 to-black/30" />
               </div>
 
-              <div className="flex flex-1 flex-col justify-center px-4 py-4 sm:px-6 sm:py-6 md:px-7 md:py-7">
-                <div className="mb-2 flex items-center gap-3">
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#8c1d3c]">
+              <div className="relative z-20 h-full p-5 sm:p-6">
+                <div className="flex items-center gap-3 transition-colors duration-300">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#8c1d3c] group-hover:text-[#f3dce3]">
                     {item.index}
                   </span>
-                  <span className="h-px w-10 bg-[#8c1d3c]/35" />
-                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#173053]">
+                  <span className="h-px w-8 bg-[#8c1d3c]/45 group-hover:bg-[#f3dce3]/55 transition-colors duration-300" />
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#173053] group-hover:text-[#f3dce3] transition-colors duration-300">
                     {item.label}
                   </span>
                 </div>
-                <span className="font-montserrat text-[clamp(1.05rem,2.1vw,1.55rem)] text-[#162e54] leading-[1.2]">
-                  {item.title}
-                </span>
-                <span className="mt-2 text-sm text-[#4f5f78] font-poppins leading-relaxed max-w-3xl">
-                  {item.desc}
-                </span>
+
+                <div className="absolute inset-x-5 top-1/2 -translate-y-1/2 sm:inset-x-6">
+                  <h3 className="text-center font-montserrat text-[clamp(1.1rem,1.8vw,1.45rem)] leading-[1.25] text-[#162e54] transition-all duration-300 group-hover:opacity-0">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 max-h-0 overflow-hidden text-sm leading-relaxed text-white/90 opacity-0 transition-all duration-400 group-hover:max-h-40 group-hover:opacity-100">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             </article>
           ))}
