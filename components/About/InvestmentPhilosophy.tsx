@@ -91,7 +91,7 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="w-full bg-white px-6 py-14 font-montserrat sm:px-10 sm:py-16 lg:px-16 lg:py-20"
+      className="w-full bg-white py-14 font-montserrat sm:py-16 lg:py-20"
     >
       <div className="layout-7xl">
         <div className="mb-8 border-b border-[#d7e0ec] pb-4">
@@ -124,7 +124,7 @@ const InvestmentPhilosophy = () => {
                 />
               </div>
               <div className={`flex items-center p-6 sm:p-8 lg:p-10 ${index % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <div>
+                <div className="text-center">
                   <h3 className="font-montserrat text-[clamp(1.15rem,2vw,1.8rem)] leading-[1.25] text-[#173053]">
                     {row.title}
                   </h3>

@@ -21,7 +21,7 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="px-6 pt-10 pb-16 sm:px-10 sm:pt-12 sm:pb-20 lg:px-16 lg:pt-14 lg:pb-24"
+      className="pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24"
     >
       <div className="layout-7xl">
         <div className="mb-12">

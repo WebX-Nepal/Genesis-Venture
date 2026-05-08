@@ -7,6 +7,7 @@ interface HeroPageProps {
   backgroundImage?: string;
   backgroundImageAlt?: string;
   backgroundVideo?: string;
+  heightClassName?: string;
 }
 export default function HeroPage({
   title,
@@ -14,9 +15,10 @@ export default function HeroPage({
   backgroundImage,
   backgroundImageAlt = "",
   backgroundVideo,
+  heightClassName = "h-screen",
 }: HeroPageProps) {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#0a1634] text-white">
+    <section className={`relative w-full overflow-hidden bg-[#0a1634] text-white ${heightClassName}`}>
       {backgroundVideo ? (
         <>
           <video

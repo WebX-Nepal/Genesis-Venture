@@ -4,7 +4,7 @@ import Title from "@/components/ui/Title";
 
 export default function OurStoryHero() {
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#0a1634] px-4 xs:px-6 sm:px-8 md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 text-white">
+    <section className="relative min-h-[60vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#0a1634] px-4 xs:px-6 sm:px-8 md:min-h-screen md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 text-white">
       <video
         autoPlay
         muted

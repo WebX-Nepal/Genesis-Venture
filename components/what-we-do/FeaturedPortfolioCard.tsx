@@ -15,12 +15,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
 
         {/* Top Meta: Badge & Sector */}
         <div className="flex justify-between items-start mb-16">
-          <div className="space-y-1">
-            <p className="text-[11px] font-bold tracking-[0.2em] text-[#173053] uppercase transition-colors duration-300">
-              {item.sector}
-            </p>
-            <div className="h-px w-6 bg-[#173053]/35 transition-all duration-500" />
-          </div>
+          <div />
 
           <span className="text-[11px] font-black tracking-[0.2em] text-[#173053]/80 uppercase border border-[#cfd9e6] px-3 py-1 transition-colors duration-300">
             {item.badge}
@@ -29,9 +24,10 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
 
         {/* Main Title & Description */}
         <div className="max-w-4xl mb-12">
-          <h4 className="mb-6 font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#152F53] transition-colors duration-300">
+          <h4 className="mb-4 font-[PPFONT] text-[1.85rem] sm:text-[2.2rem] leading-[1.35] tracking-[-0.01em] text-[#0f2745] transition-colors duration-300">
             {item.name}
           </h4>
+          <div className="mb-6 h-[2px] w-14 bg-[#8D1E39]" />
           <p
             className={`max-w-2xl text-[16px] leading-[1.55] ${
               item.id === "sopan-multiple"

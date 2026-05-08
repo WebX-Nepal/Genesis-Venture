@@ -36,20 +36,20 @@ export default function Footer() {
         <div className="relative z-10 flex min-h-[420px] flex-col justify-between md:min-h-[46vh]">
           <div className="layout-7xl flex flex-col gap-6 pb-6 pt-7 md:pb-6 md:pt-8">
             <div className="flex flex-col justify-between gap-6 md:flex-row">
-              <div className="flex max-w-xl flex-col gap-3">
+              <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
                 <h2 className="font-montserrat text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
                   Let's Get
                   <br />
                   Connected.
                 </h2>
-                <p className="max-w-sm font-poppins text-[13px] leading-relaxed text-white/60 sm:text-sm">
+                <p className="mx-auto max-w-sm font-poppins text-[13px] leading-relaxed text-white/60 sm:text-sm md:mx-0">
                   We review every submission and respond within 5 business days.
                   If there's a fit, we move quickly.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
-                <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-1 gap-7 text-center sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:text-left">
+                <div className="flex flex-col items-center gap-3 md:items-start">
                   <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Navigation
                   </span>
@@ -66,7 +66,7 @@ export default function Footer() {
 
 
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col items-center gap-3 md:items-start">
                   <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Contact
                   </span>
@@ -79,7 +79,7 @@ export default function Footer() {
                   </span>
                 </div>
 
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col items-center gap-3 md:items-start">
                   <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
                     Resources
                   </span>
@@ -97,12 +97,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-left md:grid-cols-3 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3">
+          <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-center md:grid-cols-3 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
             <span className="text-xs text-white/80 md:justify-self-start">
               Copyright (c) {new Date().getFullYear()} Genesis Ventures, Inc. All
               Rights Reserved.
             </span>
-            <div className="flex flex-wrap items-center gap-4 md:justify-self-center md:gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-self-center md:gap-6">
               {legal.map(({ label, href }) => (
                 <Link
                   key={label}
@@ -117,7 +117,7 @@ export default function Footer() {
               href="https://www.webxnepal.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 text-xs text-white/60 transition-colors hover:text-white md:justify-self-end"
+              className="inline-flex items-center justify-center gap-2 text-xs text-white/60 transition-colors hover:text-white md:justify-self-end"
             >
               <span>Designed &amp; Developed by</span>
               <img
