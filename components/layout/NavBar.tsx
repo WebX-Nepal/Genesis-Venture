@@ -7,10 +7,8 @@ import Image from "next/image";
 
 // ------------------ NAV LINKS ------------------
 const navLinks = [
-  // { label: "Home", href: "/", dropdown: null },
   {
     label: "Who We Are",
-  
     dropdown: [
       { label: "Firm", href: "/firm" },
       { label: "Our Story", href: "/our-stories" },
@@ -19,7 +17,6 @@ const navLinks = [
   },
   {
     label: "What We Do",
-
     dropdown: [
       { label: "Portfolio", href: "/what-we-do/portfolio" },
       {
@@ -29,14 +26,6 @@ const navLinks = [
     ],
   },
   { label: "Investor Relations", href: "/investment-relation", dropdown: null },
-  // {
-  //   label: "Perspective",
-  //   href: "/perspective",
-  //   dropdown: [
-  //     { label: "Market Insights", href: "/perspective#market-insights" },
-  //     { label: "Media", href: "/perspective#media" },
-  //   ],
-  // },
   { label: "Get in Touch", href: "/Contacts", dropdown: null },
 ];
 
@@ -86,6 +75,20 @@ export default function NavBar() {
   const navbarSurface = "bg-white border-gray-100";
   const navbarTextColor = "text-genesis-navy";
 
+  const isActivePath = (target?: string) => {
+    if (!target) return false;
+    return pathname === target || pathname.startsWith(`${target}/`);
+  };
+
+  const isParentActive = (
+    href?: string,
+    dropdown?: Array<{ label: string; href: string }> | null,
+  ) => {
+    if (isActivePath(href)) return true;
+    if (!dropdown) return false;
+    return dropdown.some((item) => isActivePath(item.href));
+  };
+
   return (
     <div
       className="fixed top-0 left-0 right-0 z-999 flex flex-col transition-transform duration-300 ease-in-out"
@@ -106,60 +109,68 @@ export default function NavBar() {
 
           {/* Desktop */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map(({ label, href, dropdown }) => (
-              <li
-                key={label}
-                className="relative"
-                onMouseEnter={() => dropdown && handleMouseEnter(label)}
-                onMouseLeave={() => dropdown && handleMouseLeave()}
-              >
-                <Link
-                  href={href ?? "#"}
-                  className={`flex items-center gap-1 text-xs uppercase tracking-widest font-poppins transition-colors duration-200 ${
-                    pathname === href
-                      ? "text-genesis-red"
-                      : "text-genesis-navy hover:text-genesis-red"
-                  }`}
-                >
-                  {label}
-                  {dropdown && (
-                    <ChevronDown
-                      size={12}
-                      className={`transition-transform duration-200 mt-px ${
-                        openDropdown === label
-                          ? "rotate-180 text-genesis-red"
-                          : ""
-                      }`}
-                    />
-                  )}
-                </Link>
+            {navLinks.map(({ label, href, dropdown }) => {
+              const parentActive = isParentActive(href, dropdown);
 
-                {/* Dropdown panel */}
-                {dropdown && (
-                  <div
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-white border border-gray-100 shadow-lg transition-all duration-200 origin-top ${
-                      openDropdown === label
-                        ? "opacity-100 scale-y-100 pointer-events-auto"
-                        : "opacity-0 scale-y-95 pointer-events-none"
+              return (
+                <li
+                  key={label}
+                  className="relative"
+                  onMouseEnter={() => dropdown && handleMouseEnter(label)}
+                  onMouseLeave={() => dropdown && handleMouseLeave()}
+                >
+                  <Link
+                    href={href ?? "#"}
+                    className={`flex items-center gap-1 text-xs uppercase tracking-widest font-poppins transition-colors duration-200 ${
+                      parentActive
+                        ? "text-genesis-red"
+                        : "text-genesis-navy hover:text-genesis-red"
                     }`}
                   >
-                    <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-gray-100 rotate-45" />
-                    <ul className="py-4 relative">
-                      {dropdown.map(({ label: dLabel, href: dHref }) => (
-                        <li key={dHref}>
-                          <Link
-                            href={dHref}
-                            className="block px-5 py-2.5 text-xs font-poppins uppercase tracking-wider text-gray-500 hover:text-genesis-navy hover:bg-gray-50 transition-colors duration-150"
-                          >
-                            {dLabel}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
-            ))}
+                    {label}
+                    {dropdown && (
+                      <ChevronDown
+                        size={12}
+                        className={`transition-transform duration-200 mt-px ${
+                          openDropdown === label
+                            ? "rotate-180 text-genesis-red"
+                            : ""
+                        }`}
+                      />
+                    )}
+                  </Link>
+
+                  {/* Dropdown panel */}
+                  {dropdown && (
+                    <div
+                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 bg-white border border-gray-100 shadow-lg transition-all duration-200 origin-top ${
+                        openDropdown === label
+                          ? "opacity-100 scale-y-100 pointer-events-auto"
+                          : "opacity-0 scale-y-95 pointer-events-none"
+                      }`}
+                    >
+                      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white border-l border-t border-gray-100 rotate-45" />
+                      <ul className="py-4 relative">
+                        {dropdown.map(({ label: dLabel, href: dHref }) => (
+                          <li key={dHref}>
+                            <Link
+                              href={dHref}
+                              className={`block px-5 py-2.5 text-xs font-poppins uppercase tracking-wider transition-colors duration-150 hover:bg-gray-50 ${
+                                isActivePath(dHref)
+                                  ? "text-genesis-red"
+                                  : "text-gray-500 hover:text-genesis-navy"
+                              }`}
+                            >
+                              {dLabel}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
           <button
@@ -179,56 +190,66 @@ export default function NavBar() {
         } bg-white border-b border-gray-100`}
       >
         <div className="layout-7xl flex flex-col py-4 gap-1">
-          {navLinks.map(({ label, href, dropdown }) => (
-            <div key={label}>
-              {dropdown ? (
-                <>
-                  <button
-                    onClick={() =>
-                      setMobileOpen((prev) => (prev === label ? null : label))
-                    }
-                    className="w-full flex items-center justify-between text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 text-genesis-navy"
-                  >
-                    {label}
-                    <ChevronDown
-                      size={14}
-                      className={`transition-transform duration-200 ${
-                        mobileOpen === label
-                          ? "rotate-180 text-genesis-red"
-                          : ""
+          {navLinks.map(({ label, href, dropdown }) => {
+            const parentActive = isParentActive(href, dropdown);
+
+            return (
+              <div key={label}>
+                {dropdown ? (
+                  <>
+                    <button
+                      onClick={() =>
+                        setMobileOpen((prev) => (prev === label ? null : label))
+                      }
+                      className={`w-full flex items-center justify-between text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 ${
+                        parentActive ? "text-genesis-red" : "text-genesis-navy"
                       }`}
-                    />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      mobileOpen === label
-                        ? "max-h-60 opacity-100"
-                        : "max-h-0 opacity-0"
+                    >
+                      {label}
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-200 ${
+                          mobileOpen === label
+                            ? "rotate-180 text-genesis-red"
+                            : ""
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        mobileOpen === label
+                          ? "max-h-60 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {dropdown.map(({ label: dLabel, href: dHref }) => (
+                        <Link
+                          key={dHref}
+                          href={dHref}
+                          className={`block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider border-b border-gray-50 last:border-0 transition-colors ${
+                            isActivePath(dHref)
+                              ? "text-genesis-red"
+                              : "text-gray-500 hover:text-genesis-navy"
+                          }`}
+                        >
+                          - {dLabel}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={href ?? "#"}
+                    className={`block text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 transition-colors ${
+                      isActivePath(href) ? "text-genesis-red" : "text-genesis-navy"
                     }`}
                   >
-                    {dropdown.map(({ label: dLabel, href: dHref }) => (
-                      <Link
-                        key={dHref}
-                        href={dHref}
-                        className="block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider text-gray-500 hover:text-genesis-navy border-b border-gray-50 last:border-0 transition-colors"
-                      >
-                        — {dLabel}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <Link
-                  href={href ?? "#"}
-                  className={`block text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 transition-colors ${
-                    pathname === href ? "text-genesis-red" : "text-genesis-navy"
-                  }`}
-                >
-                  {label}
-                </Link>
-              )}
-            </div>
-          ))}
+                    {label}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,5 +1,12 @@
 "use client";
 
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const beliefCards = [
   {
     no: "01",
@@ -19,64 +26,81 @@ const beliefCards = [
 ];
 
 export default function BeliefsSection() {
-  return (
-    <section
-      id="beliefs"
-      className="bg-white px-6 py-16 sm:px-10 sm:py-20 lg:px-16 lg:py-24"
-    >
-      <div className="layout-7xl">
-        <div className="mb-12 grid grid-cols-1 gap-8 border-b border-white/20 bg-[#173053] px-6 py-8 sm:px-8 sm:py-10 lg:grid-cols-[420px_1fr] lg:gap-20">
-          <div>
-            <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-poppins">
-              What We Believe
-            </p>
-            <h2 className="font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-white">
-              We are not in
-              <br />
-              the business of
-              <br />
-              <em className="text-[#8D1E39]">selling confidence.</em>
-            </h2>
-          </div>
+  const sectionRef = useRef<HTMLElement>(null);
 
-          <div className="pt-1 text-white/85 font-poppins">
-            <p className="mb-4 text-[16px] leading-[1.55]">
-              Most firms measure themselves by the returns they generate. We
-              measure ourselves by something harder to fake: whether our
-              clients can look back a decade from now and say that Genesis
-              Ventree was the most honest partner they ever had in financial
-              life.
-            </p>
-            <p className="text-[16px] leading-[1.55]">
-              Performance follows integrity - not the other way around. When
-              advice is given free of conflicts, when fees are transparent, and
-              when a firm has the discipline to say &quot;we do not know&quot;
-              rather than bluff,
-              <strong className="font-semibold text-white">
-                {" "}
-                better decisions get made
-              </strong>
-              . That is the foundation of everything we do.
-            </p>
+  useGSAP(() => {
+    if (!sectionRef.current) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 82%",
+        toggleActions: "play none none reverse",
+      },
+      defaults: { ease: "power2.out", duration: 0.6 },
+    });
+
+    tl.from(".belief-intro", { y: 16, autoAlpha: 0 })
+      .from(".belief-card", { y: 16, autoAlpha: 0, stagger: 0.1 }, "-=0.25");
+  }, { scope: sectionRef });
+
+  return (
+    <section ref={sectionRef} id="beliefs" className="bg-[#f6f9fd] py-14 sm:py-16 lg:py-20">
+      <div className="layout-7xl">
+        <div className="belief-intro rounded-sm border border-[#d8e2ee] bg-white p-6 sm:p-8 lg:p-10">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+            <div>
+              <p className="inline-flex items-center font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
+                What We Believe
+              </p>
+              <h2 className="mt-4 font-montserrat text-[clamp(1.4rem,3.1vw,2.3rem)] leading-[1.2] text-[#173053]">
+                We are not in the business of
+                <span className="block italic text-[#8D1E39]">selling confidence.</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4 border-l-0 border-[#e7edf6] pt-0 lg:border-l lg:pl-8">
+              <p className="text-sm sm:text-base leading-relaxed text-[#385273] font-montserrat">
+                Most firms measure themselves by the returns they generate. We
+                measure ourselves by something harder to fake: whether our
+                clients can look back a decade from now and say that Genesis
+                Ventree was the most honest partner they ever had in financial
+                life.
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed text-[#385273] font-montserrat">
+                Performance follows integrity - not the other way around. When
+                advice is given free of conflicts, when fees are transparent, and
+                when a firm has the discipline to say &quot;we do not know&quot;
+                rather than bluff,
+                <strong className="font-semibold text-[#173053]">
+                  {" "}better decisions get made
+                </strong>
+                . That is the foundation of everything we do.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {beliefCards.map((card) => (
             <article
               key={card.no}
-              className="group cursor-pointer border border-[#173053]/25 bg-white px-7 py-9 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#173053]/45 hover:bg-[#f7faff] hover:shadow-[0_8px_24px_rgba(16,35,71,0.08)] sm:px-8 sm:py-10"
+              className="belief-card group flex h-full flex-col border border-[#d9e2ee] bg-white p-6 sm:p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#173053]/35 hover:shadow-[0_10px_24px_rgba(16,35,71,0.08)]"
             >
-              <div className="mb-6 flex items-center justify-between">
-                <span className="h-[2px] w-10 bg-[#173053] transition-all duration-300 group-hover:w-14" />
-                <p className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#173053]">
+              <div className="mb-4 flex items-center justify-between border-b border-[#ebf0f7] pb-3">
+                <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39]">
+                  Principle
+                </span>
+                <span className="font-montserrat text-[11px] font-semibold tracking-[0.14em] text-[#173053]">
                   {card.no}
-                </p>
+                </span>
               </div>
-              <h3 className="mb-3 font-[PPFONT] text-[1.05rem] sm:text-[1.125rem] leading-[1.3] text-[#152F53] transition-colors duration-300 group-hover:text-[#173053]">
+
+              <h3 className="font-montserrat text-base sm:text-[1.05rem] font-semibold leading-[1.35] text-[#173053]">
                 {card.title}
               </h3>
-              <p className="text-[16px] leading-[1.55] text-[#355171] font-poppins transition-colors duration-300 group-hover:text-[#173053]">
+
+              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#4f6583] font-montserrat">
                 {card.body}
               </p>
             </article>

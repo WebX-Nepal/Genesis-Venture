@@ -40,7 +40,7 @@ const AnnualReport = () => {
           Annual Report 2025
         </h3>
 
-        <p className="text-sm sm:text-base text-gray-600 font-poppins leading-8 max-w-2xl "        >
+        <p className="text-xs sm:text-sm text-gray-600 font-montserrat leading-relaxed max-w-2xl "        >
           A comprehensive overview of our investment activities, portfolio performance, and key strategic milestones achieved throughout 2025. This report highlights fund growth, major partnerships, and insights into how our long-term vision continues to drive sustainable value creation across diverse markets.
         </p>
 

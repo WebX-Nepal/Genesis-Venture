@@ -12,7 +12,7 @@ const Portfolio = () => {
 
         <p
           id="animated-paragraph"
-          className="text-sm sm:text-base text-gray-600 font-poppins leading-8 max-w-2xl"
+          className="text-xs sm:text-sm text-gray-600 font-montserrat leading-relaxed max-w-2xl"
         >
           An in-depth snapshot of our global portfolio, showcasing companies across various stages, industries, and regions. This overview highlights operational progress, innovation milestones, and the collective impact of our investments across 12 countries.
         </p>

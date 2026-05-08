@@ -176,7 +176,7 @@ const InvestorDocuments = () => {
       className="layout-7xl min-h-screen bg-white flex flex-col py-4 sm:py-6 md:py-10 pb-10 sm:pb-18 md:pb-24"
     >
       <div className="flex items-start justify-between border-b border-gray-200 pb-3 sm:pb-4 md:pb-6">
-        <span className="documents-heading text-xs uppercase tracking-widest text-gray-500 font-poppins">
+        <span className="documents-heading text-xs uppercase tracking-widest text-gray-500 font-montserrat">
           Investor Relations
         </span>
       </div>
@@ -187,7 +187,7 @@ const InvestorDocuments = () => {
         </h2>
         <p
           id="animated-paragraph"
-          className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 font-poppins leading-relaxed max-w-5xl"
+          className="text-xs sm:text-sm text-gray-500 font-montserrat leading-relaxed max-w-5xl"
         >
           Key materials for current and prospective investors - fund strategy,
           performance, ESG commitments, and governance documentation.
@@ -206,7 +206,7 @@ const InvestorDocuments = () => {
               <div className="text-genesis-navy opacity-40 group-hover:opacity-100 transition-opacity duration-200">
                 {doc.icon}
               </div>
-              <span className="text-xs uppercase tracking-widest text-genesis-blue group-hover:text-genesis-red font-poppins">
+              <span className="text-xs uppercase tracking-widest text-genesis-blue group-hover:text-genesis-red font-montserrat">
                 {doc.category}
               </span>
             </div>
@@ -226,11 +226,11 @@ const InvestorDocuments = () => {
               <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
             </div>
 
-            <p className="text-sm text-gray-500 font-poppins leading-relaxed flex-1">
+            <p className="text-xs sm:text-sm text-gray-500 font-montserrat leading-relaxed flex-1">
               {doc.description}
             </p>
 
-            <span className="text-xs text-gray-400 font-poppins tracking-wide">
+            <span className="text-xs text-gray-400 font-montserrat tracking-wide">
               {doc.meta}
             </span>
 
@@ -253,3 +253,4 @@ const InvestorDocuments = () => {
 };
 
 export default InvestorDocuments;
+

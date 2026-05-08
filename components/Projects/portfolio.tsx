@@ -63,8 +63,8 @@ const PortfolioHeroSection = () => {
 
 
       <div className="relative z-20 flex w-full max-w-5xl flex-col gap-3 px-2 sm:gap-4">
-        <Title 
-        text={["Backing early-stage","companies."]}
+        <Title
+          text={["Backing Early-Stage", "Companies."]}
         />
         {/* <p className="desc project-heading desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-sm mx-auto">
           Genesis Ventures partners with founders from day one, providing

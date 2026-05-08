@@ -13,38 +13,49 @@ const prepItems = [
     num: "01",
     label: "Quarterly",
     title: "Annual Performance Report",
-    desc: "A complete record of portfolio returns, benchmarked against relevant indices and net of all fees. Published once verified by our independent reviewers.",
+    desc: "",
     image: "/images/Projects/investing.webp",
-    meta: "PDF · Updated Quarterly",
   },
   {
     num: "02",
     label: "Transparency",
     title: "Portfolio Disclosures",
-    desc: "Holdings, stages, sector allocation, and concentration metrics, the things that actually tell you how capital is being deployed.",
+    desc: "Holdings, stages, sector allocation, and concentration metrics that show exactly how capital is deployed.",
     image: "/images/Projects/founder.webp",
-    meta: "Disclosure Pack · Updated Quarterly",
   },
   {
     num: "03",
     label: "Outlook",
     title: "Letters to Investors",
-    desc: "Our perspective on markets, risk, and the reasoning behind every significant decision. Candid, long-form, and written by the people managing your capital, not a communications team.",
+    desc: "Our perspective on markets, risk, and key strategic decisions shared in long-form, candid format.",
     image: "/images/Projects/insight.webp",
-    meta: "Letter Series · Periodic",
   },
   {
     num: "04",
     label: "Governance",
     title: "Audit & Valuation Notes",
-    desc: "Independent verification notes, valuation methodology updates, and key policy disclosures that inform how we report portfolio value.",
+    desc: "Independent verification notes, valuation methodology updates, and key policy disclosures.",
     image: "/images/Projects/partnership.webp",
-    meta: "Audit Notes · As Published",
+  },
+];
+
+const reportCards = [
+  {
+    type: "Financial - Quarterly",
+    title: "Q1 2026 Financial Report",
+    desc: "Quarterly financial summary including performance, allocation, and portfolio updates.",
+  },
+  {
+    type: "Financial - Annual",
+    title: "Annual Financial Report 2025",
+    desc: "Annual audited overview with full-year performance, governance notes, and key disclosures.",
   },
 ];
 
 const ReportsAndUpdates = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const featured = prepItems[0];
+  const timelineItems = prepItems.slice(1);
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -55,64 +66,138 @@ const ReportsAndUpdates = () => {
         start: "top 80%",
         toggleActions: "play none none reverse",
       },
-      defaults: { ease: "power2.out", duration: 0.6 },
+      defaults: { ease: "power2.out", duration: 0.62 },
     });
 
-    tl.from(".iru-kicker", { y: 10, opacity: 0.65, duration: 0.45 })
-      .from(".iru-card", { y: 18, scale: 0.985, stagger: 0.08 }, "-=0.2");
+    tl.from(".iru-header", { y: 12, autoAlpha: 0, duration: 0.45 })
+      .from(".iru-featured", { y: 18, autoAlpha: 0 }, "-=0.18")
+      .from(".iru-timeline-item", { y: 14, autoAlpha: 0, stagger: 0.1 }, "-=0.28")
+      .from(".iru-reports-header", { y: 12, autoAlpha: 0 }, "-=0.2")
+      .from(".iru-report-card", { y: 14, autoAlpha: 0, stagger: 0.08 }, "-=0.24");
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="h-[64%] bg-[#001D3F]" />
-        <div className="h-[36%] bg-white" />
-      </div>
-
-      <div className="relative py-10 sm:py-14 md:py-16">
-        <div className="layout-7xl">
-          <div className="flex items-start justify-between border-b border-genesis-red pb-3 sm:pb-4">
-            <span className="iru-kicker font-poppins text-[11px] font-medium uppercase tracking-[0.28em] text-white">
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-screen overflow-hidden border-y border-[#e8edf5] bg-white py-14 sm:py-16 md:py-20"
+    >
+      <div className="layout-7xl">
+        <div className="iru-header flex items-end justify-between border-b border-[#d7e0ec] pb-4">
+          <div>
+            <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
               In Preparation
-            </span>
+            </p>
+            <h2 className="mt-3 font-montserrat text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
+              Upcoming Reports & Investor Materials
+            </h2>
           </div>
+          <p className="hidden font-montserrat text-[10px] uppercase tracking-[0.18em] text-[#6b7b93] md:block">
+            Structured release calendar
+          </p>
+        </div>
 
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {prepItems.map((item) => (
-              <article
-                key={item.num}
-                className="iru-card group relative flex min-h-[320px] flex-col gap-3 overflow-hidden border border-[#d8e0ea] bg-white p-4 transition-colors duration-200 hover:bg-gray-50 sm:gap-4 sm:p-6"
-              >
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
-                <div className="flex items-center justify-between">
-                  <p className="font-poppins text-[11px] font-semibold uppercase tracking-[0.28em] text-[#2f4268] transition-colors duration-300 group-hover:text-[#173053]">
-                    {item.label}
-                  </p>
-                  <span className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#8D1E39]">
-                    {item.num}
-                  </span>
-                </div>
-                <h3 className="text-[1.05rem] sm:text-[1.125rem] font-[PPFONT] leading-snug text-[#173053] transition-colors duration-200 group-hover:text-[#8D1E39]">
-                  {item.title}
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <article className="iru-featured group relative min-h-[420px] overflow-hidden border border-[#dbe3ef] bg-white lg:min-h-full">
+            <div className="absolute inset-0">
+              <Image
+                src={featured.image}
+                alt={featured.title}
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 60vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f2745]/70 via-[#0f2745]/10 to-transparent" />
+            </div>
+            <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between p-5 sm:p-6 lg:min-h-full">
+              <div className="inline-flex w-fit items-center gap-3 bg-white/90 px-3 py-2">
+                <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39]">
+                  Featured
+                </span>
+                <span className="font-montserrat text-[10px] uppercase tracking-[0.16em] text-[#173053]">
+                  {featured.label}
+                </span>
+              </div>
+              <div>
+                <h3 className="mt-2 font-montserrat text-[clamp(1.05rem,2.2vw,1.5rem)] font-semibold leading-[1.25] text-white">
+                  {featured.title}
                 </h3>
-                <div className="relative w-full aspect-4/3 overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
-                </div>
-                <p className="flex-1 font-poppins text-[16px] leading-[1.55] text-[#2f4268]">
-                  {item.desc}
-                </p>
-                <span className="text-[11px] text-[#6c7a93] font-poppins tracking-wide">{item.meta}</span>
-                <div className="border-t border-gray-100" />
-              </article>
-            ))}
+                {featured.desc ? (
+                  <p className="mt-3 max-w-[56ch] text-xs sm:text-sm leading-relaxed font-montserrat text-white/90">
+                    {featured.desc}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          </article>
+
+          <div className="border border-[#dbe3ef] bg-white p-5 sm:p-6">
+            <div className="space-y-5">
+              {timelineItems.map((item) => (
+                <article
+                  key={item.num}
+                  className="iru-timeline-item grid grid-cols-[auto_1fr] gap-4 border-b border-[#e8eef6] pb-5 last:border-b-0 last:pb-0"
+                >
+                  <div className="flex flex-col items-center">
+                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39]">
+                      {item.num}
+                    </span>
+                    <span className="mt-2 h-full w-px bg-[#dce4f0]" />
+                  </div>
+
+                  <div>
+                    <p className="font-montserrat text-[10px] uppercase tracking-[0.16em] text-[#6c7c95]">
+                      {item.label}
+                    </p>
+                    <h4 className="mt-1 font-montserrat text-base font-semibold leading-[1.35] text-[#173053]">
+                      {item.title}
+                    </h4>
+                    <p className="mt-2 text-xs sm:text-sm leading-relaxed font-montserrat text-[#556781]">{item.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className="iru-reports-header mt-12 flex items-center gap-4 sm:gap-6">
+          <span className="h-px flex-1 bg-[#d9e2ee]" />
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
+            Reports
+          </span>
+          <span className="h-px flex-1 bg-[#d9e2ee]" />
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {reportCards.map((card) => (
+            <a
+              key={card.title}
+              href="#"
+              className="iru-report-card group border border-[#d9e2ee] bg-white p-4 sm:p-5 transition-colors hover:bg-[#f8fbff]"
+            >
+              <div className="flex items-start gap-3">
+                <span className="shrink-0 pt-0.5">
+                  <Image
+                    src="/icons/image.png"
+                    alt="Document icon"
+                    width={42}
+                    height={42}
+                    className="object-contain"
+                  />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#8D1E39] font-semibold">
+                    {card.type}
+                  </p>
+                  <h4 className="mt-1 text-sm font-semibold text-[#173053]">
+                    {card.title}
+                  </h4>
+                  <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#556781]">
+                    {card.desc}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

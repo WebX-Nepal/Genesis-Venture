@@ -5,10 +5,10 @@ import Button from "../ui/Button2";
 type Tab = "general" | "pitch";
 
 const inputClass =
-  "w-full bg-transparent border-b border-genesis-navy/20 py-3 text-sm text-genesis-navy font-poppins placeholder:text-genesis-navy/40 focus:outline-none focus:border-genesis-navy/60 transition-colors";
+  "w-full bg-transparent border-b border-genesis-navy/20 py-3 text-sm text-genesis-navy font-montserrat placeholder:text-genesis-navy/40 focus:outline-none focus:border-genesis-navy/60 transition-colors";
 
 const labelClass =
-  "text-[11px] uppercase tracking-widest text-genesis-navy/80 font-poppins";
+  "text-[11px] uppercase tracking-widest text-genesis-navy/80 font-montserrat";
 
 export default function Connect() {
   const [tab, setTab] = useState<Tab>("general");
@@ -18,10 +18,10 @@ export default function Connect() {
       <div className="layout-7xl flex flex-col gap-10 sm:gap-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-3">
-            <span className="contact-heading text-xs uppercase tracking-[0.28em] text-genesis-blue font-[GT50]">
+            <span className="contact-heading text-xs uppercase tracking-[0.28em] text-genesis-blue font-montserrat">
               Get in touch
             </span>
-            <h1 className="contact-heading text-[clamp(1.75rem,5vw,3.4rem)] text-genesis-navy font-[PPFONT] leading-[1.05]">
+            <h1 className="contact-heading text-[clamp(1.75rem,5vw,3.4rem)] text-genesis-navy font-montserrat leading-[1.05]">
               Let&apos;s start a conversation.
             </h1>
           </div>
@@ -29,7 +29,7 @@ export default function Connect() {
           <div className="flex w-full overflow-hidden border border-genesis-navy/35 sm:w-fit sm:min-w-[18rem]">
             <button
               onClick={() => setTab("general")}
-              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${tab === "general"
+              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-montserrat transition-colors duration-200 sm:px-6 ${tab === "general"
                 ? "bg-genesis-navy text-white"
                 : "bg-transparent text-genesis-navy/40 hover:text-genesis-navy"
                 }`}
@@ -38,7 +38,7 @@ export default function Connect() {
             </button>
             <button
               onClick={() => setTab("pitch")}
-              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-poppins transition-colors duration-200 sm:px-6 ${tab === "pitch"
+              className={`flex-1 px-4 py-3 text-[11px] uppercase tracking-[0.22em] font-montserrat transition-colors duration-200 sm:px-6 ${tab === "pitch"
                 ? "bg-genesis-navy text-white"
                 : "bg-transparent text-genesis-navy/80 hover:text-genesis-navy"
                 }`}

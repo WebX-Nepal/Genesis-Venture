@@ -35,11 +35,11 @@ const PartnerCTA = () => {
     >
       <div className="layout-7xl relative z-10 w-full">
         <div className="max-w-[960px] mx-auto text-center">
-          <span className="cta-kicker inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
+          <span className="cta-kicker inline-flex items-center gap-3 font-montserrat text-[11px] font-medium tracking-[0.28em] uppercase text-[#8D1E39]">
             The Commitment
           </span>
 
-          <blockquote className="cta-quote my-8 sm:my-10 font-[PPFONT] text-[clamp(1.05rem,2.4vw,1.75rem)] leading-[1.5] text-genesis-navy/85 italic font-normal">
+          <blockquote className="cta-quote my-8 sm:my-10 font-montserrat text-[clamp(0.95rem,1.8vw,1.35rem)] leading-relaxed text-genesis-navy/85 italic font-normal">
            &quot;
             We will share our numbers the same way we make our decisions
             carefully, honestly, and only when we can stand behind every line. If
@@ -48,12 +48,12 @@ const PartnerCTA = () => {
             &quot;
           </blockquote>
 
-          <div className="cta-author flex items-center justify-center gap-4 sm:gap-6 font-poppins text-[16px] leading-[1.55]">
+          <div className="cta-author flex items-center justify-center gap-4 sm:gap-6 font-montserrat text-xs sm:text-sm leading-relaxed">
             <div>
-              <span className="text-[#08112a] font-medium tracking-[0.02em]">
+              <span className="text-[#08112a] text-xs sm:text-sm font-medium tracking-[0.02em]">
                 Anuj Rathi
               </span>
-              <span className="block text-[#616877] italic text-[11px] mt-0.5">
+              <span className="block text-[#616877] italic text-[10px] sm:text-[11px] mt-0.5">
                 Founder &amp; Managing Director
               </span>
             </div>
@@ -65,3 +65,4 @@ const PartnerCTA = () => {
 };
 
 export default PartnerCTA;
+

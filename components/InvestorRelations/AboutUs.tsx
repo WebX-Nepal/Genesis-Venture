@@ -92,10 +92,10 @@ const AboutUs = () => {
 
       <div className="layout-7xl relative w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center">
-          <span className="inline-flex items-center gap-3 font-poppins text-[11px] font-medium tracking-[0.28em] uppercase text-genesis-red">
+          <span className="inline-flex items-center gap-3 font-montserrat text-[11px] font-medium tracking-[0.28em] uppercase text-genesis-red">
             {animateWords("Investor Relations", 0, 36)}
           </span>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-poppins lg:pl-14 lg:text-left">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] font-montserrat lg:pl-14 lg:text-left">
             {animateWords("Reporting In Progress", 90, 36)}
           </p>
         </div>
@@ -111,7 +111,7 @@ const AboutUs = () => {
               </span>
             </h1>
 
-            <p className="mt-6 sm:mt-9 max-w-[560px] text-[16px] sm:text-[17px] leading-[1.55] text-[#08112a]">
+            <p className="mt-6 sm:mt-9 max-w-[560px] text-xs sm:text-sm leading-relaxed text-[#08112a]">
               {animateWords(
                 "Ours is almost ready and worth the wait. Performance materials, portfolio disclosures, and investor letters are released only when they meet the standards we hold ourselves to, not the standards the market is willing to accept.",
                 520,
@@ -124,7 +124,7 @@ const AboutUs = () => {
                 <Button
                   variant="primary"
                   size="md"
-                  className="inline-flex items-center justify-center gap-2 bg-genesis-red px-4 py-2.5 font-poppins text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-all duration-350 hover:bg-[#a52344] sm:px-6 sm:py-3"
+                  className="inline-flex items-center justify-center gap-2 bg-genesis-red px-4 py-2.5 font-montserrat text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-all duration-350 hover:bg-[#a52344] sm:px-6 sm:py-3"
                 >
                   {animateWords("Request Materials", 760, 28)}
                 </Button>
@@ -133,7 +133,7 @@ const AboutUs = () => {
                 <Button
                   variant="primary"
                   size="md"
-                  className="inline-flex items-center justify-center gap-2 border-[#173053] bg-[#173053] px-4 py-2.5 font-poppins text-[11px] font-medium uppercase tracking-[0.12em] !text-white transition-all duration-350 hover:!bg-[#173053] sm:px-6 sm:py-3"
+                  className="inline-flex items-center justify-center gap-2 border-[#173053] bg-[#173053] px-4 py-2.5 font-montserrat text-[11px] font-medium uppercase tracking-[0.12em] !text-white transition-all duration-350 hover:!bg-[#173053] sm:px-6 sm:py-3"
                 >
                   {animateWords("Our Commitment", 820, 28)}
                 </Button>
@@ -168,3 +168,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+

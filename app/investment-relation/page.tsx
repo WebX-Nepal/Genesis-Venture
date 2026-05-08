@@ -1,17 +1,15 @@
-import AboutUs from "@/components/InvestorRelations/AboutUs";
-import ReportsAndUpdates from "@/components/InvestorRelations/ReportsAndUpdates";
+"use client";
+
 import PartnerCTA from "@/components/InvestorRelations/PartnerCTA";
 import InvestorIntro from "@/components/InvestorRelations/InvestorIntro";
-
+import ReportsAndUpdates from "@/components/InvestorRelations/ReportsAndUpdates";
 
 export default function InvestorRelationsPage() {
   return (
-    <main className="w-full bg-white text-[#2c2c34] font-poppins overflow-x-hidden">
+    <main className="w-full overflow-x-hidden bg-[#f5f7fb] text-[#2c2c34] font-montserrat">
       <InvestorIntro />
-      <AboutUs />
       <ReportsAndUpdates />
       <PartnerCTA />
-      {/* <InvestorDocuments /> */}
     </main>
   );
 }
