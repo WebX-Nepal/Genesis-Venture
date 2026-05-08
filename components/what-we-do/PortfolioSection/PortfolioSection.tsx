@@ -23,12 +23,17 @@ export default function PortfolioSection({
   portfolioItems,
   sectorTabs,
 }: PortfolioSectionProps) {
+  const getSectorCount = (key: Sector | "All") => {
+    if (key === "All") return portfolioItems.length;
+    return portfolioItems.filter((item) => item.sector === key).length;
+  };
+
   return (
     <section id="portfolio" className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="layout-7xl">
         <div className="mb-8 flex flex-col justify-between gap-6 border-b border-[#8D1E39] pb-8 md:flex-row md:items-end">
           <div>
-            <h2 className="max-w-sm font-[PPFONT] text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
+            <h2 className="max-w-sm font-montserrat text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
             Portfolio Companies
             </h2>
           </div>
@@ -42,11 +47,14 @@ export default function PortfolioSection({
                   onClick={() => setActiveSector(sector.key)}
                   className={`px-4 py-2 border text-[11px] font-medium uppercase tracking-[0.12em] transition-all duration-300 ${
                     isActive
-                      ? "bg-[#edf2f7] text-[#173053] border-[#173053]/35"
+                      ? "bg-[#162e54] text-white border-[#162e54]"
                       : "bg-white text-[#173053]/80 border-[#8D1E39]/35 hover:border-[#8D1E39] hover:text-[#8D1E39]"
                   }`}
                 >
-                  {sector.title}
+                  <span>{sector.title}</span>
+                  <span className="ml-2 text-[10px] font-semibold">
+                    {getSectorCount(sector.key)}
+                  </span>
                 </button>
               );
             })}
