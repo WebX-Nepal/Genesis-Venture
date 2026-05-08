@@ -133,13 +133,13 @@ const InvestmentPhilosophy = () => {
           </div>
 
           {/* Right side */}
-          <div>
-            <h2 className="investment-philosophy-heading text-[2rem] text-genesis-navy leading-[1.45] tracking-[-0.01em] font-[PPFONT]">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <h2 className="investment-philosophy-heading text-[2rem] text-genesis-navy leading-[1.45] tracking-[-0.01em] font-montserrat">
               We invest early when conviction matters most.
             </h2>
             <p
               id="animated-paragraph"
-              className="text-[16px] text-gray-600 font-poppins leading-[1.55] mt-4"
+              className="text-[16px] text-gray-600 font-montserrat leading-[1.55] mt-4"
             >
               Genesis Ventures focuses on founders at the earliest stages, when
               clarity, speed, and hands-on support matter most. We partner with
@@ -171,7 +171,7 @@ const Card = ({ id, title, description, icon, number }: {
       <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
       <div className="flex justify-between items-center">
         <span className="h-[2px] w-10 bg-[#173053] transition-all duration-300 group-hover:w-14" />
-        <span className="font-poppins text-[11px] font-semibold tracking-[0.2em] text-[#173053]">
+        <span className="font-montserrat text-[11px] font-semibold tracking-[0.2em] text-[#173053]">
           {number}
         </span>
       </div>
@@ -180,14 +180,14 @@ const Card = ({ id, title, description, icon, number }: {
 
       <div className="flex flex-col gap-2 pt-8">
         {Icon && (
-          <Icon className="w-12 h-12 text-genesis-navy group-hover:text-genesis-red transition-colors" />
+          <Icon className="w-12 h-12 text-genesis-red transition-colors" />
         )}
 
-        <span className="text-[1.125rem] font-normal text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
+        <span className="text-[1.125rem] font-normal text-genesis-navy group-hover:text-genesis-red transition-colors font-montserrat">
           {title}
         </span>
 
-        <span className="text-[16px] text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-[1.55]">
+        <span className="text-[16px] text-gray-600 group-hover:text-genesis-navy transition-colors font-montserrat leading-[1.55]">
           {description}
         </span>
       </div>
