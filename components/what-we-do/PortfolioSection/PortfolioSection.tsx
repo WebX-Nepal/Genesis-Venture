@@ -78,7 +78,24 @@ export default function PortfolioSection({
                       {sector.title}
                     </p>
 
-                    <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+                    <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
+                      <div className="flex min-w-max gap-3 pr-2">
+                        {sectorItems.map((item) => (
+                          <div
+                            key={item.name}
+                            className="w-[86vw] shrink-0 snap-center sm:w-[70vw]"
+                          >
+                            {item.isFeatured ? (
+                              <FeaturedPortfolioCard item={item} />
+                            ) : (
+                              <PortfolioCard item={item} />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="hidden md:grid grid-cols-2 gap-2 lg:grid-cols-3">
                       {sectorItems.map((item) =>
                         item.isFeatured ? (
                           <FeaturedPortfolioCard key={item.name} item={item} />
@@ -96,7 +113,24 @@ export default function PortfolioSection({
             <p className="mb-6 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-genesis-red font-poppins">
               {sectorTabs.find((s) => s.key === activeSector)?.title}
             </p>
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+            <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
+              <div className="flex min-w-max gap-3 pr-2">
+                {filteredItems.map((item) => (
+                  <div
+                    key={item.name}
+                    className="w-[86vw] shrink-0 snap-center sm:w-[70vw]"
+                  >
+                    {item.isFeatured ? (
+                      <FeaturedPortfolioCard item={item} />
+                    ) : (
+                      <PortfolioCard item={item} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hidden md:grid grid-cols-2 gap-2 lg:grid-cols-3">
               {filteredItems.map((item) =>
                 item.isFeatured ? (
                   <FeaturedPortfolioCard key={item.name} item={item} />
