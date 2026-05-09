@@ -46,19 +46,31 @@ export default function OurStoryIntro() {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {heroStats.map((stat) => (
-            <div
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:mt-12 md:grid-cols-4">
+          {heroStats.map((stat, index) => (
+            <article
               key={stat.label}
-              className="min-h-[132px] sm:min-h-[144px] bg-[#152F53] px-5 py-7 transition hover:bg-[#152F53]"
+              className="group relative min-h-[148px] overflow-hidden border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] px-4 py-5 sm:min-h-[162px] sm:px-5 sm:py-6"
             >
-              <p className="font-[PPFONT] text-[1.9rem] sm:text-[2.1rem] leading-none text-white">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.08em] text-white/85 font-montserrat leading-tight">
-                {stat.label}
-              </p>
-            </div>
+              <div className="flex items-center gap-2.5">
+                <span className="font-montserrat text-[9px] uppercase tracking-[0.24em] text-[#f3dce3]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <span className="h-px w-6 bg-[#f3dce3]/55" />
+                <span className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-[#f3dce3]">
+                  Profile
+                </span>
+              </div>
+
+              <div className="mt-6">
+                <p className="font-[PPFONT] text-[1.9rem] leading-none text-white sm:text-[2.1rem]">
+                  {stat.value}
+                </p>
+                <p className="mt-2 font-montserrat text-[11px] uppercase leading-tight tracking-[0.08em] text-white/85">
+                  {stat.label}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
