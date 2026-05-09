@@ -6,7 +6,7 @@ export default function Contacts() {
     <main className="w-full bg-white">
        
         <Connect />
-         {/* <Hero /> */}
+         <Hero />
     
     
     </main>
