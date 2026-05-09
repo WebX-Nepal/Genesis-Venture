@@ -38,14 +38,14 @@ export default function PortfolioSection({
             </h2>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 whitespace-nowrap md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
             {sectorTabs.map((sector) => {
               const isActive = sector.key === activeSector;
               return (
                 <button
                   key={sector.key}
                   onClick={() => setActiveSector(sector.key)}
-                  className={`px-4 py-2 border text-[11px] font-medium uppercase tracking-[0.12em] transition-all duration-300 ${
+                  className={`shrink-0 px-4 py-2 border text-[11px] font-medium uppercase tracking-[0.12em] transition-all duration-300 ${
                     isActive
                       ? "bg-[#162e54] text-white border-[#162e54]"
                       : "bg-white text-[#173053]/80 border-[#8D1E39]/35 hover:border-[#8D1E39] hover:text-[#8D1E39]"

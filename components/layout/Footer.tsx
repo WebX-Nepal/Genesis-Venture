@@ -42,7 +42,7 @@ export default function Footer() {
                   <br />
                   Connected.
                 </h2>
-                <p className="mx-auto max-w-sm font-poppins text-[13px] leading-relaxed text-white/60 sm:text-sm md:mx-0">
+                <p className="mx-auto max-w-sm font-poppins text-sm leading-relaxed text-white/70 sm:text-[15px] md:mx-0">
                   We review every submission and respond within 5 business days.
                   If there's a fit, we move quickly.
                 </p>
@@ -50,14 +50,14 @@ export default function Footer() {
 
               <div className="grid grid-cols-1 gap-7 text-center sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:text-left">
                 <div className="flex flex-col items-center gap-3 md:items-start">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
+                  <span className="mb-1 text-[13px] uppercase tracking-widest text-white/55 font-montserrat">
                     Navigation
                   </span>
                   {nav.map(({ label, href }) => (
                     <Link
                       key={href}
                       href={href}
-                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white font-montserrat"
+                      className="text-[13px] uppercase tracking-wider text-white/85 transition-colors hover:text-white font-montserrat"
                     >
                       {label}
                     </Link>
@@ -67,27 +67,27 @@ export default function Footer() {
 
 
                 <div className="flex flex-col items-center gap-3 md:items-start">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
+                  <span className="mb-1 text-[13px] uppercase tracking-widest text-white/55 font-montserrat">
                     Contact
                   </span>
-                  <span className="text-xs text-white/80 font-poppins">
+                  <span className="text-[13px] text-white/85 font-poppins">
                     info@genesisventures.com.np
                   </span>
-                  <span className="text-xs text-white/80 font-poppins">+977 9851418843</span>
-                  <span className="text-xs text-white/80 font-poppins">
+                  <span className="text-[13px] text-white/85 font-poppins">+977 9851418843</span>
+                  <span className="text-[13px] text-white/85 font-poppins">
                     Dharan Road, Biratnagar
                   </span>
                 </div>
 
                 <div className="flex flex-col items-center gap-3 md:items-start">
-                  <span className="mb-1 text-xs uppercase tracking-widest text-white/50 font-montserrat">
+                  <span className="mb-1 text-[13px] uppercase tracking-widest text-white/55 font-montserrat">
                     Resources
                   </span>
                   {resources.map(({ label, href }) => (
                     <Link
                       key={label}
                       href={href}
-                      className="text-xs uppercase tracking-wider text-white/80 transition-colors hover:text-white font-montserrat"
+                      className="text-[13px] uppercase tracking-wider text-white/85 transition-colors hover:text-white font-montserrat"
                     >
                       {label}
                     </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
 
           <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-center md:grid-cols-3 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
-            <span className="text-xs text-white/80 md:justify-self-start">
+            <span className="text-[13px] text-white/85 md:justify-self-start">
               Copyright (c) {new Date().getFullYear()} Genesis Ventures, Inc. All
               Rights Reserved.
             </span>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <Link
                   key={label}
                   href={href}
-                  className="text-xs text-white/55 transition-colors hover:text-white"
+                  className="text-[13px] text-white/65 transition-colors hover:text-white"
                 >
                   {label}
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
               href="https://www.webxnepal.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-xs text-white/60 transition-colors hover:text-white md:justify-self-end"
+              className="inline-flex items-center justify-center gap-2 text-[13px] text-white/70 transition-colors hover:text-white md:justify-self-end"
             >
               <span>Designed &amp; Developed by</span>
               <img

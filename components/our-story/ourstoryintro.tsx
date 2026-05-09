@@ -164,11 +164,11 @@ export default function OurStoryIntro() {
                 </div>
 
                 <div className="relative z-20 flex items-center gap-2.5">
-                  <span className="font-montserrat text-[9px] uppercase tracking-[0.24em] text-[#f3dce3]">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#f3dce3]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <span className="h-px w-6 bg-[#f3dce3]/55" />
-                  <span className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-[#f3dce3]">
+                  <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
                     Profile
                   </span>
                 </div>
@@ -204,11 +204,11 @@ export default function OurStoryIntro() {
               </div>
 
               <div className="relative z-20 flex items-center gap-2.5">
-                <span className="font-montserrat text-[9px] uppercase tracking-[0.24em] text-[#f3dce3]">
+                <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#f3dce3]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <span className="h-px w-6 bg-[#f3dce3]/55" />
-                <span className="font-montserrat text-[9px] uppercase tracking-[0.2em] text-[#f3dce3]">
+                <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
                   Profile
                 </span>
               </div>

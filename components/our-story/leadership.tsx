@@ -28,7 +28,7 @@ export default function Leadership() {
           <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
             Leadership
           </p>
-          <h2 className="font-montserrat text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
+          <h2 className="font-montserrat text-[2rem] sm:text-[2.35rem] leading-[1.25] tracking-[-0.01em] text-[#173053]">
             The person behind the firm
           </h2>
         </div>
@@ -73,7 +73,7 @@ export default function Leadership() {
             {leaderParagraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mb-5 text-[14px] sm:text-[15px] leading-7 last:mb-0 font-montserrat"
+                className="mb-5 text-[16px] sm:text-[17px] leading-[1.55] last:mb-0 font-montserrat"
               >
                 {paragraph}
               </p>
