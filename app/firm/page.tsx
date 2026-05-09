@@ -14,7 +14,7 @@ export default function WhoWeAreFirmPage() {
         //   </>
         // }
         titleClassName="text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em]"
-        backgroundVideo="/videos/projects.mp4"
+        backgroundVideo="/videos/firm.mp4"
         heightClassName="h-[60vh] md:h-screen"
       />
       <div className="pt-8 sm:pt-10 md:pt-12">

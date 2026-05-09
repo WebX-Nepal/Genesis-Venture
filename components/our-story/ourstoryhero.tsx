@@ -12,7 +12,7 @@ export default function OurStoryHero() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/videos/projects.mp4" type="video/mp4" />
+        <source src="/videos/story.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/35" />
       <div className="relative z-20 flex w-full max-w-5xl flex-col items-center gap-3 px-2 text-center sm:gap-4">
