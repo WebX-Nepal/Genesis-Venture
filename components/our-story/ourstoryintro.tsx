@@ -193,7 +193,7 @@ export default function OurStoryIntro() {
           </div>
         </div>
 
-        <div className="mt-10 hidden gap-4 md:mt-12 md:grid md:grid-cols-4">
+        {/* <div className="mt-10 hidden gap-4 md:mt-12 md:grid md:grid-cols-4">
           {heroStats.map((stat, index) => (
             <article
               key={stat.label}
@@ -237,7 +237,7 @@ export default function OurStoryIntro() {
               </div>
             </article>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
