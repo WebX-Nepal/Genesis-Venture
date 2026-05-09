@@ -86,6 +86,7 @@ html {
 
 @theme inline {
   /* Brand */
+  --font-agatho: var(--font-agatho);
   --font-poppins: var(--font-poppins);
   --font-montserrat: var(--font-montserrat);
   --color-genesis-navy:      var(--genesis-navy);

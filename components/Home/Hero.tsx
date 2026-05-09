@@ -53,7 +53,7 @@ export default function Hero() {
           <span className="h-px w-10 bg-white/35 md:w-16" />
         </div>
         <h1
-          className="font-montserrat text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium text-center leading-tight tracking-wide text-white"
+          className="font-agatho text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium text-center leading-tight tracking-wide text-white"
         >
           <span className="block">Creating Long Term</span>
           <span>Sustainable Wealth</span>

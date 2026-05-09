@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat, Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import LenisProvider from "@/components/LenisWrapper";
 import Footer from "@/components/layout/Footer";
@@ -7,6 +8,18 @@ import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
 // import { PreLoaderProvider } from "@/context/PreLoaderContext";
 // import { TransitionProvider } from "@/context/TransitionContext";
+  
+
+const agatho = localFont({
+  variable: "--font-agatho",
+  src: [
+    { path: "../public/fonts/agatho/Agatho_Regular.otf", weight: "400", style: "normal" },
+    { path: "../public/fonts/agatho/Agatho_ Medium.otf", weight: "500", style: "normal" },
+    { path: "../public/fonts/agatho/Agatho_ Bold.otf", weight: "700", style: "normal" },
+  ],
+  display: "block",
+});
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} ${agatho.variable} antialiased`}
       >
         <LenisProvider>
           {/* <PreLoaderProvider> */}

@@ -9,7 +9,7 @@ interface PortfolioCardProps {
 
 const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-[#cfd9e6] bg-white p-8 transition-all duration-300 hover:bg-genesis-navy/10">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-[#cfd9e6] bg-white p-8 font-montserrat transition-all duration-300 hover:bg-genesis-navy/10">
       <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
 
       {/* Top Metadata Row */}
