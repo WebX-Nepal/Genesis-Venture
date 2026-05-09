@@ -26,6 +26,27 @@ html {
   src: url("/fonts/PPNeueMontreal-Regular.woff2");
 }
 
+@font-face {
+  font-family: "Agatho";
+  src: url("/fonts/agatho/Agatho_Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agatho";
+  src: url("/fonts/agatho/Agatho_ Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agatho";
+  src: url("/fonts/agatho/Agatho_ Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   /* ── Genesis Ventures Brand Palette ── */
   --genesis-navy:       #1a2e5a;   /* "genesis" text — primary navy */
@@ -211,6 +232,10 @@ html {
 }
 
 @layer utilities {
+  .font-agatho {
+    font-family: "Agatho", serif;
+  }
+
   .layout-7xl {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-8;
   }
