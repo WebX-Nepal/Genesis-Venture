@@ -214,7 +214,7 @@ export default function OurStoryIntro() {
               </div>
 
               <div className="absolute inset-x-5 top-1/2 z-20 -translate-y-1/2 text-center">
-                <p className="font-[PPFONT] text-[1.9rem] leading-none text-white sm:text-[2.1rem]">
+                <p className="font-agatho text-[1.9rem] leading-none text-white sm:text-[2.1rem]">
                   {stat.value}
                 </p>
                 <p className="mx-auto mt-2 max-w-[240px] font-montserrat text-[11px] uppercase leading-tight tracking-[0.08em] text-white/85">
