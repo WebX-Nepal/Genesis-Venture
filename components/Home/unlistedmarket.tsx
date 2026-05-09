@@ -117,7 +117,7 @@ export default function UnlistedMarket() {
             </h2>
             <p
               id="unlisted-animated-paragraph"
-              className="text-[16px] sm:text-[17px] text-gray-600 font-poppins leading-[1.55] mt-3 sm:mt-4 max-w-7xl"
+              className="text-[16px] sm:text-[17px] text-gray-600 font-montserrat leading-[1.55] mt-3 sm:mt-4 max-w-7xl"
             >
               We invest where structural growth, operating discipline, and
               founder quality can compound for years without the pressure of
@@ -159,7 +159,7 @@ export default function UnlistedMarket() {
                     <h3 className="text-center font-montserrat text-[1.3rem] leading-[1.25] text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-[15px] leading-[1.55] text-white/90">
+                    <p className="mt-3 font-montserrat text-[15px] leading-[1.55] text-white/90">
                       {item.desc}
                     </p>
                   </div>
@@ -201,7 +201,7 @@ export default function UnlistedMarket() {
                   <h3 className="text-center font-montserrat text-[clamp(1.2rem,1.9vw,1.55rem)] leading-[1.25] text-white transition-opacity duration-500 group-hover:opacity-0">
                     {item.title}
                   </h3>
-                  <p className="mt-3 max-h-0 translate-y-2 overflow-hidden text-[15px] leading-[1.55] text-white/90 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-h-40 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="mt-3 max-h-0 translate-y-2 overflow-hidden font-montserrat text-[15px] leading-[1.55] text-white/90 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-h-40 group-hover:translate-y-0 group-hover:opacity-100">
                     {item.desc}
                   </p>
                 </div>
