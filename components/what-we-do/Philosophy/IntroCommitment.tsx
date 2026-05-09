@@ -16,7 +16,7 @@ export default function IntroCommitment() {
 
         <div className="mt-7 grid grid-cols-1 gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div className="rounded-sm border border-[#d8e2ee] bg-white p-6 sm:p-8">
-            <h1 className="font-montserrat text-[clamp(1.45rem,3.2vw,2.45rem)] leading-[1.2] text-[#173053]">
+            <h1 className="font-agatho text-[clamp(1.45rem,3.2vw,2.45rem)] leading-[1.2] text-[#173053]">
               Integrity before
               <span className="block italic text-[#8D1E39]">returns. Always.</span>
             </h1>

@@ -23,7 +23,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
 
       {/* Main Content */}
       <div className="flex-1 space-y-4">
-        <h4 className="font-[PPFONT] text-[1.15rem] sm:text-[1.3rem] tracking-tight leading-[1.25] text-[#0f2745] transition-colors duration-300">
+        <h4 className="font-agatho text-[1.25rem] sm:text-[1.45rem] tracking-tight leading-[1.25] text-[#0f2745] transition-colors duration-300">
           {item.name}
         </h4>
         <div className="h-[2px] w-10 bg-[#8D1E39]" />

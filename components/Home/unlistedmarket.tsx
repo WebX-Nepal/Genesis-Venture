@@ -150,16 +150,16 @@ export default function UnlistedMarket() {
                       {item.index}
                     </span>
                     <span className="h-px w-8 bg-[#f3dce3]/55" />
-                    <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
+                    <span className="font-agatho text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
                       {item.label}
                     </span>
                   </div>
 
                   <div className="absolute inset-x-5 top-1/2 -translate-y-1/2">
-                    <h3 className="text-center font-montserrat text-[1.3rem] leading-[1.25] text-white">
+                    <h3 className="text-center font-agatho text-[1.3rem] leading-[1.25] text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-3 font-montserrat text-[15px] leading-[1.55] text-white/90">
+                    <p className="mt-3 font-agatho text-[15px] leading-[1.55] text-white/90">
                       {item.desc}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export default function UnlistedMarket() {
                 </div>
 
                 <div className="absolute inset-x-5 top-1/2 -translate-y-1/2 sm:inset-x-6">
-                  <h3 className="text-center font-montserrat text-[clamp(1.2rem,1.9vw,1.55rem)] leading-[1.25] text-white transition-opacity duration-500 group-hover:opacity-0">
+                  <h3 className="text-center font-agatho text-[clamp(1.2rem,1.9vw,1.55rem)] leading-[1.25] text-white transition-opacity duration-500 group-hover:opacity-0">
                     {item.title}
                   </h3>
                   <p className="mt-3 max-h-0 translate-y-2 overflow-hidden font-montserrat text-[15px] leading-[1.55] text-white/90 opacity-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:max-h-40 group-hover:translate-y-0 group-hover:opacity-100">

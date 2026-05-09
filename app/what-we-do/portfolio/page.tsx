@@ -81,7 +81,7 @@ export default function PortfolioPage() {
                 <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
                   Investment Portfolio
                 </p>
-                <h2 className="mt-3 font-montserrat text-[clamp(1.55rem,4vw,3rem)] leading-[1.2] text-[#173053] lg:whitespace-nowrap">
+                <h2 className="mt-3 font-agatho text-[clamp(1.55rem,4vw,3rem)] leading-[1.2] text-[#173053] lg:whitespace-nowrap">
                   Conviction-led portfolio.
                 </h2>
               </div>

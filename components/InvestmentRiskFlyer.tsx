@@ -103,7 +103,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   Investment Disclosure
                 </span>
               </div>
-              <h1 className="font-montserrat font-semibold text-[clamp(1.35rem,3.1vw,2.2rem)] text-[#162e54] leading-[1.14] tracking-[-0.01em]">
+              <h1 className="font-agatho font-semibold text-[clamp(1.35rem,3.1vw,2.2rem)] text-[#162e54] leading-[1.14] tracking-[-0.01em]">
                 Before You Invest, Understand the Risks
               </h1>
               {/* <p className="text-xs sm:text-sm text-[#5a6880] font-poppins leading-relaxed max-w-2xl">

@@ -24,17 +24,11 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
 
         {/* Main Title & Description */}
         <div className="max-w-4xl mb-12">
-          <h4 className="mb-4 font-[PPFONT] text-[1.85rem] sm:text-[2.2rem] leading-[1.35] tracking-[-0.01em] text-[#0f2745] transition-colors duration-300">
+          <h4 className="mb-4 font-agatho text-[1.85rem] sm:text-[2.2rem] leading-[1.35] tracking-[-0.01em] text-[#0f2745] transition-colors duration-300">
             {item.name}
           </h4>
           <div className="mb-6 h-[2px] w-14 bg-[#8D1E39]" />
-          <p
-            className={`max-w-2xl text-[16px] leading-[1.55] ${
-              item.id === "sopan-multiple"
-                ? "text-[#355171] transition-colors duration-300"
-                : "text-[#4f6783] transition-colors duration-300"
-            }`}
-          >
+          <p className="max-w-2xl text-[16px] leading-[1.55] text-[#4f6783] transition-colors duration-300">
             {item.description}
           </p>
         </div>

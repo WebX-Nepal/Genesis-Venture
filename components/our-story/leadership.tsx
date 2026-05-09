@@ -28,7 +28,7 @@ export default function Leadership() {
           <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
             Leadership
           </p>
-          <h2 className="font-montserrat text-[2rem] sm:text-[2.35rem] leading-[1.25] tracking-[-0.01em] text-[#173053]">
+          <h2 className="font-agatho text-[2rem] sm:text-[2.35rem] leading-[1.25] tracking-[-0.01em] text-[#173053]">
             The person behind the firm
           </h2>
         </div>
@@ -39,7 +39,7 @@ export default function Leadership() {
               <div className="mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-white/30 bg-white/15 font-[PPFONT] text-3xl text-white/90">
                 AR
               </div>
-              <h3 className="font-montserrat text-[1.7rem] leading-[1.2] text-white">
+              <h3 className="font-agatho text-[1.7rem] leading-[1.2] text-white">
                 Anuj Rathi
               </h3>
               <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-white/85 font-montserrat">
