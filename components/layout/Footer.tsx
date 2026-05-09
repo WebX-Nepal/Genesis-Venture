@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="layout-7xl flex flex-col gap-6 pb-6 pt-7 md:pb-6 md:pt-8">
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
-                <h2 className="font-montserrat text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
+                <h2 className="font-agatho text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
                   Let's Get
                   <br />
                   Connected.

@@ -112,7 +112,7 @@ export default function UnlistedMarket() {
         </div>
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 md:gap-24 mb-8 sm:mb-10 md:mb-12">
           <div className="w-full md:w-5xl">
-            <h2 className="unlisted-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-montserrat font-medium">
+            <h2 className="unlisted-heading text-[clamp(1.25rem,4vw,2rem)] text-genesis-navy leading-snug font-agatho font-medium">
               Built for patient capital and long-duration value.
             </h2>
             <p

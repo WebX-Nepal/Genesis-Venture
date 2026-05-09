@@ -19,7 +19,7 @@ export default function Firm() {
        
           <div className="mt-6 grid grid-cols-1 gap-6 sm:mt-8 sm:gap-8 lg:mt-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8 xl:gap-10">
             <div className="flex items-center justify-start">
-              <p className="firm-title w-full text-left font-montserrat text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
+              <p className="firm-title w-full text-left font-agatho text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
                 About the Firm
               </p>
             </div>
@@ -40,7 +40,7 @@ export default function Firm() {
                       <p className="font-poppins text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.24em] sm:tracking-[0.3em] text-[#162e54]">
                         {item.label}
                       </p>
-                      <h3 className="mt-1.5 sm:mt-2 font-montserrat text-[clamp(1.2rem,6vw,2.55rem)] leading-[1.08] text-[#162e54]">
+                      <h3 className="mt-1.5 sm:mt-2 font-agatho text-[clamp(1.2rem,6vw,2.55rem)] leading-[1.08] text-[#162e54]">
                         {item.value}
                       </h3>
                     </div>

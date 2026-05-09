@@ -19,6 +19,7 @@ export default function HeroVideo() {
       <div className="relative z-20 capitalize flex min-h-[60vh] items-center justify-center px-4 xs:px-6 sm:px-8 md:min-h-screen md:px-16 text-center">
         <Title
         text={["Conviction-led investing,","built for long-term value."]}
+        className="font-agatho"
         />
       </div>
     </section>

@@ -4,8 +4,9 @@ import Hero from "@/components/Contact/Hero";
 export default function Contacts() {
   return (
     <main className="w-full font-[PPFONT]">
+        <Hero />
         <Connect />
-      <Hero />
+    
     
     </main>
   );

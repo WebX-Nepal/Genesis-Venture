@@ -6,14 +6,7 @@ export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
       <HeroPage
-        // title={
-        //   <>
-        //     Independent Capital.
-        //     <br />
-        //     Enduring Partnerships.
-        //   </>
-        // }
-        titleClassName="text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em]"
+        titleClassName="font-agatho text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em]"
         backgroundVideo="/videos/firm.mp4"
         heightClassName="h-[60vh] md:h-screen"
       />

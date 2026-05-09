@@ -198,20 +198,20 @@ const InvestorDocuments = () => {
         {documents.map((doc) => (
           <div
             key={doc.id}
-            className="relative bg-white flex flex-col gap-3 sm:gap-4 md:gap-5 p-4 xs:p-5 sm:p-6 group hover:bg-gray-50 transition-colors duration-200 border"
+            className="relative flex flex-col gap-3 border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] p-4 text-white transition-colors duration-200 group xs:p-5 sm:gap-4 sm:p-6 md:gap-5"
           >
             <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
             <div className="flex items-center justify-between">
-              <div className="text-genesis-navy opacity-40 group-hover:opacity-100 transition-opacity duration-200">
+              <div className="text-white/75 opacity-80 transition-opacity duration-200 group-hover:opacity-100">
                 {doc.icon}
               </div>
-              <span className="text-xs uppercase tracking-widest text-genesis-blue group-hover:text-genesis-red font-montserrat">
+              <span className="font-montserrat text-xs uppercase tracking-widest text-[#f3dce3]">
                 {doc.category}
               </span>
             </div>
 
-            <h3 className="text-base sm:text-lg font-[PPFONT] text-genesis-navy leading-snug group-hover:text-genesis-red transition-colors duration-200">
+            <h3 className="text-base font-[PPFONT] leading-snug text-white transition-colors duration-200 sm:text-lg">
               {doc.title}
             </h3>
 
@@ -226,15 +226,15 @@ const InvestorDocuments = () => {
               <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
             </div>
 
-            <p className="text-xs sm:text-sm text-gray-500 font-montserrat leading-relaxed flex-1">
+            <p className="flex-1 font-montserrat text-xs leading-relaxed text-white/90 sm:text-sm">
               {doc.description}
             </p>
 
-            <span className="text-xs text-gray-400 font-montserrat tracking-wide">
+            <span className="font-montserrat text-xs tracking-wide text-white/75">
               {doc.meta}
             </span>
 
-            <div className="border-t border-gray-100" />
+            <div className="border-t border-white/20" />
 
             <Link href="/About" className="self-center">
               <Button

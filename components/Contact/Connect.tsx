@@ -21,7 +21,7 @@ export default function Connect() {
             <span className="contact-heading text-xs uppercase tracking-[0.28em] text-genesis-blue font-montserrat">
               Get in touch
             </span>
-            <h1 className="contact-heading text-[clamp(1.75rem,5vw,3.4rem)] text-genesis-navy font-montserrat leading-[1.05]">
+            <h1 className="contact-heading text-[clamp(1.75rem,5vw,3.4rem)] text-genesis-navy font-agatho leading-[1.05]">
               Let&apos;s start a conversation.
             </h1>
           </div>

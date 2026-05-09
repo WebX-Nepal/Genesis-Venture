@@ -48,7 +48,10 @@ export default function HeroPage({
           {title ? (
             <h1 className={titleClassName}>{title}</h1>
           ) : (
-            <Title text={[" Independent Capital.", "Enduring Partnerships."]} />
+            <Title
+              text={[" Independent Capital.", "Enduring Partnerships."]}
+              className={titleClassName}
+            />
           )}
         </div>
       </div>

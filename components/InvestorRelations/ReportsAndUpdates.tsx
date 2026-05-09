@@ -87,7 +87,7 @@ const ReportsAndUpdates = () => {
             <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
               In Preparation
             </p>
-            <h2 className="mt-3 font-montserrat text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
+            <h2 className="mt-3 font-agatho text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
               Upcoming Reports & Investor Materials
             </h2>
           </div>
@@ -172,7 +172,7 @@ const ReportsAndUpdates = () => {
             <a
               key={card.title}
               href="#"
-              className="iru-report-card group border border-[#d9e2ee] bg-white p-4 sm:p-5 transition-colors hover:bg-[#f8fbff]"
+              className="iru-report-card group border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] p-4 text-white transition-colors sm:p-5"
             >
               <div className="flex items-start gap-3">
                 <span className="shrink-0 pt-0.5">
@@ -185,13 +185,13 @@ const ReportsAndUpdates = () => {
                   />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#8D1E39] font-semibold">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#f3dce3] font-semibold">
                     {card.type}
                   </p>
-                  <h4 className="mt-1 text-sm font-semibold text-[#173053]">
+                  <h4 className="mt-1 text-sm font-semibold text-white">
                     {card.title}
                   </h4>
-                  <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#556781]">
+                  <p className="mt-1 text-xs sm:text-sm leading-relaxed text-white/85">
                     {card.desc}
                   </p>
                 </div>
