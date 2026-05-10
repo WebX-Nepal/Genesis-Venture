@@ -6,6 +6,7 @@ import LenisProvider from "@/components/LenisWrapper";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
+import CustomCursor from "@/components/ui/CustomCursor";
 // import { PreLoaderProvider } from "@/context/PreLoaderContext";
 // import { TransitionProvider } from "@/context/TransitionContext";
   
@@ -59,6 +60,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} ${agatho.variable} antialiased`}
       >
         <LenisProvider>
+          <CustomCursor />
           {/* <PreLoaderProvider> */}
             {/* <TransitionProvider> */}
               {/* <Loader /> */}

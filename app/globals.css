@@ -21,6 +21,44 @@ html {
   scroll-behavior: auto !important;
 }
 
+#cur {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #8b1a2e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s;
+}
+
+#cur2 {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #8b1a2e;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: left 0.12s cubic-bezier(0.16, 1, 0.3, 1),
+    top 0.12s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s, height 0.3s,
+    opacity 0.3s, border-color 0.3s;
+}
+
+body:has(a:hover) #cur2,
+body:has(button:hover) #cur2 {
+  width: 52px;
+  height: 52px;
+  border-color: #1a2e5a;
+}
+
+body:has(a:hover) #cur,
+body:has(button:hover) #cur {
+  background: #1a2e5a;
+}
+
 @font-face {
   font-family: "PPFONT";
   src: url("/fonts/PPNeueMontreal-Regular.woff2");
