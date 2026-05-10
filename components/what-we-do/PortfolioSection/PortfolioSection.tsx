@@ -143,6 +143,6 @@ export default function PortfolioSection({
         )}
       </section>
       </div>
-    </section>
+    {/* </section> */}
   );
 }
