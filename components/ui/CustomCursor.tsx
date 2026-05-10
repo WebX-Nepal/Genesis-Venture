@@ -21,15 +21,13 @@ export default function CustomCursor() {
     const handleMove = (e: MouseEvent) => {
       mx = e.clientX;
       my = e.clientY;
-      cur.style.left = `${mx}px`;
-      cur.style.top = `${my}px`;
+      cur.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
     };
 
     const loop = () => {
-      cx += (mx - cx) * 0.13;
-      cy += (my - cy) * 0.13;
-      cur2.style.left = `${cx}px`;
-      cur2.style.top = `${cy}px`;
+      cx += (mx - cx) * 0.22;
+      cy += (my - cy) * 0.22;
+      cur2.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
       rafId = window.requestAnimationFrame(loop);
     };
 

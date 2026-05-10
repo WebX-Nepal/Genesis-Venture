@@ -72,9 +72,13 @@ export default function InvestmentRiskModal({ onClose }: Props) {
     };
     document.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
+    document.body.classList.add("risk-flyer-open");
+    document.documentElement.classList.add("risk-flyer-open");
     return () => {
       document.removeEventListener("keydown", handleKey);
       document.body.style.overflow = "";
+      document.body.classList.remove("risk-flyer-open");
+      document.documentElement.classList.remove("risk-flyer-open");
     };
   }, [onClose]);
 
