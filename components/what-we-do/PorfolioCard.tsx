@@ -8,12 +8,19 @@ interface PortfolioCardProps {
 }
 
 const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
+  const tagColorClasses = [
+    "bg-[#E7F0FF] text-[#173053]",
+    "bg-[#E7F8EE] text-[#1E5A3A]",
+    "bg-[#FDEBEC] text-[#8D1E39]",
+    "bg-[#DCEBFF] text-[#173053]",
+  ];
+
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-[#cfd9e6] bg-white p-8 font-montserrat transition-all duration-300 hover:bg-genesis-navy/10">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-none border border-[#cfd9e6] bg-white p-6 font-montserrat transition-all duration-300 hover:bg-genesis-navy/10">
       <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
 
       {/* Top Metadata Row */}
-      <div className="flex justify-between items-start mb-12">
+      <div className="mb-8 flex items-start justify-between">
         <div />
 
         <span className="text-[11px] font-medium bg-[#8D1E39] tracking-[0.12em] text-white uppercase border border-[#cfd9e6] px-2 py-0.5 transition-colors duration-300">
@@ -22,7 +29,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 space-y-3">
         <h4 className="font-agatho text-[1.25rem] sm:text-[1.45rem] tracking-tight leading-[1.25] text-[#0f2745] transition-colors duration-300">
           {item.name}
         </h4>
@@ -34,12 +41,14 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
       </div>
 
       {/* Bottom Functional Area */}
-      <div className="mt-8">
+      <div className="mt-6">
         {/* Tags */}
-        <div className="flex flex-wrap items-center gap-y-2 border-t border-[#d8e0ea] pt-6">
+        <div className="flex flex-wrap items-center gap-y-2 border-t border-[#d8e0ea] pt-4">
           {item.tags.map((tag: string, index: number) => (
             <div key={tag} className="flex items-center">
-              <span className="text-[11px] text-[#173053] font-medium tracking-[0.12em] uppercase transition-colors duration-300">
+              <span
+                className={`${tagColorClasses[index % tagColorClasses.length]} px-2 py-1 text-[11px] font-medium tracking-[0.12em] uppercase transition-colors duration-300`}
+              >
                 {tag}
               </span>
               {index < item.tags.length - 1 && (

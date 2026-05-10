@@ -1,11 +1,11 @@
 export const sectorTabs = [
   { key: "All", title: "All" },
-  { key: "Healthcare & Pharma", title: "Healthcare" },
-  { key: "Hospitality & Tourism", title: "Hospitality" },
-  { key: "Hydropower & Clean Energy", title: "Hydropower" },
   { key: "Manufacturing & Processing", title: "Manufacturing" },
+  { key: "Hydropower & Clean Energy", title: "Hydropower" },
+  { key: "Hospitality & Tourism", title: "Hospitality" },
+  { key: "Healthcare & Pharma", title: "Healthcare" },
   { key: "Agro & Aquaculture", title: "Agro" },
-  { key: "Others", title: "Others" },
+  { key: "Others", title: "Otherw" },
 ] as const;
 
 export type Sector = (typeof sectorTabs)[number]["key"];
