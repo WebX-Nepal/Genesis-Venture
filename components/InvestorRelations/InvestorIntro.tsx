@@ -46,7 +46,7 @@ const InvesrtorIntro = () => {
         playsInline
         className="absolute inset-0 h-full w-full object-cover z-0"
       >
-        <source src="/videos/investors.mp4" type="video/mp4" />
+        <source src="/videos/invest.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0  z-10" />
       <div className="relative capitalize z-20 flex w-full max-w-xs flex-col justify-center gap-3 px-2 text-center xs:max-w-sm sm:max-w-md sm:gap-4 md:max-w-5xl md:gap-6">

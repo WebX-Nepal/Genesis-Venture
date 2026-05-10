@@ -39,7 +39,7 @@ export default function Hero() {
         playsInline
         className="absolute inset-0 h-[115%] w-full object-cover will-change-transform"
       >
-        <source src="/videos/night-sky.mp4" type="video/mp4" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
 
       <div className="relative z-10 mx-auto -translate-y-14 flex w-full max-w-5xl flex-col items-center justify-center text-center md:-translate-y-20">

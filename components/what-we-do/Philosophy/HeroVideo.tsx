@@ -12,7 +12,7 @@ export default function HeroVideo() {
         playsInline
         className="absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1]"
       >
-        <source src="/videos/skyport.mp4" type="video/mp4" />
+        <source src="/videos/sky.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-genesis-navy/40 z-10" />
 

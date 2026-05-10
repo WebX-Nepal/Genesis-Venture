@@ -56,7 +56,7 @@ const PortfolioHeroSection = () => {
         playsInline
         className="absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1]"
       >
-        <source src="/videos/projects.mp4" type="video/mp4" className="" />
+        <source src="/videos/pro.mp4" type="video/mp4" className="" />
       </video>
       <div className="absolute inset-0 bg-genesis-navy/40 z-10" />
 
