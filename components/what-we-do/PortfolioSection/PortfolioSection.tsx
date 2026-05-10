@@ -114,12 +114,12 @@ export default function PortfolioSection({
               {sectorTabs.find((s) => s.key === activeSector)?.title}
             </p>
             <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
-              <div className="flex min-w-max gap-5 pr-2">
+              {/* <div className="flex min-w-max gap-5 pr-2">
                 {filteredItems.map((item) => (
                   <div
                     key={item.name}
                     className="w-[86vw] shrink-0 snap-center sm:w-[70vw]"
-                  >
+                  > */}
                     {item.isFeatured ? (
                       <FeaturedPortfolioCard item={item} />
                     ) : (
