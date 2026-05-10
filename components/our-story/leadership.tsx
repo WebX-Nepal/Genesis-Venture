@@ -1,7 +1,7 @@
 "use client";
 
 const leaderParagraphs = [
-  "Anuj Rathi is the Founder and Managing Director of Genesis Ventures Ltd, bringing over two decades of experience across manufacturing, consumer goods, and financial markets. This rare breadth of experience forms the foundation of Genesis Ventures and distinguishes it from conventionally trained investment managers.",
+  "Anuj Rathi is the Founder and Chairman of Genesis Ventures Ltd, bringing over two decades of experience across manufacturing, consumer goods, and financial markets. This rare breadth of experience forms the foundation of Genesis Ventures and distinguishes it from conventionally trained investment managers.",
   "Anuj began his professional journey after graduating from Mayo College, earning his undergraduate degree from Shri Ram College of Commerce (SRCC), Delhi, and completing his postgraduate studies at the Faculty of Management Studies (FMS), Delhi. His career commenced at Cadbury, where he served as Area Sales Manager for Karnataka, gaining early exposure to business strategy, market dynamics, and consumer behavior.",
   "He subsequently played an instrumental role in the establishment and operations of leading industrial enterprises, including Maruti Cements Ltd and Premier Distilleries Ltd. He currently serves as Chairman of Maruti Cements Ltd and as Director of Premier Distilleries Ltd, bringing strategic oversight and deep operational insight to both organizations.",
   "This extensive operating experience gave Anuj a firsthand understanding of industrial operations, supply chains, capital allocation, and the forces that shape real businesses. He later brought this operational expertise to finance, developing a disciplined, research-driven investment approach grounded in business fundamentals.",
@@ -43,7 +43,7 @@ export default function Leadership() {
                 Anuj Rathi
               </h3>
               <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-white/85 font-montserrat">
-                Founder and Managing Director
+                Founder and Chairman
               </p>
               <div className="my-7 h-px bg-white/20" />
               <div className="space-y-5 text-white/85 font-montserrat">
