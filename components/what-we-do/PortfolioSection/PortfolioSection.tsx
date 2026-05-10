@@ -79,7 +79,7 @@ export default function PortfolioSection({
                     </p>
 
                     <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
-                      <div className="flex min-w-max gap-3 pr-2">
+                      <div className="flex min-w-max gap-5 pr-2">
                         {sectorItems.map((item) => (
                           <div
                             key={item.name}
@@ -95,7 +95,7 @@ export default function PortfolioSection({
                       </div>
                     </div>
 
-                    <div className="hidden md:grid grid-cols-2 gap-2 lg:grid-cols-3">
+                    <div className="hidden md:grid grid-cols-2 gap-5 lg:grid-cols-3">
                       {sectorItems.map((item) =>
                         item.isFeatured ? (
                           <FeaturedPortfolioCard key={item.name} item={item} />
@@ -114,7 +114,7 @@ export default function PortfolioSection({
               {sectorTabs.find((s) => s.key === activeSector)?.title}
             </p>
             <div className="md:hidden overflow-x-auto snap-x snap-mandatory">
-              <div className="flex min-w-max gap-3 pr-2">
+              <div className="flex min-w-max gap-5 pr-2">
                 {filteredItems.map((item) => (
                   <div
                     key={item.name}
@@ -130,7 +130,7 @@ export default function PortfolioSection({
               </div>
             </div>
 
-            <div className="hidden md:grid grid-cols-2 gap-2 lg:grid-cols-3">
+            <div className="hidden md:grid grid-cols-2 gap-5 lg:grid-cols-3">
               {filteredItems.map((item) =>
                 item.isFeatured ? (
                   <FeaturedPortfolioCard key={item.name} item={item} />

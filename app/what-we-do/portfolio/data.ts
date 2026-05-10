@@ -1,11 +1,11 @@
-export const sectorTabs = [
+﻿export const sectorTabs = [
   { key: "All", title: "All" },
   { key: "Manufacturing & Processing", title: "Manufacturing" },
   { key: "Hydropower & Clean Energy", title: "Hydropower" },
   { key: "Hospitality & Tourism", title: "Hospitality" },
   { key: "Healthcare & Pharma", title: "Healthcare" },
   { key: "Agro & Aquaculture", title: "Agro" },
-  { key: "Others", title: "Otherw" },
+  { key: "Others", title: "Others" },
 ] as const;
 
 export type Sector = (typeof sectorTabs)[number]["key"];
@@ -17,7 +17,14 @@ export interface PortfolioItem {
   sector: Sector;
   description: string;
   badge: string;
-  badgeType: "growth" | "est" | "preipo" | "listed" | "ipo" | "operational" | "construction";
+  badgeType:
+    | "growth"
+    | "est"
+    | "preipo"
+    | "listed"
+    | "ipo"
+    | "operational"
+    | "construction";
   tags: string[];
   progress?: number;
   isFeatured?: boolean;
@@ -136,6 +143,7 @@ export const portfolioItems: PortfolioItem[] = [
       "Commissioned run-of-river hydropower project now operational and supplying clean energy to Nepal's national grid via NEA. Genesis Ventures holds an unlisted equity position.",
     badge: "Commissioned",
     badgeType: "operational",
+    progress: 100,
     tags: ["Commissioned", "NEA Grid", "Unlisted Equity"],
   },
   {
@@ -184,6 +192,28 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ["IPO Pending · SEBON", "Kapilvastu", "Rs 1.78 Arba Issue"],
   },
   {
+    id: "premier-distillery",
+    name: "Premier Distillery Ltd.",
+    shortName: "PREMIER Distillery",
+    sector: "Manufacturing & Processing",
+    description:
+      "Premium spirits and liquor manufacturer operating in Nepal. Producing high-quality distilled beverages with a focus on domestic market penetration and import substitution.",
+    badge: "Growth Stage",
+    badgeType: "growth",
+    tags: ["Spirits & Liquor", "Consumer Goods", "Import Substitution"],
+  },
+  {
+    id: "premier-steel",
+    name: "Premier Steel Ltd.",
+    shortName: "PREMIER Steel",
+    sector: "Manufacturing & Processing",
+    description:
+      "Steel products manufacturer supplying structural and construction-grade steel across Nepal. Serving infrastructure and real-estate demand with domestic production.",
+    badge: "Growth Stage",
+    badgeType: "growth",
+    tags: ["TMT Bars & Steel", "Infrastructure", "Import Substitution"],
+  },
+  {
     id: "sopan-multiple",
     name: "Sopan Multiple Company Limited",
     shortName: "SOPAN Multiple Company",
@@ -203,9 +233,24 @@ export const portfolioItems: PortfolioItem[] = [
     subs: [
       { label: "Education", name: "Kantipur Engineering College" },
       { label: "Education", name: "Acme Engineering College" },
-      { label: "Healthcare", name: "Sopan Pharmaceuticals Ltd.", note: "IPO approved" },
+      {
+        label: "Healthcare · 49% stake",
+        name: "Sopan Pharmaceuticals Ltd.",
+        note: "IPO approved · cGMP · 190+ formulations",
+      },
       { label: "Hydropower", name: "Molnia Power Limited" },
     ],
+  },
+  {
+    id: "mero-kisan",
+    name: "Mero Kisan Ltd.",
+    shortName: "MERO KISAN",
+    sector: "Agro & Aquaculture",
+    description:
+      "Agricultural enterprise supporting Nepal's farming communities through modern input supply, technical advisory, and market linkage.",
+    badge: "Growth Stage",
+    badgeType: "growth",
+    tags: ["Agri Services", "Market Linkage", "Rural Development"],
   },
   {
     id: "annapurna-maccha",
@@ -216,6 +261,11 @@ export const portfolioItems: PortfolioItem[] = [
       "Nepal's leading fish feed manufacturer based in Khairahani, Chitwan. Produces floating feeds under the brand Matsya Raja. Plant equipped with Austrian ANDRITZ technology.",
     badge: "Pre-IPO",
     badgeType: "preipo",
-    tags: ["33,500 MT/year", "ANDRITZ Technology", "Chitwan", "Pre-IPO · AMDU"],
+    tags: [
+      "33,500 MT/year",
+      "ANDRITZ Technology",
+      "Khairahani, Chitwan",
+      "Pre-IPO · AMDU",
+    ],
   },
 ];
