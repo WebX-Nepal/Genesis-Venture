@@ -6,10 +6,9 @@ import LenisProvider from "@/components/LenisWrapper";
 import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
-// import { PreLoaderProvider } from "@/context/PreLoaderContext";
+import { PreLoaderProvider } from "@/context/PreLoaderContext";
 // import { TransitionProvider } from "@/context/TransitionContext";
   
-
 const agatho = localFont({
   variable: "--font-agatho",
   src: [
@@ -19,7 +18,6 @@ const agatho = localFont({
   ],
   display: "block",
 });
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +44,9 @@ export const metadata: Metadata = {
   title: "Genesis Ventures",
   description:
     "Early-stage venture capital firm investing in transformative companies.",
+    icons: {
+      icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
@@ -59,15 +60,15 @@ export default function RootLayout({
         className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} ${agatho.variable} antialiased`}
       >
         <LenisProvider>
-          {/* <PreLoaderProvider> */}
+          <PreLoaderProvider>
             {/* <TransitionProvider> */}
-              {/* <Loader /> */}
+              <Loader />
               {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
               <NavBar />
               {children}
               <Footer />
             {/* </TransitionProvider> */}
-          {/* </PreLoaderProvider> */}
+          </PreLoaderProvider>
         </LenisProvider>
       </body>
     </html>
