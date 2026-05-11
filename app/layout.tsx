@@ -64,7 +64,7 @@ export default function RootLayout({
           <PreLoaderProvider>
             <HeroVideoLoadProvider>
             {/* <TransitionProvider> */}
-              <Loader />
+              {/* <Loader /> */}
               {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
               <NavBar />
               {children}
