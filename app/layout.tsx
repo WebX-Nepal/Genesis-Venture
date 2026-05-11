@@ -59,6 +59,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${poppins.variable} ${montserrat.variable} ${geistSans.variable} ${geistMono.variable} ${agatho.variable} antialiased`}
+        style={{ backgroundColor: "#0a1634" }}
       >
         <LenisProvider>
           <PreLoaderProvider>
