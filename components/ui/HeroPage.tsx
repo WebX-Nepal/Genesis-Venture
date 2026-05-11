@@ -1,5 +1,8 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useEffect, useState } from "react";
 import Title from "./Title";
+import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
 interface HeroPageProps {
   title?: ReactNode;
@@ -17,16 +20,37 @@ export default function HeroPage({
   backgroundVideo,
   heightClassName = "h-screen",
 }: HeroPageProps) {
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const { setHeroVideoReady } = useHeroVideoLoad();
+
+  useEffect(() => {
+    if (!backgroundVideo) {
+      setHeroVideoReady(true);
+      return;
+    }
+
+    setHeroVideoReady(false);
+    return () => setHeroVideoReady(true);
+  }, [backgroundVideo, setHeroVideoReady]);
+
   return (
     <section className={`relative w-full overflow-hidden bg-[#0a1634] text-white ${heightClassName}`}>
       {backgroundVideo ? (
         <>
+          {!isVideoReady ? (
+            <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
+          ) : null}
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 h-full w-full object-cover"
+            preload="metadata"
+            onLoadedData={() => {
+              setIsVideoReady(true);
+              setHeroVideoReady(true);
+            }}
+            className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>

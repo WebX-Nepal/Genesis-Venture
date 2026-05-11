@@ -1,16 +1,34 @@
 "use client";
 
 import Title from "@/components/ui/Title";
+import { useEffect, useState } from "react";
+import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
 export default function HeroVideo() {
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const { setHeroVideoReady } = useHeroVideoLoad();
+
+  useEffect(() => {
+    setHeroVideoReady(false);
+    return () => setHeroVideoReady(true);
+  }, [setHeroVideoReady]);
+
   return (
     <section className="relative min-h-[60vh] w-full overflow-hidden md:min-h-screen">
+      {!isVideoReady ? (
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
+      ) : null}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1]"
+        preload="metadata"
+        onLoadedData={() => {
+          setIsVideoReady(true);
+          setHeroVideoReady(true);
+        }}
+        className={`absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1] transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
       >
         <source src="/videos/sky.mp4" type="video/mp4" />
       </video>

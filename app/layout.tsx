@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
 import { PreLoaderProvider } from "@/context/PreLoaderContext";
+import { HeroVideoLoadProvider } from "@/context/HeroVideoLoadContext";
 // import { TransitionProvider } from "@/context/TransitionContext";
   
 const agatho = localFont({
@@ -61,6 +62,7 @@ export default function RootLayout({
       >
         <LenisProvider>
           <PreLoaderProvider>
+            <HeroVideoLoadProvider>
             {/* <TransitionProvider> */}
               <Loader />
               {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
@@ -68,6 +70,7 @@ export default function RootLayout({
               {children}
               <Footer />
             {/* </TransitionProvider> */}
+            </HeroVideoLoadProvider>
           </PreLoaderProvider>
         </LenisProvider>
       </body>

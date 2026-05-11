@@ -1,15 +1,23 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Title from "../ui/Title";
+import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const InvesrtorIntro = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const { setHeroVideoReady } = useHeroVideoLoad();
+
+  useEffect(() => {
+    setHeroVideoReady(false);
+    return () => setHeroVideoReady(true);
+  }, [setHeroVideoReady]);
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -39,12 +47,20 @@ const InvesrtorIntro = () => {
 
   return (
     <section ref={sectionRef} className="relative min-h-[60vh] w-full flex flex-col items-center justify-center overflow-hidden px-4 xs:px-6 sm:px-8 md:min-h-screen md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12">
+      {!isVideoReady ? (
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
+      ) : null}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover z-0"
+        preload="metadata"
+        onLoadedData={() => {
+          setIsVideoReady(true);
+          setHeroVideoReady(true);
+        }}
+        className={`absolute inset-0 h-full w-full object-cover z-0 transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
       >
         <source src="/videos/invest.mp4" type="video/mp4" />
       </video>

@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, type MouseEvent } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
 // ------------------ NAV LINKS ------------------
 const navLinks = [
@@ -30,6 +31,7 @@ const navLinks = [
 ];
 
 export default function NavBar() {
+  const { isHeroVideoReady } = useHeroVideoLoad();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
@@ -89,6 +91,12 @@ export default function NavBar() {
     return dropdown.some((item) => isActivePath(item.href));
   };
 
+  const blockIfVideoNotReady = (event: MouseEvent<HTMLElement>) => {
+    if (!isHeroVideoReady) {
+      event.preventDefault();
+    }
+  };
+
   return (
     <div
       className="fixed top-0 left-0 right-0 z-999 flex flex-col transition-transform duration-300 ease-in-out"
@@ -98,7 +106,7 @@ export default function NavBar() {
         className={`border-b transition-all duration-300 ${navbarSurface} ${navbarTextColor}`}
       >
         <div className="layout-7xl flex items-center justify-between py-4">
-          <Link href="/" className="flex leading-none select-none shrink-0">
+          <Link href="/" onClick={blockIfVideoNotReady} className="flex leading-none select-none shrink-0">
             <Image
               src="/images/final/png/Asset 3.png"
               alt="Genesis Ventures"
@@ -121,6 +129,7 @@ export default function NavBar() {
                 >
                   <Link
                     href={href ?? "#"}
+                    onClick={blockIfVideoNotReady}
                     className={`flex items-center gap-1 text-xs uppercase tracking-widest font-poppins transition-colors duration-200 ${
                       parentActive
                         ? "text-genesis-red"
@@ -155,6 +164,7 @@ export default function NavBar() {
                           <li key={dHref}>
                             <Link
                               href={dHref}
+                              onClick={blockIfVideoNotReady}
                               className={`block px-5 py-2.5 text-xs font-poppins uppercase tracking-wider transition-colors duration-150 hover:bg-gray-50 ${
                                 isActivePath(dHref)
                                   ? "text-genesis-red"
@@ -226,6 +236,7 @@ export default function NavBar() {
                         <Link
                           key={dHref}
                           href={dHref}
+                          onClick={blockIfVideoNotReady}
                           className={`block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider border-b border-gray-50 last:border-0 transition-colors ${
                             isActivePath(dHref)
                               ? "text-genesis-red"
@@ -240,6 +251,7 @@ export default function NavBar() {
                 ) : (
                   <Link
                     href={href ?? "#"}
+                    onClick={blockIfVideoNotReady}
                     className={`block text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 transition-colors ${
                       isActivePath(href) ? "text-genesis-red" : "text-genesis-navy"
                     }`}

@@ -2,10 +2,18 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const { setHeroVideoReady } = useHeroVideoLoad();
+
+  useEffect(() => {
+    setHeroVideoReady(false);
+    return () => setHeroVideoReady(true);
+  }, [setHeroVideoReady]);
 
   useGSAP(
     () => {
@@ -31,13 +39,21 @@ export default function Hero() {
       ref={sectionRef}
       className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-genesis-navy px-6 pt-28 sm:px-8 md:px-16 md:pt-32"
     >
+      {!isVideoReady ? (
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
+      ) : null}
       <video
         ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 h-[115%] w-full object-cover will-change-transform"
+        preload="metadata"
+        onLoadedData={() => {
+          setIsVideoReady(true);
+          setHeroVideoReady(true);
+        }}
+        className={`absolute inset-0 h-[115%] w-full object-cover will-change-transform transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>

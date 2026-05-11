@@ -223,8 +223,13 @@ html {
   * {
     @apply border-border outline-ring/50;
   }
+  html,
+  body {
+    background-color: #0a1634;
+  }
   body {
     @apply bg-background text-foreground;
+    background-color: #0a1634;
   }
   html {
     @apply font-sans;
