@@ -6,6 +6,7 @@ import InvestmentRiskModal from "@/components/InvestmentRiskFlyer";
 import Firm from "@/components/Home/firm";
 import UnlistedMarket from "@/components/Home/unlistedmarket";
 import ScrollingHeadline from "@/components/Home/ScrollingHeadline";
+import About from "@/components/Home/newabout";
 import Devider from "@/components/Home/devider";
 
 
@@ -23,8 +24,10 @@ export default function Home() {
     <main className="w-full font-[PPFONT]">
       {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />}
       <Hero />
+  
       <Stats />
-      <Firm /> 
+          <About />
+      {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
       {/* <ScrollingHeadline /> */}

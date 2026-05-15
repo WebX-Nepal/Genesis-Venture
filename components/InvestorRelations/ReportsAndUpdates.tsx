@@ -1,66 +1,76 @@
 "use client";
 
-import { useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import { BriefcaseBusiness, IndianRupee, PhoneCall } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const prepItems = [
-  {
-    num: "01",
-    label: "Performance",
-    title: "Quarterly Performance Updates",
-    desc: "NAV, portfolio marks, realized gains, and strategy attribution.",
-    image: "/images/Projects/investing.webp",
-  },
-  {
-    num: "02",
-    label: "Transparency",
-    title: "Portfolio Exposure Disclosures",
-    desc: "Holdings mix, stage allocation, sector concentration, and deployment snapshots.",
-    image: "/images/Projects/founder.webp",
-  },
-  {
-    num: "03",
-    label: "Commentary",
-    title: "Letters to Investors",
-    desc: "Market view, risk posture, and allocation rationale.",
-    image: "/images/Projects/insight.webp",
-  },
-  {
-    num: "04",
-    label: "Governance",
-    title: "Valuation & Governance Notes",
-    desc: "Independent review notes and valuation framework disclosures.",
-    image: "/images/Projects/partnership.webp",
-  },
+type TabKey = "financial" | "shareholders" | "service";
+
+const tabs: { key: TabKey; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+  { key: "financial", label: "Financial Reporting", icon: IndianRupee },
+  { key: "shareholders", label: "Shareholders' Information", icon: BriefcaseBusiness },
+  { key: "service", label: "Investor Service Centre", icon: PhoneCall },
 ];
 
-const reportCards = [
+const tabContent: Record<
+  TabKey,
   {
-    type: "Latest Release",
-    title: "Q1 2026 Investor Update",
-    desc: "Performance highlights, portfolio actions, and key risks.",
+    title: string;
+    subtitle: string;
+    cards: { title: string; desc: string }[];
+  }
+> = {
+  financial: {
+    title: "Financial Reporting",
+    subtitle: "Structured disclosures to help investors track performance with clarity.",
+    cards: [
+      {
+        title: "Quarterly Results",
+        desc: "Quarterly operating and financial performance with key highlights.",
+      },
+      {
+        title: "ITC Report and Accounts",
+        desc: "Audited statements, schedules, and notes to accounts.",
+      },
+    ],
   },
-  {
-    type: "Annual",
-    title: "FY 2025 Annual Report",
-    desc: "Audited annual performance review with governance notes.",
+  shareholders: {
+    title: "Shareholders' Information",
+    subtitle: "Important updates and materials relevant for current and prospective shareholders.",
+    cards: [
+      {
+        title: "Press Releases",
+        desc: "Material announcements and official corporate updates.",
+      },
+      {
+        title: "Investor Presentations",
+        desc: "Management presentations on strategy, portfolio, and outlook.",
+      },
+    ],
   },
-  {
-    type: "Governance",
-    title: "Valuation Methodology Note",
-    desc: "How private assets are valued and model changes are governed.",
+  service: {
+    title: "Investor Service Centre",
+    subtitle: "Support documents and contact-ready resources for investor queries.",
+    cards: [
+      {
+        title: "Disclosure Notes",
+        desc: "Supplementary policy and valuation related disclosures.",
+      },
+      {
+        title: "Support Contacts",
+        desc: "Dedicated channels for investor services and document requests.",
+      },
+    ],
   },
-];
+};
 
-const ReportsAndUpdates = () => {
+export default function ReportsAndUpdates() {
   const sectionRef = useRef<HTMLElement>(null);
-  const featured = prepItems[0];
-  const timelineItems = prepItems.slice(1);
+  const [activeTab, setActiveTab] = useState<TabKey>("financial");
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -68,153 +78,71 @@ const ReportsAndUpdates = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top 80%",
+        start: "top 82%",
         toggleActions: "play none none reverse",
       },
-      defaults: { ease: "power2.out", duration: 0.62 },
+      defaults: { ease: "power2.out", duration: 0.55 },
     });
 
-    tl.from(".iru-header", { y: 12, autoAlpha: 0, duration: 0.45 })
-      .from(".iru-featured", { y: 18, autoAlpha: 0 }, "-=0.18")
-      .from(".iru-timeline-item", { y: 14, autoAlpha: 0, stagger: 0.1 }, "-=0.28")
-      .from(".iru-reports-header", { y: 12, autoAlpha: 0 }, "-=0.2")
-      .from(".iru-report-card", { y: 14, autoAlpha: 0, stagger: 0.08 }, "-=0.24");
+    tl.from(".ir-header", { y: 12, autoAlpha: 0 })
+      .from(".ir-tab", { y: 10, autoAlpha: 0, stagger: 0.08 }, "-=0.18")
+      .from(".ir-panel", { y: 14, autoAlpha: 0 }, "-=0.16")
+      .from(".ir-card", { y: 10, autoAlpha: 0, stagger: 0.08 }, "-=0.2");
   }, { scope: sectionRef });
 
+  const current = useMemo(() => tabContent[activeTab], [activeTab]);
+
   return (
-    <section ref={sectionRef} className="relative w-full overflow-hidden border-y border-[#e8edf5] bg-white py-14 sm:py-16 md:py-20">
+    <section ref={sectionRef} className="w-full border-y border-[#e8edf5] bg-white py-14 sm:py-16 md:py-20">
       <div className="layout-7xl">
-        <div className="iru-header border-b border-[#d7e0ec] pb-5">
-          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-            <div>
-              <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
-                Investor Relations
-              </p>
-              <h2 className="mt-3 font-agatho text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
-                Clear reporting. Consistent disclosures.
-              </h2>
-              <p className="mt-3 max-w-[64ch] text-sm leading-relaxed text-[#5a6f8c] sm:text-[15px]">
-                We publish concise materials so partners can track performance, risk, and portfolio direction with clarity.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="border border-[#dbe3ef] bg-[#f8fbff] p-3 sm:p-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8D1E39]">Frequency</p>
-                <p className="mt-1 text-sm font-semibold text-[#173053] sm:text-base">Quarterly</p>
-              </div>
-              <div className="border border-[#dbe3ef] bg-[#f8fbff] p-3 sm:p-4">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8D1E39]">Coverage</p>
-                <p className="mt-1 text-sm font-semibold text-[#173053] sm:text-base">Performance + Risk</p>
-              </div>
-            </div>
-          </div>
+        <div className="ir-header border-b border-[#d7e0ec] pb-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] font-montserrat">
+            Investor Relations
+          </p>
+          <h2 className="mt-3 font-agatho text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
+            Reports and investor resources
+          </h2>
+          <p className="mt-3 max-w-[64ch] text-sm leading-relaxed text-[#5a6f8c] sm:text-[15px]">
+            Explore financial reporting, shareholder updates, and service resources through a cleaner structure.
+          </p>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="iru-featured group relative min-h-[420px] overflow-hidden border border-[#dbe3ef] bg-white lg:min-h-full">
-            <div className="absolute inset-0">
-              <Image
-                src={featured.image}
-                alt={featured.title}
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f2745]/75 via-[#0f2745]/15 to-transparent" />
-            </div>
-            <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between p-5 sm:p-6 lg:min-h-full">
-              <div className="inline-flex w-fit items-center gap-3 bg-white/90 px-3 py-2">
-                <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39]">
-                  Priority Release
-                </span>
-                <span className="font-montserrat text-[10px] uppercase tracking-[0.16em] text-[#173053]">
-                  {featured.label}
-                </span>
-              </div>
-              <div>
-                <h3 className="mt-2 font-montserrat text-[clamp(1.05rem,2.2vw,1.5rem)] font-semibold leading-[1.25] text-white">
-                  {featured.title}
-                </h3>
-                <p className="mt-3 max-w-[56ch] text-xs leading-relaxed font-montserrat text-white/90 sm:text-sm">
-                  {featured.desc}
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <div className="border border-[#dbe3ef] bg-white p-5 sm:p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39]">Disclosure Roadmap</p>
-            <div className="mt-4 space-y-5">
-              {timelineItems.map((item) => (
-                <article
-                  key={item.num}
-                  className="iru-timeline-item grid grid-cols-[auto_1fr] gap-4 border-b border-[#e8eef6] pb-5 last:border-b-0 last:pb-0"
-                >
-                  <div className="flex flex-col items-center">
-                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39]">
-                      {item.num}
-                    </span>
-                    <span className="mt-2 h-full w-px bg-[#dce4f0]" />
-                  </div>
-
-                  <div>
-                    <p className="font-montserrat text-[10px] uppercase tracking-[0.16em] text-[#6c7c95]">
-                      {item.label}
-                    </p>
-                    <h4 className="mt-1 font-montserrat text-base font-semibold leading-[1.35] text-[#173053]">
-                      {item.title}
-                    </h4>
-                    <p className="mt-2 text-xs leading-relaxed font-montserrat text-[#556781] sm:text-sm">{item.desc}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="iru-reports-header mt-12 flex items-center gap-4 sm:gap-6">
-          <span className="h-px flex-1 bg-[#d9e2ee]" />
-          <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] sm:text-[11px]">
-            Available Documents
-          </span>
-          <span className="h-px flex-1 bg-[#d9e2ee]" />
-        </div>
-
-        <div className="mt-6 grid gap-3 md:grid-cols-3">
-          {reportCards.map((card) => (
-            <a
-              key={card.title}
-              href="#"
-              className="iru-report-card group border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] p-4 text-white transition-colors sm:p-5"
+        <div className="mt-7 grid gap-3 md:grid-cols-3">
+          {tabs.map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setActiveTab(key)}
+              className={`ir-tab flex items-center gap-3 border px-4 py-3 text-left transition-colors ${
+                activeTab === key
+                  ? "border-[#2f67ea] bg-[#eef4ff] text-[#1b4fd6]"
+                  : "border-[#dbe3ef] bg-white text-[#173053] hover:bg-[#f7faff]"
+              }`}
             >
-              <div className="flex items-start gap-3">
-                <span className="shrink-0 pt-0.5">
-                  <Image
-                    src="/icons/image.png"
-                    alt="Document icon"
-                    width={42}
-                    height={42}
-                    className="object-contain"
-                  />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#f3dce3] font-semibold">
-                    {card.type}
-                  </p>
-                  <h4 className="mt-1 text-sm font-semibold text-white">
-                    {card.title}
-                  </h4>
-                  <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
-                    {card.desc}
-                  </p>
-                </div>
-              </div>
-            </a>
+              <Icon className="h-4 w-4 shrink-0" />
+              <span className="text-xs font-semibold uppercase tracking-[0.15em] sm:text-[11px]">{label}</span>
+            </button>
           ))}
+        </div>
+
+        <div className="ir-panel mt-6 border border-[#dbe3ef] bg-[#f8fbff] p-5 sm:p-6">
+          <h3 className="font-montserrat text-[1.15rem] font-semibold text-[#173053] sm:text-[1.25rem]">
+            {current.title}
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-[#566b88] sm:text-[15px]">
+            {current.subtitle}
+          </p>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {current.cards.map((card) => (
+              <article key={card.title} className="ir-card border border-[#cfdcf0] bg-white p-4 sm:p-5">
+                <p className="text-sm font-semibold text-[#173053] sm:text-base">{card.title}</p>
+                <p className="mt-1 text-xs leading-relaxed text-[#566b88] sm:text-sm">{card.desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default ReportsAndUpdates;
+}
