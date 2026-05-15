@@ -193,51 +193,7 @@ export default function OurStoryIntro() {
           </div>
         </div>
 
-        {/* <div className="mt-10 hidden gap-4 md:mt-12 md:grid md:grid-cols-4">
-          {heroStats.map((stat, index) => (
-            <article
-              key={stat.label}
-              className="group relative min-h-[148px] overflow-hidden border border-[#0a3f73] bg-gradient-to-br from-[#001D3F] to-[#04356A] px-4 py-5 sm:min-h-[162px] sm:px-5 sm:py-6 md:aspect-[4/5] md:min-h-0"
-            >
-              <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100">
-                <Image
-                  src={stat.image}
-                  alt={stat.label}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/52 to-black/30" />
-              </div>
-
-              <div className="relative z-20 flex items-center gap-2.5">
-                <span className="font-montserrat text-[10px] uppercase tracking-[0.24em] text-[#f3dce3]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="h-px w-6 bg-[#f3dce3]/55" />
-                <span className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-[#f3dce3]">
-                  Profile
-                </span>
-              </div>
-
-              <div className="absolute inset-x-5 top-1/2 z-20 -translate-y-1/2 text-center">
-                <p className="text-[1.9rem] leading-none text-white sm:text-[2.1rem]">
-                  {stat.value.includes("+") ? (
-                    <>
-                      <span className="font-agatho">{stat.value.replace("+", "")}</span>
-                      <span className="font-montserrat">+</span>
-                    </>
-                  ) : (
-                    <span className="font-agatho">{stat.value}</span>
-                  )}
-                </p>
-                <p className="mx-auto mt-2 max-w-[240px] font-montserrat text-[11px] uppercase leading-tight tracking-[0.08em] text-white/85">
-                  {stat.label}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div> */}
+       
       </div>
     </section>
   );

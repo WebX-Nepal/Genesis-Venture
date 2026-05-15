@@ -45,8 +45,12 @@ export default function HeroPage({
             muted
             loop
             playsInline
-            preload="metadata"
-            onLoadedData={() => {
+            preload="auto"
+            onLoadedMetadata={() => {
+              setIsVideoReady(true);
+              setHeroVideoReady(true);
+            }}
+            onError={() => {
               setIsVideoReady(true);
               setHeroVideoReady(true);
             }}
