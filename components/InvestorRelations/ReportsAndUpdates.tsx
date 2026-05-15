@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -43,6 +43,35 @@ export default function ReportsAndUpdates() {
     },
     { scope: sectionRef }
   );
+
+  useEffect(() => {
+    const sectionElements = tabSectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (!sectionElements.length) return;
+
+    const updateActiveByScroll = () => {
+      const triggerY = window.innerHeight * 0.28;
+      let currentIndex = 0;
+
+      for (let i = 0; i < sectionElements.length; i += 1) {
+        const rect = sectionElements[i].getBoundingClientRect();
+        if (rect.top <= triggerY) currentIndex = i;
+      }
+
+      setActiveTab((prev) => (prev === currentIndex ? prev : currentIndex));
+    };
+
+    updateActiveByScroll();
+    window.addEventListener("scroll", updateActiveByScroll, { passive: true });
+    window.addEventListener("resize", updateActiveByScroll);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveByScroll);
+      window.removeEventListener("resize", updateActiveByScroll);
+    };
+  }, []);
 
   return (
     <section ref={sectionRef} className="w-full bg-white py-14 sm:py-16 md:py-20">
