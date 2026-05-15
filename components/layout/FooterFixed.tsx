@@ -1,4 +1,5 @@
-﻿import Image from "next/image";
+﻿import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const nav = [
@@ -17,7 +18,7 @@ const resources = [
 
 export default function FooterFixed() {
   return (
-    <footer className="relative h-[60vh] w-full overflow-hidden text-[#173053] bg-white">
+    <footer className="relative h-[60vh] w-full overflow-hidden bg-white text-[#173053]">
       <div className="pointer-events-none absolute inset-0">
         <Image src="/footer/image.png" alt="" fill className="object-contain object-bottom" />
       </div>
@@ -29,16 +30,37 @@ export default function FooterFixed() {
             <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
               <Image
                 src="/images/final/png/Asset 3.png"
-              alt="Genesis Ventures"
+                alt="Genesis Ventures"
                 width={150}
                 height={42}
                 className="mx-auto h-auto w-[120px] md:mx-0 md:w-[150px]"
               />
-  
-              <p className="mx-auto max-w-sm font-poppins text-sm leading-relaxed text-[#173053]/75 sm:text-[15px] md:mx-0">
-                We review every submission and respond within 5 business days.
-                If there&apos;s a fit, we move quickly.
+
+              <p className="mx-auto max-w-sm text-sm leading-relaxed text-[#173053]/75 sm:text-[15px] md:mx-0">
+                Genesis Ventures partners with investors and founders through transparent
+                communication and disciplined execution. Share your details, and our team
+                will guide your next step.
               </p>
+
+              <div className="pt-2">
+                <p className="text-[11px] uppercase tracking-[0.18em] text-[#8D1E39] font-montserrat">
+                  Let&apos;s Connect
+                </p>
+                <div className="mt-3 flex items-center justify-center gap-3 md:justify-start">
+                  <a href="#" aria-label="LinkedIn" className="text-[#173053] transition-colors hover:text-[#8D1E39]">
+                    <Linkedin size={16} />
+                  </a>
+                  <a href="#" aria-label="Instagram" className="text-[#173053] transition-colors hover:text-[#8D1E39]">
+                    <Instagram size={16} />
+                  </a>
+                  <a href="#" aria-label="Facebook" className="text-[#173053] transition-colors hover:text-[#8D1E39]">
+                    <Facebook size={16} />
+                  </a>
+                  <a href="mailto:info@genesisventures.com.np" aria-label="Email" className="text-[#173053] transition-colors hover:text-[#8D1E39]">
+                    <Mail size={16} />
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-7 text-center sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:text-left">
@@ -52,9 +74,9 @@ export default function FooterFixed() {
               </div>
               <div className="flex flex-col items-center gap-3 md:items-start">
                 <span className="mb-1 text-[13px] uppercase tracking-widest text-[#8D1E39] font-montserrat">Contact</span>
-                <span className="text-[13px] text-[#173053]/90 font-poppins">info@genesisventures.com.np</span>
-                <span className="text-[13px] text-[#173053]/90 font-poppins">+977 9851418843</span>
-                <span className="text-[13px] text-[#173053]/90 font-poppins">Dharan Road, Biratnagar</span>
+                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">info@genesisventures.com.np</span>
+                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">+977 9851418843</span>
+                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">Dharan Road, Biratnagar</span>
               </div>
               <div className="flex flex-col items-center gap-3 md:items-start">
                 <span className="mb-1 text-[13px] uppercase tracking-widest text-[#8D1E39] font-montserrat">Resources</span>
