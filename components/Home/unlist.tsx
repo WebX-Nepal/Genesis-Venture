@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -14,24 +15,36 @@ const items = [
     label: "Strategic Edge",
     title: "Asymmetric opportunity",
     desc: "Private companies represent the largest and fastest-growing segment of the economy, yet remain inaccessible to most institutional and retail investors.",
+    image: "/cards/firstone.png",
+    tone: "bg-[#FFFFFF] border-[#eadcc8]",
+    deco: "from-[#ebae84] to-[#f3d9be]",
   },
   {
     index: "02",
     label: "Risk Discipline",
     title: "Reduced market noise",
     desc: "Unlisted investments are insulated from the short-term volatility and sentiment swings that affect public markets, enabling a clearer focus on fundamental value.",
+    tone: "bg-[#efefed] border-[#ddddda]",
+    image: "/cards/pngsec.png",
+    deco: "from-[#cfcfcd] to-[#e7e7e5]",
   },
   {
     index: "03",
     label: "Entry Timing",
     title: "Early entry advantage",
     desc: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
+    image: "/cards/three.png",
+    tone: "bg-[#ece8f3] border-[#ddd7e8]",
+    deco: "from-[#c7bbe5] to-[#e7e2f2]",
   },
   {
     index: "04",
     label: "Network Access",
     title: "Relationship-driven deals",
     desc: "The best private deals are earned through trust and networks, not won through auctions - a discipline at the core of how Genesis Ventures operates.",
+    image: "/cards/hand.png",
+    tone: "bg-[#e8f0e2] border-[#d4e2cb]",
+    deco: "from-[#7bb295] to-[#bdd9c7]",
   },
 ];
 
@@ -123,23 +136,37 @@ export default function UnlistedMarket() {
           {items.map((item) => (
             <article
               key={item.index}
-              className="group relative flex flex-col overflow-hidden border border-[#d7e0ec] bg-white p-4 transition-all duration-300 hover:border-[#b9c8dd] sm:p-6 md:p-7"
+              className={`group relative min-h-[340px] overflow-hidden border p-5 transition-all duration-300 hover:-translate-y-0.5 sm:min-h-[360px] sm:p-6 ${item.tone}`}
             >
-              <span className="font-poppins text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] sm:text-[11px] sm:tracking-[0.3em]">
-                {item.label}
-              </span>
+              {item.image ? (
+                <div className="absolute right-0 top-0 z-10 h-full w-[42%] opacity-85">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              ) : null}
+              <div className={`absolute -right-8 top-10 z-0 h-44 w-44 bg-gradient-to-br opacity-70 blur-[1px] transition-transform duration-500 group-hover:scale-105 md:-right-10 md:top-12 md:h-52 md:w-52 ${item.deco}`} />
+              <div className={`absolute -right-16 bottom-[-28px] z-0 h-36 w-36 bg-gradient-to-br opacity-55 blur-[1px] transition-transform duration-500 group-hover:scale-105 md:h-44 md:w-44 ${item.deco}`} />
 
-              <div className="mt-4 h-px w-full bg-[#e3e8f1]" />
+              <div className="relative z-10 flex h-full flex-col">
+                <span className="font-poppins text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] sm:text-[11px] sm:tracking-[0.3em]">
+                  {item.label}
+                </span>
 
-              <div className="flex flex-col gap-1.5 pt-5 text-center sm:gap-2 sm:pt-6">
-                <div className="mb-2 h-px w-full bg-[#d7e0ec] sm:mb-3" />
-                <span className="font-agatho text-[clamp(1.2rem,6vw,2.1rem)] leading-[1.08] text-[#162e54]">
-                  {item.title}
-                </span>
-                <span className="font-poppins text-xs leading-relaxed text-[#5b5f67] sm:text-sm">
-                  {item.desc}
-                </span>
+                <div className="mt-8 max-w-[60%] sm:max-w-[65%]">
+                  <h3 className="font-montserrat text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 font-poppins text-sm leading-relaxed text-[#3d444f] sm:text-[15px]">
+                    {item.desc}
+                  </p>
+                </div>
+
               </div>
+
             </article>
           ))}
         </div>
