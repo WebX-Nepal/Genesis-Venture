@@ -14,7 +14,7 @@ export default function Connect() {
   const [tab, setTab] = useState<Tab>("general");
 
   return (
-    <section className="contact-section relative w-full bg-white pt-24">
+    <section className="contact-section relative pb-24 w-full bg-white pt-24">
       <div className="layout-7xl flex flex-col gap-10 sm:gap-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-3">

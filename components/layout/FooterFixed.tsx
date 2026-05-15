@@ -18,7 +18,7 @@ const resources = [
 
 export default function FooterFixed() {
   return (
-    <footer className="relative w-full overflow-hidden border-t border-[#d8d0c1] bg-white text-[#173053]">
+    <footer className="relative w-full overflow-hidden border-t border-[#8D1E39]/35 bg-white text-[#173053]">
       <Image
         src="/footer/image.png"
         alt=""
@@ -93,7 +93,7 @@ export default function FooterFixed() {
           </div>
         </div>
 
-        <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-[#173053]/15 pb-6 pt-4 text-center sm:pb-7 md:grid-cols-2 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
+        <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-[#173053]/2 pb-6 pt-4 text-center sm:pb-7 md:grid-cols-2 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
           <span className="text-[13px] font-montserrat text-[#173053]/85 md:justify-self-start">
             Copyright © {new Date().getFullYear()} Genesis Ventures, Inc. All Rights Reserved.
           </span>
