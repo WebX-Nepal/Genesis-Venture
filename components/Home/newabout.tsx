@@ -10,14 +10,14 @@ export default function Firm() {
   return (
     <section className="w-full h-screen bg-[#fdfcf9]">
       <div className="layout-7xl py-10 sm:py-12 md:py-14 lg:py-16">
-        <div className="mx-auto mt-24 w-full max-w-5xl">
+        <div className="mx-auto mt-24 w-full max-w-4xl">
           <div className="flex items-center justify-center">
             <p className="firm-title w-full text-center font-agatho text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
               About the Firm
             </p>
           </div>
 
-          <p className="py-8 text-center font-montserrat text-xl font-medium  text-[#162e54]">
+          <p className="py-8 text-center font-montserrat text-md font-medium  text-[#162e54]">
             Genesis Ventures ltd. is a dedicated private markets investment company focused exclusively on
             unlisted equity - stakes in businesses that operate beyond the reach of public exchanges, where
             the most meaningful value creation often takes place.
