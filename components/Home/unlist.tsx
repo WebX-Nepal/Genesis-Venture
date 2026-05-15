@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -15,28 +14,24 @@ const items = [
     label: "Strategic Edge",
     title: "Asymmetric opportunity",
     desc: "Private companies represent the largest and fastest-growing segment of the economy, yet remain inaccessible to most institutional and retail investors.",
-    image: "/images/hero/strategy.webp",
   },
   {
     index: "02",
     label: "Risk Discipline",
     title: "Reduced market noise",
     desc: "Unlisted investments are insulated from the short-term volatility and sentiment swings that affect public markets, enabling a clearer focus on fundamental value.",
-    image: "/images/hero/growth.webp",
   },
   {
     index: "03",
     label: "Entry Timing",
     title: "Early entry advantage",
     desc: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
-    image: "/images/hero/investment.webp",
   },
   {
     index: "04",
     label: "Network Access",
     title: "Relationship-driven deals",
     desc: "The best private deals are earned through trust and networks, not won through auctions - a discipline at the core of how Genesis Ventures operates.",
-    image: "/images/hero/handshake.webp",
   },
 ];
 
@@ -124,37 +119,24 @@ export default function UnlistedMarket() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-0 border border-[#cfcfcf] flex-1">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 md:gap-5">
           {items.map((item) => (
             <article
               key={item.index}
-              className="relative -mt-px -ml-px border border-[#cfcfcf] bg-white flex flex-col p-4 sm:p-6 md:p-7 transition-all duration-300 hover:bg-genesis-navy/10 group overflow-hidden"
+              className="group relative flex flex-col overflow-hidden border border-[#d7e0ec] bg-white p-4 transition-all duration-300 hover:border-[#b9c8dd] sm:p-6 md:p-7"
             >
-              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-genesis-red scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(0,0,0,0.03),transparent)] pointer-events-none" />
-
-              <span className="text-xs sm:text-sm text-genesis-navy font-poppins uppercase tracking-widest group-hover:text-genesis-red transition-colors">
+              <span className="font-poppins text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] sm:text-[11px] sm:tracking-[0.3em]">
                 {item.label}
               </span>
 
-              <div className="relative w-full aspect-4/3 overflow-hidden mt-3 sm:mt-4">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-black/25 to-transparent" />
-              </div>
+              <div className="mt-4 h-px w-full bg-[#e3e8f1]" />
 
-              <div className="flex flex-col gap-1.5 sm:gap-2 pt-6 sm:pt-8">
-                <div className="w-4 h-px bg-genesis-navy mb-2 sm:mb-3 transition-colors" />
-                <span className="text-sm sm:text-base text-genesis-navy group-hover:text-genesis-red transition-colors font-[PPFONT]">
+              <div className="flex flex-col gap-1.5 pt-5 text-center sm:gap-2 sm:pt-6">
+                <div className="mb-2 h-px w-full bg-[#d7e0ec] sm:mb-3" />
+                <span className="font-agatho text-[clamp(1.2rem,6vw,2.1rem)] leading-[1.08] text-[#162e54]">
                   {item.title}
                 </span>
-                <span className="text-xs sm:text-sm text-gray-600 group-hover:text-genesis-navy transition-colors font-poppins leading-relaxed">
+                <span className="font-poppins text-xs leading-relaxed text-[#5b5f67] sm:text-sm">
                   {item.desc}
                 </span>
               </div>
