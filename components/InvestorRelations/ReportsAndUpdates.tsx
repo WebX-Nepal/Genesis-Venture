@@ -11,44 +11,49 @@ gsap.registerPlugin(ScrollTrigger);
 const prepItems = [
   {
     num: "01",
-    label: "Quarterly",
-    title: "Annual Performance Report",
-    desc: "",
+    label: "Performance",
+    title: "Quarterly Performance Updates",
+    desc: "NAV, portfolio marks, realized gains, and strategy attribution.",
     image: "/images/Projects/investing.webp",
   },
   {
     num: "02",
     label: "Transparency",
-    title: "Portfolio Disclosures",
-    desc: "Holdings, stages, sector allocation, and concentration metrics that show exactly how capital is deployed.",
+    title: "Portfolio Exposure Disclosures",
+    desc: "Holdings mix, stage allocation, sector concentration, and deployment snapshots.",
     image: "/images/Projects/founder.webp",
   },
   {
     num: "03",
-    label: "Outlook",
+    label: "Commentary",
     title: "Letters to Investors",
-    desc: "Our perspective on markets, risk, and key strategic decisions shared in long-form, candid format.",
+    desc: "Market view, risk posture, and allocation rationale.",
     image: "/images/Projects/insight.webp",
   },
   {
     num: "04",
     label: "Governance",
-    title: "Audit & Valuation Notes",
-    desc: "Independent verification notes, valuation methodology updates, and key policy disclosures.",
+    title: "Valuation & Governance Notes",
+    desc: "Independent review notes and valuation framework disclosures.",
     image: "/images/Projects/partnership.webp",
   },
 ];
 
 const reportCards = [
   {
-    type: "Financial - Quarterly",
-    title: "Q1 2026 Financial Report",
-    desc: "Quarterly financial summary including performance, allocation, and portfolio updates.",
+    type: "Latest Release",
+    title: "Q1 2026 Investor Update",
+    desc: "Performance highlights, portfolio actions, and key risks.",
   },
   {
-    type: "Financial - Annual",
-    title: "Annual Financial Report 2025",
-    desc: "Annual audited overview with full-year performance, governance notes, and key disclosures.",
+    type: "Annual",
+    title: "FY 2025 Annual Report",
+    desc: "Audited annual performance review with governance notes.",
+  },
+  {
+    type: "Governance",
+    title: "Valuation Methodology Note",
+    desc: "How private assets are valued and model changes are governed.",
   },
 ];
 
@@ -77,23 +82,32 @@ const ReportsAndUpdates = () => {
   }, { scope: sectionRef });
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full min-h-screen overflow-hidden border-y border-[#e8edf5] bg-white py-14 sm:py-16 md:py-20"
-    >
+    <section ref={sectionRef} className="relative w-full overflow-hidden border-y border-[#e8edf5] bg-white py-14 sm:py-16 md:py-20">
       <div className="layout-7xl">
-        <div className="iru-header flex items-end justify-between border-b border-[#d7e0ec] pb-4">
-          <div>
-            <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
-              In Preparation
-            </p>
-            <h2 className="mt-3 font-agatho text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
-              Upcoming Reports & Investor Materials
-            </h2>
+        <div className="iru-header border-b border-[#d7e0ec] pb-5">
+          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+            <div>
+              <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
+                Investor Relations
+              </p>
+              <h2 className="mt-3 font-agatho text-[clamp(1.3rem,3vw,2.2rem)] leading-[1.2] text-[#173053]">
+                Clear reporting. Consistent disclosures.
+              </h2>
+              <p className="mt-3 max-w-[64ch] text-sm leading-relaxed text-[#5a6f8c] sm:text-[15px]">
+                We publish concise materials so partners can track performance, risk, and portfolio direction with clarity.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="border border-[#dbe3ef] bg-[#f8fbff] p-3 sm:p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8D1E39]">Frequency</p>
+                <p className="mt-1 text-sm font-semibold text-[#173053] sm:text-base">Quarterly</p>
+              </div>
+              <div className="border border-[#dbe3ef] bg-[#f8fbff] p-3 sm:p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#8D1E39]">Coverage</p>
+                <p className="mt-1 text-sm font-semibold text-[#173053] sm:text-base">Performance + Risk</p>
+              </div>
+            </div>
           </div>
-          <p className="hidden font-montserrat text-[10px] uppercase tracking-[0.18em] text-[#6b7b93] md:block">
-            Structured release calendar
-          </p>
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
@@ -106,12 +120,12 @@ const ReportsAndUpdates = () => {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 60vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f2745]/70 via-[#0f2745]/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f2745]/75 via-[#0f2745]/15 to-transparent" />
             </div>
             <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between p-5 sm:p-6 lg:min-h-full">
               <div className="inline-flex w-fit items-center gap-3 bg-white/90 px-3 py-2">
                 <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39]">
-                  Featured
+                  Priority Release
                 </span>
                 <span className="font-montserrat text-[10px] uppercase tracking-[0.16em] text-[#173053]">
                   {featured.label}
@@ -121,17 +135,16 @@ const ReportsAndUpdates = () => {
                 <h3 className="mt-2 font-montserrat text-[clamp(1.05rem,2.2vw,1.5rem)] font-semibold leading-[1.25] text-white">
                   {featured.title}
                 </h3>
-                {featured.desc ? (
-                  <p className="mt-3 max-w-[56ch] text-xs sm:text-sm leading-relaxed font-montserrat text-white/90">
-                    {featured.desc}
-                  </p>
-                ) : null}
+                <p className="mt-3 max-w-[56ch] text-xs leading-relaxed font-montserrat text-white/90 sm:text-sm">
+                  {featured.desc}
+                </p>
               </div>
             </div>
           </article>
 
           <div className="border border-[#dbe3ef] bg-white p-5 sm:p-6">
-            <div className="space-y-5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39]">Disclosure Roadmap</p>
+            <div className="mt-4 space-y-5">
               {timelineItems.map((item) => (
                 <article
                   key={item.num}
@@ -151,7 +164,7 @@ const ReportsAndUpdates = () => {
                     <h4 className="mt-1 font-montserrat text-base font-semibold leading-[1.35] text-[#173053]">
                       {item.title}
                     </h4>
-                    <p className="mt-2 text-xs sm:text-sm leading-relaxed font-montserrat text-[#556781]">{item.desc}</p>
+                    <p className="mt-2 text-xs leading-relaxed font-montserrat text-[#556781] sm:text-sm">{item.desc}</p>
                   </div>
                 </article>
               ))}
@@ -161,13 +174,13 @@ const ReportsAndUpdates = () => {
 
         <div className="iru-reports-header mt-12 flex items-center gap-4 sm:gap-6">
           <span className="h-px flex-1 bg-[#d9e2ee]" />
-          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
-            Reports
+          <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39] sm:text-[11px]">
+            Available Documents
           </span>
           <span className="h-px flex-1 bg-[#d9e2ee]" />
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="mt-6 grid gap-3 md:grid-cols-3">
           {reportCards.map((card) => (
             <a
               key={card.title}
@@ -191,7 +204,7 @@ const ReportsAndUpdates = () => {
                   <h4 className="mt-1 text-sm font-semibold text-white">
                     {card.title}
                   </h4>
-                  <p className="mt-1 text-xs sm:text-sm leading-relaxed text-white/85">
+                  <p className="mt-1 text-xs leading-relaxed text-white/85 sm:text-sm">
                     {card.desc}
                   </p>
                 </div>
