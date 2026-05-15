@@ -7,13 +7,6 @@ const nav = [
   { label: "Contact", href: "/Contacts" },
 ];
 
-
-
-const legal = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Use", href: "#" },
-];
-
 const resources = [
   { label: "Firm", href: "/who-we-are/firm" },
   { label: "Our Story", href: "/our-stories" },
@@ -97,22 +90,11 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-center md:grid-cols-3 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
+          <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-white/10 pb-5 pt-4 text-center md:grid-cols-2 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
             <span className="text-[13px] text-white/85 md:justify-self-start">
               Copyright (c) {new Date().getFullYear()} Genesis Ventures, Inc. All
               Rights Reserved.
             </span>
-            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-self-center md:gap-6">
-              {legal.map(({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="text-[13px] text-white/65 transition-colors hover:text-white"
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
             <a
               href="https://www.webxnepal.com"
               target="_blank"
