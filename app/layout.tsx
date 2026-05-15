@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Montserrat, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import LenisProvider from "@/components/LenisWrapper";
-import Footer from "@/components/layout/Footer";
+import FooterFixed from "@/components/layout/FooterFixed";
 import NavBar from "@/components/layout/NavBar";
 import Loader from "@/components/ui/Preloader";
 import { PreLoaderProvider } from "@/context/PreLoaderContext";
@@ -69,7 +69,7 @@ export default function RootLayout({
               {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
               <NavBar />
               {children}
-              <Footer />
+              <FooterFixed />
             {/* </TransitionProvider> */}
             </HeroVideoLoadProvider>
           </PreLoaderProvider>
