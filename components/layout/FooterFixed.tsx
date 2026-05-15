@@ -18,7 +18,7 @@ const resources = [
 
 export default function FooterFixed() {
   return (
-    <footer className="relative w-full overflow-hidden bg-white text-[#173053]">
+    <footer className="relative w-full overflow-hidden border-t border-[#d8d0c1] bg-white text-[#173053]">
       <Image
         src="/footer/image.png"
         alt=""

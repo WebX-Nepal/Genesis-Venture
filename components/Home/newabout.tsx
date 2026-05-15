@@ -38,7 +38,7 @@ export default function Firm() {
   ];
 
   return (
-    <section className="relative w-full h-screen bg-[#fdfcf9]">
+    <section className="relative w-full h-screen bg-white">
       <div className="pointer-events-none absolute inset-0 z-0 h-full w-full bg-[linear-gradient(to_right,#8D1E3910_1px,transparent_1px),linear-gradient(to_bottom,#8D1E3908_1px,transparent_1px)] bg-[size:6rem_4rem]" />
       <div className="relative z-10 layout-7xl py-10 sm:py-12 md:py-14 lg:py-16">
         <div className="mx-auto mt-16 w-full max-w-4xl">
