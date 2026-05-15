@@ -4,7 +4,7 @@ import Hero from "@/components/Home/Hero";
 import Stats from "@/components/Home/stats";
 import InvestmentRiskModal from "@/components/InvestmentRiskFlyer";
 import Firm from "@/components/Home/firm";
-import UnlistedMarket from "@/components/Home/unlistedmarket";
+import UnlistedMarket from "@/components/Home/unlist";
 import ScrollingHeadline from "@/components/Home/ScrollingHeadline";
 import About from "@/components/Home/newabout";
 import Devider from "@/components/Home/devider";
@@ -24,9 +24,8 @@ export default function Home() {
     <main className="w-full font-[PPFONT]">
       {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />}
       <Hero />
-  
       <Stats />
-          <About />
+      <About />
       {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
