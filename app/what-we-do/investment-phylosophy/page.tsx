@@ -10,18 +10,7 @@ export default function InvestmentPhylosophyPage() {
       
       <IntroCommitment />
       <InvestmentPhilosophy />
-   
-
-      <style jsx global>{`
-        @keyframes ticker {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+  
     </main>
   );
 }

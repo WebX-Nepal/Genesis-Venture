@@ -13,7 +13,7 @@ export default function OurStoriesPage() {
       <OurStoryIntro />
           <StoryStats />
       <Leadership />
-      <SCROLLING_HEADLINE />
+  
     </main>
   );
 }

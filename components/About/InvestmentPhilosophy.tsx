@@ -15,14 +15,14 @@ const philosophyRows = [
     image: "/images/Projects/insight.webp",
   },
   {
-    title: "Partnership With Founders",
-    body: "Capital is only one part of value creation. We work closely with founders on strategic direction, operating discipline, and sustainable growth pathways.",
-    image: "/images/Projects/founder.webp",
+    title: "Early entry advantage",
+    body: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
+    image: "/phyloshopy/2.png",
   },
   {
     title: "Disciplined Risk Framework",
     body: "Every position is sized with downside awareness. We seek resilient businesses that can compound through cycles while preserving capital integrity.",
-    image: "/images/Projects/partnership.webp",
+    image: "/phyloshopy/3.png",
   },
 ];
 
@@ -106,7 +106,7 @@ const InvestmentPhilosophy = () => {
             </div>
           </div>
         </div>
-        <div className="space-y-6 sm:space-y-7">
+        <div className="space-y-0">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
