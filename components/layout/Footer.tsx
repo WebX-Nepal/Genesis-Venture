@@ -26,9 +26,7 @@ export default function Footer() {
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
                 <h2 className="font-agatho text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
-                  Let's Get
-                  <br />
-                  Connected.
+                  Let's Get Connected.
                 </h2>
                 <p className="mx-auto max-w-sm font-poppins text-sm leading-relaxed text-white/70 sm:text-[15px] md:mx-0">
                   We review every submission and respond within 5 business days.
