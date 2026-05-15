@@ -139,7 +139,7 @@ export default function OurStoryIntro() {
             <div className="mb-10 pb-10 lg:mb-0 lg:pb-0">
               <blockquote className="font-agatho text-[1.7rem] sm:text-[2rem] italic leading-[1.45] text-[#173053]">
                 We do not just read balance sheets. We understand what it takes
-                to build a business and weather a cycle.
+                to build a business <br /> and weather a cycle.
               </blockquote>
             </div>
           </div>
