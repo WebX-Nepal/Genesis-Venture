@@ -18,15 +18,18 @@ const resources = [
 
 export default function FooterFixed() {
   return (
-    <footer className="relative h-[60vh] w-full overflow-hidden bg-white text-[#173053]">
-      <div className="pointer-events-none absolute inset-0">
-        <Image src="/footer/image.png" alt="" fill className="object-contain object-bottom" />
-      </div>
+    <footer className="relative w-full overflow-hidden bg-white text-[#173053]">
+      <Image
+        src="/footer/image.png"
+        alt=""
+        fill
+        className="pointer-events-none absolute inset-0 object-contain object-bottom"
+      />
       <div className="pointer-events-none absolute inset-0 bg-white/75" />
 
-      <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between">
-        <div className="layout-7xl flex flex-col gap-6 pb-6 pt-10 md:pb-6 md:pt-12">
-          <div className="flex flex-col justify-between gap-6 md:flex-row">
+      <div className="relative z-10 flex min-h-[60vh] flex-col justify-between">
+        <div className="layout-7xl flex flex-col gap-8 pb-8 pt-16 sm:gap-9 sm:pb-10 sm:pt-18 lg:gap-10 lg:pb-10 lg:pt-20">
+          <div className="flex flex-col justify-between gap-8 lg:flex-row lg:gap-10">
             <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
               <Image
                 src="/images/final/png/Asset 3.png"
@@ -36,7 +39,7 @@ export default function FooterFixed() {
                 className="mx-auto h-auto w-[120px] md:mx-0 md:w-[150px]"
               />
 
-              <p className="mx-auto max-w-sm text-sm leading-relaxed text-[#173053]/75 sm:text-[15px] md:mx-0">
+              <p className="mx-auto font-montserrat max-w-sm text-sm leading-relaxed text-[#173053]/75 sm:text-[15px] md:mx-0">
                 Genesis Ventures partners with investors and founders through transparent
                 communication and disciplined execution. Share your details, and our team
                 will guide your next step.
@@ -63,7 +66,7 @@ export default function FooterFixed() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-7 text-center sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:text-left">
+            <div className="grid grid-cols-1 gap-7 text-center sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12 xl:gap-16 md:text-left">
               <div className="flex flex-col items-center gap-3 md:items-start">
                 <span className="mb-1 text-[13px] uppercase tracking-widest text-[#8D1E39] font-montserrat">Navigation</span>
                 {nav.map(({ label, href }) => (
@@ -74,9 +77,9 @@ export default function FooterFixed() {
               </div>
               <div className="flex flex-col items-center gap-3 md:items-start">
                 <span className="mb-1 text-[13px] uppercase tracking-widest text-[#8D1E39] font-montserrat">Contact</span>
-                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">info@genesisventures.com.np</span>
-                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">+977 9851418843</span>
-                <span className="text-[14px] sm:text-[15px] text-[#173053]/90">Dharan Road, Biratnagar</span>
+                <span className="text-[14px] leading-relaxed sm:text-[15px] text-[#173053]/90 font-montserrat">info@genesisventures.com.np</span>
+                <span className="text-[14px] leading-relaxed sm:text-[15px] text-[#173053]/90 font-montserrat">+977 9851418843</span>
+                <span className="text-[14px] leading-relaxed sm:text-[15px] text-[#173053]/90 font-montserrat">Dharan Road, Biratnagar</span>
               </div>
               <div className="flex flex-col items-center gap-3 md:items-start">
                 <span className="mb-1 text-[13px] uppercase tracking-widest text-[#8D1E39] font-montserrat">Resources</span>
@@ -90,7 +93,7 @@ export default function FooterFixed() {
           </div>
         </div>
 
-        <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-[#173053]/15 pb-5 pt-4 text-center md:grid-cols-2 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
+        <div className="layout-7xl grid grid-cols-1 items-start gap-3 border-t border-[#173053]/15 pb-6 pt-4 text-center sm:pb-7 md:grid-cols-2 md:items-center md:gap-2 md:border-t-0 md:pb-5 md:pt-3 md:text-left">
           <span className="text-[13px] font-montserrat text-[#173053]/85 md:justify-self-start">
             Copyright © {new Date().getFullYear()} Genesis Ventures, Inc. All Rights Reserved.
           </span>
