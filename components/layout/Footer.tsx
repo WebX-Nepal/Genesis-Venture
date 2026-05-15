@@ -16,18 +16,13 @@ const resources = [
 
 export default function Footer() {
   return (
-    <div
-      style={{
-        clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)"
-      }}
-      className="relative h-auto md:h-[46vh]"
-    >
-      <footer className="relative w-full overflow-hidden bg-genesis-navy text-white font-poppins md:fixed md:bottom-0 md:h-[46vh]">
+    <div className="relative">
+      <footer className="relative w-full overflow-hidden bg-genesis-navy text-white font-poppins">
         <div className="pointer-events-none absolute inset-0 bg-[url('/footer/image.png')] bg-cover bg-center opacity-30" />
         <div className="pointer-events-none absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 flex min-h-[420px] flex-col justify-between md:min-h-[46vh]">
-          <div className="layout-7xl flex flex-col gap-6 pb-6 pt-7 md:pb-6 md:pt-8">
+        <div className="relative z-10 flex min-h-[420px] flex-col justify-between">
+          <div className="layout-7xl flex flex-col gap-6 pb-6 pt-10 md:pb-6 md:pt-12">
             <div className="flex flex-col justify-between gap-6 md:flex-row">
               <div className="flex max-w-xl flex-col gap-3 text-center md:text-left">
                 <h2 className="font-agatho text-[1.45rem] leading-[1.45] text-white sm:text-[1.85rem] md:text-[2rem]">
