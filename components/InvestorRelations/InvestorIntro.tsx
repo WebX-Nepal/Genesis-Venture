@@ -9,7 +9,7 @@ import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-const InvesrtorIntro = () => {
+const InvestorIntro = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
@@ -74,15 +74,10 @@ const InvesrtorIntro = () => {
           text={["Clear insight into capital,","performance, and strategy."]}
           className="font-agatho"
         />
-        {/* <p className="desc text-xs xs:text-sm text-white/80 font-poppins leading-relaxed max-w-xs sm:max-w-sm mx-auto">
-          We provide our partners with clear visibility into capital allocation,
-          portfolio performance, and strategic updates. Your trust drives our
-          commitment to long-term growth.
-        </p> */}
       </div>
 
     </section>
   );
 };
 
-export default InvesrtorIntro;
+export default InvestorIntro;
