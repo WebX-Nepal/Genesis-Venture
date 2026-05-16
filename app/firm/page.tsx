@@ -1,5 +1,5 @@
-import Firm from "@/components/Home/firm";
-import UnlistedMarket from "@/components/Home/unlistedmarket";
+import Firm from "@/components/Home/about";
+import UnlistedMarket from "@/components/Home/unlist";
 import HeroPage from "@/components/ui/HeroPage";
 
 export default function WhoWeAreFirmPage() {

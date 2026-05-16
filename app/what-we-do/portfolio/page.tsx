@@ -77,7 +77,7 @@ export default function PortfolioPage() {
         <div className="layout-7xl">
           <div className="mb-8 border-b border-[#d7e0ec] pb-4">
             <div className="grid grid-cols-1 items-end gap-4 lg:grid-cols-[1fr_auto]">
-              <div>
+              <div className="text-center">
                 <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
                   Investment Portfolio
                 </p>
