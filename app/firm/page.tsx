@@ -1,4 +1,4 @@
-import Firm from "@/components/Home/about";
+import Firm from "@/components/Home/newabout";
 import UnlistedMarket from "@/components/Home/unlist";
 import HeroPage from "@/components/ui/HeroPage";
 
