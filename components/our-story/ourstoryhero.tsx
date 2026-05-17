@@ -7,7 +7,8 @@ export default function OurStoryHero() {
     <Pagehero
       title={["Greatness Is Not Born", "It Is Built"]}
       description="Our story is built through patient execution, principled decisions, and long-term partnerships that compound trust over time."
-      backgroundVideo="/videos/texture.mp4"
+      backgroundImage="/gif/gifanimated.gif"
+      backgroundImageClassName="object-contain"
       heightClassName="h-[80vh]"
       overlayClassName="bg-transparent"
       contentOffsetClassName="mt-6 md:mt-10"
@@ -15,7 +16,7 @@ export default function OurStoryHero() {
       showVideoFallback={false}
       crumbs={[
         { label: "Home", href: "/" },
-        { label: "Our Story" },
+        { label: "Our Stories" },
       ]}
     />
   );

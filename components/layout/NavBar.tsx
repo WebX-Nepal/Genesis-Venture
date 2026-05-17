@@ -41,7 +41,8 @@ export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isTransparentNavbarPage =
-    pathname === "/what-we-do/investment-phylosophy";
+    pathname === "/what-we-do/investment-phylosophy" ||
+    pathname === "/our-stories";
 
   useEffect(() => {
     setMenuOpen(false);

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { PortfolioItem } from "@/app/what-we-do/portfolio/data";
 import { FC } from "react";
@@ -11,40 +11,41 @@ interface FeaturedPortfolioCardProps {
 const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
   return (
     <div className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
-      <article className="group relative grid overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:border-[#2E4D73] hover:shadow-[0_20px_50px_rgba(26,46,74,0.12)] lg:grid-cols-[280px_1fr]">
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#1A0A3A] via-[#2E1060] to-[#1A1A4A] p-8">
+      <article className="group relative grid overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#101f36] via-[#173053] to-[#1f4066] p-8">
           <Image
             src="/portfolio/Others/sopan multiple.png"
             alt={item.name}
             fill
-            className="object-contain"
-            sizes="(max-width: 1024px) 100vw, 280px"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 1024px) 100vw, 300px"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a2f]/70 via-[#0d1a2f]/20 to-transparent" />
           <div className="absolute -right-10 -top-10 h-44 w-44 bg-[#C4785A]/10" />
           <div className="absolute -bottom-10 -left-10 h-36 w-36 bg-[#8AAFD4]/10" />
           <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-            <div className="mb-3 border border-white/15 bg-white/10 px-5 py-4">
+            <div className="mb-3 border border-white/15 bg-white/10 px-5 py-4 backdrop-blur-sm">
               <p className="font-agatho text-[15px] leading-[1.35] tracking-[0.04em] text-white">
                 {item.shortName}
               </p>
             </div>
-            <span className="border border-[#C4785A]/30 bg-[#C4785A]/20 px-3 py-1 text-[10px] tracking-[0.05em] text-[#C4785A]">
+            <span className="border border-[#C4785A]/30 bg-[#C4785A]/20 px-3 py-1 text-[10px] tracking-[0.06em] uppercase text-[#F3C3AE]">
               {item.badge}
             </span>
           </div>
         </div>
 
-        <div className="p-8 lg:p-10">
+        <div className="p-7 sm:p-8 lg:p-10">
           <h4 className="mb-3 font-agatho text-[1.55rem] leading-[1.2] text-[#1A2E4A] sm:text-[1.8rem]">
             {item.name}
           </h4>
-          <p className="mb-8 max-w-3xl text-[13px] font-light leading-[1.75] text-[#5C6370]">
+          <p className="mb-8 max-w-3xl text-[13px] font-normal leading-[1.75] text-[#566a83]">
             {item.description}
           </p>
 
           <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {item.subs?.map((sub) => (
-              <div key={sub.name} className="border border-[#e6ebf2] bg-[#f0f4f8] p-4">
+              <div key={sub.name} className="border border-[#e6ebf2] bg-[#f4f8fd] p-4">
                 <p className="mb-1 text-[9.5px] uppercase tracking-[0.1em] text-[#8B1C1C]">
                   {sub.label}
                 </p>
@@ -75,7 +76,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
             {item.tags.map((tag: string, idx: number) => (
               <span
                 key={tag}
-                className={`px-2 py-1 text-[10.5px] font-medium ${
+                className={`px-2.5 py-1 text-[10.5px] font-medium ${
                   idx % 3 === 0
                     ? "bg-[#f0eaf8] text-[#4A1A8A]"
                     : idx % 3 === 1

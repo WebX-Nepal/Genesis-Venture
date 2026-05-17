@@ -21,32 +21,33 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24"
+      className="pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
     >
       <div className="layout-7xl">
-        <div className="mb-12">
-          <p className="mb-4 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
+        <div className="mb-12 text-center">
+          <p className="mb-3 inline-flex items-center justify-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
             Leadership
           </p>
-          <h2 className="font-agatho text-[2rem] sm:text-[2.35rem] leading-[1.25] tracking-[-0.01em] text-[#173053]">
+          <h2 className="font-agatho text-[clamp(2rem,4.3vw,2.7rem)] leading-[1.18] tracking-[-0.01em] text-[#173053]">
             The person behind the firm
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[340px_1fr] lg:items-start lg:gap-20">
-          <div className="relative overflow-hidden bg-[#152F53] p-10 lg:sticky lg:top-24 lg:self-start">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start lg:gap-16">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#112746] via-[#173053] to-[#1f4067] p-9 lg:sticky lg:top-24 lg:self-start">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.18),transparent_45%)]" />
             <div className="relative z-10">
-              <div className="mb-7 flex h-20 w-20 items-center justify-center rounded-full border border-white/30 bg-white/15 font-[PPFONT] text-3xl text-white/90">
+              <div className="mb-7 flex h-20 w-20 items-center justify-center border border-white/30 bg-white/15 font-[PPFONT] text-3xl text-white/90">
                 AR
               </div>
-              <h3 className="font-agatho text-[1.7rem] leading-[1.2] text-white">
+              <h3 className="font-agatho text-[1.78rem] leading-[1.15] text-white">
                 Anuj Rathi
               </h3>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-white/85 font-montserrat">
+              <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-white/85 font-montserrat">
                 Founder and Chairman
               </p>
-              <div className="my-7 h-px bg-white/20" />
-              <div className="space-y-5 text-white/85 font-montserrat">
+              <div className="my-7 h-px bg-white/25" />
+              <div className="space-y-5 text-white/90 font-montserrat">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-white/55">
                     Experience
@@ -70,20 +71,23 @@ export default function Leadership() {
           </div>
 
           <div className="text-[#173053]">
+            <div className="mb-6 border-l-2 border-[#8D1E39] pl-4 text-[13px] uppercase tracking-[0.2em] text-[#8D1E39] font-montserrat">
+              Founder Profile
+            </div>
             {leaderParagraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mb-5 text-[16px] sm:text-[17px] leading-[1.55] last:mb-0 font-montserrat"
+                className="mb-5 text-[16px] sm:text-[17px] leading-[1.65] last:mb-0 font-montserrat text-[#2a4363]"
               >
                 {paragraph}
               </p>
             ))}
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-9 flex flex-wrap gap-2.5 border-t border-[#d9e3ef] pt-6">
               {expertiseTags.map((tag) => (
                 <span
                   key={tag}
-                  className="border border-[#8D1E39] px-3 py-1.5 text-[11px] uppercase tracking-[0.08em] text-[#08112a] font-montserrat"
+                  className="border border-[#8D1E39]/65 px-3 py-1.5 text-[11px] uppercase tracking-[0.08em] text-[#173053] font-montserrat"
                 >
                   {tag}
                 </span>

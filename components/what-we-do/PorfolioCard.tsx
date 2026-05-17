@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { PortfolioItem } from "@/app/what-we-do/portfolio/data";
 import { FC } from "react";
@@ -53,39 +53,41 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
   };
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:-translate-y-1 hover:border-[#2E4D73] hover:shadow-[0_20px_50px_rgba(26,46,74,0.14)]">
-      <div className="relative h-[130px] overflow-hidden bg-gradient-to-br from-[#1A2E4A] via-[#2E4D73] to-[#1A2E4A] p-5">
+    <article className="group relative flex h-full flex-col overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
+      <div className="relative h-[170px] overflow-hidden bg-gradient-to-br from-[#112845] via-[#1c3e66] to-[#173053] p-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.18),transparent_45%)]" />
         {headerImage ? (
           <Image
             src={headerImage}
             alt={item.name}
             fill
-            className="object-contain"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
         ) : null}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#112845]/60 via-transparent to-transparent" />
         <span
-          className={`absolute right-3 top-3 border px-2.5 py-1 text-[10px] font-medium tracking-[0.04em] ${badgeTypeClasses[item.badgeType]}`}
+          className={`absolute right-3 top-3 border px-3 py-1 text-[10px] font-semibold tracking-[0.06em] uppercase backdrop-blur-sm ${badgeTypeClasses[item.badgeType]}`}
         >
           {item.badge}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h4 className="font-agatho text-[1.08rem] leading-[1.25] text-[#1A2E4A] sm:text-[1.2rem]">
+        <h4 className="font-agatho text-[1.18rem] leading-[1.2] text-[#163154] sm:text-[1.32rem]">
           {item.name}
         </h4>
-        <p className="mt-2 flex-1 text-[12.5px] font-light leading-[1.7] text-[#5C6370]">
+        <p className="mt-2.5 flex-1 text-[12.5px] font-normal leading-[1.72] text-[#556983]">
           {item.description}
         </p>
 
         {typeof item.progress === "number" ? (
-          <div className="mt-3">
-            <div className="mb-1.5 flex items-center justify-between text-[10px] uppercase tracking-[0.05em] text-[#5C6370]">
+          <div className="mt-4 border border-[#e2e9f2] bg-[#f7fafe] p-3">
+            <div className="mb-1.5 flex items-center justify-between text-[10px] uppercase tracking-[0.08em] text-[#5C6370]">
               <span>Progress</span>
               <span className="font-semibold text-[#1A2E4A]">{item.progress}%</span>
             </div>
-            <div className="h-[5px] overflow-hidden bg-[#dde2eb]">
+            <div className="h-[6px] overflow-hidden bg-[#dde2eb]">
               <div
                 className={`h-full ${progressColorByType[item.badgeType]}`}
                 style={{ width: `${item.progress}%` }}
@@ -94,11 +96,11 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
           </div>
         ) : null}
 
-        <div className="mt-4 flex flex-wrap gap-1.5 border-t border-[#e8edf3] pt-4">
+        <div className="mt-4 flex flex-wrap gap-2 border-t border-[#e8edf3] pt-4">
           {item.tags.map((tag: string, index: number) => (
             <span
               key={tag}
-              className={`${tagColorClasses[index % tagColorClasses.length]} px-2 py-1 text-[10.5px] font-medium`}
+              className={`${tagColorClasses[index % tagColorClasses.length]} px-2.5 py-1 text-[10.5px] font-medium`}
             >
               {tag}
             </span>
