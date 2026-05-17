@@ -148,7 +148,7 @@ const InvestmentPhilosophy = () => {
             <article
               key={row.title}
               className={`grid grid-cols-1 gap-10 overflow-hidden lg:grid-cols-[1fr_1.1fr] lg:gap-24 xl:gap-32 ${
-                index % 2 === 0 ? "bg-white" : "bg-[#f6f9fd]"
+                index % 2 === 0 ? "bg-white" : "bg-white"
               }`}
             >
               <div className={`relative min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
