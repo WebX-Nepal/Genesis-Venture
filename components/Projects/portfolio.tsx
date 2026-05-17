@@ -2,9 +2,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Title from "../ui/Title";
 import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
+import Image from "next/image";
 
 
 
@@ -16,11 +17,10 @@ const sectors = [
 
 const PortfolioHeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
 
   useEffect(() => {
-    setHeroVideoReady(false);
+    setHeroVideoReady(true);
     return () => setHeroVideoReady(true);
   }, [setHeroVideoReady]);
 
@@ -57,23 +57,13 @@ const PortfolioHeroSection = () => {
       ref={containerRef}
       className="relative min-h-[60vh] w-full flex flex-col items-center justify-center overflow-hidden px-4 xs:px-6 sm:px-8 md:min-h-screen md:px-16 pt-20 xs:pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 text-center"
     >
-      {!isVideoReady ? (
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
-      ) : null}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onLoadedData={() => {
-          setIsVideoReady(true);
-          setHeroVideoReady(true);
-        }}
-        className={`absolute inset-0 h-full w-full object-cover z-0 scale-x-[-1] transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
-      >
-        <source src="/videos/pro.mp4" type="video/mp4" className="" />
-      </video>
+      <Image
+        src="/hero/image.png"
+        alt="Portfolio hero background"
+        fill
+        priority
+        className="absolute inset-0 h-full w-full object-cover z-0"
+      />
       <div className="absolute inset-0 bg-genesis-navy/40 z-10" />
 
 
