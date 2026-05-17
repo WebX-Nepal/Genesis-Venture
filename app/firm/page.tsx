@@ -20,9 +20,7 @@ export default function WhoWeAreFirmPage() {
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />
-    
       <Firm />
-   
       <UnlistedMarket />
     </main>
   );

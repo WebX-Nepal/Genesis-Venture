@@ -143,11 +143,11 @@ const InvestmentPhilosophy = () => {
             className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
           />
         </div>
-        <div className="space-y-0 pt-20 sm:pt-24">
+        <div className="space-y-6 pt-20 sm:space-y-8 sm:pt-24">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
-              className={`grid grid-cols-1 overflow-hidden lg:grid-cols-[1fr_1.1fr] ${
+              className={`grid grid-cols-1 gap-10 overflow-hidden lg:grid-cols-[1fr_1.1fr] lg:gap-24 xl:gap-32 ${
                 index % 2 === 0 ? "bg-white" : "bg-[#f6f9fd]"
               }`}
             >
