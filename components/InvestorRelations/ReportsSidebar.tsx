@@ -7,7 +7,7 @@ type ReportsSidebarProps = {
 
 export default function ReportsSidebar({ activeTab, onTabClick }: ReportsSidebarProps) {
   return (
-    <div className="ir-left-panel sticky top-[calc(var(--navbar-offset)-8px)] z-30 border-b border-[#173053]/10 bg-white/98 shadow-[0_4px_14px_rgba(15,39,69,0.06)] backdrop-blur-sm">
+    <div className="ir-left-panel sticky top-[calc(var(--navbar-offset)-8px)] z-30 border-b border-[#173053]/10 bg-white/98 backdrop-blur-sm">
       <aside className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-center gap-2 py-3 sm:gap-3 sm:py-4">
         {investorTabs.map((item, idx) => (
           <button

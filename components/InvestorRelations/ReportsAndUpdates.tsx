@@ -9,7 +9,7 @@ import FinancialReportingSection from "./FinancialReportingSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tabSectionIds = ["ir-overview", "ir-financial-reporting", "ir-shareholders", "ir-service-centre"];
+const tabSectionIds = ["ir-financial-reporting", "ir-shareholders", "ir-service-centre"];
 
 export default function ReportsAndUpdates() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -77,27 +77,27 @@ export default function ReportsAndUpdates() {
           <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
           <div className="text-center">
-            <section id="ir-financial-reporting" className="mt-8 border-t border-[#173053]/20 pt-8">
+            <section id="ir-financial-reporting" className="">
               <FinancialReportingSection />
             </section>
 
-            {/* <section id="ir-shareholders" className="ir-copy mt-8 border-t border-[#173053]/20 pt-8">
+            <section id="ir-shareholders" className="ir-copy mt-8 border-t border pt-8">
               <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
                 Shareholders' Information
               </h3>
               <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
                 Shareholding updates, notices, and governance disclosures will be published in this section.
               </p>
-            </section> */}
+            </section>
 
-            {/* <section id="ir-service-centre" className="ir-copy mt-8 border-t border-[#173053]/20 pt-8">
+            <section id="ir-service-centre" className="ir-copy mt-8 border-t border-[#173053]/20 pt-8">
               <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
                 Investor Service Centre
               </h3>
               <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
                 Service requests, contact details, and investor support resources will be maintained here.
               </p>
-            </section> */}
+            </section>
           </div>
         </div>
       </div>

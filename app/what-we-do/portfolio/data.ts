@@ -1,7 +1,7 @@
-﻿export const sectorTabs = [
+export const sectorTabs = [
   { key: "All", title: "All" },
   { key: "Manufacturing & Processing", title: "Manufacturing" },
-  { key: "Hydropower & Clean Energy", title: "Hydropower & Clean Energy" },
+  { key: "Hydropower", title: "Hydropower" },
   { key: "Hospitality & Tourism", title: "Hospitality" },
   { key: "Healthcare & Pharma", title: "Healthcare" },
   { key: "Agro & Aquaculture", title: "Agro" },
@@ -114,7 +114,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "kbnr-isuwa",
     name: "K.B.N.R. Isuwa Power Ltd.",
     shortName: "KBNR Isuwa Power",
-    sector: "Hydropower & Clean Energy",
+    sector: "Hydropower",
     description:
       "97.2 MW Peaking Run-of-River on Isuwa Khola, Sankhuwasabha. 30-year PPA with NEA. 674 GWh annual output. 6.9 km headrace pipe, 940m gross head. COD targeted Feb 2027.",
     badge: "65% Complete",
@@ -126,7 +126,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "ayu-malum",
     name: "Ayu Malum Hydro",
     shortName: "Ayu Malum Hydro",
-    sector: "Hydropower & Clean Energy",
+    sector: "Hydropower",
     description:
       "21 MW run-of-river on Aayu Malun Khola, Okhaldhunga. Currently under construction with 25% completion. Total project cost of Rs 17.5 Cr/MW (total ~Rs 367 Cr).",
     badge: "25% Complete",
@@ -138,7 +138,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "abiral-hydro",
     name: "Abiral Hydro Pvt. Ltd.",
     shortName: "Abiral Hydro",
-    sector: "Hydropower & Clean Energy",
+    sector: "Hydropower",
     description:
       "Commissioned run-of-river hydropower project now operational and supplying clean energy to Nepal's national grid via NEA. Genesis Ventures holds an unlisted equity position.",
     badge: "Commissioned",
@@ -150,7 +150,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: "idi-hydro",
     name: "Idi Hydropower Co. Pvt. Ltd.",
     shortName: "Idi Hydro",
-    sector: "Hydropower & Clean Energy",
+    sector: "Hydropower",
     description:
       "0.975 MW operational small hydro on Idi Khola, NEA grid-connected. IPPAN member. Small run-of-river plants provide stable base-load generation with high uptime.",
     badge: "Operational",
@@ -269,3 +269,4 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
 ];
+

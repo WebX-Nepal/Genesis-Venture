@@ -1,5 +1,4 @@
 ﻿export const investorTabs = [
-  "OVERVIEW",
   "FINANCIAL REPORTING",
   "SHAREHOLDERS' INFORMATION",
   "INVESTOR SERVICE CENTRE",

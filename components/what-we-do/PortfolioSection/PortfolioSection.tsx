@@ -33,7 +33,7 @@ export default function PortfolioSection({
       <div className="layout-7xl">
         <div className="mb-8 flex flex-col justify-between gap-6 border-b border-[#8D1E39] pb-8 md:flex-row md:items-end">
           <div>
-            <h2 className="max-w-sm font-agatho text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
+            <h2 className="font-agatho text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
             Portfolio Companies
             </h2>
           </div>

@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -28,7 +28,40 @@ const philosophyRows = [
 
 const InvestmentPhilosophy = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const coinRef = useRef<HTMLDivElement>(null);
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const [footerIntersection, setFooterIntersection] = useState(0);
+  const coinOpacity = isSectionVisible
+    ? Math.max(0, 1 - footerIntersection / 0.2)
+    : 0;
+
+  useEffect(() => {
+    const sectionEl = containerRef.current;
+    const footerEl = document.querySelector("footer");
+    if (!sectionEl || !footerEl) return;
+
+    const sectionObserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsSectionVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 },
+    );
+
+    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
+    const footerObserver = new IntersectionObserver(
+      ([entry]) => {
+        setFooterIntersection(entry.intersectionRatio);
+      },
+      { threshold: thresholds },
+    );
+
+    sectionObserver.observe(sectionEl);
+    footerObserver.observe(footerEl);
+
+    return () => {
+      sectionObserver.disconnect();
+      footerObserver.disconnect();
+    };
+  }, []);
 
   useGSAP(() => {
     const splitTitle = new SplitText(".investment-philosophy-heading", {
@@ -83,26 +116,6 @@ const InvestmentPhilosophy = () => {
       },
     );
 
-    const coinEl = coinRef.current;
-    if (coinEl && containerRef.current) {
-      gsap.set(coinEl, { autoAlpha: 0 });
-
-      const coinTrigger = ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        onEnter: () => gsap.to(coinEl, { autoAlpha: 1, duration: 0.2 }),
-        onEnterBack: () => gsap.to(coinEl, { autoAlpha: 1, duration: 0.2 }),
-        onLeave: () => gsap.to(coinEl, { autoAlpha: 0, duration: 0.2 }),
-        onLeaveBack: () => gsap.to(coinEl, { autoAlpha: 0, duration: 0.2 }),
-      });
-
-      return () => {
-        splitTitle.revert();
-        coinTrigger.kill();
-      };
-    }
-
     return () => {
       splitTitle.revert();
     };
@@ -116,8 +129,11 @@ const InvestmentPhilosophy = () => {
     >
       <div className="layout-7xl">
         <div
-          ref={coinRef}
-          className="pointer-events-none fixed left-1/2 top-[118px] z-20 mb-6 -translate-x-1/2 sm:mb-8"
+          className="pointer-events-none fixed left-1/2 top-[60%] z-20 mb-6 -translate-x-1/2 sm:mb-8"
+          style={{
+            opacity: coinOpacity,
+            transition: "opacity 120ms linear",
+          }}
         >
           <Image
             src="/coin/coin.png"
@@ -127,7 +143,7 @@ const InvestmentPhilosophy = () => {
             className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
           />
         </div>
-        <div className="space-y-6 pt-20 sm:space-y-7 sm:pt-24">
+        <div className="space-y-0 pt-20 sm:pt-24">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
@@ -135,7 +151,7 @@ const InvestmentPhilosophy = () => {
                 index % 2 === 0 ? "bg-white" : "bg-[#f6f9fd]"
               }`}
             >
-              <div className={`relative min-h-[280px] sm:min-h-[340px] lg:min-h-[420px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+              <div className={`relative min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                 <Image
                   src={row.image}
                   alt={row.title}

@@ -1,18 +1,27 @@
 import Firm from "@/components/Home/newabout";
 import UnlistedMarket from "@/components/Home/unlist";
-import HeroPage from "@/components/ui/HeroPage";
+import Pagegoer from "@/components/ui/heropages";
 
 export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
-      <HeroPage
-        titleClassName="font-agatho text-[clamp(1.75rem,7vw,4.5rem)] leading-tight tracking-[0.015em]"
-        backgroundVideo="/videos/newfirm.mp4"
-        heightClassName="h-[60vh] md:h-screen"
+      <Pagegoer
+        title={["Independent Capital. Enduring Partnerships."]}
+        description="Genesis Ventures partners with ambitious founders and long-term investors through disciplined capital allocation, transparent communication, and execution-focused support."
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Firm" },
+        ]}
+        backgroundVideo="/videos/texture.mp4"
+        heightClassName="h-[80vh]"
+        overlayClassName="bg-transparent"
+        contentOffsetClassName="mt-6 md:mt-10"
+        baseClassName="bg-transparent"
+        showVideoFallback={false}
       />
-      <div className="pt-8 sm:pt-10 md:pt-12">
+    
       <Firm />
-      </div>
+   
       <UnlistedMarket />
     </main>
   );
