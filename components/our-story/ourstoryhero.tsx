@@ -35,7 +35,7 @@ export default function OurStoryHero() {
       <div className="absolute inset-0 bg-black/35" />
       <div className="relative z-20 flex w-full max-w-5xl flex-col items-center gap-3 px-2 text-center sm:gap-4">
         <Title
-          text={["Capital Guided By Principles,", "Not Just Opportunity"]}
+          text={["Greatness Is Not Born", "It Is Built"]}
           className="font-agatho"
         />
       </div>

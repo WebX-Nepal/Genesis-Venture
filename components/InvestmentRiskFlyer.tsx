@@ -232,7 +232,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
         </div>
 
         <div className="shrink-0 border-t border-[#e2e8f2] bg-white px-6 py-4 sm:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <span className="text-xs sm:text-sm tracking-[0.08em] text-[#6b778d] font-montserrat uppercase">
+          <span className="text-[13px] tracking-[0.08em] text-[#6b778d] font-montserrat uppercase">
             Investment risk disclosure for investor use only
           </span>
           <button

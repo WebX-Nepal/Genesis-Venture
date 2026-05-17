@@ -157,7 +157,7 @@ export default function UnlistedMarket() {
                 </span>
 
                 <div className="mt-8 max-w-[60%] sm:max-w-[65%]">
-                  <h3 className="font-montserrat text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937]">
+                  <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937]">
                     {item.title}
                   </h3>
                   <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px]">
