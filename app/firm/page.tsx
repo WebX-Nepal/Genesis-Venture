@@ -11,7 +11,7 @@ export default function WhoWeAreFirmPage() {
         heightClassName="h-[60vh] md:h-screen"
       />
       <div className="pt-8 sm:pt-10 md:pt-12">
-        <Firm />
+      <Firm />
       </div>
       <UnlistedMarket />
     </main>

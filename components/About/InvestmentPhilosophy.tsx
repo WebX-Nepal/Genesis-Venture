@@ -15,7 +15,7 @@ const philosophyRows = [
     image: "/images/Projects/insight.webp",
   },
   {
-    title: "Early entry advantage",
+    title: "Early Entry Advantage",
     body: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
     image: "/phyloshopy/2.png",
   },
@@ -28,6 +28,7 @@ const philosophyRows = [
 
 const InvestmentPhilosophy = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const coinRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const splitTitle = new SplitText(".investment-philosophy-heading", {
@@ -82,6 +83,26 @@ const InvestmentPhilosophy = () => {
       },
     );
 
+    const coinEl = coinRef.current;
+    if (coinEl && containerRef.current) {
+      gsap.set(coinEl, { autoAlpha: 0 });
+
+      const coinTrigger = ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        onEnter: () => gsap.to(coinEl, { autoAlpha: 1, duration: 0.2 }),
+        onEnterBack: () => gsap.to(coinEl, { autoAlpha: 1, duration: 0.2 }),
+        onLeave: () => gsap.to(coinEl, { autoAlpha: 0, duration: 0.2 }),
+        onLeaveBack: () => gsap.to(coinEl, { autoAlpha: 0, duration: 0.2 }),
+      });
+
+      return () => {
+        splitTitle.revert();
+        coinTrigger.kill();
+      };
+    }
+
     return () => {
       splitTitle.revert();
     };
@@ -94,13 +115,16 @@ const InvestmentPhilosophy = () => {
       className="w-full bg-white pb-14 sm:pb-16 lg:pb-20"
     >
       <div className="layout-7xl">
-        <div className="fixed left-1/2 top-118 z-20 mb-6 -translate-x-1/2 sm:mb-8">
+        <div
+          ref={coinRef}
+          className="pointer-events-none fixed left-1/2 top-[118px] z-20 mb-6 -translate-x-1/2 sm:mb-8"
+        >
           <Image
             src="/coin/coin.png"
             alt="Coin"
             width={128}
             height={128}
-            className="h-20 w-20 object-contain sm:h-24 sm:w-24"
+            className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
           />
         </div>
         <div className="space-y-6 pt-20 sm:space-y-7 sm:pt-24">
@@ -129,7 +153,7 @@ const InvestmentPhilosophy = () => {
               </div>
               <div className={`flex items-center p-6 sm:p-8 lg:p-10 ${index % 2 !== 0 ? "lg:order-1 lg:pr-20" : "lg:pl-24"}`}>
                 <div className={index % 2 !== 0 ? "text-left lg:text-right" : "text-left"}>
-                  <h3 className="font-agatho text-[clamp(1.15rem,2vw,1.8rem)] leading-[1.25] text-[#173053]">
+                  <h3 className="font-agatho text-[clamp(1.4rem,2.6vw,2.2rem)] leading-[1.2] text-[#173053]">
                     {row.title}
                   </h3>
                   <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">

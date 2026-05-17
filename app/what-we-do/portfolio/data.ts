@@ -1,7 +1,7 @@
 ﻿export const sectorTabs = [
   { key: "All", title: "All" },
   { key: "Manufacturing & Processing", title: "Manufacturing" },
-  { key: "Hydropower & Clean Energy", title: "Hydropower" },
+  { key: "Hydropower & Clean Energy", title: "Hydropower & Clean Energy" },
   { key: "Hospitality & Tourism", title: "Hospitality" },
   { key: "Healthcare & Pharma", title: "Healthcare" },
   { key: "Agro & Aquaculture", title: "Agro" },
