@@ -94,17 +94,16 @@ const InvestmentPhilosophy = () => {
       className="w-full bg-white pb-14 sm:pb-16 lg:pb-20"
     >
       <div className="layout-7xl">
-        <div className="sticky top-24 z-20 -mt-28 mb-6 flex justify-center sm:-mt-32 sm:mb-8">
+        <div className="fixed left-1/2 top-118 z-20 mb-6 -translate-x-1/2 sm:mb-8">
           <Image
             src="/coin/coin.png"
             alt="Coin"
             width={128}
             height={128}
-            className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+            className="h-20 w-20 object-contain sm:h-24 sm:w-24"
           />
         </div>
-
-        <div className="space-y-4 sm:space-y-5">
+        <div className="space-y-6 pt-20 sm:space-y-7 sm:pt-24">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
@@ -112,7 +111,7 @@ const InvestmentPhilosophy = () => {
                 index % 2 === 0 ? "bg-white" : "bg-[#f6f9fd]"
               }`}
             >
-              <div className={`relative min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+              <div className={`relative min-h-[280px] sm:min-h-[340px] lg:min-h-[420px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                 <Image
                   src={row.image}
                   alt={row.title}

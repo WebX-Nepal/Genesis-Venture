@@ -48,6 +48,7 @@ html {
 }
 
 :root {
+  --navbar-offset: 64px;
   /* ── Genesis Ventures Brand Palette ── */
   --genesis-navy:       #1a2e5a;   /* "genesis" text — primary navy */
   --genesis-navy-dark:  #111e3d;   /* darker navy for hover / depth  */
@@ -245,4 +246,6 @@ html {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-8;
   }
 }
+
+
 

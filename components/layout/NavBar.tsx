@@ -36,11 +36,12 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isTransparentNavbarPage =
-    pathname === "/investment-relation" || pathname === "/our-stories";
+    pathname === "/what-we-do/investment-phylosophy";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -51,6 +52,7 @@ export default function NavBar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      setIsAtTop(currentScrollY <= 8);
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNavbar(false);
@@ -67,6 +69,13 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--navbar-offset",
+      showNavbar ? "64px" : "0px",
+    );
+  }, [showNavbar]);
+
   const handleMouseEnter = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenDropdown(label);
@@ -77,7 +86,9 @@ export default function NavBar() {
   };
 
   const navbarSurface = isTransparentNavbarPage
-    ? "bg-transparent border-transparent"
+    ? isAtTop
+      ? "bg-transparent border-transparent"
+      : "bg-white border-gray-100"
     : "bg-white border-gray-100";
   const navbarTextColor = "text-genesis-navy";
 
@@ -109,7 +120,7 @@ export default function NavBar() {
       <nav
         className={`border-b transition-all duration-300 ${navbarSurface} ${navbarTextColor}`}
       >
-        <div className="layout-7xl flex items-center justify-between py-4">
+        <div className="layout-7xl flex items-center justify-between py-3">
           <Link href="/" onClick={blockIfVideoNotReady} className="flex leading-none select-none shrink-0">
             <Image
               src="/images/final/png/Asset 3.png"

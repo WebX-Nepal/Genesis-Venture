@@ -77,7 +77,7 @@ export default function ReportsAndUpdates() {
         <div className="space-y-6">
           <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
-          <div>
+          <div className="text-center">
             <section id="ir-overview" className="py-5 sm:py-6">
               <FundDescription />
             </section>
@@ -90,7 +90,7 @@ export default function ReportsAndUpdates() {
               <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
                 Shareholders' Information
               </h3>
-              <p className="max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
+              <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
                 Shareholding updates, notices, and governance disclosures will be published in this section.
               </p>
             </section>
@@ -99,7 +99,7 @@ export default function ReportsAndUpdates() {
               <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
                 Investor Service Centre
               </h3>
-              <p className="max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
+              <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
                 Service requests, contact details, and investor support resources will be maintained here.
               </p>
             </section>

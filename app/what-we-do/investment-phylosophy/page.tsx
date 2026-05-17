@@ -15,8 +15,11 @@ export default function InvestmentPhylosophyPage() {
           { label: "Investment Philosophy" },
         ]}
         backgroundVideo="/videos/texture.mp4"
+        contentOffsetClassName="mt-6 md:mt-10"
         heightClassName="h-[80vh]"
-        overlayClassName="bg-white/20"
+        overlayClassName="bg-transparent"
+        baseClassName="bg-transparent"
+        showVideoFallback={false}
       />
       
       <InvestmentPhilosophy />
