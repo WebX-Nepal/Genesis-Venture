@@ -172,15 +172,12 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                       : undefined
                   }
                 >
-                  <div className="mb-2.5 flex items-center justify-between">
+                  <div className="mb-2.5 flex items-center">
                     <span
                       className="text-[10px] uppercase tracking-[0.2em] font-montserrat font-semibold"
                       style={{ color: "#ffffff" }}
                     >
                       {risk.title}
-                    </span>
-                    <span className="font-montserrat text-4xl text-white leading-none">
-                      {risk.num}
                     </span>
                   </div>
                   <p className="text-xs text-white font-montserrat leading-relaxed">
