@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReportsSidebar from "./ReportsSidebar";
-import InvestorStatsCards from "./InvestorStatsCards";
 import FundDescription from "./FundDescription";
 import FinancialReportingSection from "./FinancialReportingSection";
 
@@ -38,7 +37,6 @@ export default function ReportsAndUpdates() {
           defaults: { ease: "power2.out", duration: 0.55 },
         })
         .from(".ir-left-panel", { autoAlpha: 0 }, "-=0.25")
-        .from(".ir-stat", { y: 12, autoAlpha: 0, stagger: 0.08 }, "-=0.3")
         .from(".ir-copy", { y: 12, autoAlpha: 0 }, "-=0.25");
     },
     { scope: sectionRef }
@@ -74,17 +72,13 @@ export default function ReportsAndUpdates() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-14 sm:py-16 md:py-20">
+    <section ref={sectionRef} className="w-full bg-white">
       <div className="layout-7xl">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[300px_1fr] lg:items-start lg:gap-8">
           <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
           <div>
             <section id="ir-overview" className="py-5 sm:py-6">
-              <h3 className="mb-4 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
-                Reports And Investor Resources
-              </h3>
-              <InvestorStatsCards />
               <FundDescription />
             </section>
 

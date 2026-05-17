@@ -103,11 +103,11 @@ export default function InvestmentRiskModal({ onClose }: Props) {
             <div className="flex flex-col gap-3.5 pr-4">
               <div className="inline-flex items-center gap-2 border border-[#d6deea] bg-white px-3 py-1.5 w-fit">
               
-                <span className="text-[10px] uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold">
+                <span className="text-[9px] uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold">
                   Investment Disclosure
                 </span>
               </div>
-              <h1 className="font-agatho font-semibold text-[clamp(1.35rem,3.1vw,2.2rem)] text-[#162e54] leading-[1.14] tracking-[-0.01em]">
+              <h1 className="font-agatho font-semibold text-[clamp(1.5rem,4vw,2.5rem)] text-[#162e54] leading-[1.14] tracking-[-0.01em]">
                 Before You Invest, Understand the Risks
               </h1>
               {/* <p className="text-xs sm:text-sm text-[#5a6880] font-poppins leading-relaxed max-w-2xl">
@@ -135,7 +135,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
 
           <div className="px-6 sm:px-10 pb-6">
             <div className="border-l-[3px] border-l-[#8d1e39] border border-[#e2e8f2] bg-white px-4 py-3.5">
-              <p className="text-sm text-[#4f5f78] font-montserrat leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#4f5f78] font-montserrat leading-relaxed">
                 <span className="text-[#102347] font-semibold">
                   Capital at risk.
                 </span>{" "}
@@ -179,11 +179,11 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                     >
                       {risk.title}
                     </span>
-                    <span className="font-montserrat text-xl text-white leading-none">
+                    <span className="font-montserrat text-4xl text-white leading-none">
                       {risk.num}
                     </span>
                   </div>
-                  <p className="text-sm text-white font-montserrat leading-relaxed">
+                  <p className="text-xs text-white font-montserrat leading-relaxed">
                     {risk.body}
                   </p>
                 </article>
@@ -203,11 +203,11 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                     <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
                       0{index + 1}
                     </span>
-                    <h4 className="text-[11px] uppercase tracking-[0.18em] text-white font-montserrat font-semibold">
+                    <h4 className="text-[10px] uppercase tracking-[0.18em] text-white font-montserrat font-semibold">
                       {p.title}
                     </h4>
                   </div>
-                  <p className="text-sm text-white font-montserrat leading-relaxed">
+                  <p className="text-xs text-white font-montserrat leading-relaxed">
                     {p.body}
                   </p>
                 </article>
@@ -218,11 +218,11 @@ export default function InvestmentRiskModal({ onClose }: Props) {
           <div className="px-0 py-1">
             <div className="mb-2 flex items-center gap-2">
               {/* <span className="h-[2px] w-6 bg-[#8c1d3c]" /> */}
-              <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#8c1d3c] font-montserrat font-semibold">
+              <span className="text-[9px] uppercase tracking-[0.2em] text-[#8c1d3c] font-montserrat font-semibold">
                 Important Notice - Please Read Carefully
               </span>
             </div>
-            <p className="text-sm text-[#5b6980] font-montserrat leading-relaxed">
+            <p className="text-[10px] sm:text-xs text-[#5b6980] font-montserrat leading-relaxed">
               This material is for informational purposes only and does not
               constitute financial, legal, or tax advice. Investment products
               are not bank deposits and may lose value. Past performance is not
@@ -232,7 +232,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
         </div>
 
         <div className="shrink-0 border-t border-[#e2e8f2] bg-white px-6 py-4 sm:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <span className="text-[13px] tracking-[0.08em] text-[#6b778d] font-montserrat uppercase">
+          <span className="text-[11px] tracking-[0.08em] text-[#6b778d] font-montserrat uppercase">
             Investment risk disclosure for investor use only
           </span>
           <button
@@ -250,7 +250,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold mb-4">
+    <p className="text-sm uppercase tracking-[0.2em] text-[#173053] font-montserrat font-semibold mb-4">
       {children}
     </p>
   );

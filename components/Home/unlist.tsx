@@ -136,7 +136,7 @@ export default function UnlistedMarket() {
           {items.map((item) => (
             <article
               key={item.index}
-              className={`group relative min-h-[340px] overflow-hidden border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_38px_rgba(22,46,84,0.12)] sm:min-h-[360px] sm:p-6 ${item.tone}`}
+              className={`group relative min-h-[340px] overflow-hidden border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8D1E39]/35 hover:shadow-[0_16px_38px_rgba(22,46,84,0.12)] sm:min-h-[360px] sm:p-6 ${item.tone}`}
             >
               {item.image ? (
                 <div className="absolute right-0 top-0 z-10 h-full w-[42%] opacity-85">

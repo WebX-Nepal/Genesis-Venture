@@ -30,11 +30,19 @@ export default function HeroPage({
     }
 
     setHeroVideoReady(false);
-    return () => setHeroVideoReady(true);
+    const fallbackTimer = window.setTimeout(() => {
+      setIsVideoReady(true);
+      setHeroVideoReady(true);
+    }, 2500);
+
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      setHeroVideoReady(true);
+    };
   }, [backgroundVideo, setHeroVideoReady]);
 
   return (
-    <section className={`relative w-full overflow-hidden bg-[#0a1634] text-white ${heightClassName}`}>
+    <section className={`relative w-full overflow-hidden  text-white ${heightClassName}`}>
       {backgroundVideo ? (
         <>
           {!isVideoReady ? (
@@ -50,6 +58,14 @@ export default function HeroPage({
               setIsVideoReady(true);
               setHeroVideoReady(true);
             }}
+            onLoadedData={() => {
+              setIsVideoReady(true);
+              setHeroVideoReady(true);
+            }}
+            onCanPlay={() => {
+              setIsVideoReady(true);
+              setHeroVideoReady(true);
+            }}
             onError={() => {
               setIsVideoReady(true);
               setHeroVideoReady(true);
@@ -58,7 +74,7 @@ export default function HeroPage({
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/35" />
+         
         </>
       ) : null}
       {backgroundImage ? (
