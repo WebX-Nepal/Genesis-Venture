@@ -81,7 +81,7 @@ export default function ReportsAndUpdates() {
               <FinancialReportingSection />
             </section>
 
-            <section id="ir-shareholders" className="ir-copy mt-8 border-t border pt-8">
+            <section id="ir-shareholders" className="ir-copy mt-8 pt-2">
               <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
                 Shareholders' Information
               </h3>
