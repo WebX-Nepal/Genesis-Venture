@@ -11,11 +11,11 @@ export default function OurStoriesPage() {
     <main className="bg-white text-[#1a1714] font-montserrat">
       <OurStoryHero />
   
-      <OurStoryIntro />
+     <Info />
       
       <StoryStats />
       <Leadership />
-      <Info />
+    
   
     </main>
   );

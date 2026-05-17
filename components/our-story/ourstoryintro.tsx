@@ -108,9 +108,9 @@ const heroStats = [
 
 export default function OurStoryIntro() {
   return (
-    <section className="bg-white pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24">
+    <section className="bg-zinc-50 pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24">
       <div className="layout-7xl">
-        <div className="mt-6">
+        <div className="mt-6 ">
           <blockquote className="mx-auto max-w-4xl text-center font-agatho text-[1.7rem] sm:text-[2rem] italic leading-[1.45] text-[#8D1E39]">
             "We do not just read balance sheets. We understand what it takes to build a business
             and weather a cycle."

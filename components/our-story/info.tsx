@@ -1,25 +1,9 @@
-import Image from "next/image";
-
 export default function Info() {
   return (
-    <section className="w-full bg-white py-12 sm:py-14 lg:py-16">
+    <section className="w-full bg-zinc-50 py-12 sm:py-14 lg:py-16">
       <div className="layout-7xl">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
-          <div className="relative mx-auto w-full max-w-[420px] overflow-hidden bg-[#f6f9fd]">
-            <Image
-              src="/gif/gifanimated.gif"
-              alt="Genesis Ventures visual"
-              width={900}
-              height={900}
-              className="h-full w-full object-cover"
-              unoptimized
-            />
-          </div>
-
-          <div>
-            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
-              Our Story
-            </p>
+        <div className="flex items-center justify-center gap-8 lg:gap-12">
+          <div className="mx-auto text-center">
             <h2 className="font-agatho text-[clamp(1.6rem,3.5vw,2.4rem)] leading-[1.2] text-[#173053]">
               Where We Come From
             </h2>

@@ -6,7 +6,7 @@ export default function OurStoryHero() {
   return (
     <Pagehero
       title={["Greatness Is Not Born", "It Is Built"]}
-      description="Our story is built through patient execution, principled decisions, and long-term partnerships that compound trust over time."
+      description="We do not just read balance sheets. We understand what it takes to build a business and weather a cycle."
       backgroundImage="/gif/gifanimated.gif"
       backgroundImageClassName="object-contain"
       heightClassName="h-[80vh]"
