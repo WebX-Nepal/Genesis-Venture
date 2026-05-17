@@ -127,7 +127,7 @@ export default function ReportsAndUpdates() {
                 {shareholderDocs.map((doc) => (
                   <article
                     key={doc.file}
-                    className="group bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left"
+                    className="group border border-transparent bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left transition-all duration-200 hover:border-[#8c1d3c] hover:shadow-[0_12px_26px_rgba(140,29,60,0.18)]"
                   >
                     <p className="text-[0.82rem] uppercase tracking-[0.08em] text-[#173053]/70">{doc.meta}</p>
                     <p className="mt-2 text-[1rem] font-semibold text-[#173053]">{doc.title}</p>
@@ -155,7 +155,7 @@ export default function ReportsAndUpdates() {
                 {serviceDocs.map((doc) => (
                   <article
                     key={doc.file}
-                    className="group bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left"
+                    className="group border border-transparent bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left transition-all duration-200 hover:border-[#8c1d3c] hover:shadow-[0_12px_26px_rgba(140,29,60,0.18)]"
                   >
                     <p className="text-[0.82rem] uppercase tracking-[0.08em] text-[#173053]/70">{doc.meta}</p>
                     <p className="mt-2 text-[1rem] font-semibold text-[#173053]">{doc.title}</p>
