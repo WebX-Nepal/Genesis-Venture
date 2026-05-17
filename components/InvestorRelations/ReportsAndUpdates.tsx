@@ -111,7 +111,7 @@ export default function ReportsAndUpdates() {
         <div className="space-y-6">
           <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
-          <div className="text-center pb-10 sm:pb-12">
+          <div className="text-center pb-14 sm:pb-16">
             <section id="ir-financial-reporting" className="">
               <FinancialReportingSection />
             </section>
