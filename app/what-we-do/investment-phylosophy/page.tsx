@@ -14,7 +14,7 @@ export default function InvestmentPhylosophyPage() {
           { label: "What We Do", href: "/what-we-do/portfolio" },
           { label: "Investment Philosophy" },
         ]}
-        // backgroundVideo="/videos/invest.mp4"
+        backgroundVideo="/videos/texture.mp4"
         heightClassName="h-[80vh]"
         overlayClassName="bg-white/20"
       />

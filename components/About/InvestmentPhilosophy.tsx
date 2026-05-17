@@ -94,7 +94,7 @@ const InvestmentPhilosophy = () => {
       className="w-full bg-white pb-14 sm:pb-16 lg:pb-20"
     >
       <div className="layout-7xl">
-        <div className="sticky top-24 z-20 mb-6 flex justify-center sm:mb-8">
+        <div className="sticky top-24 z-20 -mt-28 mb-6 flex justify-center sm:-mt-32 sm:mb-8">
           <Image
             src="/coin/coin.png"
             alt="Coin"
