@@ -246,8 +246,3 @@ html {
   }
 }
 
-.transition-block{
-  position: absolute;
-  background-color: #111e3d;
-  opacity: 0;
-}

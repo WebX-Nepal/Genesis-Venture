@@ -91,22 +91,20 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="w-full bg-white py-14 font-montserrat sm:py-16 lg:py-20"
+      className="w-full bg-white pb-14 sm:pb-16 lg:pb-20"
     >
       <div className="layout-7xl">
-        <div className="mb-8 border-b border-[#d7e0ec] pb-4">
-          <div className="grid grid-cols-1 items-end gap-4 lg:grid-cols-[1fr_auto]">
-            <div>
-              <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
-                Investment Philosophy
-              </p>
-              <h2 className="mt-3 font-agatho text-[clamp(1.4rem,3.2vw,2.45rem)] leading-[1.2] text-[#173053] lg:whitespace-nowrap">
-                Conviction-led philosophy.
-              </h2>
-            </div>
-          </div>
+        <div className="sticky top-24 z-20 mb-6 flex justify-center sm:mb-8">
+          <Image
+            src="/coin/coin.png"
+            alt="Coin"
+            width={128}
+            height={128}
+            className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+          />
         </div>
-        <div className="space-y-0">
+
+        <div className="space-y-4 sm:space-y-5">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
@@ -122,9 +120,16 @@ const InvestmentPhilosophy = () => {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
+                <div
+                  className={`absolute inset-0 ${
+                    index % 2 !== 0
+                      ? "bg-gradient-to-r from-white via-white/65 to-transparent"
+                      : "bg-gradient-to-l from-white via-white/65 to-transparent"
+                  }`}
+                />
               </div>
-              <div className={`flex items-center p-6 sm:p-8 lg:p-10 ${index % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <div className="text-center">
+              <div className={`flex items-center p-6 sm:p-8 lg:p-10 ${index % 2 !== 0 ? "lg:order-1 lg:pr-20" : "lg:pl-24"}`}>
+                <div className={index % 2 !== 0 ? "text-left lg:text-right" : "text-left"}>
                   <h3 className="font-agatho text-[clamp(1.15rem,2vw,1.8rem)] leading-[1.25] text-[#173053]">
                     {row.title}
                   </h3>

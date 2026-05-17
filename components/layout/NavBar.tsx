@@ -39,7 +39,8 @@ export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isInvestorRelationsPage = pathname === "/investment-relation";
+  const isTransparentNavbarPage =
+    pathname === "/investment-relation" || pathname === "/our-stories";
 
   useEffect(() => {
     setMenuOpen(false);
@@ -75,7 +76,7 @@ export default function NavBar() {
     closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
   };
 
-  const navbarSurface = isInvestorRelationsPage
+  const navbarSurface = isTransparentNavbarPage
     ? "bg-transparent border-transparent"
     : "bg-white border-gray-100";
   const navbarTextColor = "text-genesis-navy";

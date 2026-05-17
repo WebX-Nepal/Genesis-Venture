@@ -5,10 +5,8 @@ import "./globals.css";
 import LenisProvider from "@/components/LenisWrapper";
 import FooterFixed from "@/components/layout/FooterFixed";
 import NavBar from "@/components/layout/NavBar";
-import Loader from "@/components/ui/Preloader";
 import { PreLoaderProvider } from "@/context/PreLoaderContext";
 import { HeroVideoLoadProvider } from "@/context/HeroVideoLoadContext";
-// import { TransitionProvider } from "@/context/TransitionContext";
   
 const agatho = localFont({
   variable: "--font-agatho",
@@ -64,13 +62,9 @@ export default function RootLayout({
         <LenisProvider>
           <PreLoaderProvider>
             <HeroVideoLoadProvider>
-            {/* <TransitionProvider> */}
-              {/* <Loader /> */}
-              {/* <InvestmentRiskFlyer></InvestmentRiskFlyer> */}
               <NavBar />
               {children}
               <FooterFixed />
-            {/* </TransitionProvider> */}
             </HeroVideoLoadProvider>
           </PreLoaderProvider>
         </LenisProvider>

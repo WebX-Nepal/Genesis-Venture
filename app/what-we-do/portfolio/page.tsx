@@ -72,43 +72,6 @@ export default function PortfolioPage() {
   return (
     <main className="min-h-screen bg-white font-poppins">
       <PortfolioHeroSection heroStats={heroStats} />
-
-      <section ref={introRef} className="bg-[#f6f9fd] py-12 sm:py-14 md:py-16">
-        <div className="layout-7xl">
-          <div className="mb-8 border-b border-[#d7e0ec] pb-4">
-            <div className="grid grid-cols-1 items-end gap-4 lg:grid-cols-[1fr_auto]">
-              <div className="text-center">
-                <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8D1E39]">
-                  Investment Portfolio
-                </p>
-                <h2 className="mt-3 font-agatho text-[clamp(1.55rem,4vw,3rem)] leading-[1.2] text-[#173053] lg:whitespace-nowrap">
-                  Conviction-led portfolio.
-                </h2>
-              </div>
-            </div>
-          </div>
-
-          <div className="py-2 sm:py-3 md:py-4">
-            <div id="portfolio-intro-paragraph" className="max-w-5xl space-y-4">
-              <p className="text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">
-                Genesis Ventures deploys long-term capital into unlisted
-                businesses across six sectors. Every position is the result of
-                independent research, direct engagement with management, and a
-                clear view on intrinsic value, without the pressure of a fund
-                cycle or the distortion of market noise.
-              </p>
-              <p className="text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">
-                We build exposure with a deliberate long-horizon mindset,
-                prioritizing business quality, governance strength, and sector
-                durability over short-term market sentiment. Our portfolio
-                construction reflects conviction, patience, and disciplined
-                capital allocation designed to compound value through cycles.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <PortfolioSection
         activeSector={activeSector}
         setActiveSector={setActiveSector}

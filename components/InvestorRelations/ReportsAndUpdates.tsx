@@ -74,7 +74,7 @@ export default function ReportsAndUpdates() {
   return (
     <section ref={sectionRef} className="w-full bg-white">
       <div className="layout-7xl">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[300px_1fr] lg:items-start lg:gap-8">
+        <div className="space-y-6">
           <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
           <div>
