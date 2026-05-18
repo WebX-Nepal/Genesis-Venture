@@ -80,7 +80,7 @@ export default function ReportsAndUpdates() {
         </h2>
         <ReportsSidebar activeTab={activeTab} onTabClick={setActiveTab} />
 
-        <div className="ir-copy pb-14 pt-8 text-center sm:pb-16">
+        <div className="ir-copy pb-14 pt-8 text-center font-montserrat sm:pb-16">
           {activeTab === 0 ? <FinancialReportingSection /> : null}
 
           {activeTab === 1 ? (

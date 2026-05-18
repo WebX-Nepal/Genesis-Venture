@@ -18,7 +18,7 @@ export default async function InvestorRelationDetailPage({ params }: InvestorRel
 
   return (
     <main className="w-full bg-white">
-      <section className="layout-7xl pb-24 pt-16 sm:pb-28 sm:pt-20">
+      <section className="layout-7xl pb-24 pt-16 font-montserrat sm:pb-28 sm:pt-20">
         <div className="flex flex-wrap items-center gap-2 text-sm text-[#162e54]/80">
           <Link href="/" className="transition-colors hover:text-[#8D1E39]">
             Home
