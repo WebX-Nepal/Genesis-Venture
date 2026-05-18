@@ -112,7 +112,7 @@ export default function UnlistedMarket() {
       ref={containerRef}
       className="relative min-h-screen w-full overflow-x-hidden bg-white flex flex-col py-8 sm:py-12 md:py-24"
     >
-      <div className="pointer-events-none absolute inset-0 z-0 h-full w-full bg-[linear-gradient(to_right,#8D1E3910_1px,transparent_1px),linear-gradient(to_bottom,#8D1E3908_1px,transparent_1px)] bg-[size:6rem_4rem]" />
+      <div className="pointer-events-none absolute inset-0 z-0 h-full w-full" />
       <div className="layout-7xl">
         <div className="relative z-10">
 
