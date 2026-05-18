@@ -143,7 +143,7 @@ const InvestmentPhilosophy = () => {
             className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
           />
         </div>
-        <div className="space-y-6 pt-20 sm:space-y-8 sm:pt-24">
+        <div className="flex flex-col gap-[40vh] pt-20 sm:pt-24">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
