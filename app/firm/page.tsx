@@ -12,8 +12,8 @@ export default function WhoWeAreFirmPage() {
           { label: "Home", href: "/" },
           { label: "Firm" },
         ]}
-        backgroundImage="/gif/firm.gif"
-        backgroundImageClassName="object-cover opacity-30"
+        backgroundImage="/gif/firmgif.gif"
+        backgroundImageClassName="object-contain opacity-30"
         heightClassName="h-[80vh]"
         overlayClassName="bg-transparent"
         contentOffsetClassName="mt-6 md:mt-10"
