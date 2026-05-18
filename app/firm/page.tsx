@@ -1,7 +1,6 @@
 import UnlistedMarket from "@/components/Home/unlist";
 import Pagegoer from "@/components/ui/heropages";
-import FirmWhoWeAreSection from "./components/firm";
-
+import FirmWhoWeAreSection from "./components/FirmWhoWeAreSection";
 export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
