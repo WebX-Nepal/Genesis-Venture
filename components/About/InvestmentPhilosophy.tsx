@@ -12,17 +12,17 @@ const philosophyRows = [
   {
     title: "Conviction Over Noise",
     body: "We prioritize long-term fundamentals over short-term headlines. Our decisions are built on business quality, governance strength, and clarity of execution.",
-    image: "/images/Projects/insight.webp",
+    image: "/coin/1.png",
   },
   {
     title: "Early Entry Advantage",
     body: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
-    image: "/phyloshopy/2.png",
+    image: "/coin/2.png",
   },
   {
     title: "Disciplined Risk Framework",
     body: "Every position is sized with downside awareness. We seek resilient businesses that can compound through cycles while preserving capital integrity.",
-    image: "/phyloshopy/3.png",
+    image: "/coin/3.png",
   },
 ];
 
@@ -156,14 +156,14 @@ const InvestmentPhilosophy = () => {
                   src={row.image}
                   alt={row.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
                 <div
                   className={`absolute inset-0 ${
                     index % 2 !== 0
-                      ? "bg-gradient-to-r from-white via-white/65 to-transparent"
-                      : "bg-gradient-to-l from-white via-white/65 to-transparent"
+                      ? "bg-gradient-to-r from-white  to-transparent"
+                      : "bg-gradient-to-l from-white to-transparent"
                   }`}
                 />
               </div>
