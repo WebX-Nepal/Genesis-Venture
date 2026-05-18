@@ -25,7 +25,7 @@ const items = [
     title: "Reduced market noise",
     desc: "Unlisted investments are insulated from the short-term volatility and sentiment swings that affect public markets, enabling a clearer focus on fundamental value.",
     tone: "bg-[#efefed] border-[#d7e0ec]",
-    image: "/cards/image.png",
+    image: "/cards/sec.png",
     deco: "from-[#cfcfcd] to-[#e7e7e5]",
   },
   {
