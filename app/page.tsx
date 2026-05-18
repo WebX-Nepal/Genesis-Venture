@@ -30,7 +30,7 @@ export default function Home() {
       {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
-      <Blog />
+      {/* <Blog /> */}
       {/* <ScrollingHeadline /> */}
     </main>
   );

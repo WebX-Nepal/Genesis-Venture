@@ -23,19 +23,23 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section className="w-full bg-[#f6f7f9] py-14 sm:py-16 md:py-20">
+    <section className="w-full bg-[#f4f5f7] py-14 sm:py-16 md:py-20">
       <div className="layout-7xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="font-montserrat text-[11px] uppercase tracking-[0.22em] text-[#8D1E39]">Insights</p>
-          <h2 className="mt-2 font-agatho text-[clamp(1.7rem,3.8vw,3.2rem)] leading-[1.1] text-[#162e54]">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="font-montserrat text-[11px] uppercase tracking-[0.14em] text-[#162e54]/55">Insights</p>
+          <h2 className="mt-2 font-montserrat text-[clamp(2rem,4vw,3.45rem)] font-medium leading-[1.06] text-[#162e54]">
             Stay Informed with the Latest Financial Insights
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:items-start">
+        <div className="mx-auto mt-10 grid max-w-[1300px] grid-cols-1 gap-4 md:grid-cols-[1.08fr_0.78fr_0.92fr] md:items-start">
           {posts.map((post, index) => (
-            <article key={post.title} className={`${index === 1 ? "md:mt-9" : ""}`}>
-              <div className="relative h-[250px] w-full overflow-hidden sm:h-[285px]">
+            <article key={post.title}>
+              <div
+                className={`relative w-full overflow-hidden ${
+                  index === 1 ? "h-[190px] sm:h-[210px]" : "h-[250px] sm:h-[285px]"
+                }`}
+              >
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -44,10 +48,10 @@ export default function Blog() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-              <p className="mt-3 font-montserrat text-[11px] text-[#162e54]/70">
+              <p className="mt-3 font-montserrat text-[10px] text-[#162e54]/65">
                 {post.tag} · {post.date}
               </p>
-              <h3 className="mt-1 font-montserrat text-[clamp(1.35rem,2.7vw,2rem)] leading-[1.12] text-[#162e54]">
+              <h3 className="mt-1 font-montserrat text-[clamp(1.9rem,2.2vw,3rem)] leading-[1.08] text-[#162e54]">
                 {post.title}
               </h3>
             </article>
@@ -57,7 +61,7 @@ export default function Blog() {
         <div className="mt-10 text-center">
           <button
             type="button"
-            className="border border-[#162e54]/25 bg-white px-7 py-3 font-montserrat text-sm text-[#162e54] transition-colors hover:border-[#8D1E39]/40 hover:text-[#8D1E39]"
+            className="border border-[#162e54]/20 bg-white px-7 py-2.5 font-montserrat text-[13px] text-[#162e54] transition-colors hover:border-[#8D1E39]/40 hover:text-[#8D1E39]"
           >
             More insights +
           </button>
