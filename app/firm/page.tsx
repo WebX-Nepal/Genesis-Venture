@@ -6,13 +6,13 @@ export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
       <Pagegoer
-        title={["Independent Capital. Enduring Partnerships."]}
-        description="Genesis Ventures partners with ambitious founders and long-term investors through disciplined capital allocation, transparent communication, and execution-focused support."
+        title={["Investing in Vision.", "Building Long-Term Value."]}
+        description="A forward-thinking investment firm focused on strategic growth and sustainable partnerships."
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Firm" },
         ]}
-        backgroundImage="/gif/no.png"
+        backgroundImage="/gif/firm.gif"
         backgroundImageClassName="object-cover opacity-30"
         heightClassName="h-[80vh]"
         overlayClassName="bg-transparent"

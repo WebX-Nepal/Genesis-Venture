@@ -21,6 +21,10 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
     "maruti-cements": "/portfolio/Manufacturing/maruti cement.jpg",
     "shubhshree-agni": "/portfolio/Manufacturing/shubhshree agni cement.jpg",
     "mahashakti-cement": "/portfolio/Manufacturing/mahashakti cement.jpg",
+    "premier-distillery": "/portfolio/Manufacturing/distillery.png",
+    "premier-steel": "/portfolio/Manufacturing/premier steel .png",
+    "sopan-multiple": "/portfolio/Others/sopan.png",
+    "annapurna-maccha": "/portfolio/Manufacturing/annapurnamaccha.png",
     "mero-kisan": "/portfolio/agro/mero kishan.png",
   };
   const headerImage = imageById[item.id];
@@ -54,18 +58,17 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
-      <div className="relative h-[170px] overflow-hidden bg-gradient-to-br from-[#112845] via-[#1c3e66] to-[#173053] p-4">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.18),transparent_45%)]" />
+      <div className="relative h-[170px] overflow-hidden border-b border-[#8D1E39] bg-white p-4">
         {headerImage ? (
           <Image
             src={headerImage}
             alt={item.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-contain object-top p-3 transition-transform duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#112845]/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
         <span
           className={`absolute right-3 top-3 border px-3 py-1 text-[10px] font-semibold tracking-[0.06em] uppercase backdrop-blur-sm ${badgeTypeClasses[item.badgeType]}`}
         >

@@ -7,7 +7,7 @@ export default function InvestmentPhylosophyPage() {
   return (
     <main className="bg-white text-[#2c2c34] font-montserrat">
       <Pagehero
-        title={["Conviction-Led Investing,", "Built For Long-Term Value."]}
+        title={["Disciplined Thinking. Strategic Capital. Long-Term Value."]}
         description="Our investment philosophy is built on disciplined underwriting, long-term partnership, and transparent decision-making across market cycles."
         crumbs={[
           { label: "Home", href: "/" },

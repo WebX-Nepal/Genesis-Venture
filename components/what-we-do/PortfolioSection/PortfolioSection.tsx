@@ -23,6 +23,9 @@ export default function PortfolioSection({
   portfolioItems,
   sectorTabs,
 }: PortfolioSectionProps) {
+  const shouldUseFeaturedLayout = (item: PortfolioItem) =>
+    item.isFeatured && item.sector !== "Others";
+
   const getSectorCount = (key: Sector | "All") => {
     if (key === "All") return portfolioItems.length;
     return portfolioItems.filter((item) => item.sector === key).length;
@@ -85,7 +88,7 @@ export default function PortfolioSection({
                             key={item.name}
                             className="w-[86vw] shrink-0 snap-center sm:w-[70vw]"
                           >
-                            {item.isFeatured ? (
+                            {shouldUseFeaturedLayout(item) ? (
                               <FeaturedPortfolioCard item={item} />
                             ) : (
                               <PortfolioCard item={item} />
@@ -97,7 +100,7 @@ export default function PortfolioSection({
 
                     <div className="hidden md:grid grid-cols-2 gap-5 lg:grid-cols-3">
                       {sectorItems.map((item) =>
-                        item.isFeatured ? (
+                        shouldUseFeaturedLayout(item) ? (
                           <FeaturedPortfolioCard key={item.name} item={item} />
                         ) : (
                           <PortfolioCard key={item.name} item={item} />
@@ -120,7 +123,7 @@ export default function PortfolioSection({
                     key={item.name}
                     className="w-[86vw] shrink-0 snap-center sm:w-[70vw]"
                   >
-                    {item.isFeatured ? (
+                    {shouldUseFeaturedLayout(item) ? (
                       <FeaturedPortfolioCard item={item} />
                     ) : (
                       <PortfolioCard item={item} />
@@ -132,7 +135,7 @@ export default function PortfolioSection({
 
             <div className="hidden md:grid grid-cols-2 gap-5 lg:grid-cols-3">
               {filteredItems.map((item) =>
-                item.isFeatured ? (
+                shouldUseFeaturedLayout(item) ? (
                   <FeaturedPortfolioCard key={item.name} item={item} />
                 ) : (
                   <PortfolioCard key={item.name} item={item} />

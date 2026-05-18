@@ -12,27 +12,18 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
   return (
     <div className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
       <article className="group relative grid overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#101f36] via-[#173053] to-[#1f4066] p-8">
+        <div className="relative overflow-hidden bg-white p-8">
           <Image
-            src="/portfolio/Others/sopan multiple.png"
+            src="/portfolio/Others/sopan.png"
             alt={item.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-contain object-top p-4 transition-transform duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 1024px) 100vw, 300px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a2f]/70 via-[#0d1a2f]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
           <div className="absolute -right-10 -top-10 h-44 w-44 bg-[#C4785A]/10" />
           <div className="absolute -bottom-10 -left-10 h-36 w-36 bg-[#8AAFD4]/10" />
-          <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-            <div className="mb-3 border border-white/15 bg-white/10 px-5 py-4 backdrop-blur-sm">
-              <p className="font-agatho text-[15px] leading-[1.35] tracking-[0.04em] text-white">
-                {item.shortName}
-              </p>
-            </div>
-            <span className="border border-[#C4785A]/30 bg-[#C4785A]/20 px-3 py-1 text-[10px] tracking-[0.06em] uppercase text-[#F3C3AE]">
-              {item.badge}
-            </span>
-          </div>
+          <div className="relative z-10 h-full" />
         </div>
 
         <div className="p-7 sm:p-8 lg:p-10">
