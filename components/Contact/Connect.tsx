@@ -14,8 +14,9 @@ export default function Connect() {
   const [tab, setTab] = useState<Tab>("general");
 
   return (
-    <section className="contact-section relative pb-24 w-full bg-white pt-24">
-      <div className="layout-7xl flex flex-col gap-10 sm:gap-12">
+    <section className="contact-section relative z-20 -mt-[10vh] w-full bg-transparent pb-24">
+      <div className="mx-auto w-full max-w-5xl border border-genesis-navy/15 bg-white px-6 py-8 shadow-[0_20px_55px_rgba(22,46,84,0.14)] sm:px-8 sm:py-10 md:px-10">
+        <div className="flex flex-col gap-10 sm:gap-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-3">
             <span className="contact-heading text-xs uppercase tracking-[0.28em] text-genesis-blue font-montserrat">
@@ -169,6 +170,7 @@ export default function Connect() {
               </form>
             )}
           </div>
+        </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
-import Firm from "@/components/Home/newabout";
 import UnlistedMarket from "@/components/Home/unlist";
 import Pagegoer from "@/components/ui/heropages";
+import FirmWhoWeAreSection from "./components/firm";
 
 export default function WhoWeAreFirmPage() {
   return (
@@ -20,7 +20,7 @@ export default function WhoWeAreFirmPage() {
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />
-      <Firm />
+      <FirmWhoWeAreSection />
       <UnlistedMarket />
     </main>
   );
