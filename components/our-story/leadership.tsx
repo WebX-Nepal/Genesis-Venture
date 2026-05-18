@@ -21,7 +21,7 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
+      className="scroll-mt-24 pt-12 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
     >
       <div className="layout-7xl">
         <div className="mb-12 text-center">
