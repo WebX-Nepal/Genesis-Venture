@@ -12,7 +12,7 @@ import PortfolioHeroSection from "@/components/what-we-do/PortfolioSection/Portf
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function PortfolioPage() {
-  const [activeSector, setActiveSector] = useState<Sector | "All">("Hydropower");
+  const [activeSector, setActiveSector] = useState<Sector | "All">("All");
   const introRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {

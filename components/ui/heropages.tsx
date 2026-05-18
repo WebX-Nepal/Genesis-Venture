@@ -38,7 +38,7 @@ export default function Pagehero({
   contentOffsetClassName = "",
   baseClassName = "bg-white",
   showVideoFallback = true,
-  backgroundImageClassName = "object-cover",
+  backgroundImageClassName = "object-cover opacity-20",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
@@ -103,7 +103,7 @@ export default function Pagehero({
           alt={backgroundImageAlt}
           fill
           priority
-          className={`absolute inset-0 h-full w-full z-0 opacity-20 ${backgroundImageClassName}`}
+          className={`absolute inset-0 h-full w-full z-0 ${backgroundImageClassName}`}
         />
       ) : null}
       <div className={`absolute inset-0 z-10 ${overlayClassName}`} />
