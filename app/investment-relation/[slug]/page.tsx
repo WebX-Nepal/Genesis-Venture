@@ -16,15 +16,6 @@ export default async function InvestorRelationDetailPage({ params }: InvestorRel
   const report = allInvestorReportCards.find((item) => item.slug === slug);
   if (!report) notFound();
 
-  if (report.slug === "quarterly-results") {
-    return (
-      <>
-        <QuarterlyResultsDetail reportFile={report.file} />
-        <ScrollingHeadline />
-      </>
-    );
-  }
-
   return (
     <main className="w-full bg-white">
       <section className="layout-7xl pb-24 pt-16 sm:pb-28 sm:pt-20">
@@ -42,22 +33,24 @@ export default async function InvestorRelationDetailPage({ params }: InvestorRel
           <ChevronRight size={14} className="text-[#162e54]/45" />
           <span className="text-[#8D1E39]">{report.title}</span>
         </div>
-        <h1 className="mt-5 font-agatho text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.1] text-[#162e54]">
-          {report.title}
-        </h1>
+        <h1 className="mt-5 font-agatho text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.1] text-[#162e54]">{report.title}</h1>
         <p className="mt-5 max-w-[74ch] text-[1.05rem] leading-relaxed text-[#162e54]/80">{report.summary}</p>
 
-        <div className="mt-10 border border-[#162e54]/20 bg-[#f8f9fb] p-6 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.04em] text-[#8D1E39]">Report File</p>
-          <p className="mt-2 break-all font-montserrat text-[#162e54]">{report.file}</p>
-          <a
-            href={`/reports/${report.file}`}
-            download
-            className="mt-6 inline-flex items-center bg-[#162e54] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#8D1E39]"
-          >
-            Download Report
-          </a>
-        </div>
+        {report.slug === "quarterly-results" ? (
+          <QuarterlyResultsDetail reportFile={report.file} />
+        ) : (
+          <div className="mt-10 border border-[#162e54]/20 bg-[#f8f9fb] p-6 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.04em] text-[#8D1E39]">Report File</p>
+            <p className="mt-2 break-all font-montserrat text-[#162e54]">{report.file}</p>
+            <a
+              href={`/reports/${report.file}`}
+              download
+              className="mt-6 inline-flex items-center bg-[#162e54] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#8D1E39]"
+            >
+              Download Report
+            </a>
+          </div>
+        )}
       </section>
       <ScrollingHeadline />
     </main>

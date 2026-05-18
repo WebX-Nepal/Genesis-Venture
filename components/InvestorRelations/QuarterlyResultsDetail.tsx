@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
-import { ChevronDown, ChevronRight, Download, FileSpreadsheet, FileText } from "lucide-react";
+import { ChevronDown, Download, FileSpreadsheet, FileText } from "lucide-react";
 
 type QuarterlyResultsDetailProps = {
   reportFile: string;
@@ -77,26 +76,7 @@ export default function QuarterlyResultsDetail({ reportFile }: QuarterlyResultsD
   );
 
   return (
-    <main className="w-full bg-[#f4f5f7]">
-      <section className="bg-[#162e54] pt-20 pb-14 sm:pt-24 sm:pb-16">
-        <div className="layout-7xl text-white">
-          <div className="mb-3 mt-3 flex flex-wrap items-center gap-2 text-sm text-white/85 sm:mt-4">
-            <Link href="/" className="transition-colors hover:text-white">
-              Home
-            </Link>
-            <ChevronRight size={14} className="text-white/60" />
-            <Link href="/investment-relation" className="transition-colors hover:text-white">
-              Investor Relations
-            </Link>
-            <ChevronRight size={14} className="text-white/60" />
-            <span className="text-[#8D1E39]">Quarterly Results</span>
-          </div>
-          <h1 className="font-agatho text-[clamp(2.2rem,5vw,4rem)] leading-[1.08]">Genesis Quarterly Results</h1>
-          <p className="mt-2 text-lg text-white/90">Get all the latest financial updates quarter on quarter.</p>
-        </div>
-      </section>
-
-      <section className="layout-7xl py-12">
+    <section className="pt-10">
         <p className="text-[1.05rem] text-[#162e54]">Select the year for the Financial Results and Highlights</p>
         <div className="relative mt-2">
           <select
@@ -159,7 +139,6 @@ export default function QuarterlyResultsDetail({ reportFile }: QuarterlyResultsD
             ))}
           </div>
         ) : null}
-      </section>
-    </main>
+    </section>
   );
 }
