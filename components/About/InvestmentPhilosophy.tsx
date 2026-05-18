@@ -12,7 +12,7 @@ const philosophyRows = [
   {
     title: "Conviction Over Noise",
     body: "We prioritize long-term fundamentals over short-term headlines. Our decisions are built on business quality, governance strength, and clarity of execution.",
-    image: "/coin/image.png",
+    image: "/coin/1.png",
   },
   {
     title: "Early Entry Advantage",
