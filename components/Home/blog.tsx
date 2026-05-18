@@ -27,7 +27,7 @@ export default function Blog() {
       <div className="layout-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-montserrat text-[11px] uppercase tracking-[0.22em] text-[#8D1E39]">Insights</p>
-          <h2 className="mt-2 font-montserrat text-[clamp(2rem,4.2vw,3.5rem)] font-medium leading-[1.06] text-[#162e54]">
+          <h2 className="mt-2 font-agatho text-[clamp(1.7rem,3.8vw,3.2rem)] leading-[1.1] text-[#162e54]">
             Stay Informed with the Latest Financial Insights
           </h2>
         </div>
