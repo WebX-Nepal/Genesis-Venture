@@ -51,32 +51,32 @@ export const financialReportingCards: readonly ReportCardItem[] = [
 
 export const shareholderCards: readonly ReportCardItem[] = [
   {
-    slug: "shareholding-pattern",
-    title: "Shareholding Pattern",
-    file: "Major-Shareholding-Update-2026.pdf",
+    slug: "disclosures-regulation-46",
+    title: "Disclosures Under Regulation 46 of the SEBI Listing Regulations",
+    file: "Disclosures-Under-Regulation-46-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Central repository of mandated public disclosures for investor transparency and compliance.",
+  },
+  {
+    slug: "genesis-shareholding-pattern",
+    title: "Genesis Shareholding Pattern",
+    file: "Genesis-Shareholding-Pattern-2026.pdf",
     section: "Shareholders' Information",
     summary: "Updated distribution of share ownership across promoter, institutional, and other categories.",
   },
   {
-    slug: "general-meeting-notice",
-    title: "General Meeting Notice",
-    file: "Shareholder-Notice-Circular-2026.pdf",
+    slug: "unclaimed-unpaid-dividend",
+    title: "Unclaimed & Unpaid Dividend",
+    file: "Unclaimed-Unpaid-Dividend-Details-2026.pdf",
     section: "Shareholders' Information",
-    summary: "Notice and agenda details for upcoming shareholder meetings and key voting resolutions.",
+    summary: "Details of unclaimed dividends and the process for shareholder claim requests.",
   },
   {
-    slug: "voting-results",
-    title: "Voting Results",
-    file: "Annual-Voting-Meeting-Outcomes-2026.pdf",
+    slug: "shareholder-agm-information",
+    title: "Shareholder & AGM Information",
+    file: "Shareholder-AGM-Information-2026.pdf",
     section: "Shareholders' Information",
-    summary: "Final voting outcomes and resolution-wise shareholder participation records.",
-  },
-  {
-    slug: "corporate-governance",
-    title: "Corporate Governance",
-    file: "Annual-Governance-Report-2026.pdf",
-    section: "Shareholders' Information",
-    summary: "Board structure, governance practices, compliance updates, and risk oversight disclosures.",
+    summary: "Meeting schedules, notices, participation guidance, and post-AGM outcome disclosures.",
   },
 ] as const;
 

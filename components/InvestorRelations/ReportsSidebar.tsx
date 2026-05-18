@@ -10,7 +10,7 @@ export default function ReportsSidebar({ activeTab, onTabClick }: ReportsSidebar
   const tabIcons = [Files, Building2, Headset] as const;
 
   return (
-    <div className="ir-left-panel sticky top-[calc(var(--navbar-offset)-8px)] z-30 border-b border-[#162e54]/20 bg-white/95 backdrop-blur-sm">
+    <div className="ir-left-panel sticky top-[calc(var(--navbar-offset)-8px)] z-30 border-b border-[#162e54]/20 bg-zinc-100/95 backdrop-blur-sm">
       <aside className="mx-auto flex w-full max-w-6xl flex-wrap items-end justify-center gap-6 py-5 sm:gap-9">
         {investorTabs.map((item, idx) => {
           const Icon = tabIcons[idx];
@@ -24,7 +24,7 @@ export default function ReportsSidebar({ activeTab, onTabClick }: ReportsSidebar
               }`}
             >
               <Icon size={21} strokeWidth={2} />
-              <span className="text-[1.06rem] font-semibold uppercase leading-tight tracking-[-0.01em]">
+              <span className="font-montserrat text-[1.06rem] font-semibold uppercase leading-tight tracking-[-0.01em]">
                 {item}
               </span>
               <span className={`h-[4px] w-full rounded-full ${idx === activeTab ? "bg-[#8D1E39]" : "bg-transparent"}`} />
