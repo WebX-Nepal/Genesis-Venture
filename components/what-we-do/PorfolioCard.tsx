@@ -67,7 +67,16 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
             className="object-contain object-top p-3 transition-transform duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
-        ) : null}
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(to_right,rgba(22,46,84,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(22,46,84,0.08)_1px,transparent_1px)] bg-[size:22px_22px] p-4">
+            <div className="border border-[#162e54]/20 bg-white/90 px-4 py-2">
+              <p className="text-center font-montserrat text-[11px] uppercase tracking-[0.16em] text-[#162e54]/75">
+                Logo Coming Soon
+              </p>
+              <p className="mt-1 text-center font-agatho text-[1rem] text-[#162e54]">{item.shortName}</p>
+            </div>
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-transparent" />
         <span
           className={`absolute right-3 top-3 border px-3 py-1 text-[10px] font-semibold tracking-[0.06em] uppercase backdrop-blur-sm ${badgeTypeClasses[item.badgeType]}`}
@@ -85,7 +94,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
         </p>
 
         {typeof item.progress === "number" ? (
-          <div className="mt-4 border border-[#e2e9f2] bg-[#f7fafe] p-3">
+          <div className="mt-4">
             <div className="mb-1.5 flex items-center justify-between text-[10px] uppercase tracking-[0.08em] text-[#5C6370]">
               <span>Progress</span>
               <span className="font-semibold text-[#1A2E4A]">{item.progress}%</span>

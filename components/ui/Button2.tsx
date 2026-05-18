@@ -16,7 +16,6 @@ export default function Button({
 }: ButtonProps) {
   const baseStyles =
     "relative inline-flex items-center justify-center overflow-hidden font-medium transition-colors cursor-pointer";
-
   const variants = {
     primary: "bg-genesis-blue text-white hover:bg-genesis-blue/90",
     secondary: "bg-white text-genesis-navy hover:bg-white/80",
