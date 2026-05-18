@@ -38,10 +38,10 @@ export default function Firm() {
   ];
 
   return (
-    <section className="relative w-full h-screen bg-white">
+    <section className="relative w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20">
       <div className="pointer-events-none absolute inset-0 z-0 h-full w-full " />
-      <div className="relative z-10 layout-7xl py-10 sm:py-12 md:py-14 lg:py-16">
-        <div className="mx-auto mt-16 w-full max-w-4xl">
+      <div className="relative z-10 layout-7xl">
+        <div className="mx-auto w-full max-w-4xl">
           <div className="flex items-center justify-center">
             <p className="firm-title w-full text-center font-agatho text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
               About the Firm

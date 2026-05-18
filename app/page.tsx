@@ -8,6 +8,7 @@ import UnlistedMarket from "@/components/Home/unlist";
 import ScrollingHeadline from "@/components/Home/ScrollingHeadline";
 import About from "@/components/Home/newabout";
 import Devider from "@/components/Home/devider";
+import Blog from "@/components/Home/blog";
 
 
 
@@ -29,6 +30,7 @@ export default function Home() {
       {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
+      <Blog />
       {/* <ScrollingHeadline /> */}
     </main>
   );

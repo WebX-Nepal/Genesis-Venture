@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BadgeDollarSign, Factory, Sprout, TrendingUp } from "lucide-react";
+import { BadgeDollarSign, ExternalLink, Factory, FileText, Sprout, TrendingUp } from "lucide-react";
 import ReportsSidebar from "./ReportsSidebar";
 import FinancialReportingSection from "./FinancialReportingSection";
 import { shareholderCards, type ReportCardItem } from "./reportsData";
@@ -15,6 +15,28 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ReportsAndUpdates() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const shareholderAnnouncements = [
+    {
+      date: "May 16, 2026",
+      title: "Genesis Secretarial Compliance Report - 2026",
+      file: "Genesis-Secretarial-Compliance-Report-2026.pdf",
+    },
+    {
+      date: "May 12, 2026",
+      title: "Publication of Notice Re: Transfer of Unclaimed Dividend and Ordinary Shares to IEPF",
+      file: "Transfer-of-Unclaimed-Dividend-and-Shares-Notice-2026.pdf",
+    },
+    {
+      date: "May 07, 2026",
+      title: "Notice of Board Meeting",
+      file: "Notice-of-Board-Meeting-May-2026.pdf",
+    },
+    {
+      date: "May 07, 2026",
+      title: "Amalgamation of Sresta Natural Bioproducts Private Limited and Wimco Limited with the Company",
+      file: "Amalgamation-Update-Sresta-Wimco-2026.pdf",
+    },
+  ] as const;
 
   useGSAP(
     () => {
@@ -63,8 +85,38 @@ export default function ReportsAndUpdates() {
 
           {activeTab === 1 ? (
             <section>
-              <h3 className="mb-5 text-[2rem] font-semibold text-[#162e54]">Shareholders&apos; Information</h3>
               {renderBlueCards(shareholderCards)}
+              <div className="mt-10 rounded-none bg-zinc-100 p-5 text-left sm:p-6">
+                <h4 className="font-montserrat text-[clamp(1.45rem,2.5vw,2rem)] font-semibold text-[#162e54]">
+                  Stock Exchange Announcements
+                </h4>
+                <p className="mt-2 text-[1.02rem] text-[#162e54]/80">
+                  Get all the latest Genesis stock market news and updates in one place.
+                </p>
+                <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {shareholderAnnouncements.map((item) => (
+                    <a
+                      key={`${item.date}-${item.title}`}
+                      href={`/reports/${item.file}`}
+                      download
+                      className="border border-[#d5dbe5] bg-white p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(22,46,84,0.12)]"
+                    >
+                      <p className="font-montserrat text-[1.9rem] font-semibold uppercase tracking-[0.01em] text-[#162e54]">
+                        {item.date}
+                      </p>
+                      <div className="mt-3 flex items-start justify-between gap-4">
+                        <div className="flex items-start gap-3">
+                          <FileText size={19} className="mt-1 text-[#8D1E39]" />
+                          <p className="font-montserrat text-[1.04rem] leading-relaxed text-[#162e54]">
+                            {item.title}
+                          </p>
+                        </div>
+                        <ExternalLink size={21} className="shrink-0 text-[#8D1E39]" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </section>
           ) : null}
 
