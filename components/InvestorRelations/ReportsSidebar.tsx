@@ -11,7 +11,7 @@ export default function ReportsSidebar({ activeTab, onTabClick }: ReportsSidebar
 
   return (
     <div className="ir-left-panel sticky top-[calc(var(--navbar-offset)-8px)] z-30 border-b border-[#162e54]/20 bg-zinc-100/95 backdrop-blur-sm">
-      <aside className="mx-auto flex w-full max-w-6xl flex-wrap items-end justify-center gap-6 py-5 sm:gap-9">
+      <aside className="mx-auto flex w-full max-w-6xl flex-wrap items-end justify-center gap-3 pb-3 pt-5 sm:gap-6">
         {investorTabs.map((item, idx) => {
           const Icon = tabIcons[idx];
           return (
@@ -19,15 +19,15 @@ export default function ReportsSidebar({ activeTab, onTabClick }: ReportsSidebar
               key={item}
               type="button"
               onClick={() => onTabClick(idx)}
-              className={`group flex flex-col items-center gap-3 pb-4 text-center transition-colors ${
+              className={`group flex cursor-pointer flex-col items-center gap-1.5 pb-2.5 text-center transition-all duration-200 ${
                 idx === activeTab ? "text-[#8D1E39]" : "text-[#162e54] hover:text-[#8D1E39]"
               }`}
             >
-              <Icon size={21} strokeWidth={2} />
-              <span className="font-montserrat text-[1.06rem] font-semibold uppercase leading-tight tracking-[-0.01em]">
+              <Icon size={16} strokeWidth={1.9} />
+              <span className="font-montserrat text-[0.84rem] font-semibold uppercase leading-tight">
                 {item}
               </span>
-              <span className={`h-[4px] w-full rounded-full ${idx === activeTab ? "bg-[#8D1E39]" : "bg-transparent"}`} />
+              <span className={`h-[2px] w-full rounded-full ${idx === activeTab ? "bg-[#8D1E39]" : "bg-transparent"}`} />
             </button>
           );
         })}
