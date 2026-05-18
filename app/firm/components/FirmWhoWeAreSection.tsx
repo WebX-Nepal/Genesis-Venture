@@ -24,7 +24,7 @@ export default function FirmWhoWeAreSection() {
         <h2 className="text-center font-agatho text-[clamp(2rem,4vw,3rem)] leading-[1.1] text-[#162e54]">
           Who We Are
         </h2>
-        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-4 sm:mt-10 md:grid-cols-2">
+        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:mt-10 md:grid-cols-2">
           {items.map((item) => (
             <article key={item.title} className="border border-[#162e54]/12 bg-white p-6 sm:p-7">
               <h3 className="font-montserrat text-[1.05rem] font-semibold text-[#8D1E39]">{item.title}</h3>

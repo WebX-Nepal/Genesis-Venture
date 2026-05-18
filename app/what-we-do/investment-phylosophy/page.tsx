@@ -1,6 +1,5 @@
 "use client";
 import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
-import IntroCommitment from "@/components/what-we-do/Philosophy/IntroCommitment";
 import Pagehero from "@/components/ui/heropages";
 
 export default function InvestmentPhylosophyPage() {

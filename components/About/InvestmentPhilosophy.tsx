@@ -12,17 +12,17 @@ const philosophyRows = [
   {
     title: "Conviction Over Noise",
     body: "We prioritize long-term fundamentals over short-term headlines. Our decisions are built on business quality, governance strength, and clarity of execution.",
-    image: "/cards/drei.png",
+    image: "/coin/image.png",
   },
   {
     title: "Early Entry Advantage",
     body: "Investing before a public listing means accessing companies at valuations that reflect potential - not yet priced in by the crowd.",
-    image: "/coin/2.png",
+    image: "/phyloshopy/2.png",
   },
   {
     title: "Disciplined Risk Framework",
     body: "Every position is sized with downside awareness. We seek resilient businesses that can compound through cycles while preserving capital integrity.",
-    image: "/coin/3.png",
+    image: "/phyloshopy/3.png",
   },
 ];
 
@@ -143,6 +143,45 @@ const InvestmentPhilosophy = () => {
             className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
           />
         </div>
+        {/* <div className="w-full border border-[#162e54]/12 bg-white p-6 text-left sm:p-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            <div className="border-l-4 border-[#8D1E39] pl-4 sm:pl-5">
+              <h3 className="font-montserrat text-[clamp(1.35rem,2.1vw,1.85rem)] font-semibold leading-tight text-[#162e54]">
+                Strategic Investment Approach
+              </h3>
+              <p className="mt-3 font-montserrat text-[1.03rem] leading-relaxed text-[#4e617d]">
+                Our framework combines rigorous research, disciplined due diligence, and a long-term value
+                creation perspective. Every investment decision is evaluated for business quality, governance
+                strength, and the ability to compound sustainably over time.
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
+                  Research
+                </div>
+                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
+                  Due Diligence
+                </div>
+                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
+                  Long-Term Value
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-4 border-[#162e54]/25 pl-4 sm:pl-5">
+              <h3 className="font-montserrat text-[clamp(1.35rem,2.1vw,1.85rem)] font-semibold leading-tight text-[#162e54]">
+                Sustainable Growth
+              </h3>
+              <p className="mt-3 font-montserrat text-[1.03rem] leading-relaxed text-[#4e617d]">
+                We prioritize future-ready businesses that can scale responsibly across cycles. Our focus is on
+                resilient operating models, governance maturity, and execution capacity that support durable,
+                compounding growth over the long term.
+              </p>
+              <div className="mt-6 bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
+                Show Future Thinking
+              </div>
+            </div>
+          </div>
+        </div> */}
         <div className="flex flex-col gap-[40vh] pt-20 sm:pt-24">
           {philosophyRows.map((row, index) => (
             <article
