@@ -1,4 +1,4 @@
-﻿export const investorTabs = [
+export const investorTabs = [
   "FINANCIAL REPORTING",
   "SHAREHOLDERS' INFORMATION",
   "INVESTOR SERVICE CENTRE",
@@ -10,69 +10,111 @@ export const investorStats = [
   { label: "ITD Return", value: "3.64%", sub: "as of May 14, 2026", bg: "bg-[#edf4f6]" },
 ] as const;
 
-export const financialReports = [
+export type ReportCardItem = {
+  slug: string;
+  title: string;
+  file: string;
+  section: "Financial Reporting" | "Shareholders' Information" | "Investor Service Centre";
+  summary: string;
+};
+
+export const financialReportingCards: readonly ReportCardItem[] = [
   {
-    type: "quarterly",
-    year: "2024",
-    month: "October",
+    slug: "quarterly-results",
     title: "Quarterly Results",
     file: "Q4-2024-Quarterly-Results.pdf",
+    section: "Financial Reporting",
+    summary: "Quarterly performance highlights, portfolio movement, and key operational updates.",
   },
   {
-    type: "annual",
-    year: "2025",
-    month: "July",
-    title: "ITC Report and Accounts",
-    file: "ITC-Report-and-Accounts-2025.pdf",
+    slug: "genesis-report-and-accounts",
+    title: "Genesis Ventures Report and Accounts",
+    file: "Genesis-Ventures-Report-and-Accounts-2025.pdf",
+    section: "Financial Reporting",
+    summary: "Comprehensive annual report with governance, strategy, and audited financial statements.",
   },
   {
-    type: "annual",
-    year: "2025",
-    month: "January",
-    title: "Annual Financial Statement",
-    file: "Annual-Financial-Statement-2025.pdf",
+    slug: "press-releases",
+    title: "Press Releases",
+    file: "Press-Releases-2026.pdf",
+    section: "Financial Reporting",
+    summary: "Official company announcements covering milestones, investments, and leadership updates.",
   },
   {
-    type: "others",
-    year: "2025",
-    month: "April",
-    title: "Half-Year Performance Summary",
-    file: "Half-Year-Performance-Summary-2025.pdf",
-  },
-  {
-    type: "others",
-    year: "2025",
-    month: "November",
-    title: "Investor Update Bulletin",
-    file: "Investor-Update-Bulletin-2025.pdf",
-  },
-  {
-    type: "quarterly",
-    year: "2025",
-    month: "December",
-    title: "Quarterly Disclosure Pack",
-    file: "Q4-2025-Disclosure-Pack.pdf",
-  },
-  {
-    type: "annual",
-    year: "2026",
-    month: "March",
-    title: "Annual Governance Report",
-    file: "Annual-Governance-Report-2026.pdf",
-  },
-  {
-    type: "others",
-    year: "2026",
-    month: "June",
-    title: "Investor Communication Circular",
-    file: "Investor-Communication-Circular-2026.pdf",
-  },
-  {
-    type: "quarterly",
-    year: "2026",
-    month: "September",
-    title: "Quarterly Portfolio Update",
-    file: "Quarterly-Portfolio-Update-2026.pdf",
+    slug: "investor-presentations",
+    title: "Investor Presentations",
+    file: "Investor-Presentations-2026.pdf",
+    section: "Financial Reporting",
+    summary: "Investor deck materials outlining portfolio positioning and long-term investment outlook.",
   },
 ] as const;
 
+export const shareholderCards: readonly ReportCardItem[] = [
+  {
+    slug: "shareholding-pattern",
+    title: "Shareholding Pattern",
+    file: "Major-Shareholding-Update-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Updated distribution of share ownership across promoter, institutional, and other categories.",
+  },
+  {
+    slug: "general-meeting-notice",
+    title: "General Meeting Notice",
+    file: "Shareholder-Notice-Circular-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Notice and agenda details for upcoming shareholder meetings and key voting resolutions.",
+  },
+  {
+    slug: "voting-results",
+    title: "Voting Results",
+    file: "Annual-Voting-Meeting-Outcomes-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Final voting outcomes and resolution-wise shareholder participation records.",
+  },
+  {
+    slug: "corporate-governance",
+    title: "Corporate Governance",
+    file: "Annual-Governance-Report-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Board structure, governance practices, compliance updates, and risk oversight disclosures.",
+  },
+] as const;
+
+export const investorServiceCards: readonly ReportCardItem[] = [
+  {
+    slug: "service-request-form",
+    title: "Service Request Form",
+    file: "Investor-Service-Request-Form.pdf",
+    section: "Investor Service Centre",
+    summary: "Standard form for account updates, document requests, and investor support actions.",
+  },
+  {
+    slug: "contact-escalation",
+    title: "Contact & Escalation",
+    file: "Investor-Contact-Escalation-Guide.pdf",
+    section: "Investor Service Centre",
+    summary: "Contact matrix and escalation path for service requests and grievance handling.",
+  },
+  {
+    slug: "kyc-checklist",
+    title: "KYC Checklist",
+    file: "KYC-Account-Update-Checklist.pdf",
+    section: "Investor Service Centre",
+    summary: "Checklist of required KYC and account-update documents for investors.",
+  },
+  {
+    slug: "investor-helpdesk",
+    title: "Investor Helpdesk",
+    file: "Investor-Communication-Circular-2026.pdf",
+    section: "Investor Service Centre",
+    summary: "Helpdesk process note covering response timelines and communication guidelines.",
+  },
+] as const;
+
+export const allInvestorReportCards: readonly ReportCardItem[] = [
+  ...financialReportingCards,
+  ...shareholderCards,
+  ...investorServiceCards,
+];
+
+export const financialReports = financialReportingCards;

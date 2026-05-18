@@ -1,50 +1,16 @@
 ﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BadgeDollarSign, Factory, Sprout, TrendingUp } from "lucide-react";
 import ReportsSidebar from "./ReportsSidebar";
 import FinancialReportingSection from "./FinancialReportingSection";
-
+import { investorServiceCards, shareholderCards, type ReportCardItem } from "./reportsData";
 gsap.registerPlugin(ScrollTrigger);
-
 const tabSectionIds = ["ir-financial-reporting", "ir-shareholders", "ir-service-centre"];
-const shareholderDocs = [
-  {
-    title: "Shareholder Notice Circular",
-    file: "Shareholder-Notice-Circular-2026.pdf",
-    meta: "Governance Notice",
-  },
-  {
-    title: "Major Shareholding Update",
-    file: "Major-Shareholding-Update-2026.pdf",
-    meta: "Regulatory Filing",
-  },
-  {
-    title: "Annual Voting & Meeting Outcomes",
-    file: "Annual-Voting-Meeting-Outcomes-2026.pdf",
-    meta: "Shareholder Disclosure",
-  },
-] as const;
-
-const serviceDocs = [
-  {
-    title: "Investor Service Request Form",
-    file: "Investor-Service-Request-Form.pdf",
-    meta: "Request Form",
-  },
-  {
-    title: "Investor Contact & Escalation Guide",
-    file: "Investor-Contact-Escalation-Guide.pdf",
-    meta: "Support Resource",
-  },
-  {
-    title: "KYC & Account Update Checklist",
-    file: "KYC-Account-Update-Checklist.pdf",
-    meta: "Service Checklist",
-  },
-] as const;
 
 export default function ReportsAndUpdates() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -53,9 +19,7 @@ export default function ReportsAndUpdates() {
   const handleTabClick = (index: number) => {
     setActiveTab(index);
     const target = document.getElementById(tabSectionIds[index]);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   useGSAP(
@@ -68,10 +32,10 @@ export default function ReportsAndUpdates() {
             start: "top 82%",
             toggleActions: "play none none reverse",
           },
-          defaults: { ease: "power2.out", duration: 0.55 },
+          defaults: { ease: "power2.out", duration: 0.5 },
         })
-        .from(".ir-left-panel", { autoAlpha: 0 }, "-=0.25")
-        .from(".ir-copy", { y: 12, autoAlpha: 0 }, "-=0.25");
+        .from(".ir-left-panel", { autoAlpha: 0 }, "-=0.2")
+        .from(".ir-copy", { y: 10, autoAlpha: 0 }, "-=0.2");
     },
     { scope: sectionRef }
   );
@@ -80,98 +44,94 @@ export default function ReportsAndUpdates() {
     const sectionElements = tabSectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
-
     if (!sectionElements.length) return;
 
     const updateActiveByScroll = () => {
-      const triggerY = window.innerHeight * 0.28;
+      const triggerY = window.innerHeight * 0.3;
       let currentIndex = 0;
-
       for (let i = 0; i < sectionElements.length; i += 1) {
-        const rect = sectionElements[i].getBoundingClientRect();
-        if (rect.top <= triggerY) currentIndex = i;
+        if (sectionElements[i].getBoundingClientRect().top <= triggerY) currentIndex = i;
       }
-
       setActiveTab((prev) => (prev === currentIndex ? prev : currentIndex));
     };
 
     updateActiveByScroll();
     window.addEventListener("scroll", updateActiveByScroll, { passive: true });
     window.addEventListener("resize", updateActiveByScroll);
-
     return () => {
       window.removeEventListener("scroll", updateActiveByScroll);
       window.removeEventListener("resize", updateActiveByScroll);
     };
   }, []);
 
+  const renderBlueCards = (cards: readonly ReportCardItem[]) => (
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {cards.map((card) => (
+        <Link
+          key={card.slug}
+          href={`/investment-relation/${card.slug}`}
+          className="flex min-h-[180px] items-center justify-center bg-[#162e54] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:bg-[#8D1E39] hover:shadow-[0_16px_32px_rgba(22,46,84,0.35)]"
+        >
+          <p className="max-w-[13ch] text-[1.2rem] font-semibold leading-[1.2] text-white sm:text-[1.35rem]">
+            {card.title}
+          </p>
+        </Link>
+      ))}
+    </div>
+  );
+
   return (
-    <section ref={sectionRef} className="w-full bg-white">
+    <section ref={sectionRef} className="w-full bg-[#f3f4f6] py-10 sm:py-12">
       <div className="layout-7xl">
-        <div className="space-y-6">
-          <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
+        <h2 className="mb-7 text-center font-agatho text-[clamp(2rem,3.8vw,3.2rem)] font-semibold text-[#162e54]">
+          Investor Relations
+        </h2>
+        <ReportsSidebar activeTab={activeTab} onTabClick={handleTabClick} />
 
-          <div className="text-center pb-14 sm:pb-16">
-            <section id="ir-financial-reporting" className="">
-              <FinancialReportingSection />
-            </section>
+        <div className="ir-copy pb-14 pt-8 text-center sm:pb-16">
+          <section id="ir-financial-reporting">
+            <FinancialReportingSection />
+          </section>
 
-            <section id="ir-shareholders" className="ir-copy mt-8 pt-2">
-              <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
-                Shareholders' Information
-              </h3>
-              <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
-                Shareholding updates, notices, and governance disclosures will be published in this section.
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {shareholderDocs.map((doc) => (
-                  <article
-                    key={doc.file}
-                    className="group border border-transparent bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left transition-all duration-200 hover:border-[#8c1d3c] hover:shadow-[0_12px_26px_rgba(140,29,60,0.18)]"
-                  >
-                    <p className="text-[0.82rem] uppercase tracking-[0.08em] text-[#173053]/70">{doc.meta}</p>
-                    <p className="mt-2 text-[1rem] font-semibold text-[#173053]">{doc.title}</p>
-                    <p className="mt-3 text-[0.85rem] text-[#173053]/65">PDF · {doc.file}</p>
-                    <a
-                      href={`/reports/${doc.file}`}
-                      download
-                      className="mt-4 inline-flex items-center justify-center border border-[#173053]/30 bg-white px-4 py-2 text-[0.82rem] font-semibold text-[#173053] transition-colors hover:bg-[#173053] hover:text-white"
-                    >
-                      Download
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </section>
+          <section id="ir-shareholders" className="mt-10">
+            <h3 className="mb-5 text-[2rem] font-semibold text-[#162e54]">Shareholders&apos; Information</h3>
+            {renderBlueCards(shareholderCards)}
+          </section>
 
-            <section id="ir-service-centre" className="ir-copy mt-8 border-t border-[#173053]/20 pt-8">
-              <h3 className="mb-3 font-agatho text-[clamp(1.3rem,3.2vw,2rem)] leading-[1.15] text-[#173053]">
-                Investor Service Centre
-              </h3>
-              <p className="mx-auto max-w-[66ch] text-[0.9rem] leading-[1.6] text-[#173053]/80 sm:text-[0.96rem]">
-                Service requests, contact details, and investor support resources will be maintained here.
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {serviceDocs.map((doc) => (
-                  <article
-                    key={doc.file}
-                    className="group border border-transparent bg-gradient-to-br from-[#f5f8ff] via-[#edf4ff] to-[#e5eefb] p-5 text-left transition-all duration-200 hover:border-[#8c1d3c] hover:shadow-[0_12px_26px_rgba(140,29,60,0.18)]"
-                  >
-                    <p className="text-[0.82rem] uppercase tracking-[0.08em] text-[#173053]/70">{doc.meta}</p>
-                    <p className="mt-2 text-[1rem] font-semibold text-[#173053]">{doc.title}</p>
-                    <p className="mt-3 text-[0.85rem] text-[#173053]/65">PDF · {doc.file}</p>
-                    <a
-                      href={`/reports/${doc.file}`}
-                      download
-                      className="mt-4 inline-flex items-center justify-center border border-[#173053]/30 bg-white px-4 py-2 text-[0.82rem] font-semibold text-[#173053] transition-colors hover:bg-[#173053] hover:text-white"
-                    >
-                      Download
-                    </a>
-                  </article>
-                ))}
-              </div>
-            </section>
-          </div>
+          <section id="ir-service-centre" className="mt-10">
+            <h3 className="mb-5 text-[2rem] font-semibold text-[#162e54]">Investor Service Centre</h3>
+            {renderBlueCards(investorServiceCards)}
+          </section>
+
+          <section className="mt-20">
+            <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-tight text-[#162e54]">
+              Genesis At A Glance
+            </h3>
+            <p className="mx-auto mt-6 max-w-[120ch] text-[1.12rem] leading-relaxed text-[#162e54]/80">
+              Genesis Ventures Ltd. is a private markets investment company focused on unlisted equity
+              opportunities across high-growth sectors. We partner with promising businesses from growth stage
+              to pre-IPO, with a disciplined long-term approach designed to create sustainable value for our
+              investors.
+            </p>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              <article className="flex flex-col items-center">
+                <BadgeDollarSign className="mb-4 text-[#8D1E39]" size={44} strokeWidth={2.2} />
+                <p className="text-[1.25rem] font-semibold text-[#8D1E39] sm:text-[1.4rem]">Gross Revenue</p>
+              </article>
+              <article className="flex flex-col items-center">
+                <TrendingUp className="mb-4 text-[#8D1E39]" size={44} strokeWidth={2.2} />
+                <p className="text-[1.25rem] font-semibold text-[#8D1E39] sm:text-[1.4rem]">Portfolio Value Growth</p>
+              </article>
+              <article className="flex flex-col items-center">
+                <Factory className="mb-4 text-[#8D1E39]" size={44} strokeWidth={2.2} />
+                <p className="text-[1.25rem] font-semibold text-[#8D1E39] sm:text-[1.4rem]">High-Growth Portfolio Companies</p>
+              </article>
+              <article className="flex flex-col items-center">
+                <Sprout className="mb-4 text-[#8D1E39]" size={44} strokeWidth={2.2} />
+                <p className="text-[1.25rem] font-semibold text-[#8D1E39] sm:text-[1.4rem]">Long-Term Investor Partnerships</p>
+              </article>
+            </div>
+          </section>
         </div>
       </div>
     </section>

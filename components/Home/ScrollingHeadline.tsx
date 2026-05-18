@@ -1,7 +1,7 @@
 "use client";
 
 export default function ScrollingHeadline() {
-  const headline = "Create wealth with Genesis.";
+  const headline = "Create Wealth With Genesis.";
   return (
     <section className="relative w-full overflow-hidden bg-white pb-24 pt-12">
       <div className="marquee-track">
