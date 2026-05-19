@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState, useRef, type MouseEvent } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
@@ -33,6 +33,7 @@ const navLinks = [
 
 export default function NavBar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -107,6 +108,42 @@ export default function NavBar() {
     return dropdown.some((item) => isActivePath(item.href));
   };
 
+  const smoothScrollToHash = (hash: string) => {
+    const target = document.querySelector(hash);
+    if (!target) return false;
+    const offsetRaw = getComputedStyle(document.documentElement).getPropertyValue("--navbar-offset");
+    const navbarOffset = Number.parseInt(offsetRaw, 10) || 64;
+    const top = target.getBoundingClientRect().top + window.scrollY - navbarOffset - 12;
+    window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+    return true;
+  };
+
+  const handleHashLinkClick = (event: MouseEvent<HTMLAnchorElement>, href?: string) => {
+    if (!href || !href.includes("#")) return;
+    event.preventDefault();
+
+    const [targetPath, hashPart] = href.split("#");
+    const hash = `#${hashPart}`;
+    const nextUrl = `${targetPath}${hash}`;
+
+    if (pathname === targetPath) {
+      window.history.replaceState(null, "", nextUrl);
+      smoothScrollToHash(hash);
+      return;
+    }
+
+    router.push(nextUrl, { scroll: false });
+    let tries = 0;
+    const maxTries = 30;
+    const timer = window.setInterval(() => {
+      tries += 1;
+      const scrolled = smoothScrollToHash(hash);
+      if (scrolled || tries >= maxTries) {
+        window.clearInterval(timer);
+      }
+    }, 50);
+  };
+
   return (
     <div
       className="fixed top-0 left-0 right-0 z-999 flex flex-col transition-transform duration-300 ease-in-out"
@@ -173,6 +210,7 @@ export default function NavBar() {
                           <li key={dHref}>
                             <Link
                               href={dHref}
+                              onClick={(event) => handleHashLinkClick(event, dHref)}
                               className={`block px-5 py-2.5 text-xs font-poppins uppercase tracking-wider transition-colors duration-150 hover:bg-gray-50 ${
                                 isActivePath(dHref)
                                   ? "text-genesis-red"
@@ -244,6 +282,7 @@ export default function NavBar() {
                         <Link
                           key={dHref}
                           href={dHref}
+                          onClick={(event) => handleHashLinkClick(event, dHref)}
                           className={`block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider border-b border-gray-50 last:border-0 transition-colors ${
                             isActivePath(dHref)
                               ? "text-genesis-red"

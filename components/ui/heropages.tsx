@@ -108,17 +108,17 @@ export default function Pagehero({
       ) : null}
       <div className={`absolute inset-0 z-10 ${overlayClassName}`} />
 
-      <div className={`relative z-20 mx-auto flex w-full max-w-2xl flex-col gap-3 px-2 sm:gap-4 ${contentOffsetClassName}`}>
+      <div className={`relative z-20 mx-auto mt-20 flex w-full max-w-2xl flex-col items-center gap-3 px-2 sm:mt-0 sm:gap-4 ${contentOffsetClassName}`}>
         {crumbs.length ? (
-          <div className="mx-auto mb-2 flex items-center gap-2 font-montserrat text-xs font-semibold uppercase tracking-[0.18em] text-[#8D1E39]">
+          <div className="mx-auto mb-2 flex max-w-full items-center justify-center gap-1.5 px-2 text-center font-montserrat text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8D1E39] sm:gap-2 sm:text-xs sm:tracking-[0.18em]">
             {crumbs.map((crumb, index) => (
-              <span key={`${crumb.label}-${index}`} className="flex items-center gap-2">
+              <span key={`${crumb.label}-${index}`} className="flex min-w-0 items-center gap-1.5 sm:gap-2">
                 {crumb.href ? (
-                  <Link href={crumb.href} className="transition-colors hover:text-[#173053]">
+                  <Link href={crumb.href} className="truncate transition-colors hover:text-[#173053]">
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-[#8D1E39]">{crumb.label}</span>
+                  <span className="max-w-[40vw] truncate text-[#8D1E39] sm:max-w-none">{crumb.label}</span>
                 )}
                 {index < crumbs.length - 1 ? <span>/</span> : null}
               </span>
