@@ -9,7 +9,7 @@ const labelClass =
 
 export default function Connect() {
   return (
-    <section className="contact-section relative z-20 -mt-[10vh] w-full bg-transparent pb-24">
+    <section className="contact-section relative z-20 mt-[4vh] w-full bg-transparent pb-24 sm:-mt-[4vh] md:-mt-[10vh]">
       <div className="mx-auto w-full max-w-5xl border border-genesis-navy/15 bg-white px-6 py-8 shadow-[0_20px_55px_rgba(22,46,84,0.14)] sm:px-8 sm:py-10 md:px-10">
         <div className="flex flex-col gap-10 sm:gap-12">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
