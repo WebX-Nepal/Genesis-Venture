@@ -128,11 +128,6 @@ export default function Pagehero({
 
         <Title text={title} className="font-agatho text-[#173053]" />
 
-        {description ? (
-          <p className="text-sm sm:text-base text-[#173053] font-poppins leading-relaxed max-w-2xl mx-auto">
-            {description}
-          </p>
-        ) : null}
       </div>
     </section>
   );

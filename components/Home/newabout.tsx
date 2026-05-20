@@ -5,94 +5,65 @@ export default function Firm() {
     {
       label: "Investment Focus",
       value: "Unlisted Shares",
-      metric: "92%",
-      note: "Private market allocation",
-      curve: "M0 70 C30 72, 42 40, 66 34 C90 28, 108 42, 132 24 C158 6, 184 18, 210 42 C230 58, 248 66, 270 64",
-      marker: { x: 210, y: 42 },
-      tag: "$ 23,827",
-      month: "August",
-      delta: "%25",
+      blurb: "Targeting private businesses where long-term value can compound away from short-term market pressure.",
     },
     {
       label: "Investment Stage",
       value: "Growth to Pre-IPO",
-      metric: "3.4x",
-      note: "Median stage progression",
-      curve: "M0 78 C24 74, 42 50, 66 46 C90 42, 112 54, 136 30 C160 10, 182 18, 206 40 C226 58, 248 68, 270 66",
-      marker: { x: 206, y: 40 },
-      tag: "$ 18,420",
-      month: "September",
-      delta: "%19",
+      blurb: "Backing companies in the execution-heavy stage where strategic support can accelerate outcomes.",
     },
     {
       label: "Horizon",
       value: "Long-Term Capital",
-      metric: "7+ Yrs",
-      note: "Typical holding horizon",
-      curve: "M0 76 C28 78, 48 58, 72 50 C96 42, 120 52, 146 26 C168 8, 190 18, 214 36 C234 54, 252 66, 270 62",
-      marker: { x: 214, y: 36 },
-      tag: "$ 31,240",
-      month: "October",
-      delta: "%28",
+      blurb: "Structured with patience to support durable business building across multi-year timelines.",
     },
   ];
 
   return (
-    <section className="relative w-full bg-white py-12 sm:py-14 md:py-16 lg:py-20">
-      <div className="pointer-events-none absolute inset-0 z-0 h-full w-full " />
+    <section className="relative w-full overflow-hidden bg-[#f7f8fb] py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="pointer-events-none absolute inset-0 z-0 h-full w-full">
+        <div className="absolute -left-24 top-10 h-48 w-48 bg-[#8D1E39]/10 blur-3xl" />
+        <div className="absolute -right-24 bottom-6 h-56 w-56 bg-[#162e54]/10 blur-3xl" />
+      </div>
       <div className="relative z-10 layout-7xl">
-        <div className="mx-auto w-full max-w-4xl">
+        <div className="mx-auto w-full max-w-4xl text-center">
+          <p className="font-montserrat text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8D1E39] sm:text-xs">
+            Genesis Ventures
+          </p>
           <div className="flex items-center justify-center">
-            <p className="firm-title w-full text-center font-agatho text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
+            <h2 className="firm-title mt-3 w-full text-center font-agatho text-[clamp(1.9rem,7vw,4.1rem)] leading-[1.08] text-[#162e54]">
               About the Firm
-            </p>
+            </h2>
           </div>
-          <p className="py-8 text-center font-montserrat text-md font-medium  text-[#162e54]">
+          <p className="mx-auto max-w-3xl py-6 font-montserrat text-sm font-medium leading-relaxed text-[#162e54]/90 sm:py-7 sm:text-base">
             Genesis Ventures ltd. is a dedicated private markets investment company focused exclusively on
             unlisted equity - stakes in businesses that operate beyond the reach of public exchanges, where
             the most meaningful value creation often takes place.
           </p>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-7 sm:grid-cols-2 sm:gap-5 lg:mt-8 lg:grid-cols-3 lg:gap-6">
-          {focusItems.map((item) => (
+        <div className="mt-7 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+          {focusItems.map((item, index) => (
             <article
               key={`metric-${item.label}`}
-              className="firm-item group relative min-h-[230px] overflow-hidden border border-[#162e54]/15 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[#8D1E39]/35 hover:shadow-[0_16px_38px_rgba(22,46,84,0.12)] sm:min-h-[250px] sm:p-5"
+              className="firm-item group relative min-h-[220px] overflow-hidden border border-[#8D1E39]/30 bg-white/95 p-5 shadow-[0_10px_24px_rgba(22,46,84,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,46,84,0.13)] sm:min-h-[240px] sm:p-6"
             >
-              <div>
-                <p className="font-poppins text-[12px] font-semibold text-[#8D1E39] sm:text-[11px]">
-                  {item.label}
+              <div className="absolute right-0 top-0 h-24 w-24 translate-x-7 -translate-y-7 border border-[#162e54]/10" />
+              <div className="relative z-10">
+                <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39] sm:text-[11px]">
+                  0{index + 1} - {item.label}
                 </p>
-                <h3 className="mt-1.5 font-montserrat text-[clamp(1.2rem,6vw,2.0rem)]  font-semibold leading-[1.08] text-[#162e54] sm:mt-2">
+                <h3 className="mt-3 font-montserrat text-[clamp(1.25rem,5vw,2rem)] font-semibold leading-[1.1] text-[#162e54]">
                   {item.value}
                 </h3>
-                <div className="mt-3 flex items-end justify-between gap-3">
-                  <p className="font-montserrat text-2xl font-semibold leading-none text-[#173053]">{item.metric}</p>
-                  <p className="text-right font-montserrat text-[11px] text-[#162e54]/70">{item.note}</p>
-                </div>
-              </div>
-              <div className="mt-4 border border-[#162e54]/10 bg-[#f8fafc] px-2 py-2">
-                <div className="relative h-24 w-full overflow-hidden">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(22,46,84,0.08)_1px,transparent_1px)] bg-[size:28px_100%]" />
-                  <svg viewBox="0 0 270 90" className="relative z-10 h-full w-full">
-                    <path
-                      d={item.curve}
-                      fill="none"
-                      stroke="#173053"
-                      strokeWidth="2.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="transition-all duration-500 group-hover:stroke-[#0f2745]"
-                    />
-                    <circle cx={item.marker.x} cy={item.marker.y} r="4.5" fill="#ffffff" stroke="#173053" strokeWidth="2" />
-                  </svg>
-                </div>
+                <p className="mt-3 max-w-[30ch] font-poppins text-sm leading-relaxed text-[#162e54]/75">
+                  {item.blurb}
+                </p>
+                <div className="mt-5 h-[2px] w-14 bg-[#8D1E39]/45 transition-all duration-300 group-hover:w-20 group-hover:bg-[#8D1E39]" />
               </div>
             </article>
           ))}
         </div>
       </div>
-  
     </section>
   );
 }

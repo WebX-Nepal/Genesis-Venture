@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -28,40 +28,6 @@ const philosophyRows = [
 
 const InvestmentPhilosophy = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isSectionVisible, setIsSectionVisible] = useState(false);
-  const [footerIntersection, setFooterIntersection] = useState(0);
-  const coinOpacity = isSectionVisible
-    ? Math.max(0, 1 - footerIntersection / 0.2)
-    : 0;
-
-  useEffect(() => {
-    const sectionEl = containerRef.current;
-    const footerEl = document.querySelector("footer");
-    if (!sectionEl || !footerEl) return;
-
-    const sectionObserver = new IntersectionObserver(
-      ([entry]) => {
-        setIsSectionVisible(entry.isIntersecting);
-      },
-      { threshold: 0.05 },
-    );
-
-    const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
-    const footerObserver = new IntersectionObserver(
-      ([entry]) => {
-        setFooterIntersection(entry.intersectionRatio);
-      },
-      { threshold: thresholds },
-    );
-
-    sectionObserver.observe(sectionEl);
-    footerObserver.observe(footerEl);
-
-    return () => {
-      sectionObserver.disconnect();
-      footerObserver.disconnect();
-    };
-  }, []);
 
   useGSAP(() => {
     const splitTitle = new SplitText(".investment-philosophy-heading", {
@@ -125,24 +91,9 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="w-full bg-white pb-14 sm:pb-16 lg:pb-20"
+      className="w-full bg-white pb-0"
     >
       <div className="layout-7xl">
-        <div
-          className="pointer-events-none fixed left-1/2 top-[60%] z-20 mb-6 -translate-x-1/2 sm:mb-8"
-          style={{
-            opacity: coinOpacity,
-            transition: "opacity 120ms linear",
-          }}
-        >
-          <Image
-            src="/coin/coin.png"
-            alt="Coin"
-            width={128}
-            height={128}
-            className="h-20 w-20 object-contain animate-[coinPulse_2.8s_ease-in-out_infinite] sm:h-24 sm:w-24"
-          />
-        </div>
         {/* <div className="w-full border border-[#162e54]/12 bg-white p-6 text-left sm:p-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
             <div className="border-l-4 border-[#8D1E39] pl-4 sm:pl-5">
@@ -182,15 +133,15 @@ const InvestmentPhilosophy = () => {
             </div>
           </div>
         </div> */}
-        <div className="flex flex-col gap-[40vh] pt-20 sm:pt-24">
+        <div className="flex flex-col gap-0 pt-0">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
-              className={`grid grid-cols-1 gap-10 overflow-hidden lg:grid-cols-[1fr_1.1fr] lg:gap-24 xl:gap-32 ${
+              className={`grid grid-cols-1 gap-0 overflow-hidden lg:grid-cols-[1fr_1.1fr] lg:gap-0 xl:gap-0 ${
                 index % 2 === 0 ? "bg-white" : "bg-white"
               }`}
             >
-              <div className={`relative min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
+              <div className={`relative min-h-[260px] sm:min-h-[300px] lg:min-h-[340px] ${index % 2 !== 0 ? "lg:order-2" : ""}`}>
                 <Image
                   src={row.image}
                   alt={row.title}
@@ -206,7 +157,7 @@ const InvestmentPhilosophy = () => {
                   }`}
                 />
               </div>
-              <div className={`flex items-center p-6 sm:p-8 lg:p-10 ${index % 2 !== 0 ? "lg:order-1 lg:pr-20" : "lg:pl-24"}`}>
+              <div className={`flex items-center p-4 sm:p-5 lg:p-6 ${index % 2 !== 0 ? "lg:order-1 lg:pr-12" : "lg:pl-12"}`}>
                 <div className={index % 2 !== 0 ? "text-left lg:text-right" : "text-left"}>
                   <h3 className="font-agatho text-[clamp(1.4rem,2.6vw,2.2rem)] leading-[1.2] text-[#173053]">
                     {row.title}
