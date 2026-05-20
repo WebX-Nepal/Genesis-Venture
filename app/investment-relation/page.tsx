@@ -15,7 +15,7 @@ export default function InvestorRelationsPage() {
           { label: "Investor Relations" },
         ]}
         backgroundVideo="/videos/texture.mp4"
-        heightClassName="h-[80vh]"
+        heightClassName="min-h-[80vh] h-auto"
         overlayClassName="bg-transparent"
         contentOffsetClassName="mt-6 md:mt-10"
         baseClassName="bg-transparent"
