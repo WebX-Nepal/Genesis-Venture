@@ -91,49 +91,10 @@ const InvestmentPhilosophy = () => {
     <section
       id="investment-philosophy"
       ref={containerRef}
-      className="w-full bg-white pb-0"
+      className="w-full bg-white py-10 sm:py-12 md:py-14 lg:py-16"
     >
       <div className="layout-7xl">
-        {/* <div className="w-full border border-[#162e54]/12 bg-white p-6 text-left sm:p-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
-            <div className="border-l-4 border-[#8D1E39] pl-4 sm:pl-5">
-              <h3 className="font-montserrat text-[clamp(1.35rem,2.1vw,1.85rem)] font-semibold leading-tight text-[#162e54]">
-                Strategic Investment Approach
-              </h3>
-              <p className="mt-3 font-montserrat text-[1.03rem] leading-relaxed text-[#4e617d]">
-                Our framework combines rigorous research, disciplined due diligence, and a long-term value
-                creation perspective. Every investment decision is evaluated for business quality, governance
-                strength, and the ability to compound sustainably over time.
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
-                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
-                  Research
-                </div>
-                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
-                  Due Diligence
-                </div>
-                <div className="bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
-                  Long-Term Value
-                </div>
-              </div>
-            </div>
-
-            <div className="border-l-4 border-[#162e54]/25 pl-4 sm:pl-5">
-              <h3 className="font-montserrat text-[clamp(1.35rem,2.1vw,1.85rem)] font-semibold leading-tight text-[#162e54]">
-                Sustainable Growth
-              </h3>
-              <p className="mt-3 font-montserrat text-[1.03rem] leading-relaxed text-[#4e617d]">
-                We prioritize future-ready businesses that can scale responsibly across cycles. Our focus is on
-                resilient operating models, governance maturity, and execution capacity that support durable,
-                compounding growth over the long term.
-              </p>
-              <div className="mt-6 bg-zinc-100 px-4 py-3 font-montserrat text-[0.88rem] font-medium uppercase tracking-[0.08em] text-[#162e54]">
-                Show Future Thinking
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div className="flex flex-col gap-0 pt-0">
+        <div className="flex flex-col gap-0">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}
@@ -146,18 +107,13 @@ const InvestmentPhilosophy = () => {
                   src={row.image}
                   alt={row.title}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 45vw"
                 />
-                <div
-                  className={`absolute inset-0 ${
-                    index % 2 !== 0
-                      ? "bg-gradient-to-r from-white  to-transparent"
-                      : "bg-gradient-to-l from-white to-transparent"
-                  }`}
-                />
+                
+              
               </div>
-              <div className={`flex items-center p-4 sm:p-5 lg:p-6 ${index % 2 !== 0 ? "lg:order-1 lg:pr-12" : "lg:pl-12"}`}>
+              <div className={`flex items-center p-4 sm:p-5 md:p-6 lg:p-7 ${index % 2 !== 0 ? "lg:order-1 lg:pr-12" : "lg:pl-12"}`}>
                 <div className={index % 2 !== 0 ? "text-left lg:text-right" : "text-left"}>
                   <h3 className="font-agatho text-[clamp(1.4rem,2.6vw,2.2rem)] leading-[1.2] text-[#173053]">
                     {row.title}

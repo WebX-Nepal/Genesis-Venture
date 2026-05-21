@@ -41,9 +41,7 @@ export default function NavBar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isTransparentNavbarPage =
-    pathname === "/what-we-do/investment-phylosophy" ||
-    pathname === "/our-stories";
+  const isTransparentNavbarPage = false;
 
   useEffect(() => {
     setMenuOpen(false);

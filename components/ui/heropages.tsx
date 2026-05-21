@@ -24,6 +24,7 @@ interface PageheroProps {
   baseClassName?: string;
   showVideoFallback?: boolean;
   backgroundImageClassName?: string;
+  titleClassName?: string;
 }
 
 export default function Pagehero({
@@ -39,6 +40,7 @@ export default function Pagehero({
   baseClassName = "bg-white",
   showVideoFallback = true,
   backgroundImageClassName = "object-cover opacity-20",
+  titleClassName = "font-agatho text-white",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
@@ -93,6 +95,7 @@ export default function Pagehero({
               setHeroVideoReady(true);
             }}
             className={`absolute inset-0 h-full w-full object-cover z-0 transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
+            
           >
             <source src={backgroundVideo} type="video/mp4" />
           </video>
@@ -114,7 +117,7 @@ export default function Pagehero({
             {crumbs.map((crumb, index) => (
               <span key={`${crumb.label}-${index}`} className="flex min-w-0 items-center gap-1.5 sm:gap-2">
                 {crumb.href ? (
-                  <Link href={crumb.href} className="truncate transition-colors hover:text-[#173053]">
+                  <Link href={crumb.href} className="truncate text-white transition-colors hover:text-[#e2e8f0]">
                     {crumb.label}
                   </Link>
                 ) : (
@@ -126,7 +129,7 @@ export default function Pagehero({
           </div>
         ) : null}
 
-        <Title text={title} className="font-agatho text-[#173053]" />
+        <Title text={title} className={titleClassName} />
 
       </div>
     </section>

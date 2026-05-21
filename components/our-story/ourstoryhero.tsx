@@ -10,7 +10,7 @@ export default function OurStoryHero() {
       backgroundImage="/gif/gifanimated.gif"
       backgroundImageClassName="object-contain opacity-16"
       heightClassName="h-[80vh]"
-      overlayClassName="bg-transparent"
+      overlayClassName="bg-[#001D3F]/50"
       contentOffsetClassName="mt-6 md:mt-10"
       baseClassName="bg-transparent"
       showVideoFallback={false}

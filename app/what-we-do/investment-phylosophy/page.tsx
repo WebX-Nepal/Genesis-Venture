@@ -17,7 +17,7 @@ export default function InvestmentPhylosophyPage() {
         backgroundImageClassName="object-cover opacity-30"
         contentOffsetClassName="mt-6 md:mt-10"
         heightClassName="h-[80vh]"
-        overlayClassName="bg-transparent"
+        overlayClassName="bg-[#001D3F]/60"
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />

@@ -22,7 +22,7 @@ const PortfolioHeroSection = () => {
       backgroundImage="/gif/download.gif"
       backgroundImageAlt="Portfolio hero background"
       heightClassName="h-[80vh]"
-      overlayClassName="bg-white/60"
+      overlayClassName="bg-[#001D3F]/60"
       contentOffsetClassName="mt-6 md:mt-10"
       baseClassName="bg-white"
     />

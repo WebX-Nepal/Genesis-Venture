@@ -26,6 +26,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],

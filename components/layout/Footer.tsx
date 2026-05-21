@@ -26,7 +26,7 @@ export default function Footer() {
           className="object-contain object-center"
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 bg-white/75" />
+      <div className="pointer-events-none absolute inset-0 bg-blue-900/65" />
 
       <div className="relative z-10 flex h-full min-h-[420px] flex-col justify-between">
         <div className="layout-7xl flex flex-col gap-6 pb-6 pt-10 md:pb-6 md:pt-12">

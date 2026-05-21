@@ -14,7 +14,8 @@ export default function WhoWeAreFirmPage() {
         backgroundImage="/gif/firmgif.gif"
         backgroundImageClassName="object-contain opacity-30"
         heightClassName="h-[80vh]"
-        overlayClassName="bg-transparent"
+        overlayClassName="bg-[#001D3F]/50"
+        titleClassName="font-agatho text-white"
         contentOffsetClassName="mt-6 md:mt-10"
         baseClassName="bg-transparent"
         showVideoFallback={false}
