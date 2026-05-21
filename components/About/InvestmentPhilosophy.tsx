@@ -115,7 +115,7 @@ const InvestmentPhilosophy = () => {
               </div>
               <div className={`flex items-center p-4 sm:p-5 md:p-6 lg:p-7 ${index % 2 !== 0 ? "lg:order-1 lg:pr-12" : "lg:pl-12"}`}>
                 <div className={index % 2 !== 0 ? "text-left lg:text-right" : "text-left"}>
-                  <h3 className="font-agatho text-[clamp(1.4rem,2.6vw,2.2rem)] leading-[1.2] text-[#173053]">
+                  <h3 className="font-agatho text-[clamp(1.5rem,2.9vw,2.35rem)] leading-[1.2] text-[#173053]">
                     {row.title}
                   </h3>
                   <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#4e617d] font-montserrat">
