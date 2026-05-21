@@ -11,7 +11,7 @@ interface FeaturedPortfolioCardProps {
 const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
   return (
     <div className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
-      <article className="group relative grid overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
+      <article className="group relative grid overflow-hidden border border-[#8D1E39]/35 bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
         <div className="relative overflow-hidden bg-white p-8">
           <Image
             src="/portfolio/Others/sopan.png"
@@ -36,7 +36,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
 
           <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             {item.subs?.map((sub) => (
-              <div key={sub.name} className="border border-[#e6ebf2] bg-[#f4f8fd] p-4">
+              <div key={sub.name} className="border border-[#8D1E39]/25 bg-[#f4f8fd] p-4">
                 <p className="mb-1 text-[9.5px] uppercase tracking-[0.1em] text-[#8B1C1C]">
                   {sub.label}
                 </p>
@@ -50,9 +50,9 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
             ))}
           </div>
 
-          <div className="mb-8 grid grid-cols-2 gap-0 overflow-hidden border border-[#d8e0ea] sm:grid-cols-4">
+          <div className="mb-8 grid grid-cols-2 gap-0 overflow-hidden border border-[#8D1E39]/25 sm:grid-cols-4">
             {item.stats?.map((stat) => (
-              <div key={stat.label} className="border-r border-[#d8e0ea] bg-white px-4 py-3 last:border-r-0">
+              <div key={stat.label} className="border-r border-[#8D1E39]/25 bg-white px-4 py-3 last:border-r-0">
                 <p className="font-agatho text-[1.15rem] leading-none text-[#1A2E4A]">
                   {stat.value}
                 </p>
@@ -63,7 +63,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-2 border-t border-[#e6ebf2] pt-5">
+          <div className="flex flex-wrap gap-2 border-t border-[#8D1E39]/25 pt-5">
             {item.tags.map((tag: string, idx: number) => (
               <span
                 key={tag}

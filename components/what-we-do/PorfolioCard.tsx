@@ -18,8 +18,8 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
     "hotel-forest-inn": "/portfolio/Hospitality/forest inn.webp",
     "kbnr-isuwa": "/portfolio/Hydropower/kbnr iswa hydropower.png",
     "ayu-malum": "/portfolio/Hydropower/ayu malun hydro.jpeg",
-    "maruti-cements": "/portfolio/Manufacturing/maruti cement.jpg",
-    "shubhshree-agni": "/portfolio/Manufacturing/shubhshree agni cement.jpg",
+    "maruti-cements": "/portfolio/Manufacturing/maruti.png",
+    "shubhshree-agni": "/portfolio/Manufacturing/shubhashree.png",
     "mahashakti-cement": "/portfolio/Manufacturing/mahashakti cement.jpg",
     "premier-distillery": "/portfolio/Manufacturing/distillery.png",
     "premier-steel": "/portfolio/Manufacturing/premier steel .png",
@@ -57,7 +57,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
   };
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden border border-[#d8e0ea] bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
+    <article className="group relative flex h-full flex-col overflow-hidden border border-[#8D1E39]/35 bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
       <div className="relative h-[170px] overflow-hidden border-b border-[#8D1E39] bg-white p-4">
         {headerImage ? (
           <Image
@@ -107,7 +107,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
           </div>
         ) : null}
 
-        <div className="mt-4 flex flex-wrap gap-2 border-t border-[#e8edf3] pt-4">
+        <div className="mt-4 flex flex-wrap gap-2 border-t border-[#8D1E39]/25 pt-4">
           {item.tags.map((tag: string, index: number) => (
             <span
               key={tag}

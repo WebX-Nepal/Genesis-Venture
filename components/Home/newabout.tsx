@@ -31,7 +31,7 @@ export default function Firm() {
             Genesis Ventures
           </p>
           <div className="flex items-center justify-center">
-            <h2 className="firm-title mt-3 w-full text-center font-agatho text-[clamp(1.9rem,7vw,4.1rem)] leading-[1.08] text-[#162e54]">
+            <h2 className="firm-title mt-3 w-full text-center font-agatho text-[clamp(2rem,4.6vw,3.2rem)] leading-[1.08] text-[#162e54]">
               About the Firm
             </h2>
           </div>

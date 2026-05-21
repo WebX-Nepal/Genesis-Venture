@@ -28,8 +28,8 @@ export default function Leadership() {
           <p className="mb-3 inline-flex items-center justify-center text-[11px] font-medium uppercase tracking-[0.28em] text-[#8D1E39] font-montserrat">
             Leadership
           </p>
-          <h2 className="font-agatho text-[clamp(2rem,4.3vw,2.7rem)] leading-[1.18] tracking-[-0.01em] text-[#173053]">
-            The person behind the firm
+          <h2 className="font-agatho text-[clamp(2rem,4.6vw,3.2rem)] leading-[1.08] tracking-[-0.01em] text-[#173053]">
+            The Person Behind The Firm
           </h2>
         </div>
 

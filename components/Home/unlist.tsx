@@ -118,7 +118,7 @@ export default function UnlistedMarket() {
 
         <div className="mb-8 flex flex-col gap-6 sm:mb-10 sm:gap-8 md:mb-12 md:gap-24">
           <div className="mx-auto w-full max-w-4xl text-center">
-            <h2 className="unlisted-heading font-agatho text-[clamp(1.5rem,8vw,3.8rem)] leading-[1.18] text-[#162e54]">
+            <h2 className="unlisted-heading font-agatho text-[clamp(2rem,4.6vw,3.2rem)] leading-[1.08] text-[#162e54]">
               Why Unlisted Markets
             </h2>
             <p
