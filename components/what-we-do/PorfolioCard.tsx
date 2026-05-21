@@ -85,7 +85,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h4 className="font-agatho text-[1.18rem] leading-[1.2] text-[#163154] sm:text-[1.32rem]">
+        <h4 className="font-montserrat text-[1.18rem] font-semibold leading-[1.2] text-[#163154] sm:text-[1.32rem]">
           {item.name}
         </h4>
         <p className="mt-2.5 flex-1 text-[12.5px] font-normal leading-[1.72] text-[#556983]">
