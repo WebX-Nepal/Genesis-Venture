@@ -25,6 +25,11 @@ interface PageheroProps {
   showVideoFallback?: boolean;
   backgroundImageClassName?: string;
   titleClassName?: string;
+  crumbsContainerClassName?: string;
+  crumbLinkClassName?: string;
+  crumbCurrentClassName?: string;
+  crumbSeparatorClassName?: string;
+  lastCrumbSeparatorClassName?: string;
 }
 
 export default function Pagehero({
@@ -41,6 +46,11 @@ export default function Pagehero({
   showVideoFallback = true,
   backgroundImageClassName = "object-cover opacity-20",
   titleClassName = "font-agatho text-white",
+  crumbsContainerClassName = "text-[#8D1E39]",
+  crumbLinkClassName = "text-white hover:text-[#e2e8f0]",
+  crumbCurrentClassName = "text-[#8D1E39]",
+  crumbSeparatorClassName = "",
+  lastCrumbSeparatorClassName = "",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
@@ -113,17 +123,27 @@ export default function Pagehero({
 
       <div className={`relative z-20 mx-auto mt-20 flex w-full max-w-2xl flex-col items-center gap-3 px-2 sm:mt-0 sm:gap-4 ${contentOffsetClassName}`}>
         {crumbs.length ? (
-          <div className="mx-auto mb-2 flex max-w-full items-center justify-center gap-1.5 px-2 text-center font-montserrat text-[10px] font-semibold uppercase tracking-[0.12em] text-[#8D1E39] sm:gap-2 sm:text-xs sm:tracking-[0.18em]">
+          <div className={`mx-auto mb-2 flex max-w-full items-center justify-center gap-1.5 px-2 text-center font-montserrat text-[10px] font-semibold uppercase tracking-[0.12em] sm:gap-2 sm:text-xs sm:tracking-[0.18em] ${crumbsContainerClassName}`}>
             {crumbs.map((crumb, index) => (
               <span key={`${crumb.label}-${index}`} className="flex min-w-0 items-center gap-1.5 sm:gap-2">
                 {crumb.href ? (
-                  <Link href={crumb.href} className="truncate text-white transition-colors hover:text-[#e2e8f0]">
+                  <Link href={crumb.href} className={`truncate transition-colors ${crumbLinkClassName}`}>
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="max-w-[40vw] truncate text-[#8D1E39] sm:max-w-none">{crumb.label}</span>
+                  <span className={`max-w-[40vw] truncate sm:max-w-none ${crumbCurrentClassName}`}>{crumb.label}</span>
                 )}
-                {index < crumbs.length - 1 ? <span>/</span> : null}
+                {index < crumbs.length - 1 ? (
+                  <span
+                    className={
+                      index === crumbs.length - 2
+                        ? lastCrumbSeparatorClassName || crumbSeparatorClassName
+                        : crumbSeparatorClassName
+                    }
+                  >
+                    /
+                  </span>
+                ) : null}
               </span>
             ))}
           </div>

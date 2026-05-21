@@ -25,6 +25,11 @@ const PortfolioHeroSection = () => {
       overlayClassName="bg-[#001D3F]/60"
       contentOffsetClassName="mt-6 md:mt-10"
       baseClassName="bg-white"
+      crumbsContainerClassName="text-white/90"
+      crumbLinkClassName="text-white hover:text-white/80"
+      crumbCurrentClassName="text-[#8D1E39]"
+      crumbSeparatorClassName="text-white/90"
+      lastCrumbSeparatorClassName="text-[#8D1E39]"
     />
   );
 };
