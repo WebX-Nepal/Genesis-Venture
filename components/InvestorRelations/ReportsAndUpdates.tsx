@@ -175,25 +175,25 @@ export default function ReportsAndUpdates() {
               investors.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              <article className="flex flex-col items-center bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
+              <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <BadgeDollarSign className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
                 <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Gross Revenue</p>
                 <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">Rs 73,465</p>
                 <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Crores</p>
               </article>
-              <article className="flex flex-col items-center bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
+              <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <TrendingUp className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
                 <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Portfolio Value Growth</p>
                 <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">Rs 24,025</p>
                 <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Crores</p>
               </article>
-              <article className="flex flex-col items-center bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
+              <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <Factory className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
                 <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">High-Growth Portfolio Companies</p>
                 <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">11</p>
                 <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Businesses</p>
               </article>
-              <article className="flex flex-col items-center bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
+              <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <Sprout className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
                 <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Long-Term Investor Partnerships</p>
                 <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">25+</p>
