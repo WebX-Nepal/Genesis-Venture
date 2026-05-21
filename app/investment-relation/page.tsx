@@ -17,7 +17,6 @@ export default function InvestorRelationsPage() {
         backgroundVideo="/videos/texture.mp4"
         heightClassName="min-h-[80vh] h-auto"
         overlayClassName="bg-[#001D3F]/60"
-        contentOffsetClassName="mt-6 md:mt-10"
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />

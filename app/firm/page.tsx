@@ -16,7 +16,6 @@ export default function WhoWeAreFirmPage() {
         heightClassName="h-[80vh]"
         overlayClassName="bg-[#001D3F]/50"
         titleClassName="font-agatho text-white"
-        contentOffsetClassName="mt-6 md:mt-10"
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />

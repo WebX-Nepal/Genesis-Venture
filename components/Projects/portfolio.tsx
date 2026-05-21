@@ -23,7 +23,6 @@ const PortfolioHeroSection = () => {
       backgroundImageAlt="Portfolio hero background"
       heightClassName="h-[80vh]"
       overlayClassName="bg-[#001D3F]/60"
-      contentOffsetClassName="mt-6 md:mt-10"
       baseClassName="bg-white"
       crumbsContainerClassName="text-white/90"
       crumbLinkClassName="text-white hover:text-white/80"

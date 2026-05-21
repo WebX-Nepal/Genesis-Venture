@@ -11,7 +11,6 @@ export default function OurStoryHero() {
       backgroundImageClassName="object-contain opacity-16"
       heightClassName="h-[80vh]"
       overlayClassName="bg-[#001D3F]/50"
-      contentOffsetClassName="mt-6 md:mt-10"
       baseClassName="bg-transparent"
       showVideoFallback={false}
       crumbs={[
