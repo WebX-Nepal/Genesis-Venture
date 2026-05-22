@@ -39,7 +39,7 @@ export default function Pagehero({
   backgroundImage,
   backgroundVideo,
   backgroundImageAlt = "",
-  heightClassName = "h-[80vh]",
+  heightClassName = "h-screen",
   overlayClassName = "bg-white/60",
   contentOffsetClassName = "",
   baseClassName = "bg-white",

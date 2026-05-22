@@ -7,7 +7,7 @@ interface PageHeroSectionProps extends ComponentPropsWithoutRef<"section"> {
 const PageHeroSection = forwardRef<HTMLElement, PageHeroSectionProps>(
   ({ className = "", children, ...props }, ref) => {
     const combinedClassName = [
-      "relative w-full h-[50vh] bg-genesis-navy",
+      "relative w-full h-screen bg-genesis-navy",
       className,
     ]
       .filter(Boolean)

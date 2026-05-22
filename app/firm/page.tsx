@@ -5,17 +5,18 @@ export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
       <Pagegoer
-        title={["Investing in Vision.", "Building Long-Term Value."]}
+        title={["At Genesis Your are more than just an investor your are an owner."]}
         description="A forward-thinking investment firm focused on strategic growth and sustainable partnerships."
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Firm" },
         ]}
-        backgroundImage="/gif/firmgif.gif"
+        // backgroundImage="/gif/firmgif.gif"
+        backgroundVideo="/videos/firmvideo.mp4"
         backgroundImageClassName="object-contain opacity-30"
-        heightClassName="h-[80vh]"
+        heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/50"
-        titleClassName="font-agatho text-white"
+        titleClassName="font-agatho text-white capitalize "
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />

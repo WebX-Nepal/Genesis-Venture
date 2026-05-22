@@ -15,7 +15,7 @@ export default function InvestmentPhylosophyPage() {
         ]}
         backgroundImage="/gif/videoph.gif"
         backgroundImageClassName="object-cover opacity-30"
-        heightClassName="h-[80vh]"
+        heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/60"
         baseClassName="bg-transparent"
         showVideoFallback={false}
