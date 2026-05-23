@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white">
+    <section className="relative h-[60vh] w-full overflow-hidden bg-white">
       <Image
         src="/contact/contactng.png"
         alt="Contact Genesis Ventures"
