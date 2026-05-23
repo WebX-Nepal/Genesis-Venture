@@ -19,7 +19,7 @@ const PortfolioHeroSection = () => {
         { label: "What We Do", href: "/what-we-do/portfolio" },
         { label: "Portfolio" },
       ]}
-      backgroundImage="/gif/download.gif"
+      backgroundVideo="/videos/pro.mp4"
       backgroundImageAlt="Portfolio hero background"
       heightClassName="h-screen"
       overlayClassName="bg-[#001D3F]/60"

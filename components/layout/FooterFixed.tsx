@@ -25,7 +25,7 @@ export default function FooterFixed() {
         fill
         className="pointer-events-none absolute inset-0 object-contain object-bottom"
       />
-      <div className="pointer-events-none absolute inset-0 bg-[#001D3F]/80" />
+      <div className="pointer-events-none absolute inset-0 bg-[#001D3F]/95" />
       <div className="relative z-10 flex min-h-[60vh] flex-col justify-between">
         <div className="layout-7xl flex flex-col gap-8 pb-8 pt-16 sm:gap-9 sm:pb-10 sm:pt-18 lg:gap-10 lg:pb-10 lg:pt-20">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:gap-10">

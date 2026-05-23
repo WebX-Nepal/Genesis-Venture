@@ -14,7 +14,7 @@ export default function InvestorRelationsPage() {
           { label: "Home", href: "/" },
           { label: "Investor Relations" },
         ]}
-        backgroundVideo="/videos/texture.mp4"
+        backgroundVideo="/videos/invest.mp4"
         heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/60"
         baseClassName="bg-transparent"
