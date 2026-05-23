@@ -45,7 +45,7 @@ export default function Devider() {
       <div className="absolute inset-0 bg-[#08112a]/68" />
       <div className="relative z-10 flex h-full items-center justify-center px-6 text-center sm:px-10 md:px-16 lg:px-20">
         <div className="max-w-5xl -translate-y-8 sm:-translate-y-10 md:-translate-y-12">
-          <h2 className="devider-title font-agatho text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium leading-tight tracking-wide text-white">
+          <h2 className="devider-title capitalize font-agatho text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium leading-tight tracking-wide text-white">
             Backing bold ideas before the Market catches on.
           </h2>
         </div>

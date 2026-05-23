@@ -7,7 +7,7 @@ export default function InvestmentPhylosophyPage() {
   return (
     <main className="bg-white text-[#2c2c34] font-montserrat">
       <Pagehero
-        title={["Disciplined Thinking. Strategic Capital."]}
+        title={["Capital Guided by Principles, Not Just Opportunities."]}
         description="Our investment philosophy is built on disciplined underwriting, long-term partnership, and transparent decision-making across market cycles."
         crumbs={[
           { label: "Home  ", href: "/" },

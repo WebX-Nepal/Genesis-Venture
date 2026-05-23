@@ -121,7 +121,7 @@ export default function Pagehero({
       ) : null}
       <div className={`absolute inset-0 z-10 ${overlayClassName}`} />
 
-      <div className={`relative z-20 mx-auto flex w-full max-w-2xl flex-col items-center gap-3 px-2 sm:gap-4 ${contentOffsetClassName}`}>
+      <div className={`relative z-20 mx-auto flex w-full max-w-3xl flex-col items-center gap-3 px-2 sm:gap-4 ${contentOffsetClassName}`}>
         {crumbs.length ? (
           <div className={`mx-auto mb-2 flex max-w-full items-center justify-center gap-1.5 px-2 text-center font-montserrat text-[10px] font-semibold uppercase tracking-[0.12em] sm:gap-2 sm:text-xs sm:tracking-[0.18em] ${crumbsContainerClassName}`}>
             {crumbs.map((crumb, index) => (
