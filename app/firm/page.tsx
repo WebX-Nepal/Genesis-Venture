@@ -5,7 +5,7 @@ export default function WhoWeAreFirmPage() {
   return (
     <main className="w-full bg-white pb-6 sm:pb-8 md:pb-10">
       <Pagegoer
-        title={["At Genesis, you are more than just an investor you are an owner."]}
+        title={["At Genesis, you are more than just an investor. you are an owner."]}
         description="A forward-thinking investment firm focused on strategic growth and sustainable partnerships."
         crumbs={[
           { label: "Home", href: "/" },
