@@ -34,7 +34,7 @@ export default function Devider() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[60vh] w-full overflow-hidden md:h-screen"
+      className="relative h-screen w-full overflow-hidden md:h-screen"
     >
       <Image
         src="/images/grow.png"
@@ -42,9 +42,9 @@ export default function Devider() {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[#08112a]/68" />
+      <div className="absolute inset-0  bg-[#08112a]/68" />
       <div className="relative z-10 flex h-full items-center justify-center px-6 text-center sm:px-10 md:px-16 lg:px-20">
-        <div className="max-w-5xl -translate-y-8 sm:-translate-y-10 md:-translate-y-12">
+        <div className="max-w-5xl -translate-y-8 mt-20 sm:-translate-y-10 md:-translate-y-12">
           <h2 className="devider-title capitalize font-agatho text-[clamp(1.5rem,5.8vw,3.8rem)] font-medium leading-tight tracking-wide text-white">
             Backing bold ideas before the Market catches on.
           </h2>
