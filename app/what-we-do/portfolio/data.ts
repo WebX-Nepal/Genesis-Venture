@@ -159,6 +159,18 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ["0.975 MW · Live", "IPPAN Member", "NEA Grid"],
   },
   {
+    id: "solar-farm",
+    name: "Solar Farm Ltd.",
+    shortName: "Solar Farm",
+    sector: "Hydropower",
+    description:
+      "Utility-scale solar power generation company developing and operating grid-connected solar farms in Nepal. Supplying clean, renewable energy to the NEA national grid under a long-term PPA, contributing to Nepal's energy independence and clean energy transition.",
+    badge: "Operational status",
+    badgeType: "operational",
+    progress: 100,
+    tags: ["Solar Energy", "NEA Grid", "Unlisted Equity"],
+  },
+  {
     id: "maruti-cements",
     name: "Maruti Cements Ltd.",
     shortName: "MARUTI Cements",
@@ -220,7 +232,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Others",
     description:
       "A diversified holding company founded in 2008 by NRN entrepreneurs and professionals of the Mahato Group. Strategic equity stakes across education, healthcare, hydropower, real estate, and infrastructure.",
-    badge: "Pre-IPO · SMCL",
+    badge: "IPO FILED",
     badgeType: "preipo",
     isFeatured: true,
     tags: ["Mahato Group", "NRN Founded", "IPO at Premium", "NMB Capital", "SMCL"],
@@ -259,7 +271,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Agro & Aquaculture",
     description:
       "Nepal's leading fish feed manufacturer based in Khairahani, Chitwan. Produces floating feeds under the brand Matsya Raja. Plant equipped with Austrian ANDRITZ technology.",
-    badge: "Pre-IPO",
+    badge: "IPO FILED",
     badgeType: "preipo",
     tags: [
       "33,500 MT/year",

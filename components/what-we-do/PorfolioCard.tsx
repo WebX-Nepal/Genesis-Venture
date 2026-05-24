@@ -18,6 +18,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
     "hotel-forest-inn": "/portfolio/Hospitality/forest inn.webp",
     "kbnr-isuwa": "/portfolio/Hydropower/kbnr iswa hydropower.png",
     "ayu-malum": "/portfolio/Hydropower/ayu malun hydro.jpeg",
+    "solar-farm": "/portfolio/Hydropower/solar.png",
     "maruti-cements": "/portfolio/Manufacturing/maruti.png",
     "shubhshree-agni": "/portfolio/Manufacturing/shubhashree.png",
     "mahashakti-cement": "/portfolio/Manufacturing/mahashakti cement.jpg",
@@ -57,7 +58,7 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
   };
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden border border-[#8D1E39]/35 bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
+    <article className="group relative flex h-full flex-col overflow-hidden border border-[#8D1E39]/99 bg-white font-montserrat transition-all duration-300 hover:-translate-y-1.5 hover:border-[#8D1E39]/45 hover:shadow-[0_24px_56px_rgba(26,46,74,0.16)]">
       <div className="relative h-[170px] overflow-hidden border-b border-[#8D1E39] bg-white p-4">
         {headerImage ? (
           <Image

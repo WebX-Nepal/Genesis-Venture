@@ -11,7 +11,7 @@ interface FeaturedPortfolioCardProps {
 const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
   return (
     <div className="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4">
-      <article className="group relative grid overflow-hidden border border-[#8D1E39]/35 bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/65 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
+      <article className="group relative grid overflow-hidden border border-[#8D1E39]/22 bg-white font-montserrat transition-all duration-300 hover:border-[#8D1E39]/45 hover:shadow-[0_24px_56px_rgba(26,46,74,0.14)] lg:grid-cols-[300px_1fr]">
         <div className="relative overflow-hidden bg-white p-8">
           <Image
             src="/portfolio/Others/sopan.png"
