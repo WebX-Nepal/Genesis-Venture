@@ -34,8 +34,8 @@ export default function Leadership() {
         </div>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start lg:gap-16">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#112746] via-[#173053] to-[#1f4067] p-9 lg:sticky lg:top-24 lg:self-start">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.18),transparent_45%)]" />
+          <div className="relative overflow-hidden bg-[#001D3F] p-9 lg:sticky lg:top-24 lg:self-start">
+            <div className="absolute inset-0 " />
             <div className="relative z-10">
               <div className="mb-7 flex h-20 w-20 items-center justify-center border border-white/30 bg-white/15 font-[PPFONT] text-3xl text-white/90">
                 AR
@@ -70,14 +70,14 @@ export default function Leadership() {
             </div>
           </div>
 
-          <div className="text-[#173053]">
+          <div className="text-justify text-[#173053]">
             <div className="mb-6 border-l-2 border-[#8D1E39] pl-4 text-[13px] uppercase tracking-[0.2em] text-[#8D1E39] font-montserrat">
               Founder Profile
             </div>
             {leaderParagraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mb-5 text-[16px] sm:text-[17px] leading-[1.65] last:mb-0 font-montserrat text-[#2a4363]"
+                className="mb-5 text-[16px] sm:text-[17px] text-justify leading-[1.65] last:mb-0 font-montserrat text-[#2a4363]"
               >
                 {paragraph}
               </p>
