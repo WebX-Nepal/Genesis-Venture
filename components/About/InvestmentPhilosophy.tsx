@@ -12,7 +12,7 @@ const philosophyRows = [
   {
     title: "Conviction Over Noise",
     body: "We prioritize long-term fundamentals over short-term headlines. Our decisions are built on business quality, governance strength, and clarity of execution.",
-    image: "/coin/1.png",
+    image: "/contact/image.png",
   },
   {
     title: "Early Entry Advantage",
@@ -94,7 +94,18 @@ const InvestmentPhilosophy = () => {
       className="w-full bg-white py-10 sm:py-12 md:py-14 lg:py-16"
     >
       <div className="layout-7xl">
-        <div className="flex flex-col gap-0">
+        <div className="mb-8 border-t border-[#8D1E39]/45 pt-5 text-center sm:mb-10">
+          <h2 className="investment-philosophy-heading font-agatho text-[clamp(2.2rem,5.2vw,3.8rem)] leading-[1.06] text-[#173053]">
+            Our Approach
+          </h2>
+          <p
+            id="animated-paragraph"
+            className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-[#4e617d] sm:text-base font-montserrat"
+          >
+            We combine long-term conviction with disciplined underwriting to back resilient businesses and create sustainable value across market cycles.
+          </p>
+        </div>
+        <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}

@@ -2,6 +2,7 @@
 import InvestmentPhilosophy from "@/components/About/InvestmentPhilosophy";
 import IntroCommitment from "@/components/what-we-do/Philosophy/IntroCommitment";
 import Pagehero from "@/components/ui/heropages";
+import Principles from "@/components/what-we-do/Philosophy/principle";
 
 export default function InvestmentPhylosophyPage() {
   return (
@@ -21,7 +22,9 @@ export default function InvestmentPhylosophyPage() {
         baseClassName="bg-transparent"
         showVideoFallback={false}
       />
+
       <IntroCommitment />
+            <Principles />
       <InvestmentPhilosophy />
 
     </main>

@@ -5,7 +5,7 @@ export default function IntroCommitment() {
       <div className="layout-7xl border-b border-[#e6c7cf] pb-8 sm:pb-10">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="font-agatho text-[clamp(1.7rem,4.1vw,3rem)] leading-[1.15] text-[#173053]">
-            Integrity Before, <span className="italic text-[#8D1E39]">Returns Always.</span>
+            Integrity Before Returns. <span className=" text-[#8D1E39]"> Always.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-4xl font-montserrat text-base leading-relaxed text-[#385273] sm:text-lg">
             Genesis Ventures Ltd. is an independent investment firm that places
