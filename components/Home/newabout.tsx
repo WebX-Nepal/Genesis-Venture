@@ -50,7 +50,7 @@ export default function Firm() {
               <div className="absolute right-0 top-0 h-24 w-24 translate-x-7 -translate-y-7 border border-[#162e54]/10" />
               <div className="relative z-10">
                 <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39] sm:text-[11px]">
-                  0{index + 1} - {item.label}
+                 {item.label}
                 </p>
                 <h3 className="mt-3 font-montserrat text-[clamp(1.25rem,5vw,2rem)] font-semibold leading-[1.1] text-[#162e54]">
                   {item.value}

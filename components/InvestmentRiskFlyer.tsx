@@ -197,9 +197,7 @@ export default function InvestmentRiskModal({ onClose }: Props) {
                   className="group border border-[#3388db] bg-[#0A6ED3]/75 px-4 py-4 transition-colors duration-200 hover:border-[#5fa4e5]"
                 >
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
-                      0{index + 1}
-                    </span>
+                  
                     <h4 className="text-[10px] uppercase tracking-[0.18em] text-white font-montserrat font-semibold">
                       {p.title}
                     </h4>
