@@ -28,7 +28,7 @@ const navLinks = [
     ],
   },
   { label: "Investor Relations", href: "/investment-relation", dropdown: null },
-  { label: "Get in Touch", href: "/Contacts", dropdown: null },
+  { label: "Lets Connect", href: "/Contacts", dropdown: null },
 ];
 
 export default function NavBar() {

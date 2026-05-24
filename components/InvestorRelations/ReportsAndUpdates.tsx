@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -59,15 +58,14 @@ export default function ReportsAndUpdates() {
   const renderBlueCards = (cards: readonly ReportCardItem[]) => (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
       {cards.map((card) => (
-        <Link
+        <div
           key={card.slug}
-          href={`/investment-relation/${card.slug}`}
           className="flex min-h-[180px] items-center justify-center bg-[#162e54] p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:bg-[#8D1E39] hover:shadow-[0_16px_32px_rgba(22,46,84,0.35)]"
         >
           <p className="max-w-[13ch] text-[1.2rem] font-semibold leading-[1.2] text-white sm:text-[1.35rem]">
             {card.title}
           </p>
-        </Link>
+        </div>
       ))}
     </div>
   );
@@ -86,7 +84,7 @@ export default function ReportsAndUpdates() {
           {activeTab === 1 ? (
             <section>
               {renderBlueCards(shareholderCards)}
-              <div className="mt-10 rounded-none bg-zinc-100 p-5 text-left sm:p-6">
+              {/* <div className="mt-10 rounded-none bg-zinc-100 p-5 text-left sm:p-6">
                 <h4 className="font-montserrat text-[clamp(1.45rem,2.5vw,2rem)] font-semibold text-[#162e54]">
                   Stock Exchange Announcements
                 </h4>
@@ -116,7 +114,7 @@ export default function ReportsAndUpdates() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </section>
           ) : null}
 
@@ -177,27 +175,27 @@ export default function ReportsAndUpdates() {
             <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
               <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <BadgeDollarSign className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
-                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Gross Revenue</p>
-                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">Rs 73,465</p>
+                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Funds Deployed</p>
+                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">80 +</p>
                 <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Crores</p>
               </article>
               <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <TrendingUp className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
-                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Portfolio Value Growth</p>
-                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">Rs 24,025</p>
-                <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Crores</p>
+                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Largest Holding</p>
+                <p className="mt-4 font-montserrat text-[1.25rem] font-semibold leading-none text-[#162e54]">Maruti Cement Ltd.</p>
+                <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">14.14 Crores</p>
               </article>
               <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <Factory className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
-                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">High-Growth Portfolio Companies</p>
-                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">11</p>
+                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Number of Investments Made Last Quarter</p>
+                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">5</p>
                 <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Businesses</p>
               </article>
               <article className="flex flex-col items-center border border-[#8D1E39]/35 bg-zinc-100 px-5 py-6 transition-shadow duration-200 hover:shadow-[0_12px_24px_rgba(22,46,84,0.14)]">
                 <Sprout className="mb-3 text-[#8D1E39]" size={42} strokeWidth={2.1} />
-                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Long-Term Investor Partnerships</p>
-                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">25+</p>
-                <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Partners</p>
+                <p className="font-montserrat text-[1.15rem] font-semibold text-[#8D1E39]">Funds Deployed Last Quarter</p>
+                <p className="mt-4 font-montserrat text-[2.2rem] font-semibold leading-none text-[#162e54]">8</p>
+                <p className="mt-1 font-montserrat text-[1rem] font-semibold text-[#162e54]">Crores</p>
               </article>
             </div>
           </section>

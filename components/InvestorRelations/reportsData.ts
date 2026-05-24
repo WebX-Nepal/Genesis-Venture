@@ -20,19 +20,20 @@ export type ReportCardItem = {
 
 export const financialReportingCards: readonly ReportCardItem[] = [
   {
+    slug: "genesis-report-and-accounts",
+    title: "Annual Report and Accounts",
+    file: "Genesis-Ventures-Report-and-Accounts-2025.pdf",
+    section: "Financial Reporting",
+    summary: "Comprehensive annual report with governance, strategy, and audited financial statements.",
+  },
+  {
     slug: "quarterly-results",
     title: "Quarterly Results",
     file: "Q4-2024-Quarterly-Results.pdf",
     section: "Financial Reporting",
     summary: "Quarterly performance highlights, portfolio movement, and key operational updates.",
   },
-  {
-    slug: "genesis-report-and-accounts",
-    title: "Genesis Ventures Report and Accounts",
-    file: "Genesis-Ventures-Report-and-Accounts-2025.pdf",
-    section: "Financial Reporting",
-    summary: "Comprehensive annual report with governance, strategy, and audited financial statements.",
-  },
+
   {
     slug: "press-releases",
     title: "Press Releases",
@@ -51,18 +52,11 @@ export const financialReportingCards: readonly ReportCardItem[] = [
 
 export const shareholderCards: readonly ReportCardItem[] = [
   {
-    slug: "disclosures-regulation-46",
-    title: "Disclosures Under Regulation 46 of the SEBI Listing Regulations",
-    file: "Disclosures-Under-Regulation-46-2026.pdf",
+    slug: "shareholder-agm-information",
+    title: "Shareholder & AGM Information",
+    file: "Shareholder-AGM-Information-2026.pdf",
     section: "Shareholders' Information",
-    summary: "Central repository of mandated public disclosures for investor transparency and compliance.",
-  },
-  {
-    slug: "genesis-shareholding-pattern",
-    title: "Genesis Shareholding Pattern",
-    file: "Genesis-Shareholding-Pattern-2026.pdf",
-    section: "Shareholders' Information",
-    summary: "Updated distribution of share ownership across promoter, institutional, and other categories.",
+    summary: "Meeting schedules, notices, participation guidance, and post-AGM outcome disclosures.",
   },
   {
     slug: "unclaimed-unpaid-dividend",
@@ -72,12 +66,22 @@ export const shareholderCards: readonly ReportCardItem[] = [
     summary: "Details of unclaimed dividends and the process for shareholder claim requests.",
   },
   {
-    slug: "shareholder-agm-information",
-    title: "Shareholder & AGM Information",
-    file: "Shareholder-AGM-Information-2026.pdf",
+    slug: "disclosures-regulation-46",
+    title: "Disclosures under SEBON Listing Regulations",
+    file: "Disclosures-Under-Regulation-46-2026.pdf",
     section: "Shareholders' Information",
-    summary: "Meeting schedules, notices, participation guidance, and post-AGM outcome disclosures.",
+    summary: "Central repository of mandated public disclosures for investor transparency and compliance.",
   },
+
+
+  {
+    slug: "genesis-shareholding-pattern",
+    title: "Genesis Shareholding Pattern",
+    file: "Genesis-Shareholding-Pattern-2026.pdf",
+    section: "Shareholders' Information",
+    summary: "Updated distribution of share ownership across promoter, institutional, and other categories.",
+  },
+
 ] as const;
 
 export const investorServiceCards: readonly ReportCardItem[] = [

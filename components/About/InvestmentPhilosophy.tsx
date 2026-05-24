@@ -105,7 +105,7 @@ const InvestmentPhilosophy = () => {
             We combine long-term conviction with disciplined underwriting to back resilient businesses and create sustainable value across market cycles.
           </p>
         </div>
-        <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
+        <div className="flex flex-col gap-0">
           {philosophyRows.map((row, index) => (
             <article
               key={row.title}

@@ -44,21 +44,34 @@ export default function Principle() {
         </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {principles.map((item) => {
+          {principles.map((item, index) => {
             const Icon = item.icon;
+            const isBlue = index % 2 === 0;
             return (
               <article
                 key={item.title}
-                className="min-h-[380px] border border-[#8D1E39] bg-[#001D3F] p-6 text-center shadow-[0_10px_24px_rgba(22,46,84,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-[#8D1E39] hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:min-h-[410px] sm:p-7"
+                className={`min-h-[380px] border border-[#8D1E39] p-6 text-center shadow-[0_10px_24px_rgba(22,46,84,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-[#8D1E39] hover:shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:min-h-[410px] sm:p-7 ${
+                  isBlue ? "bg-[#001D3F]" : "bg-white"
+                }`}
               >
                 <Icon
-                  className="mx-auto mb-5 h-12 w-12 text-white/90 transition-colors duration-300 group-hover:text-[#8D1E39]"
+                  className={`mx-auto mb-5 h-12 w-12 transition-colors duration-300 group-hover:text-[#8D1E39] ${
+                    isBlue ? "text-white/90" : "text-[#173053]"
+                  }`}
                   strokeWidth={1.8}
                 />
-                <h3 className="font-agatho text-[1.5rem] leading-[1.15] text-white">
+                <h3
+                  className={`font-agatho text-[1.5rem] leading-[1.15] ${
+                    isBlue ? "text-white" : "text-[#173053]"
+                  }`}
+                >
                   {item.title}
                 </h3>
-                <p className="mt-3 text-[12px] leading-[1.75] text-white/85 sm:text-[15px]">
+                <p
+                  className={`mt-3 text-[12px] leading-[1.75] sm:text-[15px] ${
+                    isBlue ? "text-white/85" : "text-[#2a4363]"
+                  }`}
+                >
                   {item.description}
                 </p>
               </article>
