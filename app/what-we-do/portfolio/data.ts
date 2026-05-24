@@ -73,7 +73,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Hospitality & Tourism",
     description:
       "Nepal's first gondola cable car in Pokhara - 2.3 km from Sedi Bagar to Sarangkot in 10 minutes. Panoramic views of the Annapurna range and Machhapuchhre. Rs 2 billion investment, operational since Feb 2022.",
-    badge: "Growth Stage",
+    badge: "IPO FILED",
     badgeType: "growth",
     tags: ["Pokhara", "2.3 km Ropeway", "17 Gondolas", "Est. 2022"],
   },
@@ -95,7 +95,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Hospitality & Tourism",
     description:
       "One of Genesis Ventures' 3 IPO exits. Listed on NEPSE March 2026 (ticker: HFIN) with 20 million shares. Paid-up capital Rs 2 Arba. A milestone demonstrating the firm's ability to invest early and exit at listing.",
-    badge: "IPO Exit · HFIN",
+    badge: "IPO · HFIN",
     badgeType: "ipo",
     tags: ["HFIN - Listed Mar 2026", "IPO Exit", "Hotels & Tourism"],
   },
