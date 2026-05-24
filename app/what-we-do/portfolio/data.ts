@@ -18,13 +18,13 @@ export interface PortfolioItem {
   description: string;
   badge: string;
   badgeType:
-    | "growth"
-    | "est"
-    | "preipo"
-    | "listed"
-    | "ipo"
-    | "operational"
-    | "construction";
+  | "growth"
+  | "est"
+  | "preipo"
+  | "listed"
+  | "ipo"
+  | "operational"
+  | "construction";
   tags: string[];
   progress?: number;
   isFeatured?: boolean;
@@ -165,7 +165,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Manufacturing & Processing",
     description:
       "Nepal's first private sector Greenfield cement plant using Rotary Technology, Chandraudaipur, Siraha. ISO 9001:2015 and 14001:2015 certified. First producer of 53-grade OPC cement.",
-    badge: "NEPSE · MARUTI",
+    badge: "IPO FILED",
     badgeType: "listed",
     tags: ["MARUTI", "First Greenfield", "Siraha", "ISO 9001 & 14001"],
   },
@@ -176,7 +176,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Manufacturing & Processing",
     description:
       "Part of the Agni Group. Integrated clinker and cement manufacturer using German VRM technology, 1,200 TPD grinding capacity. Produces OPC and PPC cement from own limestone mines.",
-    badge: "Growth Stage",
+    badge: "IPO FILED",
     badgeType: "growth",
     tags: ["Agni Group", "German VRM Tech", "1,200 TPD", "Own Mines"],
   },
@@ -198,7 +198,7 @@ export const portfolioItems: PortfolioItem[] = [
     sector: "Manufacturing & Processing",
     description:
       "Premium spirits and liquor manufacturer operating in Nepal. Producing high-quality distilled beverages with a focus on domestic market penetration and import substitution.",
-    badge: "Growth Stage",
+    badge: "IPO FILED",
     badgeType: "growth",
     tags: ["Spirits & Liquor", "Consumer Goods", "Import Substitution"],
   },

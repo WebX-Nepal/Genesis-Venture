@@ -50,7 +50,7 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
             ))}
           </div>
 
-          <div className="mb-8 grid grid-cols-2 gap-0 overflow-hidden border border-[#8D1E39]/25 sm:grid-cols-4">
+          <div className="mb-8 grid grid-cols-2 bg-[#001D3F] gap-0 overflow-hidden border border-[#8D1E39]/25 sm:grid-cols-4">
             {item.stats?.map((stat) => (
               <div key={stat.label} className="border-r border-[#8D1E39]/25 bg-white px-4 py-3 last:border-r-0">
                 <p className="font-agatho text-[1.15rem] leading-none text-[#1A2E4A]">
