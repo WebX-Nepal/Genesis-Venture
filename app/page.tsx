@@ -14,7 +14,7 @@ import Blog from "@/components/Home/blog";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-  //delay of 2 second for loader animation to finish
+  
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true)
@@ -29,8 +29,8 @@ export default function Home() {
       {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
-      {/* <Blog /> */}
-      {/* <ScrollingHeadline /> */}
+      {/* <Blog />  */}
+      {/* <ScrollingHeadline />  */}
     </main>
   );
 }
