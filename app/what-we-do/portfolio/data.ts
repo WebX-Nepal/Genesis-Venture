@@ -124,8 +124,8 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "ayu-malum",
-    name: "Ayu Malum Hydro",
-    shortName: "Ayu Malum Hydro",
+    name: "Ayumalun Hydro",
+    shortName: "Ayumalun Hydro",
     sector: "Hydropower",
     description:
       "21 MW run-of-river on Aayu Malun Khola, Okhaldhunga. Currently under construction with 25% completion. Total project cost of Rs 17.5 Cr/MW (total ~Rs 367 Cr).",
@@ -136,7 +136,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "abiral-hydro",
-    name: "Abiral Hydro Pvt. Ltd.",
+    name: "Abiral Hydro Ltd.",
     shortName: "Abiral Hydro",
     sector: "Hydropower",
     description:
