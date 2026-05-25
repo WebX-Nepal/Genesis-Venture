@@ -20,7 +20,6 @@ export default function Home() {
       setShowModal(true)
     }, 2000)
   }, [])
-
   return (
     <main className="w-full font-[PPFONT]">
       {showModal && <InvestmentRiskModal onClose={() => setShowModal(false)} />}
