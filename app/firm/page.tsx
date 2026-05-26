@@ -18,7 +18,7 @@ export default function WhoWeAreFirmPage() {
         heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/50"
         titleClassName="font-agatho text-white capitalize "
-        baseClassName="bg-transparent"
+        baseClassName="bg-genesis-navy"
         showVideoFallback={false}
       />
       <FirmWhoWeAreSection />

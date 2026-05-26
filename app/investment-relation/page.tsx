@@ -20,7 +20,7 @@ export default function InvestorRelationsPage() {
         backgroundImageAlt="Investor Relations hero background"
         heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/60"
-        baseClassName="bg-transparent"
+        baseClassName="bg-genesis-navy"
         showVideoFallback={false}
       />
       <ReportsAndUpdates />

@@ -12,7 +12,7 @@ export default function OurStoryHero() {
       heightClassName="h-screen"
       overlayClassName="bg-[#001D3F]/50"
       backgroundImage="/pageimage/story.png"
-      baseClassName="bg-transparent"
+      baseClassName="bg-genesis-navy"
       showVideoFallback={false}
       crumbs={[
         { label: "Home", href: "/" },
