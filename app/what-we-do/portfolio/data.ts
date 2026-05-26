@@ -69,7 +69,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "annapurna-cable-car",
-    name: "Annapurna Cable Car Pvt. Ltd.",
+    name: "Annapurna Cable Car Ltd.",
     shortName: "Annapurna Cable Car",
     sector: "Hospitality & Tourism",
     description:

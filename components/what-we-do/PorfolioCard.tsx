@@ -10,9 +10,9 @@ interface PortfolioCardProps {
 
 const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
   const imageById: Partial<Record<PortfolioItem["id"], string>> = {
-    "divine-healthcare": "/portfolio/Healthcare & Pharma/divine.png",
-    "florid-labs": "/portfolio/Healthcare & Pharma/florid.jpg",
-    "frontline-hospital": "/portfolio/Healthcare & Pharma/frontline hospital.png",
+    "divine-healthcare": "/portfolio/healthcare/divine.png",
+    "florid-labs": "/portfolio/healthcare/florid.jpg",
+    "frontline-hospital": "/portfolio/healthcare/frontline.png",
     "annapurna-cable-car": "/portfolio/Hospitality/annapurna cable car.png",
     "bandipur-cable-car": "/portfolio/Hospitality/bandipur cable car.png",
     "hotel-forest-inn": "/portfolio/Hospitality/forest inn.webp",
