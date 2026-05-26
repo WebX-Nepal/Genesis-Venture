@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
 import Title from "./Title";
 import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 
@@ -53,6 +54,7 @@ export default function Pagehero({
   lastCrumbSeparatorClassName = "",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const imageLayerRef = useRef<HTMLDivElement | null>(null);
   const { setHeroVideoReady } = useHeroVideoLoad();
 
   useEffect(() => {
@@ -72,6 +74,26 @@ export default function Pagehero({
       setHeroVideoReady(true);
     };
   }, [backgroundVideo, setHeroVideoReady]);
+
+  useEffect(() => {
+    if (!backgroundImage || !imageLayerRef.current) return;
+
+    const tween = gsap.fromTo(
+      imageLayerRef.current,
+      { scale: 1.02 },
+      {
+        scale: 1.1,
+        duration: 7,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+      },
+    );
+
+    return () => {
+      tween.kill();
+    };
+  }, [backgroundImage]);
 
   return (
     <section
@@ -111,13 +133,15 @@ export default function Pagehero({
           </video>
         </>
       ) : backgroundImage ? (
-        <Image
-          src={backgroundImage}
-          alt={backgroundImageAlt}
-          fill
-          priority
-          className={`absolute inset-0 h-full w-full z-0 ${backgroundImageClassName}`}
-        />
+        <div ref={imageLayerRef} className="absolute inset-0 z-0 will-change-transform">
+          <Image
+            src={backgroundImage}
+            alt={backgroundImageAlt}
+            fill
+            priority
+            className={`absolute inset-0 h-full w-full ${backgroundImageClassName}`}
+          />
+        </div>
       ) : null}
       <div className={`absolute inset-0 z-10 ${overlayClassName}`} />
 

@@ -18,8 +18,11 @@ const PortfolioHeroSection = () => {
         { label: "Home", href: "/" },
         { label: "What We Do", href: "/what-we-do/portfolio" },
         { label: "Portfolio" },
-      ]}
-      backgroundVideo="/videos/pro.mp4"
+        ]}
+        // backgroundVideo="/videos/pro.mp4"
+        backgroundImage="/pageimage/pro.png"
+        backgroundImageClassName="object-cover"
+
       backgroundImageAlt="Portfolio hero background"
       heightClassName="h-screen"
       overlayClassName="bg-[#001D3F]/60"

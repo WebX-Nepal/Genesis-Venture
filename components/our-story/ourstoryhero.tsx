@@ -7,10 +7,11 @@ export default function OurStoryHero() {
     <Pagehero
       title={["Greatness Is Not Born", "It Is Built"]}
       description="We do not just read balance sheets. We understand what it takes to build a business and weather a cycle."
-      backgroundVideo="/videos/newstory.mp4"
-      backgroundImageClassName="object-contain opacity-16"
+      // backgroundVideo="/videos/newstory.mp4"
+      backgroundImageClassName="object-cover"
       heightClassName="h-screen"
       overlayClassName="bg-[#001D3F]/50"
+      backgroundImage="/pageimage/story.png"
       baseClassName="bg-transparent"
       showVideoFallback={false}
       crumbs={[

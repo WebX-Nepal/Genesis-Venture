@@ -11,9 +11,10 @@ export default function WhoWeAreFirmPage() {
           { label: "Home", href: "/" },
           { label: "Firm" },
         ]}
-        // backgroundImage="/gif/firmgif.gif"
-        backgroundVideo="/videos/newfirm.mp4"
-        backgroundImageClassName="object-contain opacity-30"
+        backgroundImage="/pageimage/firm.png"
+        
+        // backgroundVideo="/videos/newfirm.mp4"
+        backgroundImageClassName="object-cover "
         heightClassName="h-screen"
         overlayClassName="bg-[#001D3F]/50"
         titleClassName="font-agatho text-white capitalize "
