@@ -26,7 +26,7 @@ const PortfolioHeroSection = () => {
       backgroundImageAlt="Portfolio hero background"
       heightClassName="h-screen"
       overlayClassName="bg-[#001D3F]/60"
-      baseClassName="bg-white"
+      baseClassName="bg-genesis-navy"
       crumbsContainerClassName="text-white/90"
       crumbLinkClassName="text-white hover:text-white/80"
       crumbCurrentClassName="text-[#8D1E39]"
