@@ -8,7 +8,7 @@ type HeroVideoLoadContextValue = {
 };
 
 const HeroVideoLoadContext = createContext<HeroVideoLoadContextValue>({
-  isHeroVideoReady: true,
+  isHeroVideoReady: false,
   setHeroVideoReady: () => {},
 });
 
@@ -17,7 +17,7 @@ export function HeroVideoLoadProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isHeroVideoReady, setHeroVideoReady] = useState(true);
+  const [isHeroVideoReady, setHeroVideoReady] = useState(false);
 
   const value = useMemo(
     () => ({ isHeroVideoReady, setHeroVideoReady }),

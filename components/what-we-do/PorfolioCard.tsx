@@ -27,15 +27,11 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
     "sopan-multiple": "/portfolio/Others/sopan.png",
     "annapurna-maccha": "/portfolio/Manufacturing/annapurnamaccha.png",
     "mero-kisan": "/portfolio/agro/mero kishan.png",
+    "nepal-broadcasting-channel": "/media/news24.png",
+    "dish-home": "/media/dishhome.jpg",
   };
   const headerImage = imageById[item.id];
-  const tagColorClasses = [
-    "bg-[#E7F0FF] text-[#173053]",
-    "bg-[#E7F8EE] text-[#1E5A3A]",
-    "bg-[#FDEBEC] text-[#8D1E39]",
-    "bg-[#F0EAF8] text-[#4A1A8A]",
-    "bg-[#FBF5E6] text-[#8B6914]",
-  ];
+  const tagClassName = "bg-[#E7F0FF] text-[#173053]";
 
   const badgeTypeClasses: Record<PortfolioItem["badgeType"], string> = {
     growth: "bg-[#dce8f7] text-[#274a73] border-[#b8cce4]",
@@ -109,10 +105,10 @@ const PortfolioCard: FC<PortfolioCardProps> = ({ item }) => {
         ) : null}
 
         <div className="mt-4 flex flex-wrap gap-2 border-t border-[#8D1E39]/25 pt-4">
-          {item.tags.map((tag: string, index: number) => (
+          {item.tags.map((tag: string) => (
             <span
               key={tag}
-              className={`${tagColorClasses[index % tagColorClasses.length]} px-2.5 py-1 text-[10.5px] font-medium`}
+              className={`${tagClassName} px-2.5 py-1 text-[10.5px] font-medium`}
             >
               {tag}
             </span>

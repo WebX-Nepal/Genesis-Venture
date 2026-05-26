@@ -47,7 +47,6 @@ export default function Firm() {
               key={`metric-${item.label}`}
               className="firm-item group relative min-h-[220px] overflow-hidden border border-[#8D1E39]/30 bg-white/95 p-5 shadow-[0_10px_24px_rgba(22,46,84,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(22,46,84,0.13)] sm:min-h-[240px] sm:p-6"
             >
-              <div className="absolute right-0 top-0 h-24 w-24 translate-x-7 -translate-y-7 border border-[#162e54]/10" />
               <div className="relative z-10">
                 <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39] sm:text-[11px]">
                  {item.label}

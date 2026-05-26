@@ -7,6 +7,7 @@ import FooterFixed from "@/components/layout/FooterFixed";
 import NavBar from "@/components/layout/NavBar";
 import { PreLoaderProvider } from "@/context/PreLoaderContext";
 import { HeroVideoLoadProvider } from "@/context/HeroVideoLoadContext";
+import Preloader from "@/components/ui/Preloader";
   
 const agatho = localFont({
   variable: "--font-agatho",
@@ -64,6 +65,7 @@ export default function RootLayout({
         <LenisProvider>
           <PreLoaderProvider>
             <HeroVideoLoadProvider>
+              <Preloader />
               <NavBar />
               {children}
               <FooterFixed />

@@ -7,12 +7,13 @@ import { useHeroVideoLoad } from "@/context/HeroVideoLoadContext";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const headingRef = useRef<HTMLHeadingElement | null>(null);
+  const eyebrowRef = useRef<HTMLDivElement | null>(null);
   const [isVideoReady, setIsVideoReady] = useState(false);
   const { setHeroVideoReady } = useHeroVideoLoad();
 
   useEffect(() => {
     setHeroVideoReady(false);
-    return () => setHeroVideoReady(true);
   }, [setHeroVideoReady]);
 
   useGSAP(
@@ -32,6 +33,36 @@ export default function Hero() {
       }
     },
     { scope: sectionRef }
+  );
+
+  useGSAP(
+    () => {
+      if (!isVideoReady || !headingRef.current || !eyebrowRef.current) return;
+
+      const titleLines = headingRef.current.querySelectorAll("span");
+      const tl = gsap.timeline();
+
+      tl.fromTo(
+        eyebrowRef.current,
+        { opacity: 0, y: 16, filter: "blur(5px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.45, ease: "power3.out" },
+      );
+
+      tl.fromTo(
+        titleLines,
+        { opacity: 0, y: 34, filter: "blur(8px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          stagger: 0.12,
+          duration: 0.58,
+          ease: "power3.out",
+        },
+        "-=0.18",
+      );
+    },
+    { dependencies: [isVideoReady], scope: sectionRef },
   );
 
   return (
@@ -55,11 +86,11 @@ export default function Hero() {
         }}
         className={`absolute inset-0 h-[115%] w-full object-cover will-change-transform transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
       >
-        <source src="/videos/hero.mp4" type="video/mp4" />
+        <source src="/videos/hero1.mp4" type="video/mp4" />
       </video>
 
       <div className="relative z-10 mx-auto -translate-y-14 flex w-full max-w-5xl flex-col items-center justify-center text-center md:-translate-y-20">
-        <div className="mb-7 flex items-center gap-4 text-white/80 md:mb-8">
+        <div ref={eyebrowRef} className="mb-7 flex items-center gap-4 text-white/80 md:mb-8">
           <span className="h-px w-10 bg-white/35 md:w-16" />
           <span
             className="font-montserrat text-[10px] font-medium uppercase tracking-[0.45em] text-white/75"
@@ -69,6 +100,7 @@ export default function Hero() {
           <span className="h-px w-10 bg-white/35 md:w-16" />
         </div>
         <h1
+          ref={headingRef}
           className="font-agatho text-[clamp(2.05rem,8.2vw,3.8rem)] font-medium text-center leading-[1.08] tracking-wide text-white"
         >
           <span className="block">Creating Long Term</span>

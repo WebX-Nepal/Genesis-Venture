@@ -64,16 +64,10 @@ const FeaturedPortfolioCard: FC<FeaturedPortfolioCardProps> = ({ item }) => {
           </div>
 
           <div className="flex flex-wrap gap-2 border-t border-[#8D1E39]/25 pt-5">
-            {item.tags.map((tag: string, idx: number) => (
+            {item.tags.map((tag: string) => (
               <span
                 key={tag}
-                className={`px-2.5 py-1 text-[10.5px] font-medium ${
-                  idx % 3 === 0
-                    ? "bg-[#f0eaf8] text-[#4A1A8A]"
-                    : idx % 3 === 1
-                    ? "bg-[#fbf5e6] text-[#8B6914]"
-                    : "bg-[#f7eeed] text-[#8B1C1C]"
-                }`}
+                className="bg-[#E7F0FF] px-2.5 py-1 text-[10.5px] font-medium text-[#173053]"
               >
                 {tag}
               </span>

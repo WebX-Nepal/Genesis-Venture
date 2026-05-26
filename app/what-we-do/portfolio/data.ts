@@ -5,6 +5,7 @@ export const sectorTabs = [
   { key: "Hospitality & Tourism", title: "Hospitality" },
   { key: "Healthcare & Pharma", title: "Healthcare" },
   { key: "Agro & Aquaculture", title: "Agro" },
+  { key: "Media", title: "Media" },
   { key: "Others", title: "Others" },
 ] as const;
 
@@ -171,6 +172,22 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ["Solar Energy", "NEA Grid", "Unlisted Equity"],
   },
   {
+    id: "pashupati-energy",
+    name: "Pashupati Energy",
+    shortName: "Pashupati Energy",
+    sector: "Hydropower",
+    description:
+      "20 MW utility-scale solar power project under construction in Barju, Eastern Nepal. On completion, it will contribute clean renewable energy to Nepal's national grid, supporting the country's growing power demand and energy independence goals.",
+    badge: "Under Construction",
+    badgeType: "construction",
+    tags: [
+      "20 MW Solar",
+      "Barju, Eastern Nepal",
+      "Under Construction",
+      "Renewable Energy",
+    ],
+  },
+  {
     id: "maruti-cements",
     name: "Maruti Cements Ltd.",
     shortName: "MARUTI Cements",
@@ -279,6 +296,28 @@ export const portfolioItems: PortfolioItem[] = [
       "Khairahani, Chitwan",
       "Pre-IPO · AMDU",
     ],
+  },
+  {
+    id: "nepal-broadcasting-channel",
+    name: "Nepal Broadcasting Channel Ltd.",
+    shortName: "Nepal Broadcasting Channel",
+    sector: "Media",
+    description:
+      "Leading national free-to-air television broadcaster with wide viewership across Nepal. A key voice in Nepal's broadcast media landscape, delivering news, entertainment, and public affairs programming.",
+    badge: "IPO Filed",
+    badgeType: "preipo",
+    tags: ["Free-to-Air TV", "National Broadcaster", "News & Entertainment"],
+  },
+  {
+    id: "dish-home",
+    name: "Dish Home Ltd.",
+    shortName: "Dish Home",
+    sector: "Media",
+    description:
+      "Nepal's leading direct-to-home (DTH) satellite television service provider, offering 200+ channels to a nationwide subscriber base. A dominant player in Nepal's media and entertainment sector with deep rural and urban reach.",
+    badge: "IPO Filed",
+    badgeType: "preipo",
+    tags: ["DTH Television", "200+ Channels", "Nationwide", "Media & Entertainment"],
   },
 ];
 

@@ -34,14 +34,17 @@ export default function PortfolioSection({
   return (
     <section id="portfolio" className="py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="layout-7xl">
-        <div className="mb-8 flex flex-col justify-between gap-6 border-b border-[#8D1E39]/99 pb-8 md:flex-row md:items-end">
+        <div className="mb-8 border-b border-[#8D1E39]/99 pb-8 text-center">
           <div>
-            <h2 className="font-agatho text-[1.7rem] sm:text-[2rem] leading-[1.45] tracking-[-0.01em] text-[#08112a]">
+            <h2 className="font-agatho text-[2rem] sm:text-[2.35rem] leading-[1.3] tracking-[-0.01em] text-[#08112a]">
             Portfolio Companies
             </h2>
+            <p className="mx-auto mt-2 max-w-3xl font-montserrat text-sm leading-relaxed text-[#173053]/75 sm:text-base">
+              Explore our portfolio of high-conviction investments across sectors powering Nepal&apos;s long-term growth.
+            </p>
           </div>
 
-          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 whitespace-nowrap md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
+          <div className="-mx-1 mt-5 flex gap-2 overflow-x-auto whitespace-nowrap px-1 pb-1 md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
             {sectorTabs.map((sector) => {
               const isActive = sector.key === activeSector;
               return (
@@ -77,7 +80,7 @@ export default function PortfolioSection({
 
                 return (
                   <div key={sector.key} className="mb-16">
-                    <p className="mb-6 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-genesis-red font-poppins">
+                    <p className="mb-6 inline-flex items-center text-[13px] font-medium uppercase tracking-[0.2em] text-genesis-red font-poppins sm:text-sm">
                       {sector.title}
                     </p>
 
@@ -113,7 +116,7 @@ export default function PortfolioSection({
           </>
         ) : (
           <div>
-            <p className="mb-6 inline-flex items-center text-[11px] font-medium uppercase tracking-[0.28em] text-genesis-red font-poppins">
+            <p className="mb-6 inline-flex items-center text-[13px] font-medium uppercase tracking-[0.2em] text-genesis-red font-poppins sm:text-sm">
               {sectorTabs.find((s) => s.key === activeSector)?.title}
             </p>
             <div className="md:hidden overflow-x-auto snap-x snap-mandatory">

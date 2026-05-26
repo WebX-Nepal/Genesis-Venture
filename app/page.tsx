@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true)
-    }, 2000)
+    }, 10000)
   }, [])
   return (
     <main className="w-full font-[PPFONT]">
@@ -26,11 +26,8 @@ export default function Home() {
       <Hero />
       <Stats />
       <About />
-      {/* <Firm />  */}
       <Devider />
       <UnlistedMarket />
-      {/* <Blog />  */}
-      {/* <ScrollingHeadline />  */}
     </main>
   );
 }
