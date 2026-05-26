@@ -36,7 +36,7 @@ export interface PortfolioItem {
 export const portfolioItems: PortfolioItem[] = [
   {
     id: "divine-healthcare",
-    name: "Divine Healthcare Pvt. Ltd.",
+    name: "Divine Healthcare Ltd.",
     shortName: "DIVINE Healthcare",
     sector: "Healthcare & Pharma",
     description:
@@ -47,7 +47,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "florid-labs",
-    name: "Florid Laboratories Pvt. Ltd.",
+    name: "Florid Laboratories Ltd.",
     shortName: "FLORID Laboratories",
     sector: "Healthcare & Pharma",
     description:
@@ -149,7 +149,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "idi-hydro",
-    name: "Idi Hydropower Co. Pvt. Ltd.",
+    name: "Idi Hydropower Co. Ltd.",
     shortName: "Idi Hydro",
     sector: "Hydropower",
     description:
