@@ -41,9 +41,9 @@ export default function Pagehero({
   backgroundVideo,
   backgroundImageAlt = "",
   heightClassName = "h-screen",
-  overlayClassName = "bg-white/60",
+  overlayClassName = "bg-black/35",
   contentOffsetClassName = "",
-  baseClassName = "bg-white",
+  baseClassName = "bg-genesis-navy",
   showVideoFallback = true,
   backgroundImageClassName = "object-cover opacity-20",
   titleClassName = "font-agatho text-white",
@@ -54,6 +54,7 @@ export default function Pagehero({
   lastCrumbSeparatorClassName = "",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isImageReady, setIsImageReady] = useState(false);
   const imageLayerRef = useRef<HTMLDivElement | null>(null);
   const { setHeroVideoReady } = useHeroVideoLoad();
 
@@ -74,6 +75,11 @@ export default function Pagehero({
       setHeroVideoReady(true);
     };
   }, [backgroundVideo, setHeroVideoReady]);
+
+  useEffect(() => {
+    if (!backgroundImage) return;
+    setIsImageReady(false);
+  }, [backgroundImage]);
 
   useEffect(() => {
     if (!backgroundImage || !imageLayerRef.current) return;
@@ -133,15 +139,26 @@ export default function Pagehero({
           </video>
         </>
       ) : backgroundImage ? (
-        <div ref={imageLayerRef} className="absolute inset-0 z-0 will-change-transform">
-          <Image
-            src={backgroundImage}
-            alt={backgroundImageAlt}
-            fill
-            priority
-            className={`absolute inset-0 h-full w-full ${backgroundImageClassName}`}
-          />
-        </div>
+        <>
+          {!isImageReady ? (
+            <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
+          ) : null}
+          <div
+            ref={imageLayerRef}
+            className={`absolute inset-0 z-0 will-change-transform transition-opacity duration-500 ${
+              isImageReady ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={backgroundImage}
+              alt={backgroundImageAlt}
+              fill
+              priority
+              onLoad={() => setIsImageReady(true)}
+              className={`absolute inset-0 h-full w-full ${backgroundImageClassName}`}
+            />
+          </div>
+        </>
       ) : null}
       <div className={`absolute inset-0 z-10 ${overlayClassName}`} />
 
