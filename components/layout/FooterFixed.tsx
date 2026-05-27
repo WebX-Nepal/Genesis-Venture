@@ -3,17 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const nav = [
-  { label: "Who We Are", href: "/About" },
-  { label: "What We Do", href: "/what-we-do/portfolio" },
+  { label: "Firm", href: "/firm" },
+  { label: "Our Story", href: "/our-stories" },
   { label: "Investor Relations", href: "/investment-relation" },
   { label: "Contact", href: "/Contacts" },
 ];
 
 const resources = [
-  { label: "Firm", href: "/who-we-are/firm" },
-  { label: "Our Story", href: "/our-stories" },
-  { label: "Leadership", href: "/our-stories#leadership" },
-  { label: "Investment Philosophy", href: "/what-we-do/investment-phylosophy" },
+  { label: "Financial Reporting", href: "/" },
+  { label: "Shareholder's Information", href: "/" },
+  { label: "Investor Service Centre", href: "/" },
+  { label: "Press Releases", href: "/" },
 ];
 
 export default function FooterFixed() {
