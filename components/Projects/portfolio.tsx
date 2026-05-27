@@ -29,9 +29,9 @@ const PortfolioHeroSection = () => {
       baseClassName="bg-genesis-navy"
       crumbsContainerClassName="text-white/90"
       crumbLinkClassName="text-white hover:text-white/80"
-      crumbCurrentClassName="text-[#8D1E39]"
+      crumbCurrentClassName="text-white underline decoration-2 underline-offset-4 decoration-white"
       crumbSeparatorClassName="text-white/90"
-      lastCrumbSeparatorClassName="text-[#8D1E39]"
+      lastCrumbSeparatorClassName="text-white/90"
     />
   );
 };

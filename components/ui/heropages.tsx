@@ -47,11 +47,11 @@ export default function Pagehero({
   showVideoFallback = true,
   backgroundImageClassName = "object-cover opacity-20",
   titleClassName = "font-agatho text-white",
-  crumbsContainerClassName = "text-[#8D1E39]",
+  crumbsContainerClassName = "text-white/90",
   crumbLinkClassName = "text-white hover:text-[#e2e8f0]",
-  crumbCurrentClassName = "text-[#8D1E39]",
-  crumbSeparatorClassName = "",
-  lastCrumbSeparatorClassName = "",
+  crumbCurrentClassName = "text-white underline decoration-2 underline-offset-4 decoration-white",
+  crumbSeparatorClassName = "text-white/90",
+  lastCrumbSeparatorClassName = "text-white/90",
 }: PageheroProps) {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [isImageReady, setIsImageReady] = useState(false);
@@ -95,7 +95,6 @@ export default function Pagehero({
         yoyo: true,
       },
     );
-
     return () => {
       tween.kill();
     };
@@ -103,7 +102,7 @@ export default function Pagehero({
 
   return (
     <section
-      className={`relative flex w-full items-center justify-center overflow-hidden ${baseClassName} px-4 xs:px-6 sm:px-8 md:px-16 text-center ${heightClassName}`}
+      className={`relative flex w-full items-center justify-center  ${baseClassName} px-4 xs:px-6 sm:px-8 md:px-16 text-center ${heightClassName}`}
     >
       {backgroundVideo ? (
         <>
@@ -167,12 +166,16 @@ export default function Pagehero({
           <div className={`mx-auto mb-2 flex max-w-full items-center justify-center gap-1.5 px-2 text-center font-montserrat text-[10px] font-semibold uppercase tracking-[0.12em] sm:gap-2 sm:text-xs sm:tracking-[0.18em] ${crumbsContainerClassName}`}>
             {crumbs.map((crumb, index) => (
               <span key={`${crumb.label}-${index}`} className="flex min-w-0 items-center gap-1.5 sm:gap-2">
-                {crumb.href ? (
+                {crumb.href && index < crumbs.length - 1 ? (
                   <Link href={crumb.href} className={`truncate transition-colors ${crumbLinkClassName}`}>
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className={`max-w-[40vw] truncate sm:max-w-none ${crumbCurrentClassName}`}>{crumb.label}</span>
+                  <span
+                    className={`inline-block max-w-[40vw] truncate   sm:max-w-none ${crumbCurrentClassName}`}
+                  >
+                    {crumb.label}
+                  </span>
                 )}
                 {index < crumbs.length - 1 ? (
                   <span
@@ -191,7 +194,6 @@ export default function Pagehero({
         ) : null}
 
         <Title text={title} className={titleClassName} />
-
       </div>
     </section>
   );
