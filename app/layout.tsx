@@ -43,12 +43,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://genesisventures.com.np"),
   title: "Genesis Ventures",
   description:
-    "Early-stage venture capital firm investing in transformative companies.",
-    icons: {
-      icon: "/favicon.ico",
-    },
+    "Genesis Ventures is a modern venture capital and investment company focused on backing visionary businesses, innovation, and long-term growth.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
