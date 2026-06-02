@@ -102,7 +102,7 @@ export default function Pagehero({
 
   return (
     <section
-      className={`relative flex w-full items-center justify-center  ${baseClassName} px-4 xs:px-6 sm:px-8 md:px-16 text-center ${heightClassName}`}
+      className={`relative flex w-full items-center justify-center overflow-hidden ${baseClassName} px-4 xs:px-6 sm:px-8 md:px-16 text-center ${heightClassName}`}
     >
       {backgroundVideo ? (
         <>
