@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, useRef, type MouseEvent } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Linkedin, Instagram, Facebook, Mail } from "lucide-react";
 import Image from "next/image";
 
 // ------------------ NAV LINKS ------------------
@@ -241,9 +241,9 @@ export default function NavBar() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } bg-white border-b border-gray-100`}
+        } bg-white border-b border-gray-100 border-t-genesis-red`}
       >
-        <div className="layout-7xl flex flex-col py-4 gap-1">
+        <div className="layout-7xl flex flex-col py-4 gap-1 border-t border-t-genesis-red/30">
           {navLinks.map(({ label, href, dropdown }) => {
             const parentActive = isParentActive(href, dropdown);
 
@@ -251,37 +251,20 @@ export default function NavBar() {
               <div key={label}>
                 {dropdown ? (
                   <>
-                    <button
-                      onClick={() =>
-                        setMobileOpen((prev) => (prev === label ? null : label))
-                      }
-                      className={`w-full flex items-center justify-between text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 ${
+                    <div
+                      className={`text-sm uppercase tracking-widest font-poppins py-3 border-b border-gray-100 ${
                         parentActive ? "text-genesis-red" : "text-genesis-navy"
                       }`}
                     >
                       {label}
-                      <ChevronDown
-                        size={14}
-                        className={`transition-transform duration-200 ${
-                          mobileOpen === label
-                            ? "rotate-180 text-genesis-red"
-                            : ""
-                        }`}
-                      />
-                    </button>
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        mobileOpen === label
-                          ? "max-h-60 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
+                    </div>
+                    <div>
                       {dropdown.map(({ label: dLabel, href: dHref }) => (
                         <Link
                           key={dHref}
                           href={dHref}
                           onClick={(event) => handleHashLinkClick(event, dHref)}
-                          className={`block pl-4 py-2.5 text-xs font-poppins uppercase tracking-wider border-b border-gray-50 last:border-0 transition-colors ${
+                          className={`block pl-4 py-2.5 text-sm font-poppins uppercase tracking-wider border-b border-gray-50 last:border-0 transition-colors ${
                             isActivePath(dHref)
                               ? "text-genesis-red"
                               : "text-gray-500 hover:text-genesis-navy"
@@ -305,6 +288,51 @@ export default function NavBar() {
               </div>
             );
           })}
+
+          {/* Social Media & Contact Section */}
+          <div className="mt-6 pt-6 border-t border-genesis-red">
+            {/* Email */}
+            <div className="text-center mb-4">
+              <a 
+                href="mailto:info@genesisventures.com.np" 
+                className="text-base text-genesis-navy hover:text-genesis-red transition-colors"
+              >
+                info@genesisventures.com.np
+              </a>
+            </div>
+            
+            {/* Social Media Icons */}
+            <div className="flex items-center justify-center gap-5">
+              <a 
+                href="#" 
+                aria-label="LinkedIn" 
+                className="text-genesis-navy transition-colors hover:text-genesis-red"
+              >
+                <Linkedin size={24} />
+              </a>
+              <a 
+                href="#" 
+                aria-label="Instagram" 
+                className="text-genesis-navy transition-colors hover:text-genesis-red"
+              >
+                <Instagram size={24} />
+              </a>
+              <a 
+                href="#" 
+                aria-label="Facebook" 
+                className="text-genesis-navy transition-colors hover:text-genesis-red"
+              >
+                <Facebook size={24} />
+              </a>
+              <a 
+                href="mailto:info@genesisventures.com.np" 
+                aria-label="Email"
+                className="text-genesis-navy transition-colors hover:text-genesis-red"
+              >
+                <Mail size={24} />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
