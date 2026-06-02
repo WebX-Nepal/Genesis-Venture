@@ -22,7 +22,7 @@ export default function Stats() {
                 {value.includes("+") ? (
                   <>
                     <span className="font-agatho">{value.replace("+", "")}</span>
-                    <span className="font-montserrat">+</span>
+                    <span className="font-montserrat ml-0.5">+</span>
                   </>
                 ) : (
                   <span className="font-agatho">{value}</span>

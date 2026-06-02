@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 import Hero from "@/components/Home/Hero";
 import Stats from "@/components/Home/stats";
 import InvestmentRiskModal from "@/components/InvestmentRiskFlyer";
-import Firm from "@/components/Home/unsused/firm";
 import UnlistedMarket from "@/components/Home/unlist";
-import ScrollingHeadline from "@/components/Home/ScrollingHeadline";
 import About from "@/components/Home/newabout";
 import Devider from "@/components/Home/devider";
-import Blog from "@/components/Home/blog";
+
 
 
 

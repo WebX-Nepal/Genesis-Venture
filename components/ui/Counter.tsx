@@ -50,15 +50,14 @@ export default function Counter({
     );
 
     return (
-        <div className="flex items-center gap-2">
+        <span className="inline-flex items-baseline whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white">
             <span
                 ref={ref}
-                className={`whitespace-nowrap w-14 lg:w-17  text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-agatho text-white ${className}`}
+                className={`font-agatho ${className}`}
             >
-                <h1 >{display}</h1>
+                {display}
             </span>
-            <h1 className="whitespace-nowrap text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-montserrat text-white">{suffix}</h1>
-        </div>
-
+            <span className="font-montserrat ml-0.5">{suffix}</span>
+        </span>
     );
 }
