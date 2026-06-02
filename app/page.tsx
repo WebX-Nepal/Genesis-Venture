@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true)
-    }, 5000)
+    }, 4000)
   }, [])
   return (
     <main className="w-full font-[PPFONT]">
