@@ -73,21 +73,23 @@ export default function Hero() {
       {!isVideoReady ? (
         <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#0a1634] via-[#13356f] to-[#102852]" />
       ) : null}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        onLoadedData={() => {
-          setIsVideoReady(true);
-          setHeroVideoReady(true);
-        }}
-        className={`absolute inset-0 h-[115%] w-full object-cover will-change-transform transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
-      >
-        <source src="/videos/hero1.mp4" type="video/mp4" />
-      </video>
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onLoadedData={() => {
+            setIsVideoReady(true);
+            setHeroVideoReady(true);
+          }}
+          className={`absolute inset-0 h-full w-full object-cover will-change-transform transition-opacity duration-500 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
+        >
+          <source src="/videos/hero1.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       <div className="relative z-10 mx-auto -translate-y-14 flex w-full max-w-5xl flex-col items-center justify-center text-center md:-translate-y-20">
         <div ref={eyebrowRef} className="mb-7 flex items-center gap-4 text-white/80 md:mb-8">
