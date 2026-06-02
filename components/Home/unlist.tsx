@@ -151,7 +151,7 @@ export default function UnlistedMarket() {
               <div className={`absolute -right-8 top-10 z-0 h-44 w-44 bg-gradient-to-br opacity-70 blur-[1px] transition-transform duration-500 group-hover:scale-105 md:-right-10 md:top-12 md:h-52 md:w-52 ${item.deco}`} />
               <div className={`absolute -right-16 bottom-[-28px] z-0 h-36 w-36 bg-gradient-to-br opacity-55 blur-[1px] transition-transform duration-500 group-hover:scale-105 md:h-44 md:w-44 ${item.deco}`} />
 
-              <div className="relative z-10 flex h-full flex-col">
+              <div className="relative z-10 flex h-full flex-col justify-center sm:justify-start">
                 <span className="font-montserrat text-[12px] font-semibold text-[#8D1E39] sm:text-[11px]">
                   {item.label}
                 </span>
@@ -160,7 +160,7 @@ export default function UnlistedMarket() {
                   <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937] max-w-full sm:max-w-[65%]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px] max-w-[70%] sm:max-w-full">
+                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px] max-w-[70%]">
                     {item.desc}
                   </p>
                 </div>
