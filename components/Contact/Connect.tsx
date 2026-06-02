@@ -63,14 +63,14 @@ export default function Connect() {
 
       await emailjs.send(
         "service_fcva6pb",
-        "template_ucq5ww1",
+        "template_ulz0f1s",
         templateParams,
         "4mQttgecqdy_Sk_6q"
       );
 
       setPopupMessage({
         type: "success",
-        message: "Message sent successfully! We'll get back to you soon.",
+        message: "Thanks for reaching out! We'll get back to you shortly.",
       });
       setShowPopup(true);
       
@@ -88,7 +88,7 @@ export default function Connect() {
       console.error("EmailJS Error:", error);
       setPopupMessage({
         type: "error",
-        message: "Failed to send message. Please try again.",
+        message: "Oops, something went wrong. Please try again.",
       });
       setShowPopup(true);
       
@@ -133,7 +133,7 @@ export default function Connect() {
 
       setPopupMessage({
         type: "success",
-        message: "Pitch submitted successfully! We'll review it and get back to you.",
+        message: "Got it! We'll review your pitch and be in touch soon.",
       });
       setShowPopup(true);
       
@@ -153,7 +153,7 @@ export default function Connect() {
       console.error("EmailJS Error:", error);
       setPopupMessage({
         type: "error",
-        message: "Failed to submit pitch. Please try again.",
+        message: "Oops, something went wrong. Please try again.",
       });
       setShowPopup(true);
       
