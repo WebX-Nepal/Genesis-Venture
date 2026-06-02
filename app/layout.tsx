@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://genesisventures.com.np"),
   title: "Genesis Ventures | Investment Company",
   description:
-    "Genesis Ventures is a modern venture capital and investment company focused on backing visionary businesses, innovation, and long-term growth.",
+    "Genesis Ventures is an  investment firm specialising in early-stage, unlisted opportunities — the segment of the market where transformational value is built long before a public listing",
   icons: {
     icon: "/favicon.ico",
   },
