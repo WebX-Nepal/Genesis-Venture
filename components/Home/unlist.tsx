@@ -144,7 +144,7 @@ export default function UnlistedMarket() {
                     src={item.image}
                     alt=""
                     fill
-                    className="object-cover object-center"
+                    className="object-contain object-center md:object-cover"
                   />
                 </div>
               ) : null}
@@ -152,15 +152,15 @@ export default function UnlistedMarket() {
               <div className={`absolute -right-16 bottom-[-28px] z-0 h-36 w-36 bg-gradient-to-br opacity-55 blur-[1px] transition-transform duration-500 group-hover:scale-105 md:h-44 md:w-44 ${item.deco}`} />
 
               <div className="relative z-10 flex h-full flex-col">
-                <span className="font-montserrat text-[12px] font-semibold  text-[#8D1E39] sm:text-[11px] ">
+                <span className="font-montserrat text-[12px] font-semibold text-[#8D1E39] sm:text-[11px]">
                   {item.label}
                 </span>
 
-                <div className="mt-8 max-w-[60%] sm:max-w-[65%]">
-                  <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937]">
+                <div className="mt-4 sm:mt-8">
+                  <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937] max-w-full sm:max-w-[65%]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px]">
+                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px] max-w-[70%] sm:max-w-full">
                     {item.desc}
                   </p>
                 </div>
