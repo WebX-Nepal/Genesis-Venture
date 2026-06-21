@@ -52,60 +52,103 @@ export default function UnlistedMarket() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const splitTitle = new SplitText(".unlisted-heading", { type: "words" });
-
-    gsap.from(splitTitle.words, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top 90%",
-        end: "top top",
-        scrub: true,
-      },
-      opacity: 0,
-      y: 30,
-      filter: "blur(10px)",
-      stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
-    });
-
     if (!containerRef.current) return;
 
-    const paragraph = containerRef.current.querySelector<HTMLParagraphElement>(
-      "#unlisted-animated-paragraph",
-    );
-    if (!paragraph) return;
+    const mm = gsap.matchMedia();
 
-    const words = paragraph.textContent
-      ?.split(" ")
-      .map((word) => `<span class="word inline-block">${word}</span>`)
-      .join(" ");
-    if (words) paragraph.innerHTML = words;
+    // Desktop/Tablet animations
+    mm.add("(min-width: 640px)", () => {
+      const splitTitle = new SplitText(".unlisted-heading", { type: "words" });
 
-    const wordEls = paragraph.querySelectorAll(".word");
-
-    gsap.fromTo(
-      wordEls,
-      { opacity: 0.15, y: 12, filter: "blur(6px)" },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        stagger: 0.03,
-        ease: "power2.out",
+      gsap.from(splitTitle.words, {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 90%",
-          end: "top -10%",
+          end: "top top",
           scrub: true,
         },
-      },
-    );
+        opacity: 0,
+        y: 30,
+        filter: "blur(10px)",
+        stagger: 0.05,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      const paragraph = containerRef.current?.querySelector<HTMLParagraphElement>(
+        "#unlisted-animated-paragraph",
+      );
+      if (!paragraph) return;
+
+      const originalText = paragraph.textContent || "";
+      const words = originalText
+        .split(" ")
+        .map((word) => `<span class="word inline-block">${word}</span>`)
+        .join(" ");
+      paragraph.innerHTML = words;
+
+      const wordEls = paragraph.querySelectorAll(".word");
+
+      gsap.fromTo(
+        wordEls,
+        { opacity: 0.15, y: 12, filter: "blur(6px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          stagger: 0.03,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 90%",
+            end: "top -10%",
+            scrub: true,
+          },
+        },
+      );
+
+      return () => {
+        splitTitle.revert();
+        if (paragraph) {
+          paragraph.innerHTML = originalText;
+        }
+      };
+    });
+
+    // Mobile animations (no SplitText, simple fade-in-up to prevent wrapping issues and scroll lag)
+    mm.add("(max-width: 639px)", () => {
+      gsap.from(".unlisted-heading", {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          once: true,
+        },
+        opacity: 0,
+        y: 20,
+        filter: "blur(5px)",
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from("#unlisted-animated-paragraph", {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          once: true,
+        },
+        opacity: 0,
+        y: 20,
+        filter: "blur(5px)",
+        duration: 0.8,
+        delay: 0.15,
+        ease: "power3.out",
+      });
+    });
 
     return () => {
-      splitTitle.revert();
+      mm.revert();
     };
-  });
+  }, { scope: containerRef });
 
   return (
     <section
@@ -116,7 +159,7 @@ export default function UnlistedMarket() {
       <div className="layout-7xl">
         <div className="relative z-10">
 
-        <div className="mb-8 flex flex-col gap-6 sm:mb-10 sm:gap-8 md:mb-12 md:gap-24">
+        <div className="mb-8 flex flex-col gap-6 sm:mb-10 sm:gap-8 py-16 md:mb-12 md:gap-24">
           <div className="mx-auto w-full max-w-4xl text-center">
             <h2 className="unlisted-heading font-agatho text-[clamp(2rem,4.6vw,3.2rem)] leading-[1.08] text-[#162e54]">
               Why Unlisted Markets
@@ -139,7 +182,7 @@ export default function UnlistedMarket() {
               className={`group relative min-h-[340px] overflow-hidden border p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#8D1E39]/35 hover:shadow-[0_16px_38px_rgba(22,46,84,0.12)] sm:min-h-[360px] sm:p-6 ${item.tone}`}
             >
               {item.image ? (
-                <div className="absolute right-0 top-0 z-10 h-full w-[42%] opacity-85">
+                <div className="absolute right-0 top-0 z-10 h-full w-[38%] sm:w-[42%] opacity-85">
                   <Image
                     src={item.image}
                     alt=""
@@ -157,10 +200,10 @@ export default function UnlistedMarket() {
                 </span>
 
                 <div className="mt-4 sm:mt-8">
-                  <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937] max-w-full sm:max-w-[65%]">
+                  <h3 className="font-montserrat capitalize text-[clamp(1.2rem,3.2vw,2.15rem)] leading-[1.08] text-[#1f2937] max-w-[60%] sm:max-w-[65%]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px] max-w-[70%]">
+                  <p className="mt-3 font-montserrat text-sm leading-relaxed text-[#3d444f] sm:text-[15px] max-w-[60%] sm:max-w-[70%]">
                     {item.desc}
                   </p>
                 </div>
