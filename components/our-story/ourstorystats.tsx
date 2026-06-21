@@ -22,7 +22,7 @@ export default function storyStats() {
                 {value.includes("+") ? (
                   <>
                     <span className="font-agatho">{value.replace("+", "")}</span>
-                    <span className="font-montserrat">+</span>
+                    <span className="font-montserrat ml-2">+</span>
                   </>
                 ) : (
                   <span className="font-agatho">{value}</span>

@@ -57,7 +57,7 @@ export default function Counter({
             >
                 {display}
             </span>
-            <span className="font-montserrat ml-0.5">{suffix}</span>
+            <span className={`font-montserrat ${suffix.includes("+") ? "ml-1" : "ml-0.5"}`}>{suffix}</span>
         </span>
     );
 }

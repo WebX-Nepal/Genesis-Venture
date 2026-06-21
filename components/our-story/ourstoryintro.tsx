@@ -150,7 +150,7 @@ export default function OurStoryIntro() {
                     {stat.value.includes("+") ? (
                       <>
                         <span className="font-agatho">{stat.value.replace("+", "")}</span>
-                        <span className="font-montserrat">+</span>
+                        <span className="font-montserrat ml-2">+</span>
                       </>
                     ) : (
                       <span className="font-agatho">{stat.value}</span>
