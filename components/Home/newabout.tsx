@@ -5,17 +5,20 @@ export default function Firm() {
     {
       label: "Investment Focus",
       value: "Unlisted Shares",
-      blurb: "Targeting private businesses where long-term value can compound away from short-term market pressure.",
+      blurb:
+        "Targeting private businesses where long-term value can compound away from short-term market pressure.",
     },
     {
       label: "Investment Stage",
-      value: "Growth to Pre-IPO",
-      blurb: "Backing companies in the execution-heavy stage where strategic support can accelerate outcomes.",
+      value: "Growth to IPO",
+      blurb:
+        "Backing companies in the execution-heavy stage where strategic support can accelerate outcomes.",
     },
     {
       label: "Horizon",
       value: "Long-Term Capital",
-      blurb: "Structured with patience to support durable business building across multi-year timelines.",
+      blurb:
+        "Structured with patience to support durable business building across multi-year timelines.",
     },
   ];
 
@@ -36,8 +39,9 @@ export default function Firm() {
             </h2>
           </div>
           <p className="mx-auto max-w-3xl py-6 font-montserrat text-sm font-medium leading-relaxed text-[#162e54]/90 sm:py-7 sm:text-base">
-            Genesis Ventures Ltd. is a dedicated private markets investment company focused exclusively on
-            unlisted equity - stakes in businesses that operate beyond the reach of public exchanges, where
+            Genesis Ventures Ltd. is a dedicated private markets investment
+            company focused exclusively on unlisted equity - stakes in
+            businesses that operate beyond the reach of public exchanges, where
             the most meaningful value creation often takes place.
           </p>
         </div>
@@ -49,7 +53,7 @@ export default function Firm() {
             >
               <div className="relative z-10">
                 <p className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8D1E39] sm:text-[11px]">
-                 {item.label}
+                  {item.label}
                 </p>
                 <h3 className="mt-3 font-montserrat text-[clamp(1.25rem,5vw,2rem)] font-semibold leading-[1.1] text-[#162e54]">
                   {item.value}
